@@ -56,11 +56,39 @@ export const useAccountStore = defineStore('accounts', () => {
         }
     }
 
+    // 사용자 정보 가져오기 (마이 페이지)
+    const getUserInfo = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/accounts/user/`, {
+                headers: { Authorization: `Token ${token.value}` }
+            })
+            user.value = response.data
+        } catch (error) {
+            console.error('사용자 정보 가져오기 실패:', error)
+            throw error
+        }
+    }
+
+    // 프로필 업데이트
+    const updateProfile = async (userData) => {
+        try {
+            const response = await axios.put(`${API_URL}/accounts/profile/`, userData, {
+                headers: { Authorization: `Bearer ${token.value}` }
+            })
+            user.value = response.data
+        } catch (error) {
+            console.error('프로필 업데이트 실패:', error)
+            throw error
+        }
+    }
+
 
     return {
         user,
         isAuthenticated,
         login,
-        register
+        register,
+        getUserInfo,
+        updateProfile,
     }
 }, { persist: true }) // 새로고침해도 상태 유지
