@@ -9,7 +9,7 @@ const { isAuthenticated } = storeToRefs(accountStore)
 
 <template>
   <nav class="navbar">
-    <RouterLink to="/" class="logo">CARD FIT</RouterLink>
+    <RouterLink to="/" class="logo">가계북</RouterLink>
     <div class="nav-links">
       <RouterLink :to="{ name: 'CardList'}" class="nav-link">카드 찾기</RouterLink>
       <RouterLink to="/" class="nav-link">내 가계부</RouterLink>

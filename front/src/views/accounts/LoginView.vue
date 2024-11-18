@@ -19,7 +19,7 @@ const login = () => {
 
 <template>
   <div class="login-container">
-    <h1 class="welcome-text">당신과 함께하는 Pay Flow</h1>
+    <h1 class="welcome-text">맞춤 금융 가이드 가계북✨</h1>
 
     <button class="google-btn">
       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"

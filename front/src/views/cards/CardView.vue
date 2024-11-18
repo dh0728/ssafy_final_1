@@ -62,6 +62,9 @@
         </swiper>
       </div>
     </div>
+
+    <CardList />
+
   </div>
 </template>
 
@@ -70,6 +73,7 @@ import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
 import 'swiper/css'
+import CardList from "@/components/cards/CardList.vue";
 
 const selectedTab = ref('credit')
 const selectedTypes = ref([])
@@ -158,32 +162,32 @@ const toggleFilter = (type, id) => {
 }
 
 .tab-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
 }
 
 .tab-buttons {
-  display: flex;
-  gap: 1.5rem;
+  display: inline-flex;
+  background: #f5f5f5;
+  padding: 4px;
+  border-radius: 50px;
 }
 
 .tab-btn {
-  padding: 0.5rem 0;
+  padding: 12px 24px;
   border: none;
-  background: none;
-  font-size: 1.1rem;
+  border-radius: 50px;
+  font-size: 1rem;
   color: #666;
+  background: transparent;
   cursor: pointer;
-  position: relative;
+  transition: all 0.2s ease;
 }
 
 .tab-btn.active {
-  color: #1a1438;
-  font-weight: bold;
+  background: white;
+  color: #000;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tab-btn.active::after {
