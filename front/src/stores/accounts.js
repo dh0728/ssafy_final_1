@@ -56,6 +56,22 @@ export const useAccountStore = defineStore('accounts', () => {
         }
     }
 
+    // 로그아웃
+    const logout = async () => {
+        try {
+            await axios({
+                method: 'post',
+                url: `${API_URL}/accounts/logout/`
+            })
+            token.value = null
+            user.value = null
+            router.push({ name: 'home' })
+        } catch (error) {
+            console.error('로그아웃 실패:', error)
+            throw error
+        }
+    }
+
     // 사용자 정보 가져오기 (마이 페이지)
     const getUserInfo = async () => {
         try {
@@ -73,7 +89,7 @@ export const useAccountStore = defineStore('accounts', () => {
     const updateProfile = async (userData) => {
         try {
             const response = await axios.put(`${API_URL}/accounts/profile/`, userData, {
-                headers: { Authorization: `Bearer ${token.value}` }
+                headers: { Authorization: `Token ${token.value}` }
             })
             user.value = response.data
         } catch (error) {
@@ -88,6 +104,7 @@ export const useAccountStore = defineStore('accounts', () => {
         isAuthenticated,
         login,
         register,
+        logout,
         getUserInfo,
         updateProfile,
     }
