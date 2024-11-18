@@ -47,8 +47,8 @@ export const useAccountStore = defineStore('accounts', () => {
                 }
             })
             // token.value = response.data.key
-            login({ email, password1 })
-            router.push({ name: 'Home' })
+            await login({email, password: password1})
+            await router.push({name: 'Home'})
         } catch (error) {
             alert('회원가입에 실패했습니다. 입력 정보를 확인해주세요.')
             console.error('회원가입 실패:', error)
@@ -65,7 +65,7 @@ export const useAccountStore = defineStore('accounts', () => {
             })
             token.value = null
             user.value = null
-            router.push({ name: 'home' })
+            router.push({ name: 'Home' })
         } catch (error) {
             console.error('로그아웃 실패:', error)
             throw error

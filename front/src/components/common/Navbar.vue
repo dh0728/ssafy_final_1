@@ -11,7 +11,7 @@ const { isAuthenticated } = storeToRefs(accountStore)
   <nav class="navbar">
     <RouterLink to="/" class="logo">CARD FIT</RouterLink>
     <div class="nav-links">
-      <RouterLink to="/" class="nav-link">카드 찾기</RouterLink>
+      <RouterLink :to="{ name: 'CardList'}" class="nav-link">카드 찾기</RouterLink>
       <RouterLink to="/" class="nav-link">내 가계부</RouterLink>
       <RouterLink to="/" class="nav-link">소비 분석</RouterLink>
       <RouterLink to="/" class="nav-link">카드 추천</RouterLink>
