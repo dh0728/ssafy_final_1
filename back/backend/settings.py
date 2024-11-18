@@ -74,6 +74,19 @@ SPECTACULAR_SETTINGS = {
     # OTHER SETTINGS
 }
 
+# adapter 세팅 추가
+ACCOUNT_ADAPTER = 'accounts.adapters.CustomAccountAdapter'
+
+REST_AUTH = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.UserRegisterSerializer',
+}
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 # social login 
 SITE_ID =1
 
