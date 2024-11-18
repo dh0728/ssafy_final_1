@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
 
     'accounts', #유저 앱
-    
+    'cards',
     # DRF
     'rest_framework',
     'rest_framework.authtoken',
