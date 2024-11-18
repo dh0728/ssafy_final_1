@@ -223,8 +223,5 @@ onMounted(() => {
   color: #ddd;
 }
 
-.tab-btn::after,
-.tab-btn.active::after {
-  display: none !important;
-}
+
 </style>
