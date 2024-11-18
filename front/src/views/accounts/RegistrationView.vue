@@ -1,19 +1,26 @@
 <script setup>
-import {ref} from "vue";
-import {useAccountStore} from "@/stores/accounts.js";
+import { ref, watch } from 'vue'  // watch 추가
+import { useAccountStore } from "@/stores/accounts.js"
 
 const email = ref(null)
 const password = ref(null)
+const password2 = ref(null)
 const username = ref(null)
 const birth = ref(null)
+
 
 const store = useAccountStore()
 
 const registration = () => {
-  console.log('registration', email.value, password.value, username.value, birth.value)
+  if (password.value !== password2.value) {
+    alert('비밀번호가 일치하지 않습니다.')
+    return
+  }
+
   const payload = {
     email: email.value,
-    password: password.value,
+    password1: password.value,
+    password2: password2.value,
     username: username.value,
     birth: birth.value,
   }
@@ -54,9 +61,20 @@ const registration = () => {
             title="최소 8자 이상, 영문과 숫자를 포함해야 합니다"
         >
         <input
+            type="password"
+            v-model="password2"
+            placeholder="비밀번호를 확인해 주세요"
+            class="input-field"
+            required
+            minlength="8"
+            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+            title="최소 8자 이상, 영문과 숫자를 포함해야 합니다"
+        >
+
+        <input
             type="text"
             v-model="username"
-            placeholder="닉네임을 입력해 주세요"
+            placeholder="이름을 입력해 주세요"
             class="input-field"
             required
             minlength="2"

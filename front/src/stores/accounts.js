@@ -36,18 +36,18 @@ export const useAccountStore = defineStore('accounts', () => {
 
     // 회원가입
     const register = async (payload) => {
-        const {email, password, username, birth} = payload
+        const {email, password1, password2, username, birth} = payload
 
         try {
             const response = await axios({
                 method: 'post',
                 url: `${API_URL}/accounts/registration/`,
                 data: {
-                    email, password, username, birth
+                    email, password1, password2, username, birth
                 }
             })
             // token.value = response.data.key
-            login({ email, password })
+            login({ email, password1 })
             router.push({ name: 'Home' })
         } catch (error) {
             alert('회원가입에 실패했습니다. 입력 정보를 확인해주세요.')

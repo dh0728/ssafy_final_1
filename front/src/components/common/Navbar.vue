@@ -1,5 +1,5 @@
 <script setup>
-import { useAccountStore } from '@/stores/account'
+import { useAccountStore } from '@/stores/accounts'
 import { storeToRefs } from 'pinia'
 
 const accountStore = useAccountStore()
