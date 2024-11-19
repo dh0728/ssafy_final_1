@@ -21,7 +21,7 @@ export const useCardStore = defineStore('cards', () => {
                 method: 'get',
                 url: `${API_URL}/cards/${type}/search/1`,
             })
-             cards.value = response.data
+            cards.value = response.data
         } catch (error) {
             console.error(error)
         }

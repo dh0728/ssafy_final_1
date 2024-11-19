@@ -22,20 +22,21 @@
 
       <!-- 혜택 필터 -->
       <div class="filter-group">
-        <div class="filter-label">카드사</div>
+        <div class="filter-label">혜택</div>
         <swiper
             :modules="[FreeMode]"
             :slides-per-view="'auto'"
             :space-between="8"
             :free-mode="true"
+            :loop="false"
             class="filter-swiper"
         >
-          <swiper-slide v-for="company in currentCardCompanies" :key="company.id">
+          <swiper-slide v-for="item in category" :key="item.id">
             <button
-                :class="['filter-btn', { active: selectedCompanies.includes(company.id) }]"
-                @click="toggleFilter('companies', company.id)"
+                :class="['filter-btn', { active: selectedCategories.includes(item.id) }]"
+                @click="toggleFilter('categories', item.id)"
             >
-              {{ company.name }}
+              {{ item.name }}
             </button>
           </swiper-slide>
         </swiper>
@@ -51,7 +52,7 @@
             :free-mode="true"
             class="filter-swiper"
         >
-          <swiper-slide v-for="company in cardCompany" :key="company.id">
+          <swiper-slide v-for="company in currentCompanies" :key="company.id">
             <button
                 :class="['filter-btn', { active: selectedCompanies.includes(company.id) }]"
                 @click="toggleFilter('companies', company.id)"
@@ -85,13 +86,13 @@ const selectedCompanies = ref([])
 
 // 데이터는 그대로 사용
 const cardCompany = ref([
-  { id: 1, name: 'SH수협은행' },
+  { id: 1, name: 'Sh수협은행' },
   { id: 2, name: '토스뱅크' },
   { id: 3, name: 'NH농협카드' },
   { id: 4, name: '우리카드' },
   { id: 5, name: 'BNK경남은행' },
   { id: 6, name: '현대카드' },
-  { id: 7, name: 'SC제일은행' },
+  { id: 7, name: 'Sc제일은행' },
   { id: 8, name: '롯데카드' },
   { id: 9, name: '전북은행' },
   { id: 10, name: '케이뱅크' },
@@ -142,7 +143,7 @@ const category = ref([
   { id: 27, name: '생활' },
 ])
 
-const checkCardCompany = [
+const checkCardCompany = ref([
   { 'id': 1, 'name': '케이뱅크' },
   { 'id': 2, 'name': 'KB국민카드' },
   { 'id': 3, 'name': '신한카드' },
@@ -191,13 +192,12 @@ const checkCardCompany = [
   { 'id': 46, 'name': '교보증권' },
   { 'id': 47, 'name': 'SC제일은행' },
   { 'id': 48, 'name': '차이' },
-]
+])
 
-// 현재 선택된 카드 타입에 따라 다른 카드사 목록 반환
-const currentCardCompanies = computed(() => {
-  return selectedTab.value === 'credit' ? cardCompany.value : checkCardCompany
+
+const currentCompanies = computed(() => {
+  return selectedTab.value === 'credit' ? cardCompany.value : checkCardCompany.value
 })
-
 
 const toggleFilter = async (type, id) => {
   // 기존 배열 복사
@@ -228,22 +228,16 @@ const toggleFilter = async (type, id) => {
   }
 }
 
-// 탭 변경 시에도 필터 상태 고려
+// 탭 변경 시 필터 초기화 및 카드 목록 새로 불러오기
 const changeTab = async (type) => {
   store.resetCards()
   selectedTab.value = type
+  // 필터 초기화
+  selectedCategories.value = []
   selectedCompanies.value = []
 
-  // 필터가 선택된 경우에만 조건 검색
-  if (selectedCategories.value.length > 0 || selectedCompanies.value.length > 0) {
-    await store.getCardsByCondition(
-        type,
-        selectedCategories.value,
-        selectedCompanies.value
-    )
-  } else {
-    await store.getCardList(type)
-  }
+  // 기본 카드 목록 불러오기
+  await store.getCardList(type)
 }
 
 onMounted(async () => {
