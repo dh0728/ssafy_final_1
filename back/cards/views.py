@@ -6,7 +6,8 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 
-from django.db.models import Q
+from django.db.models import Count
+from django.db import connection
 
 # Create your views here.
 @api_view(['GET'])
@@ -57,7 +58,8 @@ def searchCondition(request,card_type):
     if request.method == 'GET':
         # 요청에서 brand와 category 추출
         brands = request.query_params.getlist('brand') 
-        categories = request.query_params.getlist('category') 
+        categories_str = request.query_params.getlist('category')
+        categories=list(map(int,categories_str))
 
         print(brands)
         print(categories)
@@ -66,15 +68,24 @@ def searchCondition(request,card_type):
             card_category_model = Credit_card_category
             card_category_field = 'credit_card_id'
         else:
-            card_model == Check_cards
+            card_model = Check_cards
             card_category_model = Check_card_category
             card_category_field = 'check_card_id'
         
-        # 카테고리 ID에 해당하는 카드 ID 찾기
-        card_ids = card_category_model.objects.filter(
-            category_id__in = categories
-        ).values_list(card_category_field,flat=True).distinct()
+        sql_query = f"""
+            SELECT {card_category_field}_id
+            FROM {card_category_model._meta.db_table}
+            WHERE category_id_id IN ({','.join([str(category) for category in categories])})
+            GROUP BY {card_category_field}_id
+            HAVING COUNT(DISTINCT category_id_id) = {len(categories)}
+        """
 
+        # raw SQL 쿼리 실행 및 카드 ID 추출
+        with connection.cursor() as cursor:
+            cursor.execute(sql_query)
+            card_ids = [row[0] for row in cursor.fetchall()]
+        
+        print(card_ids)
         # 카드 ID와 brand를 이용하여 최종카드 정보 조회
         cards = card_model.objects.filter(
             credit_card_id__in=card_ids,
