@@ -28,6 +28,7 @@
             :slides-per-view="'auto'"
             :space-between="8"
             :free-mode="true"
+            :loop="false"
             class="filter-swiper"
         >
           <swiper-slide v-for="item in category" :key="item.id">
@@ -69,7 +70,7 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from 'vue'
+import {onMounted, ref, watch} from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
 import 'swiper/css'
@@ -80,7 +81,6 @@ const store = useCardStore();
 
 // 기본값: credit
 const selectedTab = ref('credit')
-const selectedTypes = ref([])
 const selectedCategories = ref([])
 const selectedCompanies = ref([])
 
@@ -143,33 +143,56 @@ const category = ref([
   { id: 27, name: '생활' },
 ])
 
-// 탭 변경 시 카드 목록 새로 불러오기
-const changeTab = async (type) => {
-  store.resetCards() // 카드 목록 초기화
-  selectedTab.value = type
-  await store.getCardList(type)
-}
 
-
-onMounted(async () => {
-  await store.getCardList(selectedTab)
-})
-
-
-
-const toggleFilter = (type, id) => {
-  const targetRef =
-      type === 'types' ? selectedTypes
-          : type === 'categories' ? selectedCategories
-              : selectedCompanies
+const toggleFilter = async (type, id) => {
+  // 기존 배열 복사
+  const targetRef = type === 'categories' ? selectedCategories : selectedCompanies
 
   const index = targetRef.value.indexOf(id)
   if (index === -1) {
-    targetRef.value.push(id)
+    // 새로운 값 추가
+    targetRef.value = [...targetRef.value, id]
   } else {
-    targetRef.value.splice(index, 1)
+    // 기존 값 제거
+    targetRef.value = targetRef.value.filter(item => item !== id)
+  }
+
+  // 필터가 선택된 경우에만 API 호출
+  if (selectedCategories.value.length > 0 || selectedCompanies.value.length > 0) {
+    // 새로운 API 호출 전에 store 초기화
+    store.resetCards()
+    await store.getCardsByCondition(
+        selectedTab.value,
+        [...selectedCategories.value], // 배열 복사하여 전달
+        [...selectedCompanies.value]
+    )
+  } else {
+    // 모든 필터가 해제된 경우 기본 목록 불러오기
+    store.resetCards()
+    await store.getCardList(selectedTab.value)
   }
 }
+
+// 탭 변경 시에도 필터 상태 고려
+const changeTab = async (type) => {
+  store.resetCards()
+  selectedTab.value = type
+
+  // 필터가 선택된 경우에만 조건 검색
+  if (selectedCategories.value.length > 0 || selectedCompanies.value.length > 0) {
+    await store.getCardsByCondition(
+        type,
+        selectedCategories.value,
+        selectedCompanies.value
+    )
+  } else {
+    await store.getCardList(type)
+  }
+}
+
+onMounted(async () => {
+  await store.getCardList(selectedTab.value)
+})
 </script>
 
 <style scoped>

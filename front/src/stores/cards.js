@@ -27,6 +27,39 @@ export const useCardStore = defineStore('cards', () => {
         }
     }
 
+
+    // 조건 검색
+    const getCardsByCondition = async (type, categories, companies) => {
+        try {
+            currentType.value = type
+            const cardType = type === 'credit' ? 1 : 2
+
+            const params = new URLSearchParams()
+
+            categories?.forEach(category => {
+                params.append('categories', category)
+            })
+            companies?.forEach(company => {
+                params.append('companies', company)
+            })
+
+            // 실제 요청 URL 확인
+            const requestUrl = `${API_URL}/cards/${cardType}/search/condition?${params.toString()}`
+            console.log('요청 URL:', requestUrl)
+
+            const response = await axios({
+                method: 'get',
+                url: `${API_URL}/cards/${cardType}/search/condition`,
+                params
+            })
+
+            cards.value = response.data
+        } catch (error) {
+            console.error('카드 검색 실패:', error)
+        }
+    }
+
+
     // 추가 카드 로드
     const getMoreCards = async (lastId) => {
         if (!hasMoreCards.value) return
@@ -61,6 +94,7 @@ export const useCardStore = defineStore('cards', () => {
         hasMoreCards,
         getCardList,
         getMoreCards,
+        getCardsByCondition,
         resetCards
     }
 }, { persist: true })
