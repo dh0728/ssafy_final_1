@@ -14,7 +14,7 @@
             <h3>{{ getCardName(card) }}</h3>
             <span class="brand">{{ card.brand }}</span>
           </div>
-          <a :href="card.bank_url" target="_blank" class="detail-btn">자세히 보기</a>
+          <RouterLink :to="{ name: 'CardDetail', params: { type: store.currentType === 'credit' ? 'credit' : 'check',cardId: getCardId(card)}}" class="detail-btn"/>
         </div>
 
         <!-- 혜택 태그 -->

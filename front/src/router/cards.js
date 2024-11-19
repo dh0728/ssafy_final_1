@@ -5,7 +5,7 @@ const cardsRoutes = [
         component: () => import('@/views/cards/CardView.vue')
     },
     {
-        path: '/cards/detail/:card_id',
+        path: '/cards/:type/:cardId',
         name: 'CardDetail',
         component: () => import('@/components/cards/CardDetail.vue')
     },

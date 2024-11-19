@@ -92,6 +92,7 @@ export const useCardStore = defineStore('cards', () => {
     return {
         cards,
         hasMoreCards,
+        currentType,
         getCardList,
         getMoreCards,
         getCardsByCondition,
