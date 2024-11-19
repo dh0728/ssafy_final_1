@@ -21,7 +21,7 @@ def search(request,card_type,card_pk):
         cnt= 20
         start_pk = int(card_pk)  
 
-        if card_type=='credit':
+        if card_type=='1':
             cards = Credit_cards.objects.filter(pk__gte=start_pk)[:cnt]
             serializer = CreditCardListSerializer(cards,many=True)
         else:
@@ -38,7 +38,7 @@ def detail(request,card_type,card_pk):
     카드 상세조회 함수 
     '''
     if request.method == 'GET':
-        if card_type=='credit':
+        if card_type=='1':
             card = get_object_or_404(Credit_cards,pk=card_pk)
             serializer = CreditCardSerializer(card)
         else:
@@ -63,7 +63,7 @@ def searchCondition(request,card_type):
 
         print(brands)
         print(categories)
-        if card_type == 'credit':
+        if card_type == '1':
             card_model = Credit_cards
             card_category_model = Credit_card_category
             card_category_field = 'credit_card_id'
@@ -92,7 +92,7 @@ def searchCondition(request,card_type):
             brand__in=brands
         ).distinct()
 
-        if card_type == 'credit':
+        if card_type == '1':
             serializer = CreditCardListSerializer(cards, many=True)
         else:
             serializer = CheckCardListSerializer(cards, many=True)
