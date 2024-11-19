@@ -153,7 +153,7 @@ def searchCondition(request,card_type):
             card_category_field = 'credit_card_id'
         else:
             brands=[]
-            for category in categories_str:
+            for company in companies:
                 brands.append(check_companies[company])
             # card_model = Check_cards
             card_category_model = Check_card_category
