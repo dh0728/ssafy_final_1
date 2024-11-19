@@ -90,6 +90,12 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # social login 
 SITE_ID =1
 
+# 상세보기 다른 fields도 받기 위해 커스텀한걸로 설정 변경 
+# 나중에하기
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
