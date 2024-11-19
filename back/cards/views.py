@@ -64,11 +64,11 @@ def searchCondition(request,card_type):
         print(brands)
         print(categories)
         if card_type == '1':
-            card_model = Credit_cards
+            # card_model = Credit_cards
             card_category_model = Credit_card_category
             card_category_field = 'credit_card_id'
         else:
-            card_model = Check_cards
+            # card_model = Check_cards
             card_category_model = Check_card_category
             card_category_field = 'check_card_id'
         
@@ -81,20 +81,26 @@ def searchCondition(request,card_type):
         """
 
         # raw SQL 쿼리 실행 및 카드 ID 추출
-        with connection.cursor() as cursor:
-            cursor.execute(sql_query)
-            card_ids = [row[0] for row in cursor.fetchall()]
-        
-        print(card_ids)
-        # 카드 ID와 brand를 이용하여 최종카드 정보 조회
-        cards = card_model.objects.filter(
-            credit_card_id__in=card_ids,
-            brand__in=brands
-        ).distinct()
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(sql_query)
+                card_ids = [row[0] for row in cursor.fetchall()]
+        except Exception as e:
+            return Response({"error": f"데이터베이스 오류가 발생했습니다: {str(e)}"}, status=500)
+        # print(card_ids)
 
+        # 카드 ID와 brand를 이용하여 최종카드 정보 조회
         if card_type == '1':
+            cards = Credit_cards.objects.filter(
+                credit_card_id__in=card_ids,
+                brand__in=brands
+            ).distinct()
             serializer = CreditCardListSerializer(cards, many=True)
         else:
+            cards = Check_cards.objects.filter(
+                card_category_field__in=card_ids,
+                brand__in=brands
+            ).distinct()
             serializer = CheckCardListSerializer(cards, many=True)
 
         return Response(serializer.data)
