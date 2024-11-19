@@ -2,7 +2,7 @@ import json
 import pprint
 
 # 원본 Json 파일 경로
-input_file = '.\check_card\check_card_data.json'
+input_file = './check_card_data.json'
 
 
 # 필터링한 Json 파일 경로
@@ -39,16 +39,16 @@ print(cardCompany)
 # with open(company_output_file, 'w', encoding='utf-8') as f:
 #     json.dump(card_company_models, f, ensure_ascii=False, indent=4)
 
-filtered_data=[]
+# filtered_data=[]
 
-for idx,item in enumerate(data1):
-    if item['fields']["brand"] in cardCompany:
-        item['fields']["brand"]= cardCompany.index(item['fields']["brand"])+1
-        filtered_data.append(item)
-    else:
-        print(item)
-        filtered_data.append(item)
+# for idx,item in enumerate(data1):
+#     if item['fields']["brand"] in cardCompany:
+#         item['fields']["brand"]= cardCompany.index(item['fields']["brand"])+1
+#         filtered_data.append(item)
+#     else:
+#         print(item)
+#         filtered_data.append(item)
 
-# 결과 JSON 파일로 저장
-with open(output_file, 'w', encoding='utf-8') as f:
-    json.dump(filtered_data, f, ensure_ascii=False, indent=4)
+# # 결과 JSON 파일로 저장
+# with open(output_file, 'w', encoding='utf-8') as f:
+#     json.dump(filtered_data, f, ensure_ascii=False, indent=4)
