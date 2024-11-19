@@ -1,9 +1,9 @@
 <template>
   <div class="card-list">
-    <div v-for="card in cards" :key="card.credit_card_id" class="card-item">
+    <div v-for="card in store.cards" :key="getCardId(card)" class="card-item">
       <!-- 왼쪽: 카드 이미지 -->
       <div class="card-image">
-        <img :src="card.img_path" :alt="card.credit_card_name">
+        <img :src="card.img_path" :alt="getCardName(card)">
       </div>
 
       <!-- 오른쪽: 카드 정보 -->
@@ -11,7 +11,7 @@
         <!-- 카드명과 브랜드 -->
         <div class="card-header">
           <div class="title-wrap">
-            <h3>{{ card.credit_card_name }}</h3>
+            <h3>{{ getCardName(card) }}</h3>
             <span class="brand">{{ card.brand }}</span>
           </div>
           <a :href="card.bank_url" target="_blank" class="detail-btn">자세히 보기</a>
@@ -22,25 +22,19 @@
 
         <!-- 혜택 그리드 -->
         <div class="benefits-grid">
-          <div class="benefit-item">
-            <div class="benefit-title">공과금</div>
-            <div class="benefit-desc">10% 할인</div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-title">마트, 편의점</div>
-            <div class="benefit-desc">10% 할인</div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-title">식음료</div>
-            <div class="benefit-desc">10% 할인</div>
+          <div v-for="(category, index) in getCardCategories(card)"
+               :key="index"
+               class="benefit-item">
+            <div class="benefit-title">{{ category.title }}</div>
+            <div class="benefit-desc">{{ category.desc }}</div>
           </div>
         </div>
 
         <!-- 카드 정보 -->
         <div class="card-info">
           <div class="info-row">
-            <span>해외결제 수수료</span>
-            <span>{{ formatNumber(card.abroad_fee) }}원</span>
+            <span>연회비</span>
+            <span>{{ card.abroad_fee === 0 ? '없음' : `${formatNumber(card.abroad_fee)}원` }}</span>
           </div>
           <div class="separator">/</div>
           <div class="info-row">
@@ -50,35 +44,61 @@
         </div>
       </div>
     </div>
+    <div ref="observerTarget" class="observer-target"></div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { cardData } from '@/assets/cardData.js'
-import { cardCategory } from '@/assets/cardCategory.js'
+import { ref, computed, onMounted } from 'vue'
+import { useCardStore } from "@/stores/cards.js"
 
-const cards = ref([])
-const categories = ref([])
+const store = useCardStore()
+const observerTarget = ref(null)
+
+// ID 가져오기
+const getCardId = (card) => {
+  return card.credit_card_id || card.check_card_id
+}
+
+// 카드 이름 가져오기
+const getCardName = (card) => {
+  return card.credit_card_name || card.check_card_name
+}
+
+// 카드 카테고리 정보 가져오기
+const getCardCategories = (card) => {
+  // credit_card_category 또는 check_card_category에서 해당 카드의 카테고리 정보 반환
+  return card.categories?.slice(0, 3) || []
+}
 
 // 숫자 포맷팅
 const formatNumber = (number) => {
   return number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-// 카드별 카테고리 정보 가져오기
-const getCardCategories = (cardId) => {
-  return categories.value.filter(cat =>
-      cat.credit_card_id === cardId
-  ).slice(0, 3) // 최대 3개만 표시
+// 마지막 카드의 ID 가져오기
+const getLastCardId = () => {
+  if (store.cards.length === 0) return null
+  const lastCard = store.cards[store.cards.length - 1]
+  return lastCard.credit_card_id || lastCard.check_card_id
 }
 
 onMounted(() => {
-  // cardData.js에서 카드 정보 가져오기
-  cards.value = cardData.item.map(item => item.fields)
+  const observer = new IntersectionObserver(async (entries) => {
+    const target = entries[0]
+    if (target.isIntersecting) {
+      const lastId = getLastCardId()
+      if (lastId) {
+        await store.getMoreCards(lastId)
+      }
+    }
+  }, {
+    threshold: 0.5
+  })
 
-  // cardCategory.js에서 카테고리 정보 가져오기
-  categories.value = cardCategory.item.map(item => item.fields)
+  if (observerTarget.value) {
+    observer.observe(observerTarget.value)
+  }
 })
 </script>
 
@@ -89,6 +109,19 @@ onMounted(() => {
   padding: 20px;
 }
 
+.card-image {
+  width: 200px;
+  min-width: 200px;
+  height: 120px;
+  margin-right: 24px;
+  /* margin-top: 48px; 제거 */
+  display: flex;
+  align-items: center;  /* 세로 중앙 정렬 */
+  justify-content: center;  /* 가로 중앙 정렬 */
+  align-self: center;  /* 부모 요소 기준 중앙 정렬 */
+  transition: transform 0.3s ease;
+}
+
 .card-item {
   display: flex;
   padding: 24px;
@@ -97,18 +130,7 @@ onMounted(() => {
   margin-bottom: 20px;
   background: white;
   transition: all 0.2s ease;
-}
-
-.card-image {
-  width: 200px;
-  min-width: 200px;
-  height: 120px;
-  margin-right: 24px;
-  margin-top: 48px; /* 상단 여백 추가 */
-  display: flex;
-  align-items: center;
-  justify-content: center; /* 가운데 정렬 추가 */
-  transition: transform 0.3s ease;
+  align-items: center;  /* 추가: 카드 내용과 이미지 세로 중앙 정렬 */
 }
 
 .card-image:hover {
@@ -125,16 +147,13 @@ onMounted(() => {
   }
 }
 
-/* 부드러운 전환을 위한 추가 스타일 */
-/* 이미지 크기도 약간 조정 */
 .card-image img {
-  width: 100%; /* 이미지 크기를 약간 줄임 */
+  width: 100%;
   height: 100%;
   object-fit: contain;
   transition: all 0.3s ease;
 }
 
-/* 선택적: 호버 시 약간의 그림자 효과 추가 */
 .card-image:hover img {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
@@ -150,8 +169,14 @@ onMounted(() => {
   margin-bottom: 12px;
 }
 
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .title-wrap h3 {
   font-size: 1.3rem;
+  font-weight: 600;
   margin: 0;
   margin-bottom: 4px;
   color: #1a1438;
@@ -223,5 +248,8 @@ onMounted(() => {
   color: #ddd;
 }
 
-
+.observer-target {
+  height: 20px;
+  margin: 20px 0;
+}
 </style>

@@ -6,12 +6,12 @@
         <button
             class="tab-btn"
             :class="{ active: selectedTab === 'credit' }"
-            @click="selectedTab = 'credit'"
+            @click="changeTab('credit')"
         >신용카드</button>
         <button
             class="tab-btn"
             :class="{ active: selectedTab === 'check' }"
-            @click="selectedTab = 'check'"
+            @click="changeTab('check')"
         >체크카드</button>
       </div>
     </div>
@@ -69,12 +69,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { FreeMode } from 'swiper/modules'
 import 'swiper/css'
 import CardList from "@/components/cards/CardList.vue";
+import {useCardStore} from "@/stores/cards.js";
 
+const store = useCardStore();
+
+// 기본값: credit
 const selectedTab = ref('credit')
 const selectedTypes = ref([])
 const selectedCategories = ref([])
@@ -138,6 +142,20 @@ const category = ref([
   { id: 26, name: '금융' },
   { id: 27, name: '생활' },
 ])
+
+// 탭 변경 시 카드 목록 새로 불러오기
+const changeTab = async (type) => {
+  store.resetCards() // 카드 목록 초기화
+  selectedTab.value = type
+  await store.getCardList(type)
+}
+
+
+onMounted(async () => {
+  await store.getCardList(selectedTab)
+})
+
+
 
 const toggleFilter = (type, id) => {
   const targetRef =
