@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 
     'accounts', #유저 앱
     'cards',
+    'books',
     # DRF
     'rest_framework',
     'rest_framework.authtoken',
