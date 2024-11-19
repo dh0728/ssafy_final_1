@@ -6,7 +6,7 @@ import axios from 'axios'
 export const useAccountStore = defineStore('accounts', () => {
     const router = useRouter()
     const API_URL = 'http://127.0.0.1:8000'
-    const token = ref(null)
+    const token = ref(localStorage.getItem('auth'))
     const user = ref(null)
 
     // 로그인 상태 확인
@@ -27,6 +27,7 @@ export const useAccountStore = defineStore('accounts', () => {
                 }
             })
             token.value = response.data.key
+            localStorage.setItem('auth',response.data.key)
             await router.push({ name: 'Home' })
         } catch (error) {
             alert('정보를 다시 한번 확인해주세요!')
@@ -66,6 +67,8 @@ export const useAccountStore = defineStore('accounts', () => {
             })
             token.value = null
             user.value = null
+            // 로컬 스토리지에서 삭제
+            localStorage.removeItem('auth')
             router.push({ name: 'Home' })
         } catch (error) {
             console.error('로그아웃 실패:', error)
