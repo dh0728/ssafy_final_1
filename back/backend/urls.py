@@ -24,7 +24,7 @@ urlpatterns = [
     path('accounts/registration/',include('dj_rest_auth.registration.urls')),
 
     path('cards/',include('cards.urls')),
-    path('books/',include('books.urls')),
+    path('account/books/',include('books.urls')),
 
 
     # YOUR PATTERNS
