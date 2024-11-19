@@ -15,6 +15,7 @@ export const useAccountStore = defineStore('accounts', () => {
     // 로그인
     const login = async (payload) => {
         const { email, password } = payload
+        console.log(password)
 
         try {
             const response = await axios({
@@ -26,7 +27,7 @@ export const useAccountStore = defineStore('accounts', () => {
                 }
             })
             token.value = response.data.key
-            router.push({ name: 'Home' })
+            await router.push({ name: 'Home' })
         } catch (error) {
             alert('정보를 다시 한번 확인해주세요!')
             console.error('로그인 실패:', error)
@@ -47,8 +48,13 @@ export const useAccountStore = defineStore('accounts', () => {
                 }
             })
             // token.value = response.data.key
+<<<<<<< HEAD
+            await login({ email, password:password1 })
+            // router.push({ name: 'Home' })
+=======
             await login({email, password: password1})
             await router.push({name: 'Home'})
+>>>>>>> 9b17fe508f6645762f4b2d8821a6a600687ba43d
         } catch (error) {
             alert('회원가입에 실패했습니다. 입력 정보를 확인해주세요.')
             console.error('회원가입 실패:', error)
@@ -79,6 +85,7 @@ export const useAccountStore = defineStore('accounts', () => {
                 headers: { Authorization: `Token ${token.value}` }
             })
             user.value = response.data
+            console.log(response.data)
         } catch (error) {
             console.error('사용자 정보 가져오기 실패:', error)
             throw error
