@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import accountRoutes from './accounts'
+import cardsRoutes from "@/router/cards.js";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -9,7 +10,8 @@ const router = createRouter({
       name: 'Home',
       component: () => import('@/views/HomeView.vue')
     },
-    ...accountRoutes
+    ...accountRoutes,
+    ...cardsRoutes
   ]
 })
 

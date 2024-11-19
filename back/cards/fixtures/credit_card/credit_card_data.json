@@ -723,7 +723,6 @@
             "credit_card_name": "현대백화점카드",
             "brand": "현대백화점",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/2344/card_img/24463/2344card.png",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/2344",
             "is_active": true
@@ -1372,8 +1371,7 @@
             "credit_card_name": "국민행복 삼성카드 V2",
             "brand": "삼성카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/718/card_img/28063/718card.png",
-            "domestic_fee": "없음",
-            "abroad_fee": "없음",
+            "abroad_fee": 0,
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/718",
             "is_active": true
@@ -1521,7 +1519,6 @@
             "credit_card_name": "현대백화점 Fit카드",
             "brand": "현대백화점",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/2345/card_img/24462/2345card.png",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/2345",
             "is_active": true
@@ -1727,8 +1724,8 @@
             "credit_card_name": "신한카드 국민행복",
             "brand": "신한카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/712/card_img/22186/712card.png",
-            "domestic_fee": "없음",
-            "abroad_fee": "없음",
+            "domestic_fee": 0,
+            "abroad_fee": 0,
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/712",
             "is_active": true
@@ -3243,7 +3240,6 @@
             "credit_card_name": "현대카드M-경차전용카드(유류세 환급)",
             "brand": "현대카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/421/card_img/20919/421card.png",
-            "domestic_fee": "없음",
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/421",
             "is_active": true
@@ -3568,8 +3564,8 @@
             "credit_card_name": "롯데 국민행복카드",
             "brand": "롯데카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/455/card_img/20971/455card.png",
-            "domestic_fee": "없음",
-            "abroad_fee": "없음",
+            "domestic_fee": 0,
+            "abroad_fee": 0,
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/455",
             "is_active": true
@@ -3762,7 +3758,7 @@
             "credit_card_name": "국민행복카드(신용)",
             "brand": "IBK기업은행",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/260/card_img/20486/260card.png",
-            "domestic_fee": "없음",
+            "domestic_fee": 0,
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/260",
             "is_active": true
@@ -4091,7 +4087,7 @@
             "credit_card_name": "KB국민 국민행복카드",
             "brand": "KB국민카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/751/card_img/22225/751card.png",
-            "domestic_fee": "없음",
+            "domestic_fee": 0,
             "pre_month_perform": "40만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/751",
             "is_active": true
@@ -4585,7 +4581,7 @@
             "credit_card_name": "Kia Members 경차전용카드(유류세 환급)",
             "brand": "현대카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/859/card_img/21683/859card.png",
-            "domestic_fee": "없음",
+            "domestic_fee": 0,
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/859",
             "is_active": true
@@ -4611,8 +4607,8 @@
             "credit_card_name": "알파원카드",
             "brand": "KB국민카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/426/card_img/20924/426card.png",
-            "domestic_fee": "없음",
-            "abroad_fee": "없음",
+            "domestic_fee": 0,
+            "abroad_fee": 0,
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/426",
             "is_active": true
@@ -5172,7 +5168,6 @@
             "credit_card_name": "국민행복카드 신용카드",
             "brand": "DGB대구은행",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/834/card_img/21708/834card.gif",
-            "domestic_fee": "없음",
             "pre_month_perform": "20만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/834",
             "is_active": true
@@ -5185,7 +5180,7 @@
             "credit_card_name": "국민행복카드(비씨)",
             "brand": "NH농협카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/174/card_img/20386/174card.png",
-            "abroad_fee": "없음",
+            "abroad_fee": 0,
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/174",
             "is_active": true
@@ -5379,8 +5374,7 @@
             "credit_card_name": "국민행복카드 S2",
             "brand": "우리카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/721/card_img/22195/721card.png",
-            "domestic_fee": "없음",
-            "abroad_fee": "없음",
+            "abroad_fee": 0,
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/721",
             "is_active": true
@@ -6153,7 +6147,6 @@
             "credit_card_name": "삼성 iD POCKET 카드",
             "brand": "삼성카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/2419/card_img/28100/2419card.png",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/2419",
             "is_active": true
@@ -6617,7 +6610,6 @@
             "credit_card_name": "현대백화점 해피포인트카드",
             "brand": "현대백화점",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/2367/card_img/25074/2367card.jpg",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/2367",
             "is_active": true
@@ -6901,8 +6893,7 @@
             "credit_card_name": "경차 smart 롯데카드",
             "brand": "롯데카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/207/card_img/20431/207card.png",
-            "domestic_fee": "없음",
-            "abroad_fee": "없음",
+            "abroad_fee": 0,
             "pre_month_perform": "30만원 이상",
             "bank_url": "https://card-gorilla.com/card/detail/207",
             "is_active": true
@@ -7997,7 +7988,6 @@
             "credit_card_name": "국민행복카드",
             "brand": "BNK부산은행",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/1278/card_img/21029/1278card.png",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/1278",
             "is_active": true
@@ -8491,7 +8481,6 @@
             "credit_card_name": "현대백화점 현대오일뱅크카드",
             "brand": "현대백화점",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/2368/card_img/25075/2368card.png",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/2368",
             "is_active": true
@@ -9781,7 +9770,7 @@
             "credit_card_name": "다둥이 행복카드",
             "brand": "우리카드",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/546/card_img/21252/546card.png",
-            "abroad_fee": "없음",
+            "abroad_fee": 0,
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/546",
             "is_active": true
@@ -10134,7 +10123,6 @@
             "credit_card_name": "국민행복카드",
             "brand": "제주은행",
             "img_path": "https://d1c5n4ri2guedi.cloudfront.net/card/2150/card_img/21832/2150card.gif",
-            "domestic_fee": "없음",
             "pre_month_perform": "없음",
             "bank_url": "https://card-gorilla.com/card/detail/2150",
             "is_active": true
