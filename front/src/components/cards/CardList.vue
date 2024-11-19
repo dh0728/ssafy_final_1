@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useCardStore } from "@/stores/cards.js"
 
 const store = useCardStore()
@@ -83,10 +83,10 @@ const getLastCardId = () => {
   return lastCard.credit_card_id || lastCard.check_card_id
 }
 
-onMounted(() => {
+const setupObserver = () => {
   const observer = new IntersectionObserver(async (entries) => {
     const target = entries[0]
-    if (target.isIntersecting) {
+    if (target.isIntersecting && store.hasMoreCards) {
       const lastId = getLastCardId()
       if (lastId) {
         await store.getMoreCards(lastId)
@@ -98,6 +98,26 @@ onMounted(() => {
 
   if (observerTarget.value) {
     observer.observe(observerTarget.value)
+  }
+
+  return observer
+}
+
+// currentType이 변경될 때마다 observer 재설정
+watch(() => store.currentType, () => {
+  if (observerTarget.value) {
+    setupObserver()
+  }
+})
+
+onMounted(() => {
+  const observer = setupObserver()
+
+  // cleanup
+  return () => {
+    if (observerTarget.value) {
+      observer.unobserve(observerTarget.value)
+    }
   }
 })
 </script>

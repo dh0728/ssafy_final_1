@@ -8,11 +8,14 @@ export const useCardStore = defineStore('cards', () => {
     const API_URL = 'http://127.0.0.1:8000'
     // 불러올 카드 데이터가 존재하는지 확인
     const hasMoreCards = ref(true)
+    const currentType = ref('credit')
+
 
     const cards = ref([])
 
     const getCardList = async (cardType) => {
         try {
+            currentType.value = cardType
             const type = cardType === 'credit' ? 1 : 2
             const response = await axios({
                 method: 'get',
@@ -32,27 +35,26 @@ export const useCardStore = defineStore('cards', () => {
             const type = currentType.value === 'credit' ? 1 : 2
             const response = await axios({
                 method: 'get',
-                url: `${API_URL}/cards/${type}/search/${lastId}`, // lastId를 기준으로 다음 데이터 요청
+                url: `${API_URL}/cards/${type}/search/${lastId}`
             })
 
-            if (response.data.length === 0) {
+            if (!response.data || response.data.length < 20) {
                 hasMoreCards.value = false
-                return
             }
 
-            // 새로운 카드 추가
-            cards.value = [...cards.value, ...response.data]
+            if (response.data && response.data.length > 0) {
+                cards.value = [...cards.value, ...response.data]
+            }
         } catch (error) {
             console.error('추가 카드 로딩 실패:', error)
+            hasMoreCards.value = false
         }
     }
 
-    // 카드 목록 초기화
     const resetCards = () => {
         cards.value = []
         hasMoreCards.value = true
     }
-
 
     return {
         cards,
