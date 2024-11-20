@@ -1,5 +1,5 @@
 <template>
-  <div class="budget-container">
+  <div class="">
     <!-- 왼쪽 사이드바 -->
     <div class="sidebar">
       <div class="menu-section">
@@ -68,6 +68,7 @@
         </ul>
       </div>
     </div>
+
   </div>
 </template>
 
