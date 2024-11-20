@@ -4,34 +4,71 @@
       <h3>다가오는 금융 일정 📅</h3>
     </div>
     <div class="schedule-list">
-      <div class="schedule-item">
-        <div class="date">5일</div>
+      <div v-for="schedule in schedules" :key="schedule.schedule_id" class="schedule-item" @click="openEditModal(schedule)">
+        <div class="date">{{ schedule.day }}일</div>
         <div class="schedule-content">
-          <div class="title">넷플</div>
-          <div class="amount">5,900원 / 지출</div>
+          <div class="title">{{ schedule.name }}</div>
+          <div class="amount">
+            {{ formatNumber(schedule.value) }}원 / {{ schedule.is_income ? '수입' : '지출' }}
+          </div>
         </div>
-      </div>
-      <div class="schedule-item">
-        <div class="date">15일</div>
-        <div class="schedule-content">
-          <div class="title">월급</div>
-          <div class="amount">100,000원 / 수입</div>
-        </div>
+        <button class="delete-btn" @click="deleteSchedule(schedule.schedule_id)">×</button>
       </div>
     </div>
     <button class="add-schedule-btn" @click="openScheduleModal">금융 일정 추가하기</button>
-    <ScheduleAdd ref="scheduleModal" />
+    <ScheduleAdd ref="scheduleModal" @schedule-added="fetchSchedules" />
   </div>
+  <ScheduleEdit
+      ref="editModal"
+      :schedule="selectedSchedule"
+      @schedule-updated="fetchSchedules"
+  />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useScheduleStore } from '@/stores/schedule'
 import ScheduleAdd from './ScheduleAdd.vue'
+import ScheduleEditModal from './ScheduleEdit.vue'
 
+const store = useScheduleStore()
 const scheduleModal = ref(null)
+const schedules = ref([])
 
 const openScheduleModal = () => {
   scheduleModal.value.openModal()
+}
+
+const fetchSchedules = async () => {
+  const result = await store.getSchedules()
+  if (result) {
+    schedules.value = result
+  }
+}
+
+const formatNumber = (value) => {
+  return new Intl.NumberFormat('ko-KR').format(value)
+}
+
+onMounted(() => {
+  fetchSchedules()
+})
+
+const deleteSchedule = async (scheduleId) => {
+  if (confirm('정말 삭제하시겠습니까?')) {
+    const success = await store.deleteSchedule(scheduleId)
+    if (success) {
+      await fetchSchedules() // 목록 새로고침
+    }
+  }
+}
+
+const editModal = ref(null)
+const selectedSchedule = ref(null)
+
+const openEditModal = (schedule) => {
+  selectedSchedule.value = schedule
+  editModal.value.openModal()
 }
 </script>
 
@@ -70,6 +107,7 @@ const openScheduleModal = () => {
   padding: 12px;
   border-radius: 8px;
   background: #f8f9fa;
+  position: relative;
 }
 
 .date {
@@ -114,5 +152,28 @@ const openScheduleModal = () => {
 
 .add-schedule-btn:hover {
   background: #f1f3f5;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  color: #ff6b6b;
 }
 </style>
