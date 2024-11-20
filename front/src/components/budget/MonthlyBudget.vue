@@ -51,6 +51,7 @@
 
     <div class="calendar-schedule-container">
       <Calendar />
+<!--      <BudgetView />-->
       <Schedule />
     </div>
 
@@ -60,6 +61,7 @@
 <script setup>
 import Calendar from "@/components/budget/Calendar.vue";
 import Schedule from "@/components/budget/Schedule.vue";
+import BudgetView from "@/views/budget/BudgetView.vue";
 </script>
 
 <style scoped>
