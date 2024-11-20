@@ -1,9 +1,8 @@
-<!-- ScheduleAddModal.vue -->
 <template>
   <div v-if="isOpen" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>금융 일정 추가</h2>
+        <h2>금융 일정 수정</h2>
         <button class="close-btn" @click="closeModal">×</button>
       </div>
 
@@ -11,7 +10,7 @@
         <div class="form-item">
           <label>날짜</label>
           <div class="date-input">
-            <input type="text" v-model="month" class="month-input" placeholder="매달">
+            <input type="text" v-model="formData.day" class="month-input">
             <span>일</span>
           </div>
         </div>
@@ -20,19 +19,19 @@
           <label>분류</label>
           <div class="type-buttons">
             <button
-                :class="['type-btn', { active: type === 'expense' }]"
-                @click="type = 'expense'"
+                :class="['type-btn', { active: !formData.is_income }]"
+                @click="formData.is_income = false"
             >지출</button>
             <button
-                :class="['type-btn', { active: type === 'income' }]"
-                @click="type = 'income'"
+                :class="['type-btn', { active: formData.is_income }]"
+                @click="formData.is_income = true"
             >수입</button>
           </div>
         </div>
 
         <div class="form-item">
           <label>일정 이름</label>
-          <input type="text" v-model="scheduleName" class="input-field">
+          <input type="text" v-model="formData.name" class="input-field">
         </div>
 
         <div class="form-item">
@@ -41,36 +40,61 @@
               type="text"
               v-model="amount"
               @input="onlyNumbers"
-              placeholder="0"
               class="input-field"
           >
-          <p class="amount-note">* 정기적인 지출, 수입을 저장해두고, 효과적으로 관리해보세요!</p>
         </div>
       </div>
 
-      <button class="submit-btn" @click="addSchedule">
-        <span class="plus-icon">+</span>
+      <button class="submit-btn" @click="updateSchedule">
+        수정하기
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import {useScheduleStore} from "@/stores/schedule.js";
+import { ref, watch } from 'vue'
+import { useScheduleStore } from '@/stores/schedule'
 
-const store = useScheduleStore() // store 사용
+const props = defineProps({
+  schedule: Object
+})
+
+const emit = defineEmits(['schedule-updated'])
+const store = useScheduleStore()
 const isOpen = ref(false)
-const month = ref('')
-const type = ref('expense')
-const scheduleName = ref('')
 const amount = ref('')
+
+const formData = ref({
+  name: '',
+  day: '',
+  value: 0,
+  category_id: 1,
+  is_income: false,
+  schedule_id: ''
+})
+
+watch(() => props.schedule, (newSchedule) => {
+  if (newSchedule) {
+    formData.value = { ...newSchedule }
+    amount.value = newSchedule.value.toLocaleString()
+  }
+}, { deep: true })
 
 const onlyNumbers = (e) => {
   let value = e.target.value
   value = value.replace(/[^0-9]/g, '')
   value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   amount.value = value
+  formData.value.value = Number(value.replace(/,/g, ''))
+}
+
+const updateSchedule = async () => {
+  const success = await store.updateSchedule(formData.value)
+  if (success) {
+    emit('schedule-updated')
+    closeModal()
+  }
 }
 
 const openModal = () => {
@@ -79,34 +103,6 @@ const openModal = () => {
 
 const closeModal = () => {
   isOpen.value = false
-  resetForm()
-}
-
-const resetForm = () => {
-  month.value = ''
-  type.value = 'expense'
-  scheduleName.value = ''
-  amount.value = ''
-}
-
-const addSchedule = async () => {
-  try {
-    const scheduleData = {
-      name: scheduleName.value,
-      day: Number(month.value),
-      value: Number(amount.value.replace(/,/g, '')),
-      category_id: 1,
-      is_income: type.value === 'income'
-    }
-
-    const result = await store.addSchedule(scheduleData)
-    if (result) {
-      closeModal()
-      emit('schedule-added')
-    }
-  } catch (error) {
-    console.error('일정 추가 실패:', error)
-  }
 }
 
 defineExpose({ openModal, closeModal })
