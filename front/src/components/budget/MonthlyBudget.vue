@@ -48,6 +48,7 @@
         </div>
       </div>
     </div>
+    <Calendar />
   </div>
 </template>
 
@@ -145,7 +146,7 @@
 
 .info-item {
   flex: 1;
-  padding: 28px;
+  padding: 10px;
   position: relative;
 }
 
@@ -215,4 +216,5 @@
 }
 </style>
 <script setup lang="ts">
+import Calendar from "@/components/budget/Calendar.vue";
 </script>
