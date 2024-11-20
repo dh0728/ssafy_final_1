@@ -13,7 +13,7 @@ urlpatterns = [
     path('write/list/',views.write_account_data_list), # 여러 개 지출들 내역 POST, DELETE
     path('write/',views.write_account_data), # 한 개 지출들 POST, PUT, DELETE (post만들었는데 안씀)
     
-    path('receipt',views.receipt), # 영수증 OCR
+    path('receipt/',views.receipt), # 영수증 OCR
 
 ]
 

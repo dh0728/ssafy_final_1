@@ -8,6 +8,13 @@ from .models import Account_book, Account_book_data, Budget, Schedule
 from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer
 from django.db import transaction
 
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+import requests
+import time
+import uuid
+import json
+import os
 
 # Create your views here.
 @api_view(['GET'])
@@ -127,6 +134,7 @@ def budget(request):
     if request.method == 'GET':
         year = request.query_params.get('year')
         month = request.query_params.get('month')
+        print(month)
         month=int(month)
         year=int(year)
         try:
@@ -298,4 +306,124 @@ def write_account_data(request): # 단일 지출
 @permission_classes([IsAuthenticated])
 def receipt(request): # 영수증 OCR
     if request.method == 'POST':
-        pass
+        # 요청의 헤더를 확인
+        # print(f"Request Headers: {request.headers}")
+        
+        # 파일을 가져와서 확인
+        file = request.FILES.get('image')
+        if not file:
+            print("No file uploaded.")
+            return Response({'error': 'No file uploaded'}, status=400)
+
+        # 파일 정보 출력
+        # print(f"File name: {file.name}")
+        # print(f"File size: {file.size}")
+        # print(f"File content type: {file.content_type}")
+        
+        # FileSystemStorage를 사용하여 media 폴더에 파일 저장
+        fs = FileSystemStorage(location=settings.MEDIA_ROOT)
+        filename = fs.save(file.name, file)
+        file_path = fs.path(filename)
+
+        headers = {
+            'X-OCR-SECRET': settings.NAVER_OCR_API_KEY,
+        }        
+        message = {
+            'version':'V2',
+            'requestId':str(uuid.uuid4()),
+            'timestamp':int(time.time()*1000),
+            'images':[
+                {
+                    'format':file.name.split('.')[-1],
+                    'name':'sample_image'
+                }
+            ]
+        }
+
+        try:
+            # 요청 데이터 만들기
+            with open(file_path, 'rb') as img_file:
+                files = {
+                    'message': (None, json.dumps(message), 'application/json'),
+                    'file': (filename, img_file, file.content_type)
+                }
+                # 네이버 OCR API 요청
+                response = requests.post(settings.NAVER_OCR_URL, headers=headers, files=files)
+                response_data = response.json()  # JSON 응답 파싱
+
+                # 응답 데이터를 JSON 파일로 저장
+                json_filename = f"ocr_response_{uuid.uuid4().hex}.json"
+                json_file_path = os.path.join(settings.MEDIA_ROOT, json_filename)
+                with open(json_file_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(response_data, json_file, ensure_ascii=False, indent=4)
+
+            # API 요청 성공 시 응답 반환
+            if response.status_code == 200:
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+                
+                try:
+                    store =response_data['images'][0]['receipt']['result']['storeInfo']['name']['text']
+                except:
+                    store = ''
+                
+                try:
+                    year =response_data['images'][0]['receipt']['result']['paymentInfo']['date']['formatted']['year']
+                except:
+                    year =0
+
+                try:
+                    month =response_data['images'][0]['receipt']['result']['paymentInfo']['date']['formatted']['month']
+                except:
+                    month = 0
+
+                try:
+                    day =response_data['images'][0]['receipt']['result']['paymentInfo']['date']['formatted']['day']
+                except:
+                    day = 0
+
+                try:
+                    account =response_data['images'][0]['receipt']['result']['totalPrice']['price']['formatted']['value']
+                except:
+                    account = 0
+
+                try:
+                    subResults =response_data['images'][0]['receipt']['result']['subResults'][0]['items']
+                    memo=''
+                    for item in subResults:
+                        menu= item['name']['formatted']['value']
+                        print(menu)
+                        cnt = item['count']['formatted']['value']
+                        print(cnt)
+                        price = item['price']['price']['formatted']['value']
+                        print(price)
+                        unitPrice = item['price']['unitPrice']['formatted']['value']
+                        print(unitPrice)
+                        memo +=f'{menu}({cnt}개):{price}원 개당 {unitPrice}, '
+                        print(memo)
+                except:
+                    memo=''
+
+                data ={
+                    "store":store,
+                    "year":year,
+                    "month":month,
+                    "day":day,
+                    "account":account,
+                    "is_income":False,
+                    "payment":'카드', 
+                    "category_id":1, #이건 AI 써야함
+                    "memo":memo
+
+                }
+
+                return Response({'message': 'File uploaded and OCR processed successfully', 'data': data}, status=200)
+            else:
+                # 에러 응답 시
+                return Response({'error': 'Failed to process OCR', 'details': response_data}, status=response.status_code)
+
+        except Exception as e:
+            return Response({'error': 'Internal server error', 'details': str(e)}, status=500)
+    return Response({'error': 'Invalid request method'}, status.HTTP_405_METHOD_NOT_ALLOWED )
+
+
