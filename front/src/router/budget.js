@@ -6,7 +6,7 @@ const budgetRoutes = [
         children: [
             {
                 path: 'calendar',
-                component: () => import('@/views/budget/CalendarView.vue')
+                component: () => import('@/components/budget/MonthlyBudget.vue')
             },
         ]
     }
