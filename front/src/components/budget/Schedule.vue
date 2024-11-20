@@ -19,9 +19,21 @@
         </div>
       </div>
     </div>
-    <button class="add-schedule-btn">금융 일정 추정하기</button>
+    <button class="add-schedule-btn" @click="openScheduleModal">금융 일정 추가하기</button>
+    <ScheduleAdd ref="scheduleModal" />
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import ScheduleAdd from './ScheduleAdd.vue'
+
+const scheduleModal = ref(null)
+
+const openScheduleModal = () => {
+  scheduleModal.value.openModal()
+}
+</script>
 
 <style scoped>
 .schedule-container {
