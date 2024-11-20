@@ -2,12 +2,12 @@
   <div class="budget-container">
     <!-- 왼쪽 사이드바 -->
     <SideBar />
-    <CalendarView />
+    <CalendarView/>
     <!-- 메인 컨텐츠 영역 -->
-    <div class="main-content">
+  </div>
+  <div class="main-content">
       <RouterView />
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -19,8 +19,10 @@ import CalendarView from "@/views/budget/CalendarView.vue";
 .budget-container {
   display: flex;
   gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1600px;
+  margin-top:0px;
+  margin-left: 400px;
+
   padding: 2rem;
 }
 
@@ -29,4 +31,6 @@ import CalendarView from "@/views/budget/CalendarView.vue";
   flex: 1;
   min-width: 0;
 }
+
+
 </style>
