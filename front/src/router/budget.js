@@ -8,6 +8,10 @@ const budgetRoutes = [
                 path: 'calendar',
                 component: () => import('@/components/budget/MonthlyBudget.vue')
             },
+            {
+                path: 'schedule',
+                component: () => import('@/components/budget/Schedule.vue')
+            },
         ]
     }
 ]

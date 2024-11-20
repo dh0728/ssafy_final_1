@@ -18,10 +18,10 @@
           <div class="item-content">
             <span class="label">이번 달 지출</span>
             <div class="amount">509,212원</div>
-            <a href="#" class="link">
-              지출 분석하러 가기
-              <span class="arrow">→</span>
-            </a>
+<!--            <a href="#" class="link">-->
+<!--              지출 분석하러 가기-->
+<!--              <span class="arrow">→</span>-->
+<!--            </a>-->
           </div>
         </div>
         <div class="divider"></div>
@@ -29,10 +29,10 @@
           <div class="item-content">
             <span class="label">이번 달 수입</span>
             <div class="amount">30,111원</div>
-            <a href="#" class="link">
-              수입 분석하러 가기
-              <span class="arrow">→</span>
-            </a>
+<!--            <a href="#" class="link">-->
+<!--              수입 분석하러 가기-->
+<!--              <span class="arrow">→</span>-->
+<!--            </a>-->
           </div>
         </div>
         <div class="divider"></div>
@@ -40,21 +40,31 @@
           <div class="item-content">
             <span class="label">예산</span>
             <div class="amount">1,000,000원</div>
-            <a href="#" class="link">
-              예산 설정하러 가기
-              <span class="arrow">→</span>
-            </a>
+<!--            <a href="#" class="link">-->
+<!--              예산 설정하러 가기-->
+<!--              <span class="arrow">→</span>-->
+<!--            </a>-->
           </div>
         </div>
       </div>
     </div>
-    <Calendar />
+
+    <div class="calendar-schedule-container">
+      <Calendar />
+      <Schedule />
+    </div>
+
   </div>
 </template>
 
+<script setup>
+import Calendar from "@/components/budget/Calendar.vue";
+import Schedule from "@/components/budget/Schedule.vue";
+</script>
+
 <style scoped>
 .budget-view {
-  padding: 0px 32px;
+  padding: 0px 20px;
   width: 100%;
 }
 
@@ -62,7 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .left-section {
@@ -142,18 +152,22 @@
 .budget-info {
   display: flex;
   min-height: 160px;
+  padding: 0;
 }
 
 .info-item {
   flex: 1;
-  padding: 10px;
   position: relative;
+  display: flex; /* 추가 */
+  flex-direction: column
 }
 
 .item-content {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 36px 30px;
+  flex: 1; /* 추가 */
 }
 
 .label {
@@ -166,18 +180,20 @@
   font-size: 28px;
   font-weight: 600;
   color: #1a1438;
-  margin: 8px 0 16px;
+  margin: 2px 0;
 }
 
 .link {
-  color: #4C6EF5;
+  color: #4263eb;
   text-decoration: none;
   font-size: 14px;
   display: flex;
   align-items: center;
   gap: 6px;
   transition: all 0.2s;
-  margin-top: auto;
+  margin-top: auto; /* 하단 정렬 유지 */
+  position: relative; /* 추가 */
+  bottom: 0;
 }
 
 .link:hover {
@@ -196,7 +212,8 @@
 .divider {
   width: 1px;
   background: #f1f3f5;
-  margin: 24px 0;
+  margin: 20px 0;
+  align-self: stretch;
 }
 
 @media (max-width: 768px) {
@@ -214,7 +231,12 @@
     padding: 20px;
   }
 }
+
+.calendar-schedule-container {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+
 </style>
-<script setup lang="ts">
-import Calendar from "@/components/budget/Calendar.vue";
-</script>

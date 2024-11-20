@@ -103,8 +103,8 @@ const calendarOptions = ref({
   max-width: 820px;
   margin: 0;
   background: white;
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   margin-top: 24px;
 }
@@ -144,11 +144,11 @@ const calendarOptions = ref({
 }
 
 .income {
-  color: #FF8E99;
+  color: #1BBF83;
 }
 
 .expense {
-  color: #1BBF83;
+  color: #FF8E99;
 }
 
 /* FullCalendar 커스텀 스타일 */
@@ -200,13 +200,13 @@ const calendarOptions = ref({
 }
 
 :deep(.expense-event .fc-event-title) {
-  color: #1BBF83;
+  color: #FF8E99;
   font-size: 13px;
   font-weight: 500;
 }
 
 :deep(.income-event .fc-event-title) {
-  color: #FF8E99;
+  color: #1BBF83;
   font-size: 13px;
   font-weight: 500;
 }
