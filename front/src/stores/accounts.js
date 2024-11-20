@@ -27,7 +27,7 @@ export const useAccountStore = defineStore('accounts', () => {
                 }
             })
             token.value = response.data.key
-            localStorage.setItem('auth',response.data.key)
+            localStorage.setItem('auth', response.data.key)
             await router.push({ name: 'Home' })
         } catch (error) {
             alert('정보를 다시 한번 확인해주세요!')

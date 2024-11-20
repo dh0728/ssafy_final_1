@@ -1,37 +1,73 @@
 <template>
-  <div class="card-detail-container" v-if="cardData">
+  <div class="card-detail-container" v-if="store.card">
     <!-- 상단 영역: 카드 이미지와 기본 정보 -->
     <div class="card-basic-info">
       <div class="card-image-container">
         <div class="card-image">
-          <img :src="cardData.img_path" :alt="cardData.credit_card_name">
+          <img :src="store.card.img_path" :alt="store.card.credit_card_name">
         </div>
       </div>
       <div class="card-info">
-        <h1>{{ cardData.credit_card_name }}</h1>
-        <p class="brand">{{ cardData.brand }}</p>
-        <div class="fees">
-          <div class="fee-item">
-            <span class="label">국내전용</span>
-            <span class="value">{{ cardData.domestic_fee === 0 ? '없음' : `${formatNumber(cardData.domestic_fee)}원` }}</span>
-          </div>
-          <div class="fee-item">
-            <span class="label">해외겸용</span>
-            <span class="value">{{ cardData.abroad_fee === 0 ? '없음' : `${formatNumber(cardData.abroad_fee)}원` }}</span>
+        <div class="info-header">
+          <div class="cashback-tag">최대 9만원 캐시백</div>
+          <div class="share-button">
+<!--            <img src="@/assets/images/share-icon.svg" alt="공유하기">-->
           </div>
         </div>
-        <div class="perform">
-          <span class="label">전월실적</span>
-          <span class="value">{{ cardData.pre_month_perform }}</span>
+
+        <h1>{{ store.card.credit_card_name }}</h1>
+        <p class="brand">{{ store.card.brand }}</p>
+
+        <!-- 주요 혜택 아이콘 -->
+        <div class="main-benefits">
+          <div v-for="(benefit, index) in store.card.benefits?.slice(0, 3)"
+               :key="index"
+               class="benefit-icon">
+            <span>{{ benefit.desc }}</span>
+          </div>
+        </div>
+
+        <!-- 카드 상세 정보 -->
+        <div class="card-details">
+          <div class="detail-row">
+            <span>연회비</span>
+            <span>{{ store.card.abroad_fee === 0 ? '없음' : `${formatNumber(store.card.abroad_fee)}원` }}</span>
+          </div>
+          <div class="separator">/</div>
+          <div class="detail-row">
+            <span>전월실적</span>
+            <span>{{ store.card.pre_month_perform }}</span>
+          </div>
+        </div>
+
+        <!-- 추가 정보 -->
+        <div class="additional-info">
+          <span class="visa-tag">VISA</span>
+          <span class="online-tag">ONLINE ONLY</span>
+          <span class="type-tag">온라인발급 전용 카드</span>
+        </div>
+
+        <!-- 카드사 버튼 -->
+        <div class="action-button">
+          <a v-if="store.card.is_active"
+             :href="store.card.bank_url"
+             target="_blank"
+             class="bank-btn">
+            카드사 바로가기
+            <span class="arrow">→</span>
+          </a>
+          <div v-else class="inactive-msg">
+            발급이 중단된 카드입니다
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 혜택 영역 -->
+    <!-- 혜택 섹션 -->
     <div class="benefits-section">
       <h2>카드 혜택</h2>
       <div class="benefits-list">
-        <div v-for="benefit in cardData.benefits"
+        <div v-for="benefit in store.card.benefits"
              :key="benefit.title"
              class="benefit-item">
           <div class="benefit-header">
@@ -46,12 +82,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import {computed, onMounted} from 'vue'
 import { useRoute } from 'vue-router'
-import { cardDetail } from '@/assets/cardDetail'
+import { useCardStore } from "@/stores/cards"
 
 const route = useRoute()
-const cardData = ref(null)
+const store = useCardStore()
+
+const cardData = computed(() => store.card)
 
 const formatNumber = (number) => {
   return number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -61,9 +99,11 @@ const formatDetail = (detail) => {
   return detail?.replace(/\n/g, '<br>')
 }
 
-onMounted(() => {
-  // 실제 API 연동 전까지는 더미 데이터 사용
-  cardData.value = cardDetail
+onMounted(async () => {
+  console.log('Route params:', route.params)
+  const { type, cardId } = route.params
+  await store.getCardDetail(type, cardId)
+  console.log('Card data:', store.card)
 })
 </script>
 

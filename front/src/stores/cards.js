@@ -12,6 +12,7 @@ export const useCardStore = defineStore('cards', () => {
 
 
     const cards = ref([])
+    const card = ref(null)
 
     const getCardList = async (cardType) => {
         try {
@@ -84,6 +85,24 @@ export const useCardStore = defineStore('cards', () => {
         }
     }
 
+    // 단일 카드 검색
+    const getCardDetail = async (type, cardId) => {
+        try {
+            currentType.value = type
+            const cardType = type === 'credit' ? 1 : 2
+            console.log(cardType)
+
+            const response = await axios({
+                method: 'get',
+                url: `${API_URL}/cards/${cardType}/detail/${cardId}`,
+            })
+
+             card.value = response.data
+        } catch (error) {
+            console.error('단일 카드 조회 실패:', error)
+        }
+    }
+
     const resetCards = () => {
         cards.value = []
         hasMoreCards.value = true
@@ -91,11 +110,13 @@ export const useCardStore = defineStore('cards', () => {
 
     return {
         cards,
+        card,
         hasMoreCards,
         currentType,
         getCardList,
         getMoreCards,
         getCardsByCondition,
+        getCardDetail,
         resetCards
     }
 }, { persist: true })
