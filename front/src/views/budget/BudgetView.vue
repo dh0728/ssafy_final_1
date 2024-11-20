@@ -3,10 +3,10 @@
     <!-- 왼쪽 사이드바 -->
     <SideBar />
     <CalendarView />
-    <!-- 메인 컨텐츠 영역 -->
-    <div class="main-content">
-      <RouterView />
-    </div>
+  </div>
+  <!-- 메인 컨텐츠 영역 -->
+  <div class="main-content">
+    <RouterView />
   </div>
 </template>
 
