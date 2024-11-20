@@ -18,7 +18,6 @@ class AccountBookCalendar(serializers.ModelSerializer):
         exclude = ('created_at', 'updated_at')
 
 
-
 class AccountBookDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account_book_data
