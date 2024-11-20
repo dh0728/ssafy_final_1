@@ -18,10 +18,10 @@
           <div class="item-content">
             <span class="label">이번 달 지출</span>
             <div class="amount">509,212원</div>
-<!--            <a href="#" class="link">-->
-<!--              지출 분석하러 가기-->
-<!--              <span class="arrow">→</span>-->
-<!--            </a>-->
+            <a href="#" class="link">
+              지출 분석하러 가기
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
         <div class="divider"></div>
@@ -29,21 +29,27 @@
           <div class="item-content">
             <span class="label">이번 달 수입</span>
             <div class="amount">30,111원</div>
-<!--            <a href="#" class="link">-->
-<!--              수입 분석하러 가기-->
-<!--              <span class="arrow">→</span>-->
-<!--            </a>-->
+            <a href="#" class="link">
+              수입 분석하러 가기
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
         <div class="divider"></div>
         <div class="info-item">
           <div class="item-content">
             <span class="label">예산</span>
-            <div class="amount">1,000,000원</div>
-<!--            <a href="#" class="link">-->
-<!--              예산 설정하러 가기-->
-<!--              <span class="arrow">→</span>-->
-<!--            </a>-->
+            <div v-if="currentBudget" class="amount">
+              {{ formatNumber(currentBudget) }}원
+            </div>
+            <div v-else class="amount no-budget">
+              설정된 예산이 없습니다.<br>
+              예산을 설정하고 계획적으로 관리 해보세요!
+            </div>
+            <a href="#" class="link" @click.prevent="openBudgetModal">
+              예산 설정하러 가기
+              <span class="arrow">→</span>
+            </a>
           </div>
         </div>
       </div>
@@ -54,14 +60,39 @@
 <!--      <BudgetView />-->
       <Schedule />
     </div>
-
+    <BudgetSettingModal ref="budgetModal" />
   </div>
 </template>
 
 <script setup>
+import {onMounted, ref} from 'vue'
+import { useBudgetStore } from '@/stores/budget'
+
 import Calendar from "@/components/budget/Calendar.vue";
 import Schedule from "@/components/budget/Schedule.vue";
-import BudgetView from "@/views/budget/BudgetView.vue";
+import BudgetSettingModal from '@/components/budget/BudgetSettingModal.vue'
+
+const budgetModal = ref(null)
+const store = useBudgetStore()
+const currentBudget = ref(null)
+
+
+// 컴포넌트 마운트 시 예산 정보 가져오기
+onMounted(async () => {
+  const budgetData = await store.getBudget()
+  if (budgetData) {
+    currentBudget.value = budgetData.value
+  }
+})
+
+const openBudgetModal = () => {
+  budgetModal.value.openModal()
+}
+
+// 숫자 포맷팅 함수
+const formatNumber = (value) => {
+  return new Intl.NumberFormat('ko-KR').format(value)
+}
 </script>
 
 <style scoped>
