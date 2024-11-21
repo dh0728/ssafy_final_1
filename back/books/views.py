@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
 
-from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer
+from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer
 from django.db import transaction
 
 from django.conf import settings
@@ -17,6 +17,9 @@ import json
 import os
 
 from django.db.models import Q, Sum
+
+from datetime import datetime
+from collections import defaultdict
 
 # Create your views here.
 @api_view(['GET'])
@@ -490,4 +493,108 @@ def analyze_time(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def analyze_category(request):
-    pass
+    account_book = get_object_or_404(Account_book, user_id=request.user)
+
+    if request.method == 'GET':
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        month_age_1 = month-1
+        month_age_2 = month-2
+
+        # 1개월 전과 2개월 전의 month와 year 계산
+        if month == 1:
+            month_age_1 = 12
+            year_age_1 = year - 1
+            month_age_2 = 11
+            year_age_2 = year - 1
+        elif month == 2:
+            month_age_1 = 1
+            year_age_1 = year
+            month_age_2 = 12
+            year_age_2 = year - 1
+        else:
+            month_age_1 = month - 1
+            year_age_1 = year
+            month_age_2 = month - 2
+            year_age_2 = year
+
+        # 한달 데이터 모으기
+        month_data = Account_book_data.objects.filter(
+            year=year,
+            month=month,
+            account_book_id=account_book.pk
+        )
+
+        # 1달 전 지출 
+        total_expenditure_age_1 = Account_book_data.objects.filter(
+            year=year_age_1,
+            month=month_age_1,
+            is_income=False,
+            account_book_id=account_book.pk
+        ).aggregate(total=Sum('account'))['total'] or 0
+
+        # 2달전 지출
+        total_expenditure_age_2 = Account_book_data.objects.filter(
+            year=year_age_2,
+            month=month_age_2,
+            is_income=False,
+            account_book_id=account_book.pk
+        ).aggregate(total=Sum('account'))['total'] or 0
+
+        # 현재 달 지출
+        total_expenditure= month_data.filter(is_income=True).aggregate(total=Sum('account'))['total'] or 0
+        
+        # 현재달 하루 총 지출
+        day_data = []
+        grouped_data = month_data.values('day').annotate(
+            expenditure=Sum('account', filter=Q(is_income=False))
+        )
+
+        for day_entry in grouped_data:
+            day_data.append({
+                'day': day_entry['day'],
+                'expenditure': day_entry['expenditure'] or 0,
+            })
+
+        # 오름차순 정렬 추가
+        day_data = sorted(day_data, key=lambda x: x['day'])
+
+        # 주별 지출은 어떻게 구해야 할까?
+        
+        week_data = defaultdict(int)
+
+        for day_entry in grouped_data:
+            day = day_entry['day']
+            expenditure = day_entry['expenditure'] or 0
+
+            date_obj = datetime(year, month, day)
+            week_number = date_obj.isocalender()[1]
+
+            # 주별 지출 합산
+            week_data[week_number]  += expenditure
+
+        # 주별 지출 리스트로 변환 및 정렬
+        weekly_data = [{'week': week,'expenditure':expenditure} for week, expenditure in week_data.item()]
+        weekly_data = sorted(weekly_data,key=lambda x: x['week'])
+
+        # 응답 데이터 생성
+        analysis_data = {
+            'total_expenditure': total_expenditure,
+            'total_expenditure_age_1': total_expenditure_age_1,
+            'total_expenditure_age_2': total_expenditure_age_2,
+            'day_data': day_data,
+            'weekly_data': weekly_data,
+        }
+
+        # 시리얼라이저를 사용하여 응답 반환
+        serializer = AnalysisTimeSerialzer(analysis_data)
+        return Response(serializer.data)
