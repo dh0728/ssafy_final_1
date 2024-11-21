@@ -19,7 +19,8 @@ class Account_book_data(models.Model):
     is_income = models.BooleanField()
     payment = models.CharField(max_length=10)
     store = models.CharField(max_length=50)
-    memo = models.CharField(max_length=75, null=True)
+    memo = models.CharField(max_length=75, null=True,blank=True)
+    is_schedule = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
