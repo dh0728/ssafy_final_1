@@ -2,7 +2,7 @@
   <div class="history-container">
     <SideBar />
 
-    <div class="history-container">
+    <div class="history2-container">
       <!-- 상단 필터 영역 -->
       <div class="filter-header">
         <div class="left-section">
@@ -87,6 +87,13 @@ import SideBar from "@/components/common/SideBar.vue";
 
 <style scoped>
 .history-container {
+  padding: 32px;
+  margin-left: 440px;
+  max-width: 1300px;
+  background: white;
+}
+
+.history2-container {
   padding: 20px;
   background: white;
 }
