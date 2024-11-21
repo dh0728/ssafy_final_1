@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
 
-from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer
+from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer
 from django.db import transaction
 
 from django.conf import settings
@@ -15,6 +15,8 @@ import time
 import uuid
 import json
 import os
+
+from django.db.models import Q, Sum
 
 # Create your views here.
 @api_view(['GET'])
@@ -423,4 +425,69 @@ def receipt(request): # 영수증 OCR
             return Response({'error': 'Internal server error', 'details': str(e)}, status=500)
     return Response({'error': 'Invalid request method'}, status.HTTP_405_METHOD_NOT_ALLOWED )
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def calender_data(request): 
+    account_book = get_object_or_404(Account_book, user_id=request.user)
 
+    if request.method == 'GET':
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # 한달 데이터 모으기
+        month_data = Account_book_data.objects.filter(
+            year=year,
+            month=month,
+            account_book_id=account_book.pk
+        )
+
+        # 한 달 전체 수익 및 지출 합산
+        total_income = month_data.filter(is_income=True).aggregate(total=Sum('account'))['total'] or 0
+        total_expenditure = month_data.filter(is_income=False).aggregate(total=Sum('account'))['total'] or 0
+
+        # 날짜별 그룹화 후 수익 및 지출 합산
+        day_data = []
+        grouped_data = month_data.values('day').annotate(
+            income=Sum('account', filter=Q(is_income=True)),
+            expenditure=Sum('account', filter=Q(is_income=False))
+        )
+
+        for day_entry in grouped_data:
+            day_data.append({
+                'day': day_entry['day'],
+                'income': day_entry['income'] or 0,
+                'expenditure': day_entry['expenditure'] or 0,
+            })
+
+        # 오름차순 정렬 추가
+        day_data = sorted(day_data, key=lambda x: x['day'])
+
+        # 시리얼라이저 사용하여 데이터 응답
+        monthly_data = {
+            'total_income': total_income,
+            'total_expenditure': total_expenditure,
+            'day_data': day_data
+        }
+
+        serializer = MonthlyDataSerializer(monthly_data)
+        return Response(serializer.data)
+
+    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+        # month_data에서 
+        # is_income True 인 것들의 account 들의 합
+        # is_income False 인 것들의 account 들의 합
+
+        # month_data에서 day가 같은 거끼리도 그룹지어서
+        # is_income True 인 것들의 account 들의 합
+        # is_income False 인 것들의 account 들의 합
+        
+        #이거 serializer로 만들수 있니?
