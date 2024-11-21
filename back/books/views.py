@@ -482,12 +482,12 @@ def calender_data(request):
 
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-        # month_data에서 
-        # is_income True 인 것들의 account 들의 합
-        # is_income False 인 것들의 account 들의 합
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def analyze_time(request):
+    pass
 
-        # month_data에서 day가 같은 거끼리도 그룹지어서
-        # is_income True 인 것들의 account 들의 합
-        # is_income False 인 것들의 account 들의 합
-        
-        #이거 serializer로 만들수 있니?
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def analyze_category(request):
+    pass
