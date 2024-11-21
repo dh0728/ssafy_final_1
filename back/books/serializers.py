@@ -27,3 +27,8 @@ class BudgetPostPutSerializer(serializers.ModelSerializer):
     class Meta:
         model = Budget
         fields = '__all__'
+
+class AccountBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account_book
+        fields = '__all__'

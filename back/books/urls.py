@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('',views.get_calendar),
     path('budget/',views.budget), # 예산 GET, POST, PUT
 
     path('schedule/',views.schedule), #금융일정 GET, POST, PUT, DELETE
