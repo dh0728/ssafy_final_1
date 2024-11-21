@@ -69,7 +69,7 @@ import { useBudgetStore } from '@/stores/budget'
 
 import Calendar from "@/components/calendar/Calendar.vue";
 import Schedule from "@/components/schedule/Schedule.vue";
-import BudgetSettingModal from '@/components/budget/BudgetSettingModal.vue'
+import BudgetSettingModal from '@/components/budget/BudgetSetting.vue'
 
 const budgetModal = ref(null)
 const store = useBudgetStore()
