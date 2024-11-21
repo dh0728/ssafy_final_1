@@ -18,7 +18,7 @@ const uploadImage = async function () {
     const response = await axios.post(' http://127.0.0.1:8000/account/books/receipt/', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        'Authorization': 'Token 68c7958b53dd4a1f5b6aa418849b3d199d38db12',  // CSRF 토큰을 헤더에 추가
+        'Authorization': 'Token 15442ecff0a2514893e9fad94abc373f676e968e',  // CSRF 토큰을 헤더에 추가
       }
     });
     console.log('Upload success:', response.data);

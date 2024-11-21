@@ -1,7 +1,7 @@
 const budgetRoutes = [
     {
-        path: '/main/',
-        name: 'Main',
+        path: '/budget/',
+        name: 'Budget',
         component: () => import('@/views/budget/BudgetView.vue'),
         children: [
             {

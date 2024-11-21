@@ -57,7 +57,6 @@
 
     <div class="calendar-schedule-container">
       <Calendar />
-<!--      <BudgetView />-->
       <Schedule />
     </div>
     <BudgetSettingModal ref="budgetModal" />
@@ -247,6 +246,13 @@ const formatNumber = (value) => {
   background: #f1f3f5;
   margin: 20px 0;
   align-self: stretch;
+}
+
+.amount.no-budget {
+  font-size: 14px; /* label보다 작은 크기 */
+  font-weight: normal;
+  color: #666; /* label과 동일한 색상 */
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {

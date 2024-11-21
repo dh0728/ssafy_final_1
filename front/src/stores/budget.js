@@ -9,6 +9,7 @@ export const useBudgetStore = defineStore('budget', () => {
     const budgetId = ref(null) // budget_id 저장용
 
     const getBudget = async () => {
+        console.log(localStorage.getItem('auth'))
         try {
             const date = new Date()
             const response = await axios({
@@ -17,6 +18,7 @@ export const useBudgetStore = defineStore('budget', () => {
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('auth')}`
                 },
+
                 params: {
                     year: date.getFullYear(),
                     month: date.getMonth() + 1
@@ -29,7 +31,8 @@ export const useBudgetStore = defineStore('budget', () => {
                 return response.data
             }
         } catch (error) {
-            console.error('예산 조회 실패:', error)
+            console.error('예산 조회 실패:', error.response?.data)
+            console.error('에러 상태:', error.response?.status)
             return null
         }
     }
