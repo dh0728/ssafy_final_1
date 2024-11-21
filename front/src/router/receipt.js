@@ -4,6 +4,11 @@ const receiptRoutes = [
         name: 'Receipt',
         component: () => import('@/views/receipt/ReceiptView.vue')
     },
+    {
+        path: '/receipt/result',
+        name: 'ResultReceipt',
+        component: () => import('@/views/receipt/ResultReceiptView.vue')
+    },
 
 ]
 

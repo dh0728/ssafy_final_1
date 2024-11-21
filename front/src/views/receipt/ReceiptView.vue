@@ -1,11 +1,7 @@
 <template>
   <div class="receipt-container">
     <SideBar />
-
     <div class="receipt-content">
-
-
-      <!-- 업로드 영역 -->
       <div class="upload-container">
         <div class="upload-box"
              @drop.prevent="handleDrop"
@@ -23,7 +19,7 @@
             <div class="upload-icon">📸</div>
             <h3>영수증 이미지를 업로드해주세요</h3>
             <p>이미지를 드래그하여 놓거나 클릭하여 선택해주세요</p>
-            <p class="file-types">지원 형식: image/png, image/jpeg, image.jpg</p>
+            <p class="file-types">지원 형식: image/png, image/jpeg, image/jpg</p>
           </div>
         </div>
 
@@ -34,7 +30,9 @@
             <button class="close-btn" @click="clearPreview">×</button>
           </div>
           <img :src="previewUrl" alt="영수증 미리보기" class="preview-image">
-          <button class="submit-btn" @click="uploadImage">인식하기</button>
+          <button class="submit-btn" @click="uploadReceipt" :disabled="isLoading">
+            {{ isLoading ? '처리중...' : '인식하기' }}
+          </button>
         </div>
       </div>
     </div>
@@ -43,12 +41,17 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useReceiptStore } from '@/stores/receipt'
 import SideBar from "@/components/common/SideBar.vue"
 import axios from "axios";
 
+const router = useRouter()
+const receiptStore = useReceiptStore()
 const fileInput = ref(null)
 const previewUrl = ref(null)
 const selectedImage = ref(null)
+const isLoading = ref(false)
 
 const triggerFileInput = () => {
   fileInput.value.click()
@@ -80,25 +83,32 @@ const clearPreview = () => {
   selectedImage.value = null
 }
 
-const uploadImage = async () => {
+const uploadReceipt = async () => {
   if (!selectedImage.value) return
 
   const formData = new FormData()
   formData.append('image', selectedImage.value)
 
   try {
+    receiptStore.setReceiptImage(selectedImage.value)
+
     const response = await axios.post('http://127.0.0.1:8000/account/books/receipt/', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         'Authorization': `Token ${localStorage.getItem('auth')}`
       }
     })
-    console.log('Upload success:', response.data)
+
+    if (response.status === 200) {
+      receiptStore.setOcrResult(response.data.data)
+      router.push({name : 'ResultReceipt'})
+    }
   } catch (error) {
     console.error('Upload error:', error)
   }
 }
 </script>
+
 
 
 <style scoped>
@@ -208,5 +218,34 @@ const uploadImage = async () => {
   font-size: 24px;
   color: #666;
   cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background: #9CA3AF;
+  cursor: not-allowed;
+}
+
+.submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.submit-btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-right-color: transparent;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 </style>
