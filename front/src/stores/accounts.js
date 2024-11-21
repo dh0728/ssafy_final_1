@@ -48,6 +48,25 @@ export const useAccountStore = defineStore('accounts', () => {
                     email, password1, password2, username, birth
                 }
             })
+            try {
+                const res = await axios.get(`${API_URL}/account/books/`, {
+                    headers: {
+                        'Authorization': `Token ${response.data.key}`,
+                    }
+                });
+                // 가계부 인스턴스가 성공적으로 존재할 때의 처리
+                console.log('가계부 인스턴스 있음:', res.data);
+            } catch (err) {
+                // 오류 발생 시 처리
+                if (err.res) {
+                    // 서버에서 응답을 받은 경우, 응답 데이터와 상태 코드를 로그로 출력
+                    console.error('가계부 인스턴스 에러:', err.response.data);
+                    console.error('상태 코드:', err.response.status);
+                } else {
+                    // 서버에 도달하지 못한 경우 또는 응답을 받지 못한 경우
+                    console.error('가계부 인스턴스 에러:', err.message);
+                }
+            }
             // token.value = response.data.key
             await login({email, password: password1})
             await router.push({name: 'Home'})
