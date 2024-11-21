@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
 
-from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer
+from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer
 from django.db import transaction
 
 from django.conf import settings
@@ -20,20 +20,19 @@ import os
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_calendar(request):  # 캘린더 페이지
-    # 사용자의 가계부 인스턴스가 있는지 확인하고 없으면 생성
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user)
-
-    if created:
-        return Response({"message": "Account book was created for the user."}, status=status.HTTP_201_CREATED)
-    else:
-        return Response({"message": "Account book already exists."}, status=status.HTTP_200_OK)
-
+    try:
+        account_book = get_object_or_404(Account_book, user_id=request.user) 
+    except:  # 가계부 인스턴스 없으면 생성
+        account_book = Account_book.objects.create(user_id=request.user)
+    
+    serializer = AccountBookSerializer(account_book)
+    return Response(serializer.data)
 
 # 하루치 결제 데이터 조회
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def day(request):
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user)
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
     if request.method == "GET":
         year = request.query_params.get('year')
         month = request.query_params.get('month')
@@ -52,7 +51,7 @@ def day(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def month(request):
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user)
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
     if request.method == "GET":
         year = request.query_params.get('year')
         month = request.query_params.get('month')
@@ -71,8 +70,7 @@ def month(request):
 @api_view(['GET','POST','PUT','DELETE'])
 @permission_classes([IsAuthenticated])
 def schedule(request):
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user) 
-
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
     if request.method == 'GET':
         schedules = Schedule.objects.filter(
             account_book_id = account_book
@@ -129,8 +127,7 @@ def schedule(request):
 @api_view(['GET','POST','PUT'])
 @permission_classes([IsAuthenticated])
 def budget(request):
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user)
-
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
     if request.method == 'GET':
         year = request.query_params.get('year')
         month = request.query_params.get('month')
@@ -180,7 +177,7 @@ def budget(request):
 @api_view(['POST','DELETE'])
 @permission_classes([IsAuthenticated])
 def write_account_data_list(request): 
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user)
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
     if request.method == 'POST':
         with transaction.atomic():
             data = request.data
@@ -193,7 +190,7 @@ def write_account_data_list(request):
                         response.append(serializer.data)
                     else:
                         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
+                return Response(response, status=status.HTTP_201_CREATED)
             else:
                 return Response({"error": "Invalid data format, expected a list of items."}, status=status.HTTP_400_BAD_REQUEST)
             
@@ -222,7 +219,7 @@ def write_account_data_list(request):
 @api_view(['POST','PUT','DELETE'])
 @permission_classes([IsAuthenticated])
 def write_account_data(request): # 단일 지출
-    account_book, created = Account_book.objects.get_or_create(user_id=request.user)
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
     
     if request.method == 'POST':
         year = request.data.get('year')
