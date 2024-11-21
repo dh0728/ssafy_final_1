@@ -16,6 +16,10 @@ urlpatterns = [
     
     path('receipt/',views.receipt), # 영수증 OCR
 
+    path('calender_data/',views.calender_data),
+
+    path('analyze/time/', views.analyze_time),
+    path('analyze/category',views.analyze_category),
 ]
 
 
