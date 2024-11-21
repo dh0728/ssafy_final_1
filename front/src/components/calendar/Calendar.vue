@@ -25,11 +25,14 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import {ref, computed, onMounted} from 'vue'
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import CalendarAdd from './CalendarAdd.vue'
+import {useCalendarStore} from "@/stores/calendar.js";
+
+const store = useCalendarStore();
 
 const calendarRef = ref(null)
 const calendarModal = ref(null)
@@ -43,16 +46,52 @@ const currentMonthLabel = computed(() => {
   }).format(currentDate.value)
 })
 
+const fetchCalendarData = async () => {
+  const year = currentDate.value.getFullYear()
+  const month = currentDate.value.getMonth() + 1
+
+  const result = await store.getCalendarData(year, month)
+  if (result) {
+    const events = []
+
+    // day_data를 이벤트로 변환
+    result.day_data.forEach(dayData => {
+      const date = `${year}-${String(month).padStart(2, '0')}-${String(dayData.day).padStart(2, '0')}`
+
+      if (dayData.income > 0) {
+        events.push({
+          title: new Intl.NumberFormat('ko-KR').format(dayData.income),
+          date: date,
+          classNames: ['income-event']
+        })
+      }
+
+      if (dayData.expenditure > 0) {
+        events.push({
+          title: new Intl.NumberFormat('ko-KR').format(dayData.expenditure),
+          date: date,
+          classNames: ['expense-event']
+        })
+      }
+    })
+
+    // 캘린더 이벤트 업데이트
+    calendarOptions.value.events = events
+  }
+}
+
 const prevMonth = () => {
   const calendarApi = calendarRef.value.getApi()
   calendarApi.prev()
   currentDate.value = calendarApi.getDate()
+  fetchCalendarData()
 }
 
 const nextMonth = () => {
   const calendarApi = calendarRef.value.getApi()
   calendarApi.next()
   currentDate.value = calendarApi.getDate()
+  fetchCalendarData()
 }
 
 const calendarOptions = ref({
@@ -69,37 +108,15 @@ const calendarOptions = ref({
   dayCellContent: (arg) => {
     return arg.dayNumberText.replace('일', '')
   },
-  events: [
-    {
-      title: '8,000',
-      date: '2024-11-02',
-      classNames: ['expense-event']
-    },
-    {
-      title: '30,000',
-      date: '2024-11-02',
-      classNames: ['income-event']
-    },
-    {
-      title: '500,000',
-      date: '2024-11-08',
-      classNames: ['expense-event']
-    },
-    {
-      title: '1,212',
-      date: '2024-11-14',
-      classNames: ['expense-event']
-    },
-    {
-      title: '111',
-      date: '2024-11-13',
-      classNames: ['income-event']
-    }
-  ],
+  events: [], // 초기값은 빈 배열
   dateClick: function(info) {
     selectedDate.value = info.date
     calendarModal.value.openModal()
   }
+})
+
+onMounted(() => {
+  fetchCalendarData()
 })
 </script>
 
