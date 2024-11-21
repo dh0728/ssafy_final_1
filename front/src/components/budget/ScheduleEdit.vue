@@ -42,11 +42,12 @@
               @input="onlyNumbers"
               class="input-field"
           >
+          <p class="amount-note">* 정기적인 지출, 수입을 저장해두고, 효과적으로 관리해보세요!</p>
         </div>
       </div>
 
       <button class="submit-btn" @click="updateSchedule">
-        수정하기
+        +
       </button>
     </div>
   </div>

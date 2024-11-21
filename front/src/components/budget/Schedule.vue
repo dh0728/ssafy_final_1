@@ -4,25 +4,25 @@
       <h3>다가오는 금융 일정 📅</h3>
     </div>
     <div class="schedule-list">
-      <div v-for="schedule in schedules" :key="schedule.schedule_id" class="schedule-item" @click="openEditModal(schedule)">
-        <div class="date" :style="{ background: schedule.is_income ? '#1BBF83' : '#ff6b6b' }">{{ schedule.day }}일</div>
-        <div class="schedule-content">
-          <div class="title">{{ schedule.name }}</div>
-          <div class="amount">
-            {{ formatNumber(schedule.value) }}원 / {{ schedule.is_income ? '수입' : '지출' }}
+      <div v-for="schedule in schedules" :key="schedule.schedule_id" class="schedule-item">
+        <div class="schedule-content-wrapper" @click="openEditModal(schedule)">
+          <div class="date" :style="{ background: schedule.is_income ? '#1BBF83' : '#ff6b6b' }">
+            {{ schedule.day }}일
+          </div>
+          <div class="schedule-content">
+            <div class="title">{{ schedule.name }}</div>
+            <div class="amount">
+              {{ formatNumber(schedule.value) }}원 / {{ schedule.is_income ? '수입' : '지출' }}
+            </div>
           </div>
         </div>
-        <button class="delete-btn" @click="deleteSchedule(schedule.schedule_id)">×</button>
+        <button class="delete-btn" @click.stop.prevent="deleteSchedule(schedule.schedule_id)">×</button>
       </div>
     </div>
     <button class="add-schedule-btn" @click="openScheduleModal">금융 일정 추가하기</button>
     <ScheduleAdd ref="scheduleModal" @schedule-added="fetchSchedules" />
+    <ScheduleEdit ref="editModal" :schedule="selectedSchedule" @schedule-updated="fetchSchedules" />
   </div>
-  <ScheduleEdit
-      ref="editModal"
-      :schedule="selectedSchedule"
-      @schedule-updated="fetchSchedules"
-  />
 </template>
 
 <script setup>
@@ -58,7 +58,8 @@ const deleteSchedule = async (scheduleId) => {
   if (confirm('정말 삭제하시겠습니까?')) {
     const success = await store.deleteSchedule(scheduleId)
     if (success) {
-      await fetchSchedules() // 목록 새로고침
+      await fetchSchedules()
+      window.location.reload()
     }
   }
 }
@@ -100,10 +101,17 @@ const openEditModal = (schedule) => {
   margin-bottom: 20px;
 }
 
-.schedule-item {
+.schedule-content-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: flex-start;
   padding: 12px;
   border-radius: 8px;
   background: #f8f9fa;
@@ -170,9 +178,11 @@ const openEditModal = (schedule) => {
   justify-content: center;
   padding: 0;
   transition: all 0.2s;
+  z-index: 2; /* 삭제 버튼을 더 위로 올림 */
 }
 
 .delete-btn:hover {
   color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1); /* 호버 시 배경색 추가 */
 }
 </style>
