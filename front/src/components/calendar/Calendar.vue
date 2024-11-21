@@ -1,5 +1,6 @@
 <template>
   <div class="calendar-container">
+    <!-- 캘린더 헤더 -->
     <div class="calendar-header">
       <div class="month-selector">
         <span>{{ currentMonthLabel }}</span>
@@ -12,33 +13,36 @@
         <button class="control-btn" @click="prevMonth">←</button>
         <button class="control-btn" @click="nextMonth">→</button>
       </div>
-
     </div>
 
+    <!-- 캘린더 본문 -->
     <FullCalendar
         ref="calendarRef"
         :options="calendarOptions"
         class="calendar"
     />
-    <CalendarAdd ref="calendarModal" :selected-date="selectedDate" />
+
+    <!-- 가계부 작성 모달 -->
+    <CalendarAdd ref="addModalRef" :selected-date="selectedDate" @write-completed="onWriteCompleted" />
   </div>
 </template>
 
 <script setup>
-import {ref, computed, onMounted} from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import CalendarAdd from './CalendarAdd.vue'
-import {useCalendarStore} from "@/stores/calendar.js";
+import { useCalendarStore } from "@/stores/calendar.js"
 
-const store = useCalendarStore();
-
+// store와 ref 초기화
+const calendarStore = useCalendarStore()
 const calendarRef = ref(null)
-const calendarModal = ref(null)
+const addModalRef = ref(null)
 const currentDate = ref(new Date())
 const selectedDate = ref(null)
 
+// 현재 월 표시
 const currentMonthLabel = computed(() => {
   return new Intl.DateTimeFormat('ko-KR', {
     year: 'numeric',
@@ -46,15 +50,14 @@ const currentMonthLabel = computed(() => {
   }).format(currentDate.value)
 })
 
+// 캘린더 데이터 가져오기
 const fetchCalendarData = async () => {
   const year = currentDate.value.getFullYear()
   const month = currentDate.value.getMonth() + 1
 
-  const result = await store.getCalendarData(year, month)
+  const result = await calendarStore.getCalendarData(year, month)
   if (result) {
     const events = []
-
-    // day_data를 이벤트로 변환
     result.day_data.forEach(dayData => {
       const date = `${year}-${String(month).padStart(2, '0')}-${String(dayData.day).padStart(2, '0')}`
 
@@ -65,7 +68,6 @@ const fetchCalendarData = async () => {
           classNames: ['income-event']
         })
       }
-
       if (dayData.expenditure > 0) {
         events.push({
           title: new Intl.NumberFormat('ko-KR').format(dayData.expenditure),
@@ -74,12 +76,11 @@ const fetchCalendarData = async () => {
         })
       }
     })
-
-    // 캘린더 이벤트 업데이트
     calendarOptions.value.events = events
   }
 }
 
+// 월 이동 핸들러
 const prevMonth = () => {
   const calendarApi = calendarRef.value.getApi()
   calendarApi.prev()
@@ -94,6 +95,7 @@ const nextMonth = () => {
   fetchCalendarData()
 }
 
+// 캘린더 옵션
 const calendarOptions = ref({
   plugins: [dayGridPlugin, interactionPlugin],
   initialView: 'dayGridMonth',
@@ -102,16 +104,26 @@ const calendarOptions = ref({
   dayHeaderFormat: { weekday: 'short' },
   height: 'auto',
   firstDay: 1,
-  selectable: true,
+  selectable: false,
   editable: false,
   fixedWeekCount: false,
   dayCellContent: (arg) => {
     return arg.dayNumberText.replace('일', '')
   },
-  events: [], // 초기값은 빈 배열
-  dateClick: function(info) {
-    selectedDate.value = info.date
-    calendarModal.value.openModal()
+  events: [],
+  dayCellDidMount: (arg) => {
+    const editButton = document.createElement('button')
+    editButton.className = 'edit-button'
+    editButton.innerHTML = '✏️'
+
+    editButton.addEventListener('click', (e) => {
+      e.stopPropagation()
+      selectedDate.value = arg.date
+      addModalRef.value.openModal()
+    })
+
+    const cellContent = arg.el.querySelector('.fc-daygrid-day-top')
+    cellContent.appendChild(editButton)
   }
 })
 
@@ -146,78 +158,65 @@ onMounted(() => {
   font-weight: 500;
 }
 
-.month-controls {
-  display: flex;
-  gap: 8px;
-}
-
-.control-btn {
-  padding: 4px 12px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
 .calendar-legend {
   display: flex;
   gap: 16px;
   font-size: 14px;
 }
 
-.income {
-  color: #1BBF83;
-}
-
-.expense {
-  color: #FF8E99;
-}
+.income { color: #1BBF83; }
+.expense { color: #FF8E99; }
 
 /* FullCalendar 커스텀 스타일 */
-:deep(.fc) {
-  font-family: inherit;
-}
-
 :deep(.fc-theme-standard td) {
-  border: 1px solid #eee;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #eee;
 }
 
 :deep(.fc-theme-standard th) {
-  border: 1px solid #eee;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #eee;
   padding: 8px 0;
-  font-weight: 500;
-  color: #666;
 }
 
-:deep(.fc-scrollgrid) {
-  border: none !important;
+:deep(.fc-daygrid-day-top) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+  flex-direction: row;
 }
 
 :deep(.fc-daygrid-day-number) {
+  padding: 2px 4px;
+  margin: 0;
+  line-height: 1;
   font-size: 14px;
-  padding: 8px;
-  color: #333;
 }
 
-:deep(.fc-day-sat .fc-daygrid-day-number) {
-  color: #D10000;
+:deep(.edit-button) {
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  opacity: 0;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
 }
 
-:deep(.fc-day-sun .fc-daygrid-day-number) {
-  color: #D10000;
-}
-
-:deep(.fc-daygrid-day-frame) {
-  padding: 8px;
-  min-height: 100px;
-}
-
-:deep(.fc-daygrid-day-events) {
-  margin-top: 4px;
+:deep(.fc-daygrid-day:hover .edit-button) {
+  opacity: 1;
+  background: rgba(76, 110, 245, 0.1);
 }
 
 :deep(.fc-event) {
-  background: none;
+  background: none !important;  /* 이벤트 배경색 완전 제거 */
   border: none;
 }
 
@@ -225,28 +224,20 @@ onMounted(() => {
   color: #FF8E99;
   font-size: 13px;
   font-weight: 500;
+  background: none !important;  /* 지출 이벤트 배경색 제거 */
 }
 
 :deep(.income-event .fc-event-title) {
   color: #1BBF83;
   font-size: 13px;
   font-weight: 500;
+  background: none !important;  /* 수입 이벤트 배경색 제거 */
 }
 
-:deep(.fc-daygrid-event-dot) {
-  display: none;
+/* 호버 시에도 배경색이 나타나지 않도록 */
+:deep(.fc-event:hover) {
+  background: none !important;
 }
 
-:deep(.fc-day-today) {
-  background: #f8f9fa !important;
-}
-
-:deep(.fc-highlight) {
-  background: rgba(76, 110, 245, 0.05);
-}
-
-:deep(.fc-daygrid-day.fc-day-today) {
-  background-color: #f8f9fa !important;
-}
 
 </style>
