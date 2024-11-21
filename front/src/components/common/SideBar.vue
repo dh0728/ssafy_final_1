@@ -18,7 +18,7 @@
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/budget/fixed" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'Receipt' }" class="menu-item" active-class="active">
               <span class="icon">📸</span>
               영수증 인식하기
             </RouterLink>
