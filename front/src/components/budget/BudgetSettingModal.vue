@@ -40,7 +40,7 @@
 import { ref, computed } from 'vue'
 import { useBudgetStore } from '@/stores/budget'
 
-const emit = defineEmits(['update:budget'])
+const emit = defineEmits(['budget-updated'])
 const budgetStore = useBudgetStore()
 const isOpen = ref(false)
 const inputBudget = ref('')
@@ -60,7 +60,7 @@ const submitBudget = async () => {
   const amount = Number(inputBudget.value.replace(/,/g, ''))
   const success = await budgetStore.setBudget(amount)
   if (success) {
-    emit('update:budget', amount)
+    emit('budget-updated', amount)
     closeModal()
   }
 }

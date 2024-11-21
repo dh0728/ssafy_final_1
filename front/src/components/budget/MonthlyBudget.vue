@@ -59,7 +59,7 @@
       <Calendar />
       <Schedule />
     </div>
-    <BudgetSettingModal ref="budgetModal" />
+    <BudgetSettingModal ref="budgetModal" @budget-updated="refreshBudget" />
   </div>
 </template>
 
@@ -75,17 +75,23 @@ const budgetModal = ref(null)
 const store = useBudgetStore()
 const currentBudget = ref(null)
 
-
-// 컴포넌트 마운트 시 예산 정보 가져오기
-onMounted(async () => {
+const fetchBudget = async () => {
   const budgetData = await store.getBudget()
   if (budgetData) {
     currentBudget.value = budgetData.value
   }
-})
+}
+
+// 컴포넌트 마운트 시 예산 정보 가져오기
+onMounted(fetchBudget)
 
 const openBudgetModal = () => {
   budgetModal.value.openModal()
+}
+
+const refreshBudget = (newBudget) => {
+  currentBudget.value = newBudget
+  fetchBudget()  // 전체 예산 정보 새로고침
 }
 
 // 숫자 포맷팅 함수
