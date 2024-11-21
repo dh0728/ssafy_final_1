@@ -15,7 +15,6 @@
             class="input-field"
         >
         <span class="currency">원</span>
-        <button class="edit-btn">✎</button>
       </div>
 
       <div class="type-selector">
@@ -48,9 +47,19 @@
 
         <div class="form-item">
           <label>결제 수단</label>
-          <select v-model="paymentMethod" class="select-field">
-            <option value="">선택</option>
-          </select>
+          <div class="select-wrapper">
+            <select v-model="paymentMethod" class="input-field">
+              <option value="" >선택해주세요</option>
+              <option
+                  v-for="method in paymentMethods"
+                  :key="method.value"
+                  :value="method.value"
+              >
+                {{ method.label }}
+              </option>
+            </select>
+            <span class="select-arrow">▼</span>
+          </div>
         </div>
 
         <div class="form-item">
@@ -64,7 +73,7 @@
         </div>
       </div>
 
-      <button class="submit-btn">작성 완료</button>
+      <button class="submit-btn" @click="submitForm">작성 완료</button>
 
       <div v-if="showCategoryModal" class="category-modal">
         <div class="category-modal-content">
@@ -73,14 +82,16 @@
             <button class="close-btn" @click="showCategoryModal = false">×</button>
           </div>
           <div class="category-list">
-            <button
-                v-for="selectedCategory in categories"
-                :key="selectedCategory.id"
-                class="category-item"
-                @click="selectCategory(selectedCategory)"
-            >
-              {{ selectedCategory.name }}
-            </button>
+            <div v-for="(group, index) in categoryGroups" :key="index" class="category-group">
+              <button
+                  v-for="selectedCategory in group"
+                  :key="selectedCategory.id"
+                  class="category-item"
+                  @click="selectCategory(selectedCategory)"
+              >
+                {{ selectedCategory.name }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -90,6 +101,10 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import {useCalendarStore} from "@/stores/calendar.js";
+
+const calendarStore = useCalendarStore();
+const emit = defineEmits(['write-completed'])
 
 const props = defineProps({
   selectedDate: {
@@ -105,6 +120,12 @@ const category = ref('')
 const paymentMethod = ref('')
 const storeName = ref('')
 const memo = ref('')
+
+const paymentMethods = [
+  { value: 'cash', label: '현금' },
+  { value: 'card', label: '카드' },
+  { value: 'transfer', label: '이체' }
+]
 
 const showCategoryModal = ref(false)
 const categories = ref([
@@ -137,8 +158,13 @@ const categories = ref([
   { id: 27, name: '🏃‍♂️ 생활' },
 ])
 
-
-
+const categoryGroups = computed(() => {
+  const groups = [];
+  for (let i = 0; i < categories.value.length; i += 10) {
+    groups.push(categories.value.slice(i, i + 10));
+  }
+  return groups;
+});
 
 const currentDate = computed(() => {
   if (!props.selectedDate) return ''
@@ -171,9 +197,35 @@ const resetForm = () => {
   memo.value = ''
 }
 
-const selectCategory = (cat) => {
-  category.value = cat.name
+const selectCategory = (seleted) => {
+  category.value = seleted.name
   showCategoryModal.value = false
+}
+
+
+const submitForm = async () => {
+  try {
+    const selectedDate = props.selectedDate
+    const formData = {
+      year: selectedDate.getFullYear(),
+      month: selectedDate.getMonth() + 1,
+      day: selectedDate.getDate(),
+      is_income: type.value === 'income',
+      payment: paymentMethod.value,
+      store: storeName.value,
+      category_id: categories.value.find(seleted => seleted.name === category.value)?.id,
+      account: Number(amount.value.replace(/,/g, '')),
+      memo: memo.value
+    }
+
+    const result = await calendarStore.addCalendar(formData)
+    if (result) {
+      closeModal()
+      emit('write-completed', result)
+    }
+  } catch (error) {
+    console.error('가계부 작성 실패:', error)
+  }
 }
 
 defineExpose({ openModal, closeModal })
@@ -249,14 +301,6 @@ defineExpose({ openModal, closeModal })
   color: #666;
 }
 
-.edit-btn {
-  background: none;
-  border: none;
-  color: #666;
-  cursor: pointer;
-  padding: 4px;
-}
-
 .type-selector {
   display: flex;
   gap: 8px;
@@ -296,25 +340,7 @@ defineExpose({ openModal, closeModal })
   color: #666;
 }
 
-.select-field,
-.input-field {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
-}
 
-.add-account-btn {
-  width: 100%;
-  padding: 12px;
-  background: #f8f9fa;
-  border: none;
-  border-radius: 8px;
-  color: #4C6EF5;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 16px;
-}
 
 .submit-btn {
   width: 100%;
@@ -359,28 +385,78 @@ defineExpose({ openModal, closeModal })
   background: white;
   border-radius: 16px;
   padding: 24px;
-  width: 300px;
+  width: 750px; /* 너비 증가 */
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.category-group {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(5, 1fr); /* 5개 컬럼으로 변경 */
+  gap: 8px; /* 간격 조정 */
   margin-top: 16px;
 }
 
 .category-item {
-  padding: 12px;
+  padding: 8px; /* 패딩 조정 */
   border: 1px solid #ddd;
   border-radius: 6px;
   background: white;
   cursor: pointer;
   transition: all 0.2s;
+  text-align: center;
+  font-size: 13px; /* 폰트 크기 조정 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 긴 텍스트 처리 */
 }
 
 .category-item:hover {
   background: #f8f9fa;
   border-color: #4C6EF5;
   color: #4C6EF5;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  appearance: none;
+}
+
+.select-wrapper select:focus {
+  outline: none;
+  border-color: #4C6EF5;
+}
+
+.select-wrapper .select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+select option {
+  padding: 8px;
 }
 </style>

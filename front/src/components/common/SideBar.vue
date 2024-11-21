@@ -6,21 +6,21 @@
         <div class="menu-title">내 가계부</div>
         <ul class="menu-list">
           <li>
-            <RouterLink to="/budget/calendar" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'Budget' }" class="menu-item" active-class="active">
               <span class="icon">📅</span>
               캘린더
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/budget/history" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'CalendarHistory' }" class="menu-item" active-class="active">
               <span class="icon">📝</span>
               내역
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/budget/fixed" class="menu-item" active-class="active">
-              <span class="icon">💰</span>
-              고정지출 관리
+              <span class="icon">📸</span>
+              영수증 인식하기
             </RouterLink>
           </li>
         </ul>
