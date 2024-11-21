@@ -454,7 +454,9 @@ def calender_data(request):
                 'income': day_entry['income'] or 0,
                 'expenditure': day_entry['expenditure'] or 0,
             })
-
+        # 오름차순 정렬 추가
+        day_data = sorted(day_data, key=lambda x: x['day'])
+        
         # 시리얼라이저 사용하여 데이터 응답
         monthly_data = {
             'total_income': total_income,
