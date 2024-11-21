@@ -5,7 +5,7 @@
     </div>
     <div class="schedule-list">
       <div v-for="schedule in schedules" :key="schedule.schedule_id" class="schedule-item" @click="openEditModal(schedule)">
-        <div class="date">{{ schedule.day }}일</div>
+        <div class="date" :style="{ background: schedule.is_income ? '#1BBF83' : '#ff6b6b' }">{{ schedule.day }}일</div>
         <div class="schedule-content">
           <div class="title">{{ schedule.name }}</div>
           <div class="amount">
@@ -29,7 +29,7 @@
 import { ref, onMounted } from 'vue'
 import { useScheduleStore } from '@/stores/schedule'
 import ScheduleAdd from './ScheduleAdd.vue'
-import ScheduleEditModal from './ScheduleEdit.vue'
+import ScheduleEdit from './ScheduleEdit.vue'
 
 const store = useScheduleStore()
 const scheduleModal = ref(null)
@@ -111,7 +111,6 @@ const openEditModal = (schedule) => {
 }
 
 .date {
-  background: #1BBF83;
   color: white;
   padding: 6px 10px;
   border-radius: 6px;

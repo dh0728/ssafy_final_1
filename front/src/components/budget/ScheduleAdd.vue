@@ -59,7 +59,9 @@
 import { ref } from 'vue'
 import {useScheduleStore} from "@/stores/schedule.js";
 
-const store = useScheduleStore() // store 사용
+const store = useScheduleStore()
+const emit = defineEmits(['schedule-added'])
+
 const isOpen = ref(false)
 const month = ref('')
 const type = ref('expense')
