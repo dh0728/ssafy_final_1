@@ -10,7 +10,7 @@ const budgetRoutes = [
             },
             {
                 path: 'schedule',
-                component: () => import('@/components/budget/Schedule.vue')
+                component: () => import('@/components/schedule/Schedule.vue')
             },
             {
                 path: 'budgetWrite',

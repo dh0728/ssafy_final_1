@@ -27,7 +27,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useScheduleStore } from '@/stores/schedule'
+import { useScheduleStore } from '@/stores/schedule.js'
 import ScheduleAdd from './ScheduleAdd.vue'
 import ScheduleEdit from './ScheduleEdit.vue'
 

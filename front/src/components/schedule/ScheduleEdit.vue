@@ -55,7 +55,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { useScheduleStore } from '@/stores/schedule'
+import { useScheduleStore } from '@/stores/schedule.js'
 
 const props = defineProps({
   schedule: Object
