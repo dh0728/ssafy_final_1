@@ -59,7 +59,6 @@ const deleteSchedule = async (scheduleId) => {
     const success = await store.deleteSchedule(scheduleId)
     if (success) {
       await fetchSchedules()
-      window.location.reload()
     }
   }
 }
