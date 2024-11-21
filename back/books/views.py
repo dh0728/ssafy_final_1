@@ -428,20 +428,32 @@ def receipt(request): # 영수증 OCR
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def calender_data(request): 
-    account_book = get_object_or_404(Account_book, user_id=request.user) 
+    account_book = get_object_or_404(Account_book, user_id=request.user)
+
     if request.method == 'GET':
-        year = request.query_params.get('year')
-        month = request.query_params.get('month')
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
 
         # 한달 데이터 모으기
         month_data = Account_book_data.objects.filter(
-            year = int(year),
-            month = int(month),
-            account_book_id = account_book.pk
+            year=year,
+            month=month,
+            account_book_id=account_book.pk
         )
+
+        # 한 달 전체 수익 및 지출 합산
         total_income = month_data.filter(is_income=True).aggregate(total=Sum('account'))['total'] or 0
         total_expenditure = month_data.filter(is_income=False).aggregate(total=Sum('account'))['total'] or 0
 
+        # 날짜별 그룹화 후 수익 및 지출 합산
         day_data = []
         grouped_data = month_data.values('day').annotate(
             income=Sum('account', filter=Q(is_income=True)),
@@ -454,9 +466,10 @@ def calender_data(request):
                 'income': day_entry['income'] or 0,
                 'expenditure': day_entry['expenditure'] or 0,
             })
+
         # 오름차순 정렬 추가
         day_data = sorted(day_data, key=lambda x: x['day'])
-        
+
         # 시리얼라이저 사용하여 데이터 응답
         monthly_data = {
             'total_income': total_income,
@@ -466,6 +479,8 @@ def calender_data(request):
 
         serializer = MonthlyDataSerializer(monthly_data)
         return Response(serializer.data)
+
+    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
         # month_data에서 
         # is_income True 인 것들의 account 들의 합
