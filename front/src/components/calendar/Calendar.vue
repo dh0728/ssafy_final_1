@@ -20,6 +20,7 @@
         :options="calendarOptions"
         class="calendar"
     />
+    <CalendarAdd ref="calendarModal" :selected-date="selectedDate" />
   </div>
 </template>
 
@@ -28,9 +29,12 @@ import { ref, computed } from 'vue'
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import CalendarAdd from './CalendarAdd.vue'
 
 const calendarRef = ref(null)
+const calendarModal = ref(null)
 const currentDate = ref(new Date())
+const selectedDate = ref(null)
 
 const currentMonthLabel = computed(() => {
   return new Intl.DateTimeFormat('ko-KR', {
@@ -93,7 +97,8 @@ const calendarOptions = ref({
     }
   ],
   dateClick: function(info) {
-    console.log('날짜 클릭:', info.dateStr)
+    selectedDate.value = info.date
+    calendarModal.value.openModal()
   }
 })
 </script>
