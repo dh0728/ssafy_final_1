@@ -25,6 +25,7 @@ export const useDateChartStore = defineStore('dateChart', () => {
             if (response.status === 200) {
                 return response.data
             }
+            console.log(response.data)
         } catch (error) {
             console.error('월 총지출 분석:', error.response?.data)
             return null

@@ -169,7 +169,7 @@ onMounted(async () => {
 .line-chart {
   height: 160px !important;
   margin-top: 100px; /* 상단 여백 */
-  margin-bottom: 20px; /* 하단 여백 추가 */
+  margin-bottom: 10px; /* 하단 여백 추가 */
   transform: translateY(-20px);
 }
 </style>

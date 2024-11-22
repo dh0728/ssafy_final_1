@@ -110,7 +110,7 @@ import MonthlyBudgetChart from "@/components/chart/MonthlyBudgetChart.vue";
   /* 옆 상자 간결 */
   margin-left: 50px;
   /* 위칸 두번째 컨테이너 넓이 */
-  width: 850px;
+  width: 650px;
   background: white;
   border-radius: 12px;
   padding: 20px;
