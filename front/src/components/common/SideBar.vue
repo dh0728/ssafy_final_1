@@ -30,7 +30,7 @@
         <div class="menu-title">분석</div>
         <ul class="menu-list">
           <li>
-            <RouterLink to="/budget/monthly" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'DateChart' }" class="menu-item" active-class="active">
               <span class="icon">📊</span>
               주간 월별 분석
             </RouterLink>
