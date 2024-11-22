@@ -18,12 +18,8 @@
 
         <!-- 2. 11월 분석 그래프 컨테이너 -->
         <div class="chart-container">
-          <div class="chart-header">
-            <h3>11월 분석</h3>
+            <MonthlyBudgetChart />
 
-          </div>
-          <div class="chart-content">
-          </div>
         </div>
 
       </div>
@@ -51,6 +47,7 @@
 import SideBar from "@/components/common/SideBar.vue";
 import MonthlyChart from "@/components/chart/MonthlyChart.vue";
 import WeeklyChart from "@/components/chart/WeeklyChart.vue";
+import MonthlyBudgetChart from "@/components/chart/MonthlyBudgetChart.vue";
 </script>
 
 <style scoped>
