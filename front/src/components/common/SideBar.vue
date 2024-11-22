@@ -36,7 +36,7 @@
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/budget/category" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'CategoryChart' }" class="menu-item" active-class="active">
               <span class="icon">🔍</span>
               카테고리별 분석
             </RouterLink>
