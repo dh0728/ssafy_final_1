@@ -24,18 +24,23 @@
 
     <!-- 가계부 작성 모달 -->
     <CalendarAdd ref="addModalRef" :selected-date="selectedDate" @write-completed="onWriteCompleted" />
+    <CalendarDayDetail :selected-date="selectedDate" :day-data="selectedDayData" :is-open="showDetailModal" @close="showDetailModal = false"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useCalendarStore } from "@/stores/calendar.js"
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import CalendarAdd from './CalendarAdd.vue'
-import { useCalendarStore } from "@/stores/calendar.js"
+import CalendarDayDetail from "@/components/calendar/CalendarDayDetail.vue";
 
-// store와 ref 초기화
+const showDetailModal = ref(false)
+const selectedDayData = ref(null)
+
 const calendarStore = useCalendarStore()
 const calendarRef = ref(null)
 const addModalRef = ref(null)
@@ -104,7 +109,7 @@ const calendarOptions = ref({
   dayHeaderFormat: { weekday: 'short' },
   height: 'auto',
   firstDay: 1,
-  selectable: false,
+  selectable: true,
   editable: false,
   fixedWeekCount: false,
   dayCellContent: (arg) => {
@@ -124,8 +129,31 @@ const calendarOptions = ref({
 
     const cellContent = arg.el.querySelector('.fc-daygrid-day-top')
     cellContent.appendChild(editButton)
+  },
+  dateClick: async (info) => {
+    // 연필 버튼 클릭이 아닌 경우에만 실행
+    if (!info.jsEvent.target.classList.contains('edit-button')) {
+      const date = info.date
+      const year = date.getFullYear()
+      const month = date.getMonth() + 1
+      const day = date.getDate()
+
+      // 해당 날짜의 내역 조회
+      const dayHistory = await calendarStore.getDayHistory(year, month, day)
+
+      // dayHistory가 있고 데이터가 있는 경우에만 모달 표시
+      if (dayHistory && dayHistory.length > 0) {
+        selectedDate.value = date
+        selectedDayData.value = dayHistory
+        showDetailModal.value = true
+      }
+    }
   }
 })
+
+const onWriteCompleted = () => {
+  fetchCalendarData()
+}
 
 onMounted(() => {
   fetchCalendarData()
