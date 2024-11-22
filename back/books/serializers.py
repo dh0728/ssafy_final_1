@@ -59,3 +59,8 @@ class AnalysisTimeSerialzer(serializers.Serializer):
     total_expenditure_age_2 = serializers.IntegerField()
     day_data = TimeDayDataSerializer(many=True)
     weekly_data = TimeWeekDateSerializer(many=True)    
+
+
+class CategoryExpenseSerializer(serializers.Serializer):
+    category_id = serializers.IntegerField()
+    total_amount = serializers.IntegerField()

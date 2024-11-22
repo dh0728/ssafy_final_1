@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
 
-from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer
+from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer,CategoryExpenseSerializer
 from django.db import transaction
 
 from django.conf import settings
@@ -487,12 +487,44 @@ def calender_data(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def analyze_time(request):
-    pass
+def analyze_category(request):
+    account_book = get_object_or_404(Account_book, user_id=request.user)
+
+    if request.method == 'GET':
+        if request.method == 'GET':
+            # 요청 파라미터 유효성 검사
+            try:
+                year = int(request.query_params.get('year'))
+                month = int(request.query_params.get('month'))
+
+                if not (1 <= month <= 12):
+                    return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            except (ValueError, TypeError):
+                return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # 한달 데이터 모으기
+        month_data = Account_book_data.objects.filter(
+            year=year,
+            month=month,
+            account_book_id=account_book.pk,
+            is_income = False
+        )
+
+        # 카테고리 id 별로 account 합쳐야함
+        # 카테고리별 소비 금액 합계 계산
+        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+
+        serializer =CategoryExpenseSerializer(category_expenses)
+
+        return Response(serializer.data)
+    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def analyze_category(request):
+def analyze_time(request):
     account_book = get_object_or_404(Account_book, user_id=request.user)
 
     if request.method == 'GET':
@@ -598,3 +630,4 @@ def analyze_category(request):
         # 시리얼라이저를 사용하여 응답 반환
         serializer = AnalysisTimeSerialzer(analysis_data)
         return Response(serializer.data)
+    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
