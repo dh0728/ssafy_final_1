@@ -117,6 +117,7 @@ const calendarOptions = ref({
   },
   events: [],
   dayCellDidMount: (arg) => {
+    // console.log('Day cell mount:', arg); 
     const editButton = document.createElement('button')
     editButton.className = 'edit-button'
     editButton.innerHTML = '✏️'
@@ -130,6 +131,12 @@ const calendarOptions = ref({
 
     const cellContent = arg.el.querySelector('.fc-daygrid-day-top')
     cellContent.appendChild(editButton)
+    // if (cellContent) {
+    //   cellContent.appendChild(editButton);
+    //     console.log('Edit button added to:', cellContent); // 추가 확인용 로그
+    //   } else {
+    //     console.warn('Cell content not found for:', arg.el); // 문제가 있는 경우 경고 출력
+    //   }
   },
 
   // dateClick 이벤트 수정
@@ -138,6 +145,7 @@ const calendarOptions = ref({
     if (info.jsEvent.target.closest('.edit-button')) {
       return
     }
+
 
     // 날짜 영역 클릭 시 CalendarDayDetail 모달 처리
     const date = info.date
@@ -229,6 +237,7 @@ onMounted(() => {
 
 :deep(.edit-button) {
   position: absolute;
+  z-index: 10; /* 버튼을 달력위로 올리기*/
   right: 10px;
   top: 16px;
   opacity: 0;
