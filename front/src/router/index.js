@@ -5,6 +5,7 @@ import budgetRoutes from "@/router/budget.js";
 import calendarRoutes from "@/router/calendar.js";
 import receiptRoutes from "@/router/receipt.js";
 import dateChartRoutes from "@/router/dateChart.js";
+import categoryChartRoutes from "@/router/categoryChart.js";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -19,7 +20,8 @@ const router = createRouter({
     ...budgetRoutes,
     ...calendarRoutes,
     ...receiptRoutes,
-    ...dateChartRoutes
+    ...dateChartRoutes,
+    ...categoryChartRoutes
   ]
 })
 

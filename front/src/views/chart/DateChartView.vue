@@ -6,7 +6,7 @@
       <div class="left-section">
         <button class="filter-btn active">
           <span class="check-icon">✓</span>
-          이지연 님의 가계부 분석
+          이지연 님의 소비 분석
         </button>
       </div>
     </div>
