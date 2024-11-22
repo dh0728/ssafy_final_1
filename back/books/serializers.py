@@ -64,5 +64,19 @@ class AnalysisTimeSerialzer(serializers.Serializer):
     total_expenditure_age_2 = serializers.IntegerField()
     total_schedules = serializers.IntegerField()
     day_data = TimeDayDataSerializer(many=True)
-    weekly_data = TimeWeekDateSerializer(many=True) 
+    weekly_data = TimeWeekDateSerializer(many=True)    
     schedules = TimeScheduleSerializer(many=True)
+
+
+class CategoryExpenseDetailSerializer(serializers.Serializer):
+    day = serializers.IntegerField()
+    account = serializers.IntegerField()
+    payment = serializers.CharField(max_length=100)
+    store = serializers.CharField(max_length=100)
+    memo = serializers.CharField(max_length=255)
+    
+
+class CategoryExpenseSerializer(serializers.Serializer):
+    category_id = serializers.IntegerField()
+    total_amount = serializers.IntegerField()
+    details = CategoryExpenseDetailSerializer(many=True)
