@@ -53,7 +53,7 @@ class TimeWeekDateSerializer(serializers.Serializer):
     week = serializers.IntegerField()
     expenditure = serializers.IntegerField()
 
-class ScheduleSerializer(serializers.Serializer):
+class TimeScheduleSerializer(serializers.Serializer):
     day = serializers.IntegerField()
     store = serializers.CharField()
     account = serializers.IntegerField()
@@ -65,4 +65,4 @@ class AnalysisTimeSerialzer(serializers.Serializer):
     total_schedules = serializers.IntegerField()
     day_data = TimeDayDataSerializer(many=True)
     weekly_data = TimeWeekDateSerializer(many=True) 
-    schedules = ScheduleSerializer(many=True)
+    schedules = TimeScheduleSerializer(many=True)

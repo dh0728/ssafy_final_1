@@ -91,7 +91,6 @@ def schedule(request):
         value = request.data.get('value')
         category_id = request.data.get('category_id')
         is_income = request.data.get('is_income')
-
         sehedule = {
             'account_book_id':account_book.pk,
             'name': name,
