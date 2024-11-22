@@ -14,10 +14,7 @@
     <div class="analysis-content">
       <div class="month_container">
         <!-- 1. 월별 총액 요약 컨테이너 -->
-        <div class="summary-container">
-          <div class="month-label">11월 총 지출</div>
-          <div class="total-amount">이번 달에는 지난 달 보다 509,212원 더 쓰이고</div>
-        </div>
+        <MonthlyChart />
 
         <!-- 2. 11월 분석 그래프 컨테이너 -->
         <div class="chart-container">
@@ -65,11 +62,11 @@
 
 <script setup>
 import SideBar from "@/components/common/SideBar.vue";
+import MonthlyChart from "@/components/chart/MonthlyChart.vue";
 </script>
 
 <style scoped>
 .analysis-container {
-  
   padding: 32px;
   margin-left: 440px;
   max-width: 1300px;
@@ -131,7 +128,7 @@ import SideBar from "@/components/common/SideBar.vue";
   width: 850px;
   background: white;
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
