@@ -19,19 +19,19 @@ except FileNotFoundError:
     print(f"파일을 찾을 수 없습니다: {credit_card_file_path}")
     exit()
 
-# credit_card_embeddings = {
-#     card['credit_card_id']: model.encode(
-#         f"{card['credit_card_name']} " + " ".join(card['categories'])
-#     ) for card in credit_cards
-# }
+credit_card_embeddings = {
+    card['credit_card_id']: model.encode(
+        f"{card['credit_card_name']} " + " ".join(card['categories'])
+    ) for card in credits_data
+}
 
 # 카테고리 개별 임베딩 결합
-credit_card_embeddings = {}
-for card in credits_data:
-    name_embedding = model.encode(card['credit_card_name'])
-    category_embeddings = [model.encode(category) for category in card['categories']]
-    combined_embedding = np.mean([name_embedding] + category_embeddings, axis=0)
-    credit_card_embeddings[card['credit_card_id']] = combined_embedding
+# credit_card_embeddings = {}
+# for card in credits_data:
+#     name_embedding = model.encode(card['credit_card_name'])
+#     category_embeddings = [model.encode(category) for category in card['categories']]
+#     combined_embedding = np.mean([name_embedding] + category_embeddings, axis=0)
+#     credit_card_embeddings[card['credit_card_id']] = combined_embedding
 
 # numpy 배열로 변환 (벡터는 float32로 변환)
 all_embeddings = np.array(list(credit_card_embeddings.values()), dtype='float32')
