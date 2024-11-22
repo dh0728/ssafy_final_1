@@ -516,7 +516,22 @@ def analyze_category(request):
         # 카테고리별 소비 금액 합계 계산
         category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
 
-        serializer =CategoryExpenseSerializer(category_expenses)
+        category_summary = []
+        for category in category_expenses:
+            category_id = category['category_id']
+            total_amount = category['total_amount']
+
+            details = month_data.filter(category_id=category_id).values(
+                'day', 'account', 'payment', 'store', 'memo'
+            )
+
+            # 요약 및 세부 내역 추가
+            category_summary.append({
+                'category_id': category_id,
+                'total_amount': total_amount,
+                'details': list(details)
+            })
+        serializer =CategoryExpenseSerializer(category_summary, many=True)
 
         return Response(serializer.data)
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
