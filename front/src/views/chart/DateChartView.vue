@@ -1,6 +1,16 @@
 <template>
   <div class="analysis-container">
     <SideBar />
+
+    <div class="filter-header">
+      <div class="left-section">
+        <button class="filter-btn active">
+          <span class="check-icon">✓</span>
+          이지연 님의 가계부 분석
+        </button>
+      </div>
+    </div>
+
     <div class="analysis-content">
       <!-- 1. 월별 총액 요약 컨테이너 -->
       <div class="summary-container">
@@ -48,7 +58,6 @@
 
 <script setup>
 import SideBar from "@/components/common/SideBar.vue";
-
 </script>
 
 <style scoped>
@@ -63,6 +72,27 @@ import SideBar from "@/components/common/SideBar.vue";
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+}
+
+.filter-btn.active {
+  background: #f0f0f0;
 }
 
 /* 1. 월별 총액 요약 컨테이너 */
