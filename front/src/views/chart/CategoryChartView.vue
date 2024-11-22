@@ -65,7 +65,7 @@ import SideBar from "@/components/common/SideBar.vue";
 .content-wrapper {
   flex: 1;
   padding: 32px;
-  margin-left: 280px;
+  margin-left: 450px;
 }
 
 .filter-header {
@@ -90,6 +90,7 @@ import SideBar from "@/components/common/SideBar.vue";
 }
 
 .category-analysis {
+  display: flex;
   background: white;
   border-radius: 12px;
   padding: 24px;
@@ -97,8 +98,8 @@ import SideBar from "@/components/common/SideBar.vue";
 }
 
 .chart-section {
+  border: solid 1px black;
   display: flex;
-  gap: 40px;
   margin-bottom: 32px;
 }
 
@@ -108,7 +109,7 @@ import SideBar from "@/components/common/SideBar.vue";
 
 .chart-wrapper {
   height: 300px;
-  margin-top: 16px;
+  /* margin-top: 16px; */
 }
 
 h3 {
@@ -142,6 +143,9 @@ h3 {
 }
 
 .details-section {
-  margin-top: 24px;
+  border: 1px solid black;
+  /* margin-top: 24px; */
+  margin-left: 50px;
+  width: 800px;
 }
 </style>
