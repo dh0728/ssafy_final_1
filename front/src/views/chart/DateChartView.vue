@@ -161,5 +161,6 @@ h3 {
   display: flex;
   gap: 16px;
   font-size: 14px;
+}
 
 </style>
