@@ -19,7 +19,7 @@ user_query = input("검색하고 싶은 내용을 입력하세요: ")
 query_embedding = model.encode(user_query).astype('float32')
 
 # 검색 수행 (가장 유사한 5개 결과 찾기)
-D, I = index.search(np.array([query_embedding]), k=5)
+D, I = index.search(np.array([query_embedding]), k=10)
 
 # 검색된 결과 출력
 print("추천된 결과:")

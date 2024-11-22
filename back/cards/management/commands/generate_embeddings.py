@@ -25,14 +25,22 @@ category_embeddings = {
 # 신용카드 임베딩 생성
 credit_card_embeddings = {
     cc.credit_card_id: model.encode(
+<<<<<<< HEAD
         f"{cc.credit_card_name} {cc.brand} {cc.pre_month_perform} {cc.domestic_fee} {cc.abroad_fee}"
+=======
+        f"{cc.credit_card_name}"
+>>>>>>> 7a852adc33a11397a4469262d890b2d61237a2da
     ) for cc in credit_cards
 }
 
 # 체크카드 임베딩 생성
 check_card_embeddings = {
     chk.check_card_id: model.encode(
+<<<<<<< HEAD
         f"{chk.check_card_name} {chk.brand} {chk.pre_month_perform} {chk.domestic_fee} {chk.abroad_fee}"
+=======
+        f"{chk.check_card_name}"
+>>>>>>> 7a852adc33a11397a4469262d890b2d61237a2da
     ) for chk in check_cards
 }
 
@@ -97,11 +105,20 @@ np.save(ids_file_path, np.array(ids))
 
 print("FAISS 인덱스와 ID 매핑이 성공적으로 저장되었습니다.")
 
+<<<<<<< HEAD
 # 저장된 인덱스와 ID 매핑 불러오기
 index = faiss.read_index(index_file_path)  # 저장된 FAISS 인덱스 불러오기
 loaded_ids = np.load(ids_file_path)  # ID 매핑 파일 불러오기
 
 print("FAISS 인덱스와 ID 매핑이 성공적으로 불러와졌습니다.")
+=======
+
+# 저장된 인덱스와 ID 매핑 불러오기
+# index = faiss.read_index(index_file_path)  # 저장된 FAISS 인덱스 불러오기
+# loaded_ids = np.load(ids_file_path)  # ID 매핑 파일 불러오기
+
+# print("FAISS 인덱스와 ID 매핑이 성공적으로 불러와졌습니다.")
+>>>>>>> 7a852adc33a11397a4469262d890b2d61237a2da
 
 # # 사용자 쿼리 임베딩 생성
 # user_query = input("검색하고 싶은 내용을 입력하세요: ")  # 사용자 입력 쿼리

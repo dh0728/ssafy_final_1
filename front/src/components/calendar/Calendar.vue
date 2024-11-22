@@ -24,18 +24,23 @@
 
     <!-- 가계부 작성 모달 -->
     <CalendarAdd ref="addModalRef" :selected-date="selectedDate" @write-completed="onWriteCompleted" />
+    <CalendarDayDetail :selected-date="selectedDate" :day-data="selectedDayData" :is-open="showDetailModal" @close="showDetailModal = false"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useCalendarStore } from "@/stores/calendar.js"
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import CalendarAdd from './CalendarAdd.vue'
-import { useCalendarStore } from "@/stores/calendar.js"
+import CalendarDayDetail from "@/components/calendar/CalendarDayDetail.vue";
 
-// store와 ref 초기화
+const showDetailModal = ref(false)
+const selectedDayData = ref(null)
+
 const calendarStore = useCalendarStore()
 const calendarRef = ref(null)
 const addModalRef = ref(null)
@@ -104,7 +109,7 @@ const calendarOptions = ref({
   dayHeaderFormat: { weekday: 'short' },
   height: 'auto',
   firstDay: 1,
-  selectable: false,
+  selectable: true,
   editable: false,
   fixedWeekCount: false,
   dayCellContent: (arg) => {
@@ -112,20 +117,54 @@ const calendarOptions = ref({
   },
   events: [],
   dayCellDidMount: (arg) => {
+    // console.log('Day cell mount:', arg); 
     const editButton = document.createElement('button')
     editButton.className = 'edit-button'
     editButton.innerHTML = '✏️'
 
-    editButton.addEventListener('click', (e) => {
-      e.stopPropagation()
+    editButton.onclick = (e) => {
+      e.preventDefault()
+      e.stopPropagation()  // 이벤트 전파 중지
       selectedDate.value = arg.date
-      addModalRef.value.openModal()
-    })
+      addModalRef.value?.openModal()
+    }
 
     const cellContent = arg.el.querySelector('.fc-daygrid-day-top')
     cellContent.appendChild(editButton)
+    // if (cellContent) {
+    //   cellContent.appendChild(editButton);
+    //     console.log('Edit button added to:', cellContent); // 추가 확인용 로그
+    //   } else {
+    //     console.warn('Cell content not found for:', arg.el); // 문제가 있는 경우 경고 출력
+    //   }
+  },
+
+  // dateClick 이벤트 수정
+  dateClick: async (info) => {
+    // 연필 버튼이나 그 하위 요소를 클릭한 경우 무시
+    if (info.jsEvent.target.closest('.edit-button')) {
+      return
+    }
+
+
+    // 날짜 영역 클릭 시 CalendarDayDetail 모달 처리
+    const date = info.date
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+
+    const dayHistory = await calendarStore.getDayHistory(year, month, day)
+    if (dayHistory && dayHistory.length > 0) {
+      selectedDate.value = date
+      selectedDayData.value = dayHistory
+      showDetailModal.value = true
+    }
   }
 })
+
+const onWriteCompleted = () => {
+  fetchCalendarData()
+}
 
 onMounted(() => {
   fetchCalendarData()
@@ -198,6 +237,7 @@ onMounted(() => {
 
 :deep(.edit-button) {
   position: absolute;
+  z-index: 10; /* 버튼을 달력위로 올리기*/
   right: 10px;
   top: 16px;
   opacity: 0;
