@@ -4,6 +4,7 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
+from cards.models import Category
 
 from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer,CategoryExpenseSerializer
 from django.db import transaction
@@ -559,17 +560,14 @@ def analyze_category(request):
     account_book = get_object_or_404(Account_book, user_id=request.user)
 
     if request.method == 'GET':
-        if request.method == 'GET':
-            # 요청 파라미터 유효성 검사
-            try:
-                year = int(request.query_params.get('year'))
-                month = int(request.query_params.get('month'))
-
-                if not (1 <= month <= 12):
-                    return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
-
-            except (ValueError, TypeError):
-                return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
 
         # 한달 데이터 모으기
         month_data = Account_book_data.objects.filter(
@@ -730,4 +728,43 @@ def analyze_time(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def recommend_cards(request):
-    pass
+    account_book = get_object_or_404(Account_book, user_id=request.user)
+
+    if request.method == 'GET':
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # 한달 데이터 모으기
+        month_data = Account_book_data.objects.filter(
+            year=year,
+            month=month,
+            account_book_id=account_book.pk,
+            is_income = False
+        )
+
+        # 카테고리 id 별로 account 합쳐야함
+        # 카테고리별 소비 금액 합계 계산
+        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+
+        category_summary = []
+        for category in category_expenses:
+            category_id = category['category_id']
+            total_amount = category['total_amount']
+            category_instance = get_list_or_404(Category, pk=category_id)
+            category_name = category_instance.name
+            # 요약 및 세부 내역 추가
+            category_summary.append({
+                'category_name':category_name,
+                'total_amount': total_amount,
+            })
+        
+        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+
+        return Response()
+    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
