@@ -20,6 +20,8 @@ urlpatterns = [
 
     path('analyze/time/', views.analyze_time),
     path('analyze/category',views.analyze_category),
+
+    path('recommend/',views.recommend_cards),
 ]
 
 

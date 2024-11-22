@@ -27,7 +27,7 @@ DEBUG = env('DEBUG')
 
 NAVER_OCR_API_KEY = env('NAVER_OCR_API_KEY')
 NAVER_OCR_URL =env('NAVER_OCR_URL')
-
+OPENAI_API_KEY=env('OPENAI_API_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
