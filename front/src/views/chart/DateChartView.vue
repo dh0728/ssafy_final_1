@@ -20,12 +20,8 @@
         <div class="chart-container">
           <div class="chart-header">
             <h3>11월 분석</h3>
-            <div class="chart-legend">
-              <span class="income">● 수입</span>
-              <span class="expense">● 지출</span>
-            </div>
+
           </div>
-          <!-- 차트 들어갈 자리 -->
           <div class="chart-content">
           </div>
         </div>
@@ -34,16 +30,7 @@
 
       <div class="weekly_container">
         <!-- 3. 주간별 상세 내역 컨테이너 -->
-        <div class="weekly-details-container">
-          <div class="week-details">
-            <div class="week-row">
-              <div class="week-label">11월 1주 (11/01 - 11/07)</div>
-              <div class="week-amount">8,000원</div>
-              <div class="week-bar"></div>
-            </div>
-            <!-- 다른 주차 내역들 -->
-          </div>
-        </div>
+        <WeeklyChart />
 
         <!-- 4. 고정 지출 분석 컨테이너 -->
         <div class="fixed-expense-container">
@@ -63,13 +50,14 @@
 <script setup>
 import SideBar from "@/components/common/SideBar.vue";
 import MonthlyChart from "@/components/chart/MonthlyChart.vue";
+import WeeklyChart from "@/components/chart/WeeklyChart.vue";
 </script>
 
 <style scoped>
 .analysis-container {
   padding: 32px;
-  margin-left: 440px;
-  max-width: 1300px;
+  margin-left: 480px;
+  max-width: 1100px;
   background: white;
 }
 
@@ -173,8 +161,5 @@ h3 {
   display: flex;
   gap: 16px;
   font-size: 14px;
-}
 
-.income { color: #1BBF83; }
-.expense { color: #FF8E99; }
 </style>
