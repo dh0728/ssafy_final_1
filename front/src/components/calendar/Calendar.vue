@@ -121,32 +121,35 @@ const calendarOptions = ref({
     editButton.className = 'edit-button'
     editButton.innerHTML = '✏️'
 
-    editButton.addEventListener('click', (e) => {
-      e.stopPropagation()
+    editButton.onclick = (e) => {
+      e.preventDefault()
+      e.stopPropagation()  // 이벤트 전파 중지
       selectedDate.value = arg.date
-      addModalRef.value.openModal()
-    })
+      addModalRef.value?.openModal()
+    }
 
     const cellContent = arg.el.querySelector('.fc-daygrid-day-top')
     cellContent.appendChild(editButton)
   },
+
+  // dateClick 이벤트 수정
   dateClick: async (info) => {
-    // 연필 버튼 클릭이 아닌 경우에만 실행
-    if (!info.jsEvent.target.classList.contains('edit-button')) {
-      const date = info.date
-      const year = date.getFullYear()
-      const month = date.getMonth() + 1
-      const day = date.getDate()
+    // 연필 버튼이나 그 하위 요소를 클릭한 경우 무시
+    if (info.jsEvent.target.closest('.edit-button')) {
+      return
+    }
 
-      // 해당 날짜의 내역 조회
-      const dayHistory = await calendarStore.getDayHistory(year, month, day)
+    // 날짜 영역 클릭 시 CalendarDayDetail 모달 처리
+    const date = info.date
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
 
-      // dayHistory가 있고 데이터가 있는 경우에만 모달 표시
-      if (dayHistory && dayHistory.length > 0) {
-        selectedDate.value = date
-        selectedDayData.value = dayHistory
-        showDetailModal.value = true
-      }
+    const dayHistory = await calendarStore.getDayHistory(year, month, day)
+    if (dayHistory && dayHistory.length > 0) {
+      selectedDate.value = date
+      selectedDayData.value = dayHistory
+      showDetailModal.value = true
     }
   }
 })
