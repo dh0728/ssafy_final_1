@@ -53,10 +53,16 @@ class TimeWeekDateSerializer(serializers.Serializer):
     week = serializers.IntegerField()
     expenditure = serializers.IntegerField()
 
+class TimeScheduleSerializer(serializers.Serializer):
+    day = serializers.IntegerField()
+    store = serializers.CharField()
+    account = serializers.IntegerField()
+
 class AnalysisTimeSerialzer(serializers.Serializer):
     total_expenditure = serializers.IntegerField()
     total_expenditure_age_1 = serializers.IntegerField()
     total_expenditure_age_2 = serializers.IntegerField()
+    total_schedules = serializers.IntegerField()
     day_data = TimeDayDataSerializer(many=True)
     weekly_data = TimeWeekDateSerializer(many=True)    
 
@@ -64,3 +70,5 @@ class AnalysisTimeSerialzer(serializers.Serializer):
 class CategoryExpenseSerializer(serializers.Serializer):
     category_id = serializers.IntegerField()
     total_amount = serializers.IntegerField()
+    weekly_data = TimeWeekDateSerializer(many=True) 
+    schedules = TimeScheduleSerializer(many=True)

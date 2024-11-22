@@ -16,6 +16,8 @@ import uuid
 import json
 import os
 
+import math
+
 from django.db.models import Q, Sum
 
 from datetime import datetime
@@ -89,7 +91,6 @@ def schedule(request):
         value = request.data.get('value')
         category_id = request.data.get('category_id')
         is_income = request.data.get('is_income')
-
         sehedule = {
             'account_book_id':account_book.pk,
             'name': name,
@@ -563,8 +564,16 @@ def analyze_time(request):
         month_data = Account_book_data.objects.filter(
             year=year,
             month=month,
-            account_book_id=account_book.pk
+            is_income=False,
+            account_book_id=account_book.pk,
         )
+
+        # 11월 고정 지출 결제 내역
+        schedules = month_data.filter(is_schedule=True)
+
+        schedules = schedules.order_by('day')
+
+        total_schedules= schedules.aggregate(total=Sum('account'))['total'] or 0
 
         # 1달 전 지출 
         total_expenditure_age_1 = Account_book_data.objects.filter(
@@ -583,7 +592,7 @@ def analyze_time(request):
         ).aggregate(total=Sum('account'))['total'] or 0
 
         # 현재 달 지출
-        total_expenditure= month_data.filter(is_income=True).aggregate(total=Sum('account'))['total'] or 0
+        total_expenditure= month_data.filter(is_income=False).aggregate(total=Sum('account'))['total'] or 0
         
         # 현재달 하루 총 지출
         day_data = []
@@ -600,6 +609,8 @@ def analyze_time(request):
         # 오름차순 정렬 추가
         day_data = sorted(day_data, key=lambda x: x['day'])
 
+
+
         # 주별 지출은 어떻게 구해야 할까?
         
         week_data = defaultdict(int)
@@ -608,14 +619,13 @@ def analyze_time(request):
             day = day_entry['day']
             expenditure = day_entry['expenditure'] or 0
 
-            date_obj = datetime(year, month, day)
-            week_number = date_obj.isocalender()[1]
+            week_number = math.ceil(day/7) 
 
             # 주별 지출 합산
             week_data[week_number]  += expenditure
 
         # 주별 지출 리스트로 변환 및 정렬
-        weekly_data = [{'week': week,'expenditure':expenditure} for week, expenditure in week_data.item()]
+        weekly_data = [{'week': week,'expenditure':expenditure} for week, expenditure in week_data.items()]
         weekly_data = sorted(weekly_data,key=lambda x: x['week'])
 
         # 응답 데이터 생성
@@ -623,8 +633,10 @@ def analyze_time(request):
             'total_expenditure': total_expenditure,
             'total_expenditure_age_1': total_expenditure_age_1,
             'total_expenditure_age_2': total_expenditure_age_2,
+            'total_schedules':total_schedules,
             'day_data': day_data,
             'weekly_data': weekly_data,
+            'schedules':schedules,
         }
 
         # 시리얼라이저를 사용하여 응답 반환

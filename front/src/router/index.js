@@ -3,6 +3,8 @@ import accountRoutes from './accounts'
 import cardsRoutes from "@/router/cards.js";
 import budgetRoutes from "@/router/budget.js";
 import calendarRoutes from "@/router/calendar.js";
+import receiptRoutes from "@/router/receipt.js";
+import dateChartRoutes from "@/router/dateChart.js";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,7 +17,9 @@ const router = createRouter({
     ...accountRoutes,
     ...cardsRoutes,
     ...budgetRoutes,
-    ...calendarRoutes
+    ...calendarRoutes,
+    ...receiptRoutes,
+    ...dateChartRoutes
   ]
 })
 

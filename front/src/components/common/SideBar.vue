@@ -18,7 +18,7 @@
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/budget/fixed" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'Receipt' }" class="menu-item" active-class="active">
               <span class="icon">📸</span>
               영수증 인식하기
             </RouterLink>
@@ -30,7 +30,7 @@
         <div class="menu-title">분석</div>
         <ul class="menu-list">
           <li>
-            <RouterLink to="/budget/monthly" class="menu-item" active-class="active">
+            <RouterLink :to="{ name: 'DateChart' }" class="menu-item" active-class="active">
               <span class="icon">📊</span>
               주간 월별 분석
             </RouterLink>

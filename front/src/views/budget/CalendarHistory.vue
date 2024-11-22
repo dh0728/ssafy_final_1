@@ -10,18 +10,47 @@
             <span class="check-icon">✓</span>
             이지연 님의 가계부
           </button>
-          <button class="more-btn">⋯</button>
         </div>
         <div class="right-section">
-          <button class="write-btn">가계부 작성하기 📝</button>
+          <button class="write-btn" @click="openWriteModal">가계부 작성하기 📝</button>
         </div>
       </div>
 
       <!-- 메인 필터 -->
       <div class="main-filters">
         <div class="filter-tabs">
-          <button class="tab-btn active">내역 전체보기 ▾</button>
-          <button class="tab-btn">카테고리 전체보기 ▾</button>
+          <button
+              class="tab-btn"
+              :class="{ active: !showCategoryFilter }"
+              @click="toggleTabs(true)"
+          >내역 전체보기 ▾</button>
+          <button
+              class="tab-btn"
+              :class="{ active: showCategoryFilter }"
+              @click="toggleTabs(false)"
+          >카테고리 전체보기 ▾</button>
+        </div>
+      </div>
+
+      <div v-if="showCategoryModal" class="modal-overlay" @click="closeCategoryModal">
+        <div class="modal-content" @click.stop>
+          <div class="modal-header">
+            <h3>카테고리 선택</h3>
+            <button class="close-btn" @click="closeCategoryModal">×</button>
+          </div>
+          <div class="category-list">
+            <div class="category-group">
+              <button
+                  v-for="category in categories"
+                  :key="category.id"
+                  class="category-item"
+                  :class="{ active: selectedCategoryId === category.id }"
+                  @click="filterByCategory(category)"
+              >
+                {{ category.name }}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -37,15 +66,13 @@
             <th>날짜</th>
             <th>카테고리</th>
             <th>결제수단</th>
-            <th>가게지</th>
+            <th>거래처</th>
             <th>금액</th>
             <th>메모</th>
-            <th>작성자</th>
-            <th>액션</th>
           </tr>
           </thead>
           <tbody>
-          <tr v-for="item in historyItems" :key="item.id">
+          <tr v-for="item in filteredHistoryItems" :key="item.account_book_data_id">
             <td><input type="checkbox"></td>
             <td>
               <span :class="['type-badge', item.type]">
@@ -53,17 +80,16 @@
               </span>
             </td>
             <td>{{ item.date }}</td>
-            <td>{{ item.category }}</td>
+            <td>{{ getCategoryName(item.category_id) }}</td>
             <td>{{ item.payment }}</td>
             <td>{{ item.store }}</td>
             <td :class="['amount', item.type]">
-              {{ formatNumber(item.amount) }}원
+              {{ formatNumber(item.account) }}원
             </td>
             <td>{{ item.memo }}</td>
-            <td>{{ item.writer }}</td>
             <td class="action-buttons">
-              <button class="action-btn">수정하기</button>
-              <button class="action-btn">삭제하기</button>
+              <button class="action-btn" @click="editItem(item)">수정하기</button>
+              <button class="action-btn" @click="deleteItem(item.account_book_data_id)">삭제하기</button>
             </td>
           </tr>
           </tbody>
@@ -77,12 +103,176 @@
         <button class="page-btn">→</button>
       </div>
     </div>
+    <CalendarAdd ref="writeModal" :selected-date="currentDate" @write-completed="onWriteCompleted" />
     </div>
 </template>
 
 <script setup>
-import SideBar from "@/components/common/SideBar.vue";
+import {onMounted, ref, computed} from 'vue'
+import SideBar from "@/components/common/SideBar.vue"
+import CalendarAdd from '@/components/calendar/CalendarDateAdd.vue'
+import {useCalendarStore} from "@/stores/calendar.js";
 
+const calendarStore = useCalendarStore()
+const writeModal = ref(null)
+const currentDate = ref(new Date())
+const historyItems = ref([])
+
+const showCategoryFilter = ref(false)
+const showCategoryModal = ref(false)
+const selectedCategoryId = ref(null)
+
+const categories = ref([
+  { id: 1, name: '🏬 모든가맹점' },
+  { id: 2, name: '🚍 교통' },
+  { id: 3, name: '⛽ 주유' },
+  { id: 4, name: '📱 통신' },
+  { id: 5, name: '🛒 마트/편의점' },
+  { id: 6, name: '🎁 쇼핑' },
+  { id: 7, name: '🍛 푸드' },
+  { id: 8, name: '☕ 카페/디저트' },
+  { id: 9, name: '💄 뷰티/피트니스' },
+  { id: 10, name: '💰 무실적' },
+  { id: 11, name: '📃 공과금/렌탈' },
+  { id: 12, name: '🏥 병원/약국' },
+  { id: 13, name: '🐱 애완동물' },
+  { id: 14, name: '✏ 교육/육아' },
+  { id: 15, name: '🚗 자동차/하이패스' },
+  { id: 16, name: '⚽ 레저/스포츠' },
+  { id: 17, name: '🎬 영화/문화' },
+  { id: 18, name: '🤳 간편결제' },
+  { id: 19, name: '✈ 항공마일리지' },
+  { id: 20, name: '💺 공항라운지/PP' },
+  { id: 21, name: '💎 프리미엄' },
+  { id: 22, name: '🧳 여행/숙박' },
+  { id: 23, name: '🌏 해외' },
+  { id: 24, name: '💼 비지니스' },
+  { id: 25, name: '🎸 기타' },
+  { id: 26, name: '💸 금융' },
+  { id: 27, name: '🏃‍♂️ 생활' }
+])
+
+const formatCustomDate = (year, month, day) => {
+  return `${year}. ${String(month).padStart(2, '0')}. ${String(day).padStart(2, '0')}`
+}
+
+const getCategoryName = (categoryId) => {
+  const category = categories.value.find(cat => cat.id === categoryId)
+  return category ? category.name : ''
+}
+
+const openWriteModal = () => {
+  writeModal.value.openModal()
+}
+
+// 초기 데이터 로드 시 필터 초기화
+const fetchHistoryItems = async () => {
+  const year = currentDate.value.getFullYear()
+  const month = currentDate.value.getMonth() + 1
+  const result = await calendarStore.getMonthlyHistory(year, month)
+
+  if (result) {
+    historyItems.value = result.map(item => ({
+      ...item,
+      type: item.is_income ? 'income' : 'expense',
+      date: formatCustomDate(item.year, item.month, item.day),
+      amount: item.account
+    }))
+  }
+}
+
+// 수정 기능
+const editItem = async (item) => {
+  try {
+    const formData = {
+      year: item.year,
+      month: item.month,
+      day: item.day,
+      is_income: item.is_income,
+      payment: item.payment,
+      store: item.store,
+      category_id: item.category_id,
+      account: item.account,
+      memo: item.memo,
+      account_book_data_id: item.account_book_data_id
+    }
+
+    const result = await calendarStore.updateCalendar(formData)
+    if (result) {
+      fetchHistoryItems()
+    }
+  } catch (error) {
+    console.error('수정 실패:', error)
+  }
+}
+
+// 삭제 기능
+const deleteItem = async (accountBookDataId) => {
+  if (confirm('정말 삭제하시겠습니까?')) {
+    try {
+      const success = await calendarStore.deleteCalendar(accountBookDataId)
+      if (success) {
+        fetchHistoryItems() // 목록 새로고침
+      }
+    } catch (error) {
+      console.error('삭제 실패:', error)
+    }
+  }
+}
+
+const formatNumber = (value) => {
+  return new Intl.NumberFormat('ko-KR').format(value)
+}
+
+// 카테고리 그룹화
+const categoryGroups = computed(() => {
+  const groups = []
+  for (let i = 0; i < categories.value.length; i += 5) {
+    groups.push(categories.value.slice(i, i + 5))
+  }
+  return groups
+})
+
+// 필터링된 내역 목록
+const filteredHistoryItems = computed(() => {
+  if (!selectedCategoryId.value) {
+    return historyItems.value
+  }
+  return historyItems.value.filter(item =>
+      item.category_id === selectedCategoryId.value
+  )
+})
+
+// 카테고리 모달 토글
+const toggleCategoryModal = () => {
+  showCategoryModal.value = !showCategoryModal.value
+  showCategoryFilter.value = true
+}
+
+// 카테고리 필터링
+const filterByCategory = (category) => {
+  selectedCategoryId.value = category.id
+  showCategoryModal.value = false
+}
+
+// 카테고리 모달 닫기
+const closeCategoryModal = () => {
+  showCategoryModal.value = false
+}
+
+const toggleTabs = (isAllView) => {
+  if (isAllView) {
+    showCategoryFilter.value = false
+    selectedCategoryId.value = null // 카테고리 선택 초기화
+  } else {
+    toggleCategoryModal()
+  }
+}
+
+// 초기 데이터 로드
+onMounted(() => {
+  fetchHistoryItems()
+})
 </script>
 
 <style scoped>
@@ -182,13 +372,6 @@ import SideBar from "@/components/common/SideBar.vue";
   color: #ff6b6b;
 }
 
-.amount.income {
-  color: #1BBF83;
-}
-
-.amount.expense {
-  color: #ff6b6b;
-}
 
 .action-buttons {
   display: flex;
@@ -202,6 +385,14 @@ import SideBar from "@/components/common/SideBar.vue";
   background: white;
   color: #666;
   font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: #f8f9fa;
+  border-color: #4C6EF5;
+  color: #4C6EF5;
 }
 
 .pagination {
@@ -219,6 +410,220 @@ import SideBar from "@/components/common/SideBar.vue";
 }
 
 .page-btn.active {
+  background: #4C6EF5;
+  color: white;
+  border-color: #4C6EF5;
+}
+
+.category-item.active {
+  background: #4C6EF5;
+  color: white;
+  border-color: #4C6EF5;
+}
+
+.tab-btn {
+  position: relative;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  font-weight: 600;
+  border-bottom: 2px solid #4C6EF5;
+}
+
+.tab-btn:hover {
+  color: #4C6EF5;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.category-item {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-item:hover {
+  border-color: #4C6EF5;
+  color: #4C6EF5;
+}
+
+.category-item.active {
+  background: #4C6EF5;
+  color: white;
+  border-color: #4C6EF5;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.category-item {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-item:hover {
+  border-color: #4C6EF5;
+  color: #4C6EF5;
+}
+
+.category-item.active {
+  background: #4C6EF5;
+  color: white;
+  border-color: #4C6EF5;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1438;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.category-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.category-item {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-item:hover {
+  background: #f8f9fa;
+  border-color: #4C6EF5;
+  color: #4C6EF5;
+}
+
+.category-item.active {
   background: #4C6EF5;
   color: white;
   border-color: #4C6EF5;
