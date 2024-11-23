@@ -169,7 +169,7 @@ const openWriteModal = () => {
 const fetchHistoryItems = async () => {
   const year = currentDate.value.getFullYear()
   const month = currentDate.value.getMonth() + 1
-  const result = await calendarStore.getMonthlyHistory(year, month)
+  const result = await calendarStore.getYearHistory(year, month)
 
   if (result) {
     historyItems.value = result.map(item => ({

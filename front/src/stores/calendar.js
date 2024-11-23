@@ -93,6 +93,29 @@ export const useCalendarStore = defineStore('calendar', () => {
         try {
             const response = await axios({
                 method: 'GET',
+                url: `${API_URL}/account/books/month/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+                params: {
+                    year: year,
+                    month: month
+                }
+            })
+
+            if (response.status === 200) {
+                return response.data
+            }
+        } catch (error) {
+            console.error('월별 내역 조회 실패:', error)
+            return null
+        }
+    }
+
+    const getYearHistory = async (year, month) => {
+        try {
+            const response = await axios({
+                method: 'GET',
                 url: `${API_URL}/account/books/year/`,
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('auth')}`
@@ -164,6 +187,7 @@ export const useCalendarStore = defineStore('calendar', () => {
         updateCalendar,
         deleteCalendar,
         getMonthlyHistory,
+        getYearHistory,
         getCalendarData,
         getDayHistory
     }
