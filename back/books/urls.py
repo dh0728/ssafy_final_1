@@ -19,7 +19,9 @@ urlpatterns = [
     path('calender_data/',views.calender_data),
 
     path('analyze/time/', views.analyze_time),
-    path('analyze/category/',views.analyze_category),
+    path('analyze/category',views.analyze_category),
+
+    path('recommend/cards/',views.recommend_cards),
 ]
 
 

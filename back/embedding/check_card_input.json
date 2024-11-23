@@ -1,0 +1,3523 @@
+[
+    {
+        "check_card_id": 1,
+        "check_card_name": "ONE 체크카드",
+        "benefit": [
+            "캐시백",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 2,
+        "check_card_name": "노리2 체크카드(KB Pay)",
+        "benefit": [
+            "카페",
+            "게임",
+            "공연/전시",
+            "드럭스토어",
+            "편의점",
+            "디지털구독",
+            "배달앱",
+            "통신",
+            "영화",
+            "테마파크",
+            "간편결제"
+        ]
+    },
+    {
+        "check_card_id": 3,
+        "check_card_name": "신한카드 Deep Dream 체크(미니언즈)",
+        "benefit": [
+            "적립",
+            "생활",
+            "주유소",
+            "택시"
+        ]
+    },
+    {
+        "check_card_id": 4,
+        "check_card_name": "카카오페이 신한 체크카드",
+        "benefit": [
+            "선택형",
+            "카카오페이",
+            "대중교통",
+            "통신",
+            "영화",
+            "해외",
+            "프리미엄 서비스"
+        ]
+    },
+    {
+        "check_card_id": 5,
+        "check_card_name": "네이버페이 머니 하나 체크카드",
+        "benefit": [
+            "적립",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 6,
+        "check_card_name": "노리체크카드",
+        "benefit": [
+            "대중교통",
+            "통신",
+            "영화",
+            "푸드",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서"
+        ]
+    },
+    {
+        "check_card_id": 7,
+        "check_card_name": "트래블러스 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "온라인쇼핑",
+            "편의점",
+            "카페",
+            "생활",
+            "푸드",
+            "패스트푸드",
+            "통신",
+            "기타",
+            "혜택 프로모션"
+        ]
+    },
+    {
+        "check_card_id": 8,
+        "check_card_name": "네이버페이 머니카드",
+        "benefit": [
+            "해외",
+            "할인",
+            "카페",
+            "베이커리",
+            "기차",
+            "고속버스",
+            "자동차",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 9,
+        "check_card_name": "토스뱅크카드",
+        "benefit": [
+            "해외",
+            "여행/숙박",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 10,
+        "check_card_name": "토심이 첵첵 체크카드",
+        "benefit": [
+            "캐시백",
+            "해외",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 11,
+        "check_card_name": "모빌리언스카드",
+        "benefit": [
+            "대중교통",
+            "편의점",
+            "카페",
+            "영화",
+            "쇼핑",
+            "간편결제",
+            "뷰티/피트니스",
+            "도서",
+            "공연/전시"
+        ]
+    },
+    {
+        "check_card_id": 12,
+        "check_card_name": "노리2 체크카드(Global)",
+        "benefit": [
+            "카페",
+            "게임",
+            "공연/전시",
+            "드럭스토어",
+            "편의점",
+            "디지털구독",
+            "배달앱",
+            "통신",
+            "영화/문화",
+            "테마파크",
+            "해외이용",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 13,
+        "check_card_name": "우리 K-패스 (COOKIE CHECK)",
+        "benefit": [
+            "대중교통",
+            "해외",
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 14,
+        "check_card_name": "PAYCO 포인트 카드",
+        "benefit": [
+            "해외이용",
+            "수수료우대",
+            "공항라운지",
+            "해외",
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 15,
+        "check_card_name": "신한카드 SOL트래블 체크",
+        "benefit": [
+            "적립",
+            "할인",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 16,
+        "check_card_name": "신한카드 Deep Dream 체크",
+        "benefit": [
+            "온라인쇼핑",
+            "간편결제",
+            "생활",
+            "카페",
+            "배달앱",
+            "대중교통",
+            "통신",
+            "해외",
+            "디지털구독",
+            "공연/전시",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 17,
+        "check_card_name": "카드의정석 오하CHECK",
+        "benefit": [
+            "적립",
+            "생활",
+            "주유소",
+            "택시",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 18,
+        "check_card_name": "카카오뱅크 프렌즈 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "생활",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 19,
+        "check_card_name": "춘식이달달체크카드",
+        "benefit": [
+            "적립",
+            "디지털구독",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 20,
+        "check_card_name": "네이버페이 신한카드 체크 S2",
+        "benefit": [
+            "간편결제",
+            "생활",
+            "해외",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 21,
+        "check_card_name": "신한카드 On 체크(잔망루피)",
+        "benefit": [
+            "네이버페이",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 22,
+        "check_card_name": "MY 체크카드",
+        "benefit": [
+            "대중교통",
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 23,
+        "check_card_name": "더나은 체크카드",
+        "benefit": [
+            "간편결제",
+            "온라인쇼핑",
+            "카페",
+            "해외이용"
+        ]
+    },
+    {
+        "check_card_id": 24,
+        "check_card_name": "직장인보너스체크카드",
+        "benefit": [
+            "선택형",
+            "온라인쇼핑",
+            "생활",
+            "멤버십포인트",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 25,
+        "check_card_name": "K-패스 신한카드 체크",
+        "benefit": [
+            "공과금/렌탈",
+            "주유소",
+            "정비",
+            "렌터카",
+            "백화점",
+            "패밀리레스토랑",
+            "대중교통",
+            "통신",
+            "테마파크",
+            "해피포인트",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 26,
+        "check_card_name": "NH20해봄체크카드",
+        "benefit": [
+            "대중교통",
+            "간편결제",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 27,
+        "check_card_name": "개이득 체크카드",
+        "benefit": [
+            "할인",
+            "디지털구독",
+            "온라인쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 28,
+        "check_card_name": "카드의정석 EVERY CHECK",
+        "benefit": [
+            "해외이용",
+            "수수료우대",
+            "적립",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 29,
+        "check_card_name": "트래블로그 체크카드",
+        "benefit": [
+            "무실적",
+            "적립",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 30,
+        "check_card_name": "K-패스카드(체크)",
+        "benefit": [
+            "모든가맹점",
+            "공항라운지",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 31,
+        "check_card_name": "올바른POINT체크카드",
+        "benefit": [
+            "교통",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 32,
+        "check_card_name": "신한카드 플리 체크(산리오캐릭터즈)",
+        "benefit": [
+            "국내외가맹점",
+            "기타",
+            "적립",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 33,
+        "check_card_name": "K-패스 삼성체크카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 34,
+        "check_card_name": "라이언 치즈 체크카드",
+        "benefit": [
+            "대중교통",
+            "통신",
+            "편의점",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 35,
+        "check_card_name": "달달 하나 체크카드",
+        "benefit": [
+            "캐시백",
+            "해외",
+            "수수료우대",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 36,
+        "check_card_name": "신한카드 Hey Young 체크",
+        "benefit": [
+            "카페",
+            "편의점",
+            "영화",
+            "온라인쇼핑",
+            "APP",
+            "교통",
+            "해외",
+            "도서",
+            "생활",
+            "기타",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 37,
+        "check_card_name": "NH트래블리체크카드",
+        "benefit": [
+            "선택형",
+            "대중교통",
+            "통신",
+            "영화",
+            "편의점",
+            "카페",
+            "온라인쇼핑",
+            "간편결제",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 38,
+        "check_card_name": "올리 POINT 체크",
+        "benefit": [
+            "적립",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 39,
+        "check_card_name": "현대카드M CHECK",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 40,
+        "check_card_name": "K-패스체크카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 41,
+        "check_card_name": "스타플러스 체크카드",
+        "benefit": [
+            "생활",
+            "기타",
+            "SSM",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 42,
+        "check_card_name": "KB국민 우리동네 체크카드",
+        "benefit": [
+            "카페",
+            "게임",
+            "공연/전시",
+            "드럭스토어",
+            "편의점",
+            "디지털구독",
+            "배달앱",
+            "통신",
+            "영화",
+            "테마파크",
+            "해외이용",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 43,
+        "check_card_name": "현대카드M HYBRID",
+        "benefit": [
+            "수수료우대",
+            "해외",
+            "쇼핑",
+            "푸드",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 44,
+        "check_card_name": "위비트래블 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "하이브리드"
+        ]
+    },
+    {
+        "check_card_id": 45,
+        "check_card_name": "위글위글 첵첵 체크카드",
+        "benefit": [
+            "대중교통",
+            "카페",
+            "온라인쇼핑",
+            "편의점",
+            "영화",
+            "테마파크",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 46,
+        "check_card_name": "NH 무럭이 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "카페/디저트",
+            "통신",
+            "편의점",
+            "교통",
+            "대형마트",
+            "주유"
+        ]
+    },
+    {
+        "check_card_id": 47,
+        "check_card_name": "K-패스 하나 체크카드",
+        "benefit": [
+            "대중교통",
+            "드럭스토어",
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 48,
+        "check_card_name": "나라사랑체크카드",
+        "benefit": [
+            "기타",
+            "쇼핑",
+            "대중교통",
+            "영화/문화",
+            "교육/육아",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 49,
+        "check_card_name": "가온체크카드",
+        "benefit": [
+            "국내외가맹점",
+            "적립",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 50,
+        "check_card_name": "K-패스(체크)",
+        "benefit": [
+            "간편결제",
+            "대중교통",
+            "편의점",
+            "카페",
+            "영화",
+            "기타",
+            "드럭스토어",
+            "도서",
+            "공연/전시"
+        ]
+    },
+    {
+        "check_card_id": 51,
+        "check_card_name": "청춘대로 싱글 체크카드",
+        "benefit": [
+            "국내외가맹점",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 52,
+        "check_card_name": "카드의정석 EVERYDAY CHECK",
+        "benefit": [
+            "적립",
+            "공항라운지",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 53,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "해외이용",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 54,
+        "check_card_name": "IBK무민카드(체크)",
+        "benefit": [
+            "모든가맹점",
+            "푸드",
+            "교통",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 55,
+        "check_card_name": "트래블GO 체크카드",
+        "benefit": [
+            "편의점",
+            "소셜커머스",
+            "교통",
+            "애완동물",
+            "해외이용",
+            "여행/숙박"
+        ]
+    },
+    {
+        "check_card_id": 56,
+        "check_card_name": "올바른 NEW HAVE체크카드",
+        "benefit": [
+            "캐시백",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 57,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "대중교통",
+            "소셜커머스",
+            "편의점",
+            "영화",
+            "카페",
+            "금융",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 58,
+        "check_card_name": "가온 올포인트 체크카드",
+        "benefit": [
+            "적립",
+            "주유",
+            "영화/문화",
+            "수수료우대",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 59,
+        "check_card_name": "신한카드 주거래 체크",
+        "benefit": [
+            "카카오페이",
+            "편의점",
+            "온라인쇼핑",
+            "기타",
+            "영화",
+            "카페",
+            "패스트푸드"
+        ]
+    },
+    {
+        "check_card_id": 60,
+        "check_card_name": "체크카드",
+        "benefit": [
+            "모든가맹점",
+            "쇼핑",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 61,
+        "check_card_name": "IBK 나라사랑카드",
+        "benefit": [
+            "교통",
+            "통신",
+            "편의점",
+            "화장품",
+            "영화",
+            "패밀리레스토랑",
+            "테마파크",
+            "여행/숙박",
+            "도서",
+            "은행사",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 62,
+        "check_card_name": "카드의정석 DON CHECK",
+        "benefit": [
+            "푸드",
+            "쇼핑",
+            "게임"
+        ]
+    },
+    {
+        "check_card_id": 63,
+        "check_card_name": "꿀카드",
+        "benefit": [
+            "교육/육아",
+            "주유소",
+            "대형마트",
+            "영화",
+            "여행/숙박"
+        ]
+    },
+    {
+        "check_card_id": 64,
+        "check_card_name": "스타체크카드",
+        "benefit": [
+            "주유소",
+            "대중교통",
+            "통신",
+            "영화",
+            "테마파크",
+            "온라인쇼핑",
+            "드럭스토어",
+            "도서",
+            "패밀리레스토랑",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 65,
+        "check_card_name": "카드의정석 칼퇴 CHECK",
+        "benefit": [
+            "디지털구독",
+            "음원사이트",
+            "간편결제",
+            "온라인쇼핑",
+            "배달앱",
+            "수수료우대"
+        ]
+    },
+    {
+        "check_card_id": 66,
+        "check_card_name": "내일배움체크카드",
+        "benefit": [
+            "디지털구독",
+            "온라인쇼핑",
+            "배달앱",
+            "카페",
+            "생활",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 67,
+        "check_card_name": "케이뱅크 플러스 체크카드",
+        "benefit": [
+            "푸드",
+            "뷰티/피트니스",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 68,
+        "check_card_name": "삼성체크카드 & CASHBACK",
+        "benefit": [
+            "모든가맹점",
+            "기타",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 69,
+        "check_card_name": "행복한 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "영화",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 70,
+        "check_card_name": "영리한 PLUS 체크카드",
+        "benefit": [
+            "병원/약국",
+            "학원",
+            "대형마트",
+            "공연/전시",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 71,
+        "check_card_name": "SC제일은행-현대카드 X CHECK",
+        "benefit": [
+            "대형마트",
+            "주유소",
+            "정비",
+            "패스트푸드",
+            "통신",
+            "대중교통",
+            "편의점",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 72,
+        "check_card_name": "민 체크카드",
+        "benefit": [
+            "할인",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 73,
+        "check_card_name": "그랑블루 체크카드",
+        "benefit": [
+            "캐시백",
+            "금융",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 74,
+        "check_card_name": "노리2 체크카드(Play)",
+        "benefit": [
+            "바우처",
+            "모든가맹점",
+            "공항라운지/PP",
+            "여행/숙박",
+            "푸드",
+            "영화",
+            "레저/스포츠",
+            "주유소"
+        ]
+    },
+    {
+        "check_card_id": 75,
+        "check_card_name": "카카오뱅크 개인사업자 체크카드",
+        "benefit": [
+            "카페",
+            "게임",
+            "공연/전시",
+            "헤어",
+            "편의점",
+            "디지털구독",
+            "배달앱",
+            "통신",
+            "영화",
+            "테마파크",
+            "패스트푸드"
+        ]
+    },
+    {
+        "check_card_id": 76,
+        "check_card_name": "카카오뱅크 mini카드",
+        "benefit": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 77,
+        "check_card_name": "able Premier Members 카드",
+        "benefit": [
+            "대한항공",
+            "해외이용",
+            "프리미엄 서비스"
+        ]
+    },
+    {
+        "check_card_id": 78,
+        "check_card_name": "OK캐쉬백 썸(SUM)타는 우리체크카드",
+        "benefit": [
+            "온라인쇼핑",
+            "대중교통",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 79,
+        "check_card_name": "브라보(Bravo) 체크카드",
+        "benefit": [
+            "푸드",
+            "대형마트",
+            "충전소",
+            "주유소",
+            "약국",
+            "쇼핑",
+            "골프",
+            "영화",
+            "도서",
+            "여행/숙박",
+            "기타",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 80,
+        "check_card_name": "신한 슈퍼SOL 체크",
+        "benefit": [
+            "생활",
+            "비즈니스"
+        ]
+    },
+    {
+        "check_card_id": 81,
+        "check_card_name": "신한카드 Global Air 스카이패스 체크",
+        "benefit": [
+            "모든가맹점",
+            "생활",
+            "쇼핑",
+            "해외이용"
+        ]
+    },
+    {
+        "check_card_id": 82,
+        "check_card_name": "신한카드 On 체크",
+        "benefit": [
+            "쇼핑",
+            "푸드",
+            "주유소",
+            "영화/문화",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 83,
+        "check_card_name": "어피치 스윗 체크카드",
+        "benefit": [
+            "OK캐쉬백",
+            "온라인쇼핑",
+            "카페/디저트",
+            "푸드",
+            "마트/편의점",
+            "영화",
+            "대중교통",
+            "교육/육아",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 84,
+        "check_card_name": "알뜰교통 비바 e 플래티늄 체크카드",
+        "benefit": [
+            "간편결제",
+            "생활",
+            "해외",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 85,
+        "check_card_name": "신한카드 플리(체크)",
+        "benefit": [
+            "대중교통",
+            "온라인쇼핑",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 86,
+        "check_card_name": "BAZIC(베이직)체크카드",
+        "benefit": [
+            "간편결제",
+            "카페",
+            "화장품",
+            "기타",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 87,
+        "check_card_name": "당근머니 하나 체크카드",
+        "benefit": [
+            "국내외가맹점",
+            "기타",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 88,
+        "check_card_name": "어디서나 체크카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 89,
+        "check_card_name": "모두의 일상 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 90,
+        "check_card_name": "삼성빅보너스체크카드",
+        "benefit": [
+            "멤버십포인트",
+            "여행/숙박",
+            "카페",
+            "공항라운지",
+            "해외이용",
+            "수수료우대"
+        ]
+    },
+    {
+        "check_card_id": 91,
+        "check_card_name": "에어머니 체크카드",
+        "benefit": [
+            "적립",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 92,
+        "check_card_name": "신한카드 S-Line 체크(마이펫)",
+        "benefit": [
+            "모든가맹점",
+            "푸드",
+            "교통",
+            "쇼핑",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 93,
+        "check_card_name": "트래블제로카드",
+        "benefit": [
+            "해외이용",
+            "수수료우대",
+            "해외직구",
+            "적립",
+            "할인",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 94,
+        "check_card_name": "롯데체크카드",
+        "benefit": [
+            "모든가맹점",
+            "주유",
+            "경기관람"
+        ]
+    },
+    {
+        "check_card_id": 95,
+        "check_card_name": "신한카드 On 체크(쥬라기)",
+        "benefit": [
+            "간편결제",
+            "생활",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 96,
+        "check_card_name": "포인트리체크카드",
+        "benefit": [
+            "국민행복",
+            "쇼핑",
+            "생활",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 97,
+        "check_card_name": "국민행복 삼성체크카드 V2",
+        "benefit": [
+            "주유소",
+            "패밀리레스토랑",
+            "영화",
+            "대중교통",
+            "통신",
+            "온라인쇼핑",
+            "도서",
+            "드럭스토어",
+            "테마파크",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 98,
+        "check_card_name": "신한카드 하이패스(전용) 체크",
+        "benefit": [
+            "대형마트",
+            "온라인쇼핑",
+            "배달앱",
+            "주유",
+            "할인",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 99,
+        "check_card_name": "able 카드 Ⅱ",
+        "benefit": [
+            "하이패스"
+        ]
+    },
+    {
+        "check_card_id": 100,
+        "check_card_name": "VIVA+ 체크카드",
+        "benefit": [
+            "적립",
+            "OK캐쉬백",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 101,
+        "check_card_name": "트래블페이 충전카드",
+        "benefit": [
+            "간편결제",
+            "수수료우대",
+            "해외이용",
+            "해외직구"
+        ]
+    },
+    {
+        "check_card_id": 102,
+        "check_card_name": "FANtastic S 신한카드 체크",
+        "benefit": [
+            "간편결제",
+            "소셜커머스",
+            "편의점",
+            "카페",
+            "해외이용",
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 103,
+        "check_card_name": "부자되세요 더마일리지카드",
+        "benefit": [
+            "수수료우대",
+            "점심"
+        ]
+    },
+    {
+        "check_card_id": 104,
+        "check_card_name": "우체국 우리동네plus 체크카드",
+        "benefit": [
+            "학원",
+            "주유",
+            "일반음식점",
+            "쇼핑",
+            "편의점",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 105,
+        "check_card_name": "미래에셋증권 체크카드(할인 2)",
+        "benefit": [
+            "온라인쇼핑",
+            "통신",
+            "대한항공",
+            "영화",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 106,
+        "check_card_name": "LG U+ 체크카드",
+        "benefit": [
+            "카페",
+            "마트/편의점",
+            "디지털구독"
+        ]
+    },
+    {
+        "check_card_id": 107,
+        "check_card_name": "NH올원체크카드",
+        "benefit": [
+            "선택형",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 108,
+        "check_card_name": "VIVA X 체크카드",
+        "benefit": [
+            "해외이용",
+            "수수료우대",
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 109,
+        "check_card_name": "올바른GLOBAL체크카드",
+        "benefit": [
+            "통신",
+            "카페",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 110,
+        "check_card_name": "더담은 체크카드",
+        "benefit": [
+            "병원/약국",
+            "온라인쇼핑",
+            "교육/육아",
+            "배달앱",
+            "디지털구독",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 111,
+        "check_card_name": "신한카드 국민행복 체크",
+        "benefit": [
+            "해외이용",
+            "공항라운지",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 112,
+        "check_card_name": "삼성체크카드 & POINT",
+        "benefit": [
+            "모든가맹점",
+            "영화",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 113,
+        "check_card_name": "다드림 체크카드",
+        "benefit": [
+            "소셜커머스",
+            "카페",
+            "편의점",
+            "택시"
+        ]
+    },
+    {
+        "check_card_id": 114,
+        "check_card_name": "신세계 신한카드 체크",
+        "benefit": [
+            "국민행복",
+            "교육/육아",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 115,
+        "check_card_name": "GS리테일 NH농협체크카드",
+        "benefit": [
+            "모든가맹점",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 116,
+        "check_card_name": "카드의정석 L.POINT CHECK",
+        "benefit": [
+            "국내외가맹점",
+            "캐시백",
+            "무실적",
+            "해외",
+            "교통",
+            "프리미엄 서비스",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 117,
+        "check_card_name": "트리플카드",
+        "benefit": [
+            "적립",
+            "통신",
+            "멤버십포인트",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 118,
+        "check_card_name": "NAMUH 체크카드",
+        "benefit": [
+            "적립",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 119,
+        "check_card_name": "롯데 국민행복 체크카드",
+        "benefit": [
+            "선택형",
+            "대형마트",
+            "기타",
+            "온라인쇼핑",
+            "백화점",
+            "홈쇼핑",
+            "호텔",
+            "카페",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 120,
+        "check_card_name": "신한카드 S-Line 체크",
+        "benefit": [
+            "푸드",
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 121,
+        "check_card_name": "KDB Choice 하이브리드 카드",
+        "benefit": [
+            "영화",
+            "카페",
+            "생활",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 122,
+        "check_card_name": "케이뱅크 X KT멤버십더블혜택 체크카드",
+        "benefit": [
+            "카카오페이",
+            "온라인쇼핑",
+            "편의점",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 123,
+        "check_card_name": "DB 캐쉬백 3.1 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 124,
+        "check_card_name": "NEW농촌사랑체크카드",
+        "benefit": [
+            "적립",
+            "주유소",
+            "생활",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 125,
+        "check_card_name": "NH농협 올바른 하나로(Hanaro) 체크카드",
+        "benefit": [
+            "선택형",
+            "쇼핑",
+            "마트/편의점",
+            "애완동물",
+            "레저/스포츠",
+            "기타",
+            "해외",
+            "저가항공"
+        ]
+    },
+    {
+        "check_card_id": 126,
+        "check_card_name": "밥바라밥 페이북머니 체크카드",
+        "benefit": [
+            "캐시백",
+            "카페",
+            "대중교통",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 127,
+        "check_card_name": "카카오페이 신한 라이언 체크",
+        "benefit": [
+            "적립",
+            "푸드",
+            "교통",
+            "쇼핑",
+            "금융",
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 128,
+        "check_card_name": "카카오페이 신한 춘식이 체크",
+        "benefit": [
+            "카카오페이",
+            "카페",
+            "대중교통",
+            "해외",
+            "프리미엄"
+        ]
+    },
+    {
+        "check_card_id": 129,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "KT",
+            "멤버십포인트",
+            "수수료우대"
+        ]
+    },
+    {
+        "check_card_id": 130,
+        "check_card_name": "라이프+플러스 체크카드",
+        "benefit": [
+            "카카오페이",
+            "편의점",
+            "통신",
+            "해외",
+            "프리미엄"
+        ]
+    },
+    {
+        "check_card_id": 131,
+        "check_card_name": "포미 하이브리드 체크카드",
+        "benefit": [
+            "멤버십포인트",
+            "카드사"
+        ]
+    },
+    {
+        "check_card_id": 132,
+        "check_card_name": "하나멤버스 Mega 체크카드",
+        "benefit": [
+            "적립",
+            "모든가맹점",
+            "OK캐쉬백",
+            "공항라운지"
+        ]
+    },
+    {
+        "check_card_id": 133,
+        "check_card_name": "1st TRIPLE 체크카드",
+        "benefit": [
+            "국민행복",
+            "디지털구독",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 134,
+        "check_card_name": "훈 체크카드",
+        "benefit": [
+            "쇼핑",
+            "드럭스토어",
+            "카페",
+            "수수료우대",
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 135,
+        "check_card_name": "go 캐시백 글로벌 체크카드",
+        "benefit": [
+            "대중교통",
+            "편의점",
+            "드럭스토어",
+            "소셜커머스",
+            "영화",
+            "카페",
+            "은행사",
+            "테마파크",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 136,
+        "check_card_name": "미타임 체크카드",
+        "benefit": [
+            "마트/편의점",
+            "간편결제",
+            "온라인쇼핑",
+            "통신",
+            "배달앱"
+        ]
+    },
+    {
+        "check_card_id": 137,
+        "check_card_name": "신한카드 Pick I 체크",
+        "benefit": [
+            "학원",
+            "도서",
+            "병원/약국",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 138,
+        "check_card_name": "일상의 기쁨카드(체크)",
+        "benefit": [
+            "캐시백",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 139,
+        "check_card_name": "카카오페이카드3",
+        "benefit": [
+            "적립",
+            "금융",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 140,
+        "check_card_name": "한국투자 the More 체크카드",
+        "benefit": [
+            "생활",
+            "적립",
+            "기타",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 141,
+        "check_card_name": "현대카드X CHECK",
+        "benefit": [
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 142,
+        "check_card_name": "able 아이맥스카드",
+        "benefit": [
+            "해외",
+            "간편결제",
+            "배달앱",
+            "대형마트",
+            "기타",
+            "면세점",
+            "공항라운지",
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 143,
+        "check_card_name": "GS칼텍스 신한카드 경차사랑 체크",
+        "benefit": [
+            "모든가맹점",
+            "점심",
+            "대형마트",
+            "수수료우대"
+        ]
+    },
+    {
+        "check_card_id": 144,
+        "check_card_name": "IBK 무직타이거 카드(체크)",
+        "benefit": [
+            "편의점",
+            "카페",
+            "해외이용",
+            "디지털구독",
+            "온라인쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 145,
+        "check_card_name": "SC제일은행-현대카드 M CHECK",
+        "benefit": [
+            "할인",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 146,
+        "check_card_name": "국민행복 삼성체크카드",
+        "benefit": [
+            "캐시백",
+            "기타",
+            "금융",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 147,
+        "check_card_name": "다원 체크카드",
+        "benefit": [
+            "국민행복",
+            "모든가맹점",
+            "어린이집",
+            "병원",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 148,
+        "check_card_name": "신한 Meme(밈) 카드",
+        "benefit": [
+            "점심",
+            "카페",
+            "편의점",
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 149,
+        "check_card_name": "신한카드 Global+ 체크 월리를찾아라",
+        "benefit": [
+            "국민행복",
+            "모든가맹점",
+            "패밀리레스토랑",
+            "카페",
+            "영화",
+            "정비",
+            "백화점",
+            "대형마트"
+        ]
+    },
+    {
+        "check_card_id": 150,
+        "check_card_name": "함께그린카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 151,
+        "check_card_name": "LUNCH 체크카드",
+        "benefit": [
+            "공과금",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 152,
+        "check_card_name": "국민행복 체크카드 S2",
+        "benefit": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 153,
+        "check_card_name": "이지캐시백",
+        "benefit": [
+            "금융",
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 154,
+        "check_card_name": "하나로 전자카드 메가캐쉬백 더드림 체크카드",
+        "benefit": [
+            "자동차",
+            "주유",
+            "보험"
+        ]
+    },
+    {
+        "check_card_id": 155,
+        "check_card_name": "IBK DC히어로즈 카드(체크)",
+        "benefit": [
+            "캐시백",
+            "금융",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 156,
+        "check_card_name": "IBK 국민행복 체크카드",
+        "benefit": [
+            "대중교통",
+            "편의점",
+            "온라인쇼핑",
+            "영화",
+            "카페",
+            "금융",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 157,
+        "check_card_name": "NEW현대백화점체크카드",
+        "benefit": [
+            "선택형",
+            "기타",
+            "바우처"
+        ]
+    },
+    {
+        "check_card_id": 158,
+        "check_card_name": "국민행복카드 체크카드",
+        "benefit": [
+            "디지털구독",
+            "기타",
+            "편의점",
+            "패스트푸드",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 159,
+        "check_card_name": "누리체크카드",
+        "benefit": [
+            "교통",
+            "카페",
+            "백화점"
+        ]
+    },
+    {
+        "check_card_id": 160,
+        "check_card_name": "위버스 신한카드 체크(TXT)",
+        "benefit": [
+            "대중교통",
+            "생활",
+            "해외",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 161,
+        "check_card_name": "참! 좋은 kt wiz 카드[체크]",
+        "benefit": [
+            "아시아나항공",
+            "소셜커머스"
+        ]
+    },
+    {
+        "check_card_id": 162,
+        "check_card_name": "카드의정석 APT CHECK",
+        "benefit": [
+            "기타",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 163,
+        "check_card_name": "토스유스카드(USS)",
+        "benefit": [
+            "모든가맹점",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 164,
+        "check_card_name": "Global체크카드",
+        "benefit": [
+            "대형마트",
+            "전통시장",
+            "유치원",
+            "학원",
+            "병원",
+            "패밀리레스토랑",
+            "영화",
+            "테마파크",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 165,
+        "check_card_name": "TMAP & LOGI 행복 체크카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 166,
+        "check_card_name": "신한카드 Point Plan 체크",
+        "benefit": [
+            "백화점",
+            "진에어",
+            "캐시백",
+            "주유",
+            "카페",
+            "영화",
+            "도서",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 167,
+        "check_card_name": "신한카드 Way 체크(최고심)",
+        "benefit": [
+            "모든가맹점",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 168,
+        "check_card_name": "아시아나 체크카드",
+        "benefit": [
+            "대중교통",
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서"
+        ]
+    },
+    {
+        "check_card_id": 169,
+        "check_card_name": "카카오페이 KB국민 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "푸드",
+            "교통",
+            "통신",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 170,
+        "check_card_name": "토스뱅크 모임카드",
+        "benefit": [
+            "생활",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 171,
+        "check_card_name": "페이북 머니 체크카드",
+        "benefit": [
+            "백화점",
+            "주유",
+            "카페",
+            "영화",
+            "학원",
+            "패밀리레스토랑",
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 172,
+        "check_card_name": "현대백화점 체크카드",
+        "benefit": [
+            "학원",
+            "영화",
+            "해외이용",
+            "은행사",
+            "여행/숙박",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 173,
+        "check_card_name": "#ing(샵핑) 체크카드",
+        "benefit": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 174,
+        "check_card_name": "2030 언택트 체크카드",
+        "benefit": [
+            "아시아나항공",
+            "해외이용",
+            "프리미엄 서비스"
+        ]
+    },
+    {
+        "check_card_id": 175,
+        "check_card_name": "GOODGAME 체크카드",
+        "benefit": [
+            "편의점",
+            "카페",
+            "패스트푸드",
+            "도서",
+            "드럭스토어",
+            "렌터카",
+            "영화",
+            "기타",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 176,
+        "check_card_name": "롯데포인트플러스 체크카드",
+        "benefit": [
+            "적립",
+            "생활",
+            "기타",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 177,
+        "check_card_name": "미래에셋증권 체크카드 (캐시백 2)",
+        "benefit": [
+            "소셜커머스",
+            "영화",
+            "패밀리레스토랑",
+            "테마파크",
+            "제휴/PLCC"
+        ]
+    },
+    {
+        "check_card_id": 178,
+        "check_card_name": "신한 S-Choice체크카드",
+        "benefit": [
+            "카카오페이",
+            "카페",
+            "베이커리",
+            "편의점",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 179,
+        "check_card_name": "올유닛 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "온라인쇼핑",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 180,
+        "check_card_name": "위클리 VISA 롯데체크카드",
+        "benefit": [
+            "게임",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 181,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 182,
+        "check_card_name": "콕체크카드",
+        "benefit": [
+            "아시아나항공",
+            "해외이용",
+            "온라인쇼핑",
+            "마트/편의점",
+            "카페",
+            "주유소",
+            "면세점",
+            "영화",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 183,
+        "check_card_name": "해피노리체크카드",
+        "benefit": [
+            "멤버십포인트",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 184,
+        "check_card_name": "현대카드M CHECK-경차전용카드(유류세 환급)",
+        "benefit": [
+            "생활",
+            "배달앱",
+            "편의점"
+        ]
+    },
+    {
+        "check_card_id": 185,
+        "check_card_name": "BNK 프렌즈 체크카드",
+        "benefit": [
+            "카카오페이",
+            "온라인쇼핑",
+            "쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 186,
+        "check_card_name": "NH1934 체크카드",
+        "benefit": [
+            "적립",
+            "기타",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 187,
+        "check_card_name": "샘 쏘영 체크카드",
+        "benefit": [
+            "쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 188,
+        "check_card_name": "신협 어부바 체크카드",
+        "benefit": [
+            "카페",
+            "배달앱",
+            "온라인쇼핑",
+            "디지털구독"
+        ]
+    },
+    {
+        "check_card_id": 189,
+        "check_card_name": "토스 USS NEXT 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "해외",
+            "프리미엄 서비스"
+        ]
+    },
+    {
+        "check_card_id": 190,
+        "check_card_name": "하나멤버스 1Q 체크카드",
+        "benefit": []
+    },
+    {
+        "check_card_id": 191,
+        "check_card_name": "DB금융투자 해피플러스 체크카드",
+        "benefit": [
+            "편의점",
+            "카페",
+            "해외이용",
+            "생활",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 192,
+        "check_card_name": "L.PAY 하나 체크카드",
+        "benefit": [
+            "통신",
+            "레저/스포츠",
+            "병원/약국",
+            "캐시백",
+            "수수료우대"
+        ]
+    },
+    {
+        "check_card_id": 193,
+        "check_card_name": "MULTI Any 체크카드",
+        "benefit": [
+            "캐시백",
+            "쇼핑",
+            "테마파크",
+            "영화",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 194,
+        "check_card_name": "럭키 더블카드",
+        "benefit": [
+            "멤버십포인트",
+            "카드사"
+        ]
+    },
+    {
+        "check_card_id": 195,
+        "check_card_name": "롯데마트 라서 즐거운 체크카드",
+        "benefit": [
+            "대중교통",
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "편의점",
+            "도서",
+            "해피포인트",
+            "은행사",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 196,
+        "check_card_name": "신한카드 Global Air 아시아나 체크",
+        "benefit": [
+            "모든가맹점",
+            "해외이용"
+        ]
+    },
+    {
+        "check_card_id": 197,
+        "check_card_name": "신한카드 Pick E 체크",
+        "benefit": [
+            "패밀리레스토랑",
+            "카페",
+            "영화",
+            "테마파크",
+            "편의점",
+            "대중교통",
+            "도서",
+            "헤어",
+            "항공권",
+            "은행사",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 198,
+        "check_card_name": "11번가 신한카드 체크",
+        "benefit": [
+            "디지털구독",
+            "기타",
+            "편의점",
+            "패스트푸드",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 199,
+        "check_card_name": "Liiv M 체크카드",
+        "benefit": [
+            "카페",
+            "편의점",
+            "게임",
+            "배달앱",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 200,
+        "check_card_name": "LIKIT all 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "주유",
+            "통신",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 201,
+        "check_card_name": "SOCAR 제휴 SOCAR 신한카드 체크",
+        "benefit": [
+            "통신",
+            "소셜커머스",
+            "여행/숙박",
+            "편의점"
+        ]
+    },
+    {
+        "check_card_id": 202,
+        "check_card_name": "TEENS(틴즈) PLUS PONEY 신한카드 체크",
+        "benefit": [
+            "국내외가맹점",
+            "간편결제",
+            "쇼핑",
+            "배달앱",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 203,
+        "check_card_name": "국민행복체크카드(비씨)",
+        "benefit": [
+            "영화",
+            "테마파크",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 204,
+        "check_card_name": "넥슨 던전앤파이터 체크카드",
+        "benefit": [
+            "국민행복",
+            "선택형",
+            "멤버십포인트",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 205,
+        "check_card_name": "넥슨 현대카드Check",
+        "benefit": [
+            "골프",
+            "주유소",
+            "보험사",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 206,
+        "check_card_name": "롯데 플래티넘 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 207,
+        "check_card_name": "리브 NEXT카드",
+        "benefit": [
+            "혜택 프로모션",
+            "카페/디저트",
+            "마트/편의점",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 208,
+        "check_card_name": "배달의민족 비장의카드 V.2",
+        "benefit": [
+            "대형마트",
+            "카페",
+            "패밀리레스토랑",
+            "영화",
+            "대중교통",
+            "주유소",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 209,
+        "check_card_name": "비트윈체크카드",
+        "benefit": [
+            "푸드",
+            "생활",
+            "게임",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 210,
+        "check_card_name": "신세계 하나 체크카드",
+        "benefit": [
+            "배달앱",
+            "온라인쇼핑",
+            "카페",
+            "기타",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 211,
+        "check_card_name": "현대카드X HYBRID",
+        "benefit": [
+            "패밀리레스토랑",
+            "영화",
+            "테마파크",
+            "카페",
+            "제주항공",
+            "헤어",
+            "도서",
+            "편의점",
+            "금융",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 212,
+        "check_card_name": "CJ ONE 신한카드 체크",
+        "benefit": [
+            "적립",
+            "온라인쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 213,
+        "check_card_name": "KB국민 국민행복체크",
+        "benefit": [
+            "멤버십포인트",
+            "바우처",
+            "할인",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 214,
+        "check_card_name": "K리그 축덕 Young Hana 체크카드 with OKcashbag",
+        "benefit": [
+            "국민행복",
+            "병원",
+            "교육/육아",
+            "보험사"
+        ]
+    },
+    {
+        "check_card_id": 215,
+        "check_card_name": "그린재킷 체크카드",
+        "benefit": [
+            "적립",
+            "OK캐쉬백",
+            "수수료우대",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 216,
+        "check_card_name": "락스타 체크카드",
+        "benefit": [
+            "렌터카",
+            "영화",
+            "기차",
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 217,
+        "check_card_name": "신한카드 Global+ 체크",
+        "benefit": [
+            "게임",
+            "교통",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 218,
+        "check_card_name": "쏘영 체크카드",
+        "benefit": [
+            "캐시백",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 219,
+        "check_card_name": "참! 좋은 글로벌 체크카드",
+        "benefit": [
+            "간편결제",
+            "학원",
+            "통신",
+            "카페",
+            "교통",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 220,
+        "check_card_name": "티머니 체크카드",
+        "benefit": [
+            "무실적"
+        ]
+    },
+    {
+        "check_card_id": 221,
+        "check_card_name": "Air Money(에어머니)체크",
+        "benefit": [
+            "모든가맹점",
+            "하이브리드"
+        ]
+    },
+    {
+        "check_card_id": 222,
+        "check_card_name": "AK KB국민 체크카드",
+        "benefit": [
+            "적립",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 223,
+        "check_card_name": "KB Pay 머니백카드",
+        "benefit": [
+            "영화",
+            "드럭스토어",
+            "CJ ONE",
+            "온라인쇼핑",
+            "패스트푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "check_card_id": 224,
+        "check_card_name": "LGU+ 라서즐거운 체크카드",
+        "benefit": [
+            "적립",
+            "간편결제"
+        ]
+    },
+    {
+        "check_card_id": 225,
+        "check_card_name": "드림플러스 아시아나 체크카드",
+        "benefit": [
+            "LGU+",
+            "패밀리레스토랑",
+            "카페",
+            "영화",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 226,
+        "check_card_name": "세븐일레븐 멤버십롯데체크카드",
+        "benefit": [
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 227,
+        "check_card_name": "신한카드 FANtastic S 체크(LoL)",
+        "benefit": [
+            "대중교통",
+            "통신",
+            "영화",
+            "푸드",
+            "테마파크",
+            "금융",
+            "생활",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 228,
+        "check_card_name": "신한카드 Pick E 선불",
+        "benefit": [
+            "간편결제",
+            "소셜커머스",
+            "편의점",
+            "카페",
+            "해외이용",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 229,
+        "check_card_name": "오늘은e 체크카드",
+        "benefit": [
+            "편의점",
+            "카페",
+            "생활",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 230,
+        "check_card_name": "위버스 신한카드 체크(BTS)",
+        "benefit": [
+            "편의점",
+            "온라인쇼핑",
+            "캐시백",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 231,
+        "check_card_name": "인플카 현대카드 CHECK",
+        "benefit": [
+            "백화점",
+            "항공권",
+            "카페",
+            "영화",
+            "해피포인트"
+        ]
+    },
+    {
+        "check_card_id": 232,
+        "check_card_name": "정 체크카드",
+        "benefit": [
+            "멤버십포인트",
+            "정비",
+            "연회비지원",
+            "헤어",
+            "테마파크",
+            "경기관람",
+            "쇼핑",
+            "영화",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 233,
+        "check_card_name": "케이뱅크 Hi teen 카드",
+        "benefit": [
+            "해외",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "check_card_id": 234,
+        "check_card_name": "폼 체크카드",
+        "benefit": [
+            "편의점",
+            "연회비지원",
+            "헤어",
+            "테마파크",
+            "레저/스포츠",
+            "쇼핑",
+            "여행/숙박",
+            "푸드",
+            "주유",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 235,
+        "check_card_name": "NC다이노스체크카드",
+        "benefit": [
+            "대중교통",
+            "생활",
+            "해외이용"
+        ]
+    },
+    {
+        "check_card_id": 236,
+        "check_card_name": "Smart Cashback 체크카드",
+        "benefit": [
+            "금융",
+            "영화",
+            "테마파크",
+            "대형마트",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 237,
+        "check_card_name": "다날-유니온페이 모바일카드",
+        "benefit": [
+            "적립",
+            "생활",
+            "기타",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 238,
+        "check_card_name": "부산 동백전 체크카드",
+        "benefit": [
+            "배달앱",
+            "편의점",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 239,
+        "check_card_name": "신한카드 Way 체크(미니언즈 여름)",
+        "benefit": [
+            "백화점",
+            "홈쇼핑",
+            "화장품",
+            "교통",
+            "해외이용"
+        ]
+    },
+    {
+        "check_card_id": 240,
+        "check_card_name": "우리V외국인체크카드",
+        "benefit": [
+            "쇼핑",
+            "소셜커머스",
+            "헤어",
+            "드럭스토어",
+            "편의점",
+            "영화",
+            "카페",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 241,
+        "check_card_name": "일상의 기쁨 Dream 체크카드",
+        "benefit": [
+            "카카오페이",
+            "온라인쇼핑",
+            "편의점"
+        ]
+    },
+    {
+        "check_card_id": 242,
+        "check_card_name": "제주그린체크카드",
+        "benefit": [
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 243,
+        "check_card_name": "참! 좋은 다이소카드(체크)",
+        "benefit": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 244,
+        "check_card_name": "청춘날다 체크카드",
+        "benefit": [
+            "경기관람",
+            "온라인쇼핑",
+            "카페",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 245,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "지역"
+        ]
+    },
+    {
+        "check_card_id": 246,
+        "check_card_name": "able 시럽카드",
+        "benefit": [
+            "캐시백",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 247,
+        "check_card_name": "KB국민 티머니 노리 학생증체크카드(퍼플)",
+        "benefit": [
+            "대중교통",
+            "편의점",
+            "영화",
+            "카페",
+            "금융",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 248,
+        "check_card_name": "KB국민 티머니노리학생증 체크카드(세로형_퍼플)",
+        "benefit": [
+            "영화",
+            "카페",
+            "적립",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 249,
+        "check_card_name": "국민행복체크카드",
+        "benefit": [
+            "편의점",
+            "카페",
+            "대형마트",
+            "온라인쇼핑",
+            "주유",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 250,
+        "check_card_name": "땡겨요 신한카드 체크",
+        "benefit": [
+            "기타",
+            "카페",
+            "온라인쇼핑",
+            "편의점",
+            "배달앱",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 251,
+        "check_card_name": "레고랜드 체크카드",
+        "benefit": [
+            "해외",
+            "간편결제",
+            "배달앱",
+            "대형마트",
+            "기타",
+            "면세점",
+            "공항라운지",
+            "카페",
+            "하이브리드"
+        ]
+    },
+    {
+        "check_card_id": 252,
+        "check_card_name": "새로이 체크카드",
+        "benefit": [
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 253,
+        "check_card_name": "위버스 신한카드 체크(ENHYPEN)",
+        "benefit": [
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 254,
+        "check_card_name": "챔피언 체크카드",
+        "benefit": [
+            "국민행복",
+            "병원",
+            "온라인쇼핑",
+            "패밀리레스토랑",
+            "카페",
+            "통신",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 255,
+        "check_card_name": "해피락스타 체크카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 256,
+        "check_card_name": "해피포인트 우리체크 V.2",
+        "benefit": [
+            "생활",
+            "편의점",
+            "카페",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 257,
+        "check_card_name": "E1 LPG 롯데 체크카드",
+        "benefit": [
+            "배달앱",
+            "카페",
+            "편의점"
+        ]
+    },
+    {
+        "check_card_id": 258,
+        "check_card_name": "jumjum(점점) 체크카드(비씨)",
+        "benefit": [
+            "테마파크",
+            "대중교통",
+            "통신",
+            "디지털구독",
+            "카페",
+            "도서",
+            "편의점"
+        ]
+    },
+    {
+        "check_card_id": 259,
+        "check_card_name": "JYP Fan’s EDM 체크",
+        "benefit": [
+            "편의점",
+            "생활",
+            "카페",
+            "디지털구독",
+            "도서"
+        ]
+    },
+    {
+        "check_card_id": 260,
+        "check_card_name": "L.pay 신한카드 체크",
+        "benefit": [
+            "대중교통",
+            "생활",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 261,
+        "check_card_name": "LG U+ 신한카드 Smart 체크",
+        "benefit": [
+            "대중교통",
+            "생활",
+            "해외"
+        ]
+    },
+    {
+        "check_card_id": 262,
+        "check_card_name": "LIKIT on 체크카드",
+        "benefit": [
+            "적립",
+            "생활",
+            "기타",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 263,
+        "check_card_name": "Real Zero 체크카드",
+        "benefit": [
+            "대중교통",
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "편의점",
+            "도서",
+            "해피포인트",
+            "은행사",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 264,
+        "check_card_name": "넥슨 메이플스토리 하나BC 체크카드",
+        "benefit": [
+            "적립",
+            "해외이용",
+            "해피포인트"
+        ]
+    },
+    {
+        "check_card_id": 265,
+        "check_card_name": "농부의마음 Farmers Heart 체크카드",
+        "benefit": [
+            "공연/전시",
+            "음원사이트",
+            "대중교통",
+            "카페",
+            "마트/편의점",
+            "해외이용"
+        ]
+    },
+    {
+        "check_card_id": 266,
+        "check_card_name": "시장愛 체크카드",
+        "benefit": [
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 267,
+        "check_card_name": "신한카드 봄(체크)",
+        "benefit": [
+            "적립",
+            "교통",
+            "간편결제"
+        ]
+    },
+    {
+        "check_card_id": 268,
+        "check_card_name": "위버스 신한카드 체크(SEVENTEEN)",
+        "benefit": [
+            "LGU+",
+            "편의점",
+            "영화",
+            "테마파크"
+        ]
+    },
+    {
+        "check_card_id": 269,
+        "check_card_name": "티니 카드",
+        "benefit": [
+            "온라인쇼핑",
+            "쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 270,
+        "check_card_name": "해피리워드 체크카드",
+        "benefit": [
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 271,
+        "check_card_name": "해피포인트 체크카드",
+        "benefit": [
+            "게임",
+            "교통",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 272,
+        "check_card_name": "go 캐시백 글로벌 하이브리드",
+        "benefit": [
+            "모든가맹점",
+            "주유소",
+            "편의점"
+        ]
+    },
+    {
+        "check_card_id": 273,
+        "check_card_name": "H.Point 체크카드",
+        "benefit": [
+            "전통시장",
+            "기타",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 274,
+        "check_card_name": "KB국민 티머니노리학생증 체크카드(그린_세로형)",
+        "benefit": [
+            "적립",
+            "생활",
+            "기타",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 275,
+        "check_card_name": "LineageM 신한카드 체크",
+        "benefit": [
+            "교육/육아",
+            "교통",
+            "간편결제"
+        ]
+    },
+    {
+        "check_card_id": 276,
+        "check_card_name": "NH올원 NH투자증권체크카드",
+        "benefit": [
+            "생활",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 277,
+        "check_card_name": "국민행복체크카드",
+        "benefit": [
+            "주유",
+            "대중교통",
+            "통신",
+            "렌터카",
+            "카페/디저트",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 278,
+        "check_card_name": "다이소 신한카드 체크",
+        "benefit": [
+            "해피포인트"
+        ]
+    },
+    {
+        "check_card_id": 279,
+        "check_card_name": "땡겨요 신한카드 체크(라이더형)",
+        "benefit": [
+            "캐시백",
+            "해피포인트"
+        ]
+    },
+    {
+        "check_card_id": 280,
+        "check_card_name": "럭키 유카드",
+        "benefit": [
+            "기타",
+            "카페",
+            "영화",
+            "드럭스토어"
+        ]
+    },
+    {
+        "check_card_id": 281,
+        "check_card_name": "메가쇼핑체크카드",
+        "benefit": [
+            "카페",
+            "영화",
+            "편의점",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 282,
+        "check_card_name": "신한카드 Pick I 선불",
+        "benefit": [
+            "게임",
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 283,
+        "check_card_name": "신한카드 Way 체크",
+        "benefit": [
+            "적립",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 284,
+        "check_card_name": "신한카드 Way 체크(쥬라기)",
+        "benefit": [
+            "국민행복",
+            "편의점",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 285,
+        "check_card_name": "어디로든 그린체크카드",
+        "benefit": [
+            "소셜커머스",
+            "온라인쇼핑",
+            "점심",
+            "카페",
+            "영화",
+            "공연/전시",
+            "통신",
+            "도서",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 286,
+        "check_card_name": "우리성당 체크카드",
+        "benefit": [
+            "혜택 프로모션",
+            "카페",
+            "편의점",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 287,
+        "check_card_name": "제주도 삼성체크카드",
+        "benefit": [
+            "멤버십포인트",
+            "연회비지원",
+            "해외이용",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 288,
+        "check_card_name": "탐나는전 체크카드",
+        "benefit": [
+            "주유",
+            "카페/디저트",
+            "마트/편의점",
+            "쇼핑",
+            "영화",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 289,
+        "check_card_name": "하나 국민행복 체크카드",
+        "benefit": [
+            "홈쇼핑",
+            "연회비지원",
+            "헤어",
+            "테마파크",
+            "경기관람",
+            "쇼핑",
+            "영화",
+            "푸드",
+            "주유소",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 290,
+        "check_card_name": "하이틴즈 체크카드",
+        "benefit": [
+            "간편결제",
+            "소셜커머스",
+            "편의점",
+            "카페",
+            "해외이용",
+            "프리미엄 서비스"
+        ]
+    },
+    {
+        "check_card_id": 291,
+        "check_card_name": "한화생명 Family 체크카드",
+        "benefit": [
+            "편의점",
+            "카페",
+            "디지털구독",
+            "온라인쇼핑"
+        ]
+    },
+    {
+        "check_card_id": 292,
+        "check_card_name": "AIA생명 롯데 리얼체크카드",
+        "benefit": [
+            "충전소",
+            "생활",
+            "카페",
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 293,
+        "check_card_name": "KT 신한카드 체크",
+        "benefit": [
+            "대중교통",
+            "병원/약국",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "주유"
+        ]
+    },
+    {
+        "check_card_id": 294,
+        "check_card_name": "내가그린카드",
+        "benefit": [
+            "할인"
+        ]
+    },
+    {
+        "check_card_id": 295,
+        "check_card_name": "리디 신한카드 체크",
+        "benefit": [
+            "지역",
+            "주유",
+            "경기관람"
+        ]
+    },
+    {
+        "check_card_id": 296,
+        "check_card_name": "리틀프렌즈 체크카드",
+        "benefit": [
+            "적립",
+            "푸드",
+            "대중교통",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 297,
+        "check_card_name": "마이 홈플러스 체크카드",
+        "benefit": [
+            "생활",
+            "통신"
+        ]
+    },
+    {
+        "check_card_id": 298,
+        "check_card_name": "쇼퍼홀릭 롯데홈쇼핑 롯데체크카드",
+        "benefit": [
+            "보험사",
+            "연회비지원",
+            "헤어",
+            "테마파크",
+            "경기관람",
+            "쇼핑",
+            "항공권",
+            "영화",
+            "푸드",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 299,
+        "check_card_name": "시코르 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "카페",
+            "테마파크",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 300,
+        "check_card_name": "유안타 Daily+ 체크카드",
+        "benefit": [
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 301,
+        "check_card_name": "KB국민 티머니노리학생증 체크카드(블루_세로형)",
+        "benefit": [
+            "KT",
+            "편의점",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 302,
+        "check_card_name": "LIKIT fun 체크카드",
+        "benefit": [
+            "도서",
+            "영화",
+            "패스트푸드"
+        ]
+    },
+    {
+        "check_card_id": 303,
+        "check_card_name": "라떼 우리체크카드",
+        "benefit": [
+            "편의점",
+            "도서",
+            "베이커리"
+        ]
+    },
+    {
+        "check_card_id": 304,
+        "check_card_name": "롯데체크카드",
+        "benefit": [
+            "마트/편의점"
+        ]
+    },
+    {
+        "check_card_id": 305,
+        "check_card_name": "신한카드 FANtastic S 체크(DRX)",
+        "benefit": [
+            "해외직구",
+            "해외이용",
+            "수수료우대",
+            "소셜커머스",
+            "편의점",
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 306,
+        "check_card_name": "신한카드 Finnq(핀크) 체크",
+        "benefit": [
+            "적립",
+            "대중교통",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 307,
+        "check_card_name": "신한카드 봄 체크(도구리)",
+        "benefit": [
+            "캐시백",
+            "대중교통"
+        ]
+    },
+    {
+        "check_card_id": 308,
+        "check_card_name": "아모레퍼시픽 체크카드",
+        "benefit": [
+            "카카오페이",
+            "온라인쇼핑",
+            "편의점",
+            "드럭스토어"
+        ]
+    },
+    {
+        "check_card_id": 309,
+        "check_card_name": "아이부자 카드",
+        "benefit": [
+            "바우처",
+            "멤버십포인트"
+        ]
+    },
+    {
+        "check_card_id": 310,
+        "check_card_name": "유안타 CMA+ 체크카드",
+        "benefit": [
+            "국민행복"
+        ]
+    },
+    {
+        "check_card_id": 311,
+        "check_card_name": "이사배 카드",
+        "benefit": [
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 312,
+        "check_card_name": "청소년 후불교통 체크카드",
+        "benefit": [
+            "기타",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "check_card_id": 313,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "적립"
+        ]
+    },
+    {
+        "check_card_id": 314,
+        "check_card_name": "카카오페이 체크카드",
+        "benefit": [
+            "화장품",
+            "카페",
+            "해피포인트",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 315,
+        "check_card_name": "탐나는전 체크카드",
+        "benefit": [
+            "대중교통",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "check_card_id": 316,
+        "check_card_name": "핀크카드",
+        "benefit": [
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 317,
+        "check_card_name": "해피CU포인트 체크카드",
+        "benefit": [
+            "드럭스토어",
+            "화장품",
+            "헤어",
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 318,
+        "check_card_name": "해피포인트 체크카드",
+        "benefit": [
+            "편의점",
+            "카페/디저트",
+            "패스트푸드",
+            "쇼핑",
+            "영화/문화",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 319,
+        "check_card_name": "현대백화점 체크카드",
+        "benefit": [
+            "쇼핑",
+            "카카오페이"
+        ]
+    },
+    {
+        "check_card_id": 320,
+        "check_card_name": "AK우리카드 체크",
+        "benefit": [
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 321,
+        "check_card_name": "EDIYA 신한카드 체크",
+        "benefit": [
+            "적립",
+            "기타",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 322,
+        "check_card_name": "GS Prime 신한카드 체크",
+        "benefit": [
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 323,
+        "check_card_name": "IBK-Syrup카드[체크]",
+        "benefit": [
+            "멤버십포인트",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 324,
+        "check_card_name": "KB국민 티머니노리학생증 체크카드(그린)",
+        "benefit": [
+            "해피포인트",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 325,
+        "check_card_name": "KB국민 티머니노리학생증 체크카드(블루)",
+        "benefit": [
+            "해피포인트",
+            "패밀리레스토랑",
+            "편의점",
+            "영화/문화"
+        ]
+    },
+    {
+        "check_card_id": 326,
+        "check_card_name": "SB 팝 체크카드",
+        "benefit": [
+            "모든가맹점",
+            "공연/전시",
+            "백화점"
+        ]
+    },
+    {
+        "check_card_id": 327,
+        "check_card_name": "SB 팝 플러스 체크카드",
+        "benefit": [
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 328,
+        "check_card_name": "Syrup Membership Wealth 마이카드(체크)",
+        "benefit": [
+            "쇼핑",
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 329,
+        "check_card_name": "국민행복 체크카드",
+        "benefit": [
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 330,
+        "check_card_name": "나마네카드",
+        "benefit": [
+            "통신",
+            "영화",
+            "패밀리레스토랑",
+            "카페",
+            "테마파크",
+            "금융",
+            "편의점",
+            "도서",
+            "기타"
+        ]
+    },
+    {
+        "check_card_id": 331,
+        "check_card_name": "더본 신한카드 체크",
+        "benefit": [
+            "기타",
+            "편의점",
+            "온라인쇼핑",
+            "대형마트",
+            "카페"
+        ]
+    },
+    {
+        "check_card_id": 332,
+        "check_card_name": "머니트리카드",
+        "benefit": [
+            "기타",
+            "모든가맹점",
+            "은행사"
+        ]
+    },
+    {
+        "check_card_id": 333,
+        "check_card_name": "메가쇼핑 신한카드 체크",
+        "benefit": [
+            "금융"
+        ]
+    },
+    {
+        "check_card_id": 334,
+        "check_card_name": "몰테일 신한카드 체크",
+        "benefit": [
+            "기타",
+            "공과금/렌탈",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 335,
+        "check_card_name": "쏙쏙 체크카드",
+        "benefit": [
+            "푸드",
+            "영화"
+        ]
+    },
+    {
+        "check_card_id": 336,
+        "check_card_name": "아모레퍼시픽 신한카드 체크",
+        "benefit": [
+            "마트/편의점",
+            "모든가맹점"
+        ]
+    },
+    {
+        "check_card_id": 337,
+        "check_card_name": "유안타 Stock+ 체크카드",
+        "benefit": [
+            "캐시백"
+        ]
+    },
+    {
+        "check_card_id": 338,
+        "check_card_name": "음 체크카드",
+        "benefit": [
+            "화장품",
+            "대형마트",
+            "백화점",
+            "생활"
+        ]
+    },
+    {
+        "check_card_id": 339,
+        "check_card_name": "제주삼다수 체크카드",
+        "benefit": [
+            "증권사"
+        ]
+    },
+    {
+        "check_card_id": 340,
+        "check_card_name": "총무 체크카드",
+        "benefit": [
+            "일반음식점",
+            "카페",
+            "교통"
+        ]
+    },
+    {
+        "check_card_id": 341,
+        "check_card_name": "카드의정석 U+알뜰모바일 CHECK",
+        "benefit": [
+            "대중교통",
+            "교육/육아",
+            "통신",
+            "편의점",
+            "영화",
+            "푸드"
+        ]
+    },
+    {
+        "check_card_id": 342,
+        "check_card_name": "탐나는J체크카드",
+        "benefit": [
+            "일반음식점",
+            "카페",
+            "아이스크림",
+            "대중교통",
+            "선택형"
+        ]
+    },
+    {
+        "check_card_id": 343,
+        "check_card_name": "투썸플레이스 신한카드 체크",
+        "benefit": [
+            "통신"
+        ]
+    }
+]

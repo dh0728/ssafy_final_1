@@ -4,6 +4,7 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
+from cards.models import Category
 
 from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer,CategoryExpenseSerializer
 from django.db import transaction
@@ -22,6 +23,12 @@ from django.db.models import Q, Sum
 
 from datetime import datetime
 from collections import defaultdict
+
+from openai import OpenAI
+
+import faiss
+import numpy as np
+from sentence_transformers import SentenceTransformer
 
 # Create your views here.
 @api_view(['GET'])
@@ -304,6 +311,50 @@ def write_account_data(request): # 단일 지출
         account_book_data_instance.delete()
         return Response({"message": f"Account book data with id {account_book_data_id} has been deleted."}, status=status.HTTP_204_NO_CONTENT)
 
+def category_ask(userInput):
+    media_path = os.path.join(settings.MEDIA_ROOT, 'category_input.json')
+    try:
+        with open(media_path, 'r', encoding='utf-8') as file:
+            category_data = json.load(file)
+
+        categories_summary = "\n".join([f"{key} (ID: {value['category_id']}): {', '.join(value['kinds'])}" for key, value in category_data.items()])
+        
+        OPENAI_API_KEY =settings.OPENAI_API_KEY
+
+        client = OpenAI(api_key=OPENAI_API_KEY)
+        # 페르소나 지정 및 기존 대화 내용 저장
+        conversation_history = [
+            {"role": "system", "content": "당신은 사용자가 입력한 영수증의 구매 내역 카테고리를 알려주는 프로그램이야."},
+            {"role": "system", "content": "내가 정한 카테고리는 총 27개야 "},
+            {"role": "system", "content": f'The categories are: {categories_summary}'},
+            {"role": "system", "content": "답변은 내가 정해준 카테고리 중 너가 생각하는 카테고리를 선택해서 category_id 가 몇번인지 알려주면 출력해줘"},
+            {"role": "system", "content": "어딘지 모르겠으면 기타로 분류해야하니까 출력값은 '25'로 하면 돼"},
+            {"role": "system", "content": "만약 카테고리가 푸드이면 숫자 '7'만 출력하고 다른 말은 하면 안돼."},
+            {"role": "system", "content": "어떤 설명도 추가하지 말고, 숫자만 출력해야 돼."},
+        ]
+
+        conversation_history.append(
+            {
+                "role": "user",
+                "content": f"{userInput}",
+            }
+        )
+
+        response = client.chat.completions.create(
+        model="gpt-3.5-turbo",  # 사용하려는 모델 (필수 지정)
+        messages=conversation_history,  # 대화 메시지 목록 (필수 지정)
+        max_tokens=500,  # 생성될 응답의 최대 토큰 수 (값의 범위: 1~모델 마다 최대값 ex> gpt-3.5-turbo: 16,385 tokens)
+        temperature=0.7,  # 확률 분포 조정을 통한 응답의 다양성 제어 (값의 범위: 0~2)
+        top_p=0.9,  # 누적 확률 값을 통한 응답의 다양성 제어 (값의 범위: 0~1)
+        n=1,  # 생성할 응답 수 (1이상의 값)
+        seed=1000 # 랜덤 씨드 값
+        )
+        # 응답 출력
+        for response in response.choices :
+            return response.message.content
+    except:
+        return 
+
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -355,10 +406,10 @@ def receipt(request): # 영수증 OCR
                 response_data = response.json()  # JSON 응답 파싱
 
                 # 응답 데이터를 JSON 파일로 저장
-                json_filename = f"ocr_response_{uuid.uuid4().hex}.json"
-                json_file_path = os.path.join(settings.MEDIA_ROOT, json_filename)
-                with open(json_file_path, 'w', encoding='utf-8') as json_file:
-                    json.dump(response_data, json_file, ensure_ascii=False, indent=4)
+                # json_filename = f"ocr_response_{uuid.uuid4().hex}.json"
+                # json_file_path = os.path.join(settings.MEDIA_ROOT, json_filename)
+                # with open(json_file_path, 'w', encoding='utf-8') as json_file:
+                #     json.dump(response_data, json_file, ensure_ascii=False, indent=4)
 
             # API 요청 성공 시 응답 반환
             if response.status_code == 200:
@@ -390,22 +441,43 @@ def receipt(request): # 영수증 OCR
                 except:
                     account = 0
 
+                AI_input =f'{store}에서 총 결제 금액:{account}원 결제 했어.'
+
                 try:
                     subResults =response_data['images'][0]['receipt']['result']['subResults'][0]['items']
                     memo=''
                     for item in subResults:
-                        menu= item['name']['formatted']['value']
-                        print(menu)
-                        cnt = item['count']['formatted']['value']
-                        print(cnt)
-                        price = item['price']['price']['formatted']['value']
-                        print(price)
-                        unitPrice = item['price']['unitPrice']['formatted']['value']
-                        print(unitPrice)
-                        memo +=f'{menu}({cnt}개):{price}원 개당 {unitPrice}, '
-                        print(memo)
+                        try:
+                            menu= item['name']['formatted']['value']
+                            memo += f'{menu}'
+                        except:
+                            pass
+                        try:
+                            cnt = item['count']['formatted']['value']
+                            memo += f'({cnt}개)'
+                        except:
+                            pass
+                        try:
+                            price = item['price']['price']['formatted']['value']
+                            memo += f'{price}원'
+                        except:
+                            pass
+                        try:
+                            unitPrice = item['price']['unitPrice']['formatted']['value']
+                            memo += f'개당 {unitPrice}원'
+                        except:
+                            pass
+                        memo +=', \n'
+                    AI_input += f'상세 내역은 {memo}이야'
+                    # print(memo)
                 except:
                     memo=''
+
+                category_id=category_ask(AI_input)
+                try:
+                    int(category_id)
+                except:
+                    category_id=25
 
                 data ={
                     "store":store,
@@ -415,7 +487,7 @@ def receipt(request): # 영수증 OCR
                     "account":account,
                     "is_income":False,
                     "payment":'카드', 
-                    "category_id":1, #이건 AI 써야함
+                    "category_id":category_id,
                     "memo":memo
 
                 }
@@ -492,17 +564,14 @@ def analyze_category(request):
     account_book = get_object_or_404(Account_book, user_id=request.user)
 
     if request.method == 'GET':
-        if request.method == 'GET':
-            # 요청 파라미터 유효성 검사
-            try:
-                year = int(request.query_params.get('year'))
-                month = int(request.query_params.get('month'))
-
-                if not (1 <= month <= 12):
-                    return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
-
-            except (ValueError, TypeError):
-                return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
 
         # 한달 데이터 모으기
         month_data = Account_book_data.objects.filter(
@@ -657,4 +726,78 @@ def analyze_time(request):
         # 시리얼라이저를 사용하여 응답 반환
         serializer = AnalysisTimeSerialzer(analysis_data)
         return Response(serializer.data)
+    
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def recommend_cards(request):
+    pass
+    # account_book = get_object_or_404(Account_book, user_id=request.user)
+
+    # if request.method == 'GET':
+    #     # 요청 파라미터 유효성 검사
+    #     try:
+    #         year = int(request.query_params.get('year'))
+    #         month = int(request.query_params.get('month'))
+    #         if not (1 <= month <= 12):
+    #             return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+    #     except (ValueError, TypeError):
+    #         return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    #     # 한달 데이터 모으기
+    #     month_data = Account_book_data.objects.filter(
+    #         year=year,
+    #         month=month,
+    #         account_book_id=account_book.pk,
+    #         is_income = False
+    #     )
+
+    #     # 카테고리 id 별로 account 합쳐야함
+    #     # 카테고리별 소비 금액 합계 계산
+    #     category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+
+    #     category_summary = []
+    #     for category in category_expenses:
+    #         category_id = category['category_id']
+    #         total_amount = category['total_amount']
+    #         category_instance = get_object_or_404(Category, pk=category_id)
+    #         category_name = category_instance.category_name
+    #         # 요약 및 세부 내역 추가
+    #         category_summary.append({
+    #             'category_name':category_name,
+    #             'total_amount': total_amount,
+    #         })
+    #     sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+        
+    #     user_query=''
+    #     for data in sorted_category_summary:
+    #         user_query +=f'{data['category_name']} '
+
+    #     print(user_query)
+    #     # Django 프로젝트 경로에 맞게 설정
+    #     index_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_combined_vector_index.index')
+    #     ids_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_vector_ids.npy')
+
+    #     # FAISS 인덱스 및 ID 매핑 파일 불러오기
+    #     index = faiss.read_index(index_file_path)
+    #     loaded_ids = np.load(ids_file_path)
+
+    #     # 임베딩 모델 로드
+    #     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+
+    #     # 사용자 쿼리 입력 및 검색 수
+    #     query_embedding = model.encode(user_query).astype('float32')
+
+    #     # 검색 수행 (가장 유사한 10개 결과 찾기)
+    #     D, I = index.search(np.array([query_embedding]), k=10)
+
+    #     # 검색된 결과 출력
+    #     print("추천된 결과:")
+    #     recommend_list=[]
+    #     for idx in I[0]:
+    #         recommend_list.append(loaded_ids[idx])
+    #     print(recommend_list)
+
+    #     return Response()
+    # return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
