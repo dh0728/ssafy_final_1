@@ -11,7 +11,7 @@ from django.db import transaction
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-import requests
+# import requests
 import time
 import uuid
 import json
@@ -25,11 +25,11 @@ from django.db.models import Q, Sum
 from datetime import datetime
 from collections import defaultdict
 
-from openai import OpenAI
+# from openai import OpenAI
 
-import faiss
-import numpy as np
-from sentence_transformers import SentenceTransformer
+# import faiss
+# import numpy as np
+# from sentence_transformers import SentenceTransformer
 
 # Create your views here.
 @api_view(['GET'])
