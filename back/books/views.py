@@ -17,7 +17,8 @@ import uuid
 import json
 import os
 
-import math
+import math 
+
 
 from django.db.models import Q, Sum
 
@@ -69,13 +70,25 @@ def month(request):
     if request.method == "GET":
         year = request.query_params.get('year')
         month = request.query_params.get('month')
-        account_book =get_object_or_404(Account_book, user_id=request.user) 
 
         account_book_data = Account_book_data.objects.filter(
             account_book_id=account_book.pk,
             month = int(month),
             year = int(year)
             )
+        serializer = AccountBookCalendar(account_book_data,many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def year(request):
+    account_book = get_object_or_404(Account_book, user_id=request.user) 
+    if request.method == "GET":
+        year= datetime.now().year
+        account_book_data = Account_book_data.objects.filter(
+            account_book_id=account_book.pk,
+            year=year
+        ).order_by('-month', 'day')  # month 내림차순, day 오름차순
         serializer = AccountBookCalendar(account_book_data,many=True)
         return Response(serializer.data)
 
