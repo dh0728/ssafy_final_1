@@ -54,24 +54,28 @@
         <div class="menu-title">설정</div>
         <ul class="menu-list">
           <li>
-            <button class="menu-item" @click="openModal">
+            <button class="menu-item" @click="openMyCardModal">
               <span class="icon">💳</span>
               내 카드 설정
             </button>
           </li>
           <li>
-            <RouterLink to="/budget/account-settings" class="menu-item" active-class="active">
+            <button class="menu-item" @click="openRecommendModal">
               <span class="icon">💸</span>
               카드 추천 서비스
-            </RouterLink>
+            </button>
           </li>
         </ul>
       </div>
     </div>
   </div>
   <MyCardRegister
-      v-if="showModal"
-      @close="closeModal"
+      v-if="showMyCardModal"
+      @close="closeMyCardModal"
+  />
+  <CardRecommend
+      v-if="showRecommendModal"
+      @close="closeRecommendModal"
   />
 </template>
 
@@ -79,15 +83,25 @@
 import { RouterLink, RouterView } from 'vue-router'
 import MyCardRegister from "@/components/cards/MyCardRegister.vue";
 import {ref} from "vue";
+import CardRecommend from "@/components/cards/CardRecommend.vue";
 
-const showModal = ref(false)
+const showMyCardModal = ref(false)
+const showRecommendModal = ref(false)
 
-const openModal = () => {
-  showModal.value = true
+const openMyCardModal = () => {
+  showMyCardModal.value = true
 }
 
-const closeModal = () => {
-  showModal.value = false
+const closeMyCardModal = () => {
+  showMyCardModal.value = false
+}
+
+const openRecommendModal = () => {
+  showRecommendModal.value = true
+}
+
+const closeRecommendModal = () => {
+  showRecommendModal.value = false
 }
 </script>
 
