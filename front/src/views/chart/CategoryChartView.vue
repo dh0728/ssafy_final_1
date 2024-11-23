@@ -16,35 +16,17 @@
         <!-- 카테고리 도넛 차트 섹션 -->
         <div class="chart-section">
           <div class="donut-container">
-            <h3>카테고리별 분석</h3>
-            <div class="chart-wrapper">
-              <!-- 도넛 차트가 들어갈 자리 -->
-            </div>
+            <CategoryChart @select-category="onSelectCategory" />
           </div>
 
           <!-- 카테고리 목록 -->
           <div class="category-list">
-            <!-- 카테고리 아이템들이 들어갈 자리 -->
           </div>
         </div>
 
         <!-- 상세 내역 테이블 섹션 -->
         <div class="details-section">
-          <table class="details-table">
-            <thead>
-            <tr>
-              <th>날짜</th>
-              <th>카테고리</th>
-              <th>결제수단</th>
-              <th>거래처</th>
-              <th>금액</th>
-              <th>메모</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- 상세 내역이 들어갈 자리 -->
-            </tbody>
-          </table>
+          <CategoryList ref="categoryList" />
         </div>
       </div>
     </div>
@@ -53,6 +35,15 @@
 
 <script setup>
 import SideBar from "@/components/common/SideBar.vue";
+import CategoryChart from "@/components/chart/CategoryChart.vue";
+import CategoryList from "@/components/chart/CategoryList.vue";
+import {ref} from "vue";
+
+const categoryList = ref(null)
+
+const onSelectCategory = (category) => {
+  categoryList.value?.updateSelectedCategory(category)
+}
 </script>
 
 <style scoped>
@@ -104,7 +95,7 @@ import SideBar from "@/components/common/SideBar.vue";
 }
 
 .donut-container {
-  width: 300px;
+  width: 430px;
 }
 
 .chart-wrapper {
