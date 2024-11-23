@@ -793,9 +793,10 @@ def recommend_cards(request):
 
         # 검색된 결과 출력
         print("추천된 결과:")
+        recommend_list=[]
         for idx in I[0]:
-            original_id = loaded_ids[idx]
-            print(f"추천된 아이템 ID: {original_id}")
+            recommend_list.append(loaded_ids[idx])
+        print(recommend_list)
 
         return Response()
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
