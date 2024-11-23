@@ -26,6 +26,10 @@ from collections import defaultdict
 
 from openai import OpenAI
 
+import faiss
+import numpy as np
+from sentence_transformers import SentenceTransformer
+
 # Create your views here.
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -756,15 +760,42 @@ def recommend_cards(request):
         for category in category_expenses:
             category_id = category['category_id']
             total_amount = category['total_amount']
-            category_instance = get_list_or_404(Category, pk=category_id)
-            category_name = category_instance.name
+            category_instance = get_object_or_404(Category, pk=category_id)
+            category_name = category_instance.category_name
             # 요약 및 세부 내역 추가
             category_summary.append({
                 'category_name':category_name,
                 'total_amount': total_amount,
             })
-        
         sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+        
+        user_query=''
+        for data in sorted_category_summary:
+            user_query +=f'{data['category_name']} '
+
+        print(user_query)
+        # Django 프로젝트 경로에 맞게 설정
+        index_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_combined_vector_index.index')
+        ids_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_vector_ids.npy')
+
+        # FAISS 인덱스 및 ID 매핑 파일 불러오기
+        index = faiss.read_index(index_file_path)
+        loaded_ids = np.load(ids_file_path)
+
+        # 임베딩 모델 로드
+        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+
+        # 사용자 쿼리 입력 및 검색 수
+        query_embedding = model.encode(user_query).astype('float32')
+
+        # 검색 수행 (가장 유사한 10개 결과 찾기)
+        D, I = index.search(np.array([query_embedding]), k=10)
+
+        # 검색된 결과 출력
+        print("추천된 결과:")
+        for idx in I[0]:
+            original_id = loaded_ids[idx]
+            print(f"추천된 아이템 ID: {original_id}")
 
         return Response()
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)

@@ -1,7 +1,6 @@
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
-import os
 
 # Django 프로젝트 경로에 맞게 설정
 index_file_path ='cards/management/commands/faiss_indices/faiss_indices_combined_vector_index.index'
