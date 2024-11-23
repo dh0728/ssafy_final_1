@@ -93,14 +93,14 @@ export const useCalendarStore = defineStore('calendar', () => {
         try {
             const response = await axios({
                 method: 'GET',
-                url: `${API_URL}/account/books/month/`,
+                url: `${API_URL}/account/books/year/`,
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('auth')}`
                 },
-                params: {
-                    year: year,
-                    month: month
-                }
+                // params: {
+                //     year: year,
+                //     month: month
+                // }
             })
 
             if (response.status === 200) {

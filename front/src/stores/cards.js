@@ -164,6 +164,10 @@ export const useCardStore = defineStore('cards', () => {
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('auth')}`
                 },
+                data: {
+                    card_type: cardType,
+                    card_id: cardId
+                }
             })
         } catch (error) {
             console.error('my card delete fail', error)
@@ -187,6 +191,7 @@ export const useCardStore = defineStore('cards', () => {
         getCardDetail,
         registerMyCard,
         getMyCards,
+        deleteMyCard,
         resetCards
     }
 }, { persist: true })
