@@ -18,7 +18,7 @@
             <RouterLink :to="{ name: 'CardDetail', params: { type: store.currentType === 'credit' ? 'credit' : 'check', cardId: getCardId(card)}}" class="detail-btn">
               자세히 보기
             </RouterLink>
-            <button class="register-btn"> + 내 카드 등록</button>
+            <button @click="registerCard(card)" class="register-btn"> + 내 카드 등록</button>
           </div>
         </div>
 
@@ -114,6 +114,19 @@ watch(() => store.currentType, () => {
     setupObserver()
   }
 })
+
+const registerCard = async (card) => {
+  const cardType = store.currentType === 'credit' ? 1 : 2
+  const cardId = getCardId(card)
+
+  const result = await store.registerMyCard(cardType, cardId)
+
+  if (result.success) {
+    alert('카드가 성공적으로 등록되었습니다.')
+  } else {
+    alert(result.message)
+  }
+}
 
 onMounted(() => {
   const observer = setupObserver()

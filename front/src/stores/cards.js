@@ -103,6 +103,35 @@ export const useCardStore = defineStore('cards', () => {
         }
     }
 
+    // 내 카드 등록
+    const registerMyCard = async (cardType, cardId) => {
+        try {
+            const response = await axios({
+                method: 'POST',
+                url: `${API_URL}/cards/mycard/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+                data: {
+                    card_type: cardType,
+                    card_id: cardId
+                }
+            })
+
+            if (response.status === 200) {
+                alert('카드가 성공적으로 등록되었습니다.')
+                return true
+            }
+        } catch (error) {
+            if (error.response?.data?.error) {
+                alert(error.response.data.error)
+            } else {
+                alert('카드 등록 중 오류가 발생했습니다.')
+            }
+            return false
+        }
+    }
+
     const resetCards = () => {
         cards.value = []
         hasMoreCards.value = true
@@ -117,6 +146,7 @@ export const useCardStore = defineStore('cards', () => {
         getMoreCards,
         getCardsByCondition,
         getCardDetail,
+        registerMyCard,
         resetCards
     }
 }, { persist: true })
