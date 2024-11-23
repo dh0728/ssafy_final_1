@@ -116,15 +116,15 @@ watch(() => store.currentType, () => {
 })
 
 const registerCard = async (card) => {
-  const cardType = store.currentType === 'credit' ? 1 : 2
-  const cardId = getCardId(card)
+  try {
+    const cardType = store.currentType === 'credit' ? 1 : 2
+    const cardId = getCardId(card)
 
-  const result = await store.registerMyCard(cardType, cardId)
-
-  if (result.success) {
-    alert('카드가 성공적으로 등록되었습니다.')
-  } else {
+    const result = await store.registerMyCard(cardType, cardId)
     alert(result.message)
+  } catch (error) {
+    console.error('카드 등록 실패:', error)
+    alert('카드 등록 중 오류가 발생했습니다.')
   }
 }
 

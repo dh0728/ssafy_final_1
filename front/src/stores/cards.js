@@ -4,11 +4,11 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 
 export const useCardStore = defineStore('cards', () => {
-    const router = useRouter()
     const API_URL = 'http://127.0.0.1:8000'
     // 불러올 카드 데이터가 존재하는지 확인
     const hasMoreCards = ref(true)
     const currentType = ref('credit')
+    const myCard = ref(null)
 
 
     const cards = ref([])
@@ -104,6 +104,7 @@ export const useCardStore = defineStore('cards', () => {
     }
 
     // 내 카드 등록
+    // store의 registerMyCard 함수
     const registerMyCard = async (cardType, cardId) => {
         try {
             const response = await axios({
@@ -118,17 +119,54 @@ export const useCardStore = defineStore('cards', () => {
                 }
             })
 
-            if (response.status === 200) {
-                alert('카드가 성공적으로 등록되었습니다.')
-                return true
+            return {
+                success: true,
+                message: '카드가 성공적으로 등록되었습니다.'
             }
+
         } catch (error) {
-            if (error.response?.data?.error) {
-                alert(error.response.data.error)
-            } else {
-                alert('카드 등록 중 오류가 발생했습니다.')
+            // 400 에러는 이미 등록된 카드
+            if (error.response?.status === 400) {
+                return {
+                    success: false,
+                    message: '이미 등록된 카드입니다.'
+                }
             }
-            return false
+            // 기타 에러
+            return {
+                success: false,
+                message: '카드 등록 중 오류가 발생했습니다.'
+            }
+        }
+    }
+
+    // 내 카드 조회
+    const getMyCards = async () => {
+        try {
+            const response = await axios({
+                method: 'get',
+                url: `${API_URL}/cards/mycard/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+            })
+            myCard.value = response.data
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const deleteMyCard = async (cardType, cardId) => {
+        try {
+            const response = await axios({
+                method: 'delete',
+                url: `${API_URL}/cards/mycard/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+            })
+        } catch (error) {
+            console.error('my card delete fail', error)
         }
     }
 
@@ -140,6 +178,7 @@ export const useCardStore = defineStore('cards', () => {
     return {
         cards,
         card,
+        myCard,
         hasMoreCards,
         currentType,
         getCardList,
@@ -147,6 +186,7 @@ export const useCardStore = defineStore('cards', () => {
         getCardsByCondition,
         getCardDetail,
         registerMyCard,
+        getMyCards,
         resetCards
     }
 }, { persist: true })
