@@ -4,7 +4,8 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404 , get_list_or_404
 from rest_framework.response import Response
 from .models import Account_book, Account_book_data, Budget, Schedule
-from cards.models import Category
+from cards.models import Category, Credit_cards, Check_cards
+from cards.serializers import RecommendCheckCard, RecommendCreditCard
 
 from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer,CategoryExpenseSerializer
 from django.db import transaction
@@ -745,7 +746,6 @@ def analyze_time(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def recommend_cards(request):
-    pass
     # account_book = get_object_or_404(Account_book, user_id=request.user)
 
     # if request.method == 'GET':
@@ -814,3 +814,21 @@ def recommend_cards(request):
 
     #     return Response()
     # return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    check_list=[1,2,3]
+    credits_list=[1,2,3]
+
+    # 체크카드 정보 조회
+    check_cards = Check_cards.objects.filter(check_card_id__in=check_list)
+
+    # 신용카드 정보 조회
+    credit_cards = Credit_cards.objects.filter(credit_card_id__in=credits_list)
+
+    credit_cards_serializer = RecommendCreditCard(credit_cards,many=True)
+    check_cards_serializer = RecommendCheckCard(check_cards, many=True)
+
+    response_data = {
+        'credit_cards': credit_cards_serializer.data,
+        'check_cards': check_cards_serializer.data
+    }
+
+    return Response(response_data, status=status.HTTP_200_OK)
