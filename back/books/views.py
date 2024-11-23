@@ -732,71 +732,72 @@ def analyze_time(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def recommend_cards(request):
-    account_book = get_object_or_404(Account_book, user_id=request.user)
+    pass
+    # account_book = get_object_or_404(Account_book, user_id=request.user)
 
-    if request.method == 'GET':
-        # 요청 파라미터 유효성 검사
-        try:
-            year = int(request.query_params.get('year'))
-            month = int(request.query_params.get('month'))
-            if not (1 <= month <= 12):
-                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
-        except (ValueError, TypeError):
-            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+    # if request.method == 'GET':
+    #     # 요청 파라미터 유효성 검사
+    #     try:
+    #         year = int(request.query_params.get('year'))
+    #         month = int(request.query_params.get('month'))
+    #         if not (1 <= month <= 12):
+    #             return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+    #     except (ValueError, TypeError):
+    #         return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # 한달 데이터 모으기
-        month_data = Account_book_data.objects.filter(
-            year=year,
-            month=month,
-            account_book_id=account_book.pk,
-            is_income = False
-        )
+    #     # 한달 데이터 모으기
+    #     month_data = Account_book_data.objects.filter(
+    #         year=year,
+    #         month=month,
+    #         account_book_id=account_book.pk,
+    #         is_income = False
+    #     )
 
-        # 카테고리 id 별로 account 합쳐야함
-        # 카테고리별 소비 금액 합계 계산
-        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+    #     # 카테고리 id 별로 account 합쳐야함
+    #     # 카테고리별 소비 금액 합계 계산
+    #     category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
 
-        category_summary = []
-        for category in category_expenses:
-            category_id = category['category_id']
-            total_amount = category['total_amount']
-            category_instance = get_object_or_404(Category, pk=category_id)
-            category_name = category_instance.category_name
-            # 요약 및 세부 내역 추가
-            category_summary.append({
-                'category_name':category_name,
-                'total_amount': total_amount,
-            })
-        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+    #     category_summary = []
+    #     for category in category_expenses:
+    #         category_id = category['category_id']
+    #         total_amount = category['total_amount']
+    #         category_instance = get_object_or_404(Category, pk=category_id)
+    #         category_name = category_instance.category_name
+    #         # 요약 및 세부 내역 추가
+    #         category_summary.append({
+    #             'category_name':category_name,
+    #             'total_amount': total_amount,
+    #         })
+    #     sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
         
-        user_query=''
-        for data in sorted_category_summary:
-            user_query +=f'{data['category_name']} '
+    #     user_query=''
+    #     for data in sorted_category_summary:
+    #         user_query +=f'{data['category_name']} '
 
-        print(user_query)
-        # Django 프로젝트 경로에 맞게 설정
-        index_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_combined_vector_index.index')
-        ids_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_vector_ids.npy')
+    #     print(user_query)
+    #     # Django 프로젝트 경로에 맞게 설정
+    #     index_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_combined_vector_index.index')
+    #     ids_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_vector_ids.npy')
 
-        # FAISS 인덱스 및 ID 매핑 파일 불러오기
-        index = faiss.read_index(index_file_path)
-        loaded_ids = np.load(ids_file_path)
+    #     # FAISS 인덱스 및 ID 매핑 파일 불러오기
+    #     index = faiss.read_index(index_file_path)
+    #     loaded_ids = np.load(ids_file_path)
 
-        # 임베딩 모델 로드
-        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+    #     # 임베딩 모델 로드
+    #     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-        # 사용자 쿼리 입력 및 검색 수
-        query_embedding = model.encode(user_query).astype('float32')
+    #     # 사용자 쿼리 입력 및 검색 수
+    #     query_embedding = model.encode(user_query).astype('float32')
 
-        # 검색 수행 (가장 유사한 10개 결과 찾기)
-        D, I = index.search(np.array([query_embedding]), k=10)
+    #     # 검색 수행 (가장 유사한 10개 결과 찾기)
+    #     D, I = index.search(np.array([query_embedding]), k=10)
 
-        # 검색된 결과 출력
-        print("추천된 결과:")
-        recommend_list=[]
-        for idx in I[0]:
-            recommend_list.append(loaded_ids[idx])
-        print(recommend_list)
+    #     # 검색된 결과 출력
+    #     print("추천된 결과:")
+    #     recommend_list=[]
+    #     for idx in I[0]:
+    #         recommend_list.append(loaded_ids[idx])
+    #     print(recommend_list)
 
-        return Response()
-    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    #     return Response()
+    # return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)

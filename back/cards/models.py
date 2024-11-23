@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class Credit_cards(models.Model):
@@ -43,4 +44,24 @@ class Check_card_category(models.Model):
     desc = models.CharField(max_length=100)
     desc_detail= models.TextField(default='상세 없음')
 
+class MyCreditCard(models.Model):
+    credit_card_id = models.ForeignKey('Credit_cards', on_delete=models.CASCADE)  # 신용카드 외래키
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='my_credit_cards')
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['credit_card_id', 'user_id'], name='unique_user_credit_card'
+            )
+        ]
+
+class MyCheckCard(models.Model):
+    check_card_id = models.ForeignKey('Check_cards', on_delete=models.CASCADE)  # 체크카드 외래키
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='my_check_cards')
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['check_card_id', 'user_id'], name='unique_user_check_card'
+            )
+        ]

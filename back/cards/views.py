@@ -1,6 +1,6 @@
-from .models import Credit_cards, Check_cards, Credit_card_category,Check_card_category
+from .models import Credit_cards, Check_cards, Credit_card_category,Check_card_category, MyCheckCard, MyCreditCard
 from rest_framework.permissions import AllowAny
-from .serializers import CreditCardSerializer, CheckCardSerializer, CreditCardListSerializer, CheckCardListSerializer
+from .serializers import CreditCardSerializer, CheckCardSerializer, CreditCardListSerializer, CheckCardListSerializer,MyCheckCardSerializer,MyCreditCardSerializer
 from rest_framework.decorators import api_view,permission_classes, authentication_classes
 from rest_framework import status
 from django.shortcuts import get_object_or_404 , get_list_or_404
@@ -8,6 +8,9 @@ from rest_framework.response import Response
 
 from django.db.models import Count
 from django.db import connection
+
+from rest_framework.permissions import IsAuthenticated
+
 
 # Create your views here.
 @api_view(['GET'])
@@ -225,3 +228,108 @@ def searchCondition(request,card_type):
 
 def recommend(request):
     pass
+
+@api_view(['GET','POST','DELETE'])
+@permission_classes([IsAuthenticated])
+def mycard(request):
+    if request.method == "GET":
+        # 신용카드 조회
+        my_credit_cards = MyCreditCard.objects.filter(user_id=request.user)
+        credit_cards_serializer = MyCreditCardSerializer(my_credit_cards, many=True)
+
+        # 체크카드 조회
+        my_check_cards = MyCheckCard.objects.filter(user_id=request.user)
+        check_cards_serializer = MyCheckCardSerializer(my_check_cards, many=True)
+
+        # 응답
+        return Response(
+            {
+                "credit_cards": credit_cards_serializer.data,
+                "check_cards": check_cards_serializer.data,
+            },
+            status=status.HTTP_200_OK,
+        )
+    elif request.method == 'POST':
+        card_type = request.data.get('card_type')
+        card_id = request.data.get('card_id')
+        print(card_id)
+        if not card_type or not card_id:
+            return Response({"error": "Both card_type and card_id are required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            card_type = int(card_type)
+            card_id = int(card_id)
+        except ValueError:
+            return Response({"error": "Invalid card_type or card_id format."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if card_type == 1:  # 신용카드
+            try:
+                credit_card = Credit_cards.objects.get(pk=card_id)
+                
+                # 이미 등록된 카드인지 확인
+                if MyCreditCard.objects.filter(credit_card_id=credit_card, user_id=request.user).exists():
+                    return Response({"error": "This card is already registered."}, status=status.HTTP_400_BAD_REQUEST)
+
+                # 카드 저장
+                MyCreditCard.objects.create(
+                    credit_card_id=credit_card,
+                    user_id=request.user
+                )
+                return Response({"message": "Credit card added successfully."}, status=status.HTTP_201_CREATED)
+            except Credit_cards.DoesNotExist:
+                return Response({"error": "Credit card not found."}, status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        elif card_type == 2:  # 체크카드
+            try:
+                check_card = Check_cards.objects.get(pk=card_id)
+
+                # 이미 등록된 카드인지 확인
+                if MyCheckCard.objects.filter(check_card_id=check_card, user_id=request.user).exists():
+                    return Response({"error": "This card is already registered."}, status=status.HTTP_400_BAD_REQUEST)
+
+                # 카드 저장
+                MyCheckCard.objects.create(
+                    check_card_id=check_card,
+                    user_id=request.user
+                )
+                return Response({"message": "Check card added successfully."}, status=status.HTTP_201_CREATED)
+            except Check_cards.DoesNotExist:
+                return Response({"error": "Check card not found."}, status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        else:
+            return Response({"error": "Invalid card_type. Use 1 for credit cards, 2 for check cards."}, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        card_type = request.data.get('card_type')
+        card_id = request.data.get('card_id')
+
+        if not card_type or not card_id:
+            return Response({"error": "Both card_type and card_id are required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            card_type = int(card_type)
+            card_id = int(card_id)
+        except ValueError:
+            return Response({"error": "Invalid card_type or card_id format."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if card_type == 1:  # 신용카드 삭제
+            try:
+                card = MyCreditCard.objects.get(credit_card_id=card_id, user_id=request.user)
+                card.delete()
+                return Response({"message": "Credit card deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+            except MyCreditCard.DoesNotExist:
+                return Response({"error": "Credit card not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        elif card_type == 2:  # 체크카드 삭제
+            try:
+                card = MyCheckCard.objects.get(check_card_id=card_id, user_id=request.user)
+                card.delete()
+                return Response({"message": "Check card deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+            except MyCheckCard.DoesNotExist:
+                return Response({"error": "Check card not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        else:
+            return Response({"error": "Invalid card_type. Use 1 for credit cards, 2 for check cards."}, status=status.HTTP_400_BAD_REQUEST)
