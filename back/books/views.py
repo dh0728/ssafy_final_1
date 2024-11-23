@@ -26,11 +26,13 @@ from django.db.models import Q, Sum
 from datetime import datetime
 from collections import defaultdict
 
-# from openai import OpenAI
 
-# import faiss
-# import numpy as np
-# from sentence_transformers import SentenceTransformer
+from openai import OpenAI
+
+from langchain_community.vectorstores import FAISS
+from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings.cache import CacheBackedEmbeddings
+
 
 # Create your views here.
 @api_view(['GET'])
@@ -620,6 +622,57 @@ def analyze_category(request):
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
 
+def evaluation(month_data,birth):
+    try:
+        user_input='나는 이번 한달 동안'
+        total=0
+        for data in month_data:
+            total +=data['total_amount']
+            user_input += f'{data["category_name"]}에 {data["total_amount"]}원, '
+
+        user_input +=f'총 {total}원을 사용했어 내 소비 습관 어때?? '
+
+
+        OPENAI_API_KEY =settings.MY_OPENAI_API_KEY
+
+        client = OpenAI(api_key=OPENAI_API_KEY)
+        # 페르소나 지정 및 기존 대화 내용 저장
+        conversation_history = [
+            {"role": "system", "content": "너는 사용자의 소비 내역을 바탕으로 사용자가 올바른 소비를 하고 있는지 평가하는 사용자 지갑 지킴이야."},
+            {"role": "system", "content": "만약 사용자의 소비 내역이 문제가 있어 보인다면 과격한 표현을 사용해가며 사용자가 경각심을 느낄 수 있도록 해줘야해."},
+            {"role": "system", "content": "사용자의 나이대와 비슷한 다른 사람들과 마음껏 비교해도 괜찮아."},
+            {"role": "system", "content": "만약 사용자가 소비를 올바르게 잘 하고 있다면 칭찬해 줘."},
+            {"role": "system", "content": "500자 이내로 부탁해."},
+        ]
+
+        conversation_history.append(
+            {
+                "role": "user",
+                "content": f"나는 {birth}에 태어났어",
+            }
+        )
+        conversation_history.append(
+            {
+                "role": "user",
+                "content": f"{user_input}",
+            },
+        )
+
+        response = client.chat.completions.create(
+        model="gpt-4o-mini-2024-07-18",  # 사용하려는 모델 (필수 지정)
+        messages=conversation_history,  # 대화 메시지 목록 (필수 지정)
+        max_tokens=1000,  # 생성될 응답의 최대 토큰 수 (값의 범위: 1~모델 마다 최대값 ex> gpt-3.5-turbo: 16,385 tokens)
+        temperature=0.7,  # 확률  분포 조정을 통한 응답의 다양성 제어 (값의 범위: 0~2)
+        top_p=0.6,  # 누적 확률 값을 통한 응답의 다양성 제어 (값의 범위: 0~1)
+        n=1,  # 생성할 응답 수 (1이상의 값)
+        seed=1000 # 랜덤 씨드 값
+        )
+        # 응답 출력
+        for response in response.choices :
+            return response.message.content
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -707,8 +760,6 @@ def analyze_time(request):
         # 오름차순 정렬 추가
         day_data = sorted(day_data, key=lambda x: x['day'])
 
-
-
         # 주별 지출은 어떻게 구해야 할까?
         
         week_data = defaultdict(int)
@@ -737,8 +788,32 @@ def analyze_time(request):
             'schedules':schedules,
         }
 
+
+        # 카테고리 id 별로 account 합쳐야함
+        # 카테고리별 소비 금액 합계 계산
+        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+
+        category_summary = []
+        for category in category_expenses:
+            category_id = category['category_id']
+            total_amount = category['total_amount']
+            category_instance = get_object_or_404(Category, pk=category_id)
+            category_name = category_instance.category_name
+            # 요약 및 세부 내역 추가
+            category_summary.append({
+                'category_name':category_name,
+                'total_amount': total_amount,
+            })
+        
+        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+        print(request.user.birth)
+        comment =evaluation(sorted_category_summary,request.user.birth)
+
+        analysis_data['comment']=comment
         # 시리얼라이저를 사용하여 응답 반환
         serializer = AnalysisTimeSerialzer(analysis_data)
+
+
         return Response(serializer.data)
     
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -746,89 +821,110 @@ def analyze_time(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def recommend_cards(request):
-    # account_book = get_object_or_404(Account_book, user_id=request.user)
+    account_book = get_object_or_404(Account_book, user_id=request.user)
 
-    # if request.method == 'GET':
-    #     # 요청 파라미터 유효성 검사
-    #     try:
-    #         year = int(request.query_params.get('year'))
-    #         month = int(request.query_params.get('month'))
-    #         if not (1 <= month <= 12):
-    #             return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
-    #     except (ValueError, TypeError):
-    #         return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'GET':
+        # 요청 파라미터 유효성 검사
+        try:
+            year = int(request.query_params.get('year'))
+            month = int(request.query_params.get('month'))
+            if not (1 <= month <= 12):
+                return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
+        except (ValueError, TypeError):
+            return Response({'error': 'Invalid year or month parameter.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    #     # 한달 데이터 모으기
-    #     month_data = Account_book_data.objects.filter(
-    #         year=year,
-    #         month=month,
-    #         account_book_id=account_book.pk,
-    #         is_income = False
-    #     )
+        # 한달 데이터 모으기
+        month_data = Account_book_data.objects.filter(
+            year=year,
+            month=month,
+            account_book_id=account_book.pk,
+            is_income = False
+        )
 
-    #     # 카테고리 id 별로 account 합쳐야함
-    #     # 카테고리별 소비 금액 합계 계산
-    #     category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+        # 카테고리 id 별로 account 합쳐야함
+        # 카테고리별 소비 금액 합계 계산
+        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
 
-    #     category_summary = []
-    #     for category in category_expenses:
-    #         category_id = category['category_id']
-    #         total_amount = category['total_amount']
-    #         category_instance = get_object_or_404(Category, pk=category_id)
-    #         category_name = category_instance.category_name
-    #         # 요약 및 세부 내역 추가
-    #         category_summary.append({
-    #             'category_name':category_name,
-    #             'total_amount': total_amount,
-    #         })
-    #     sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+        category_summary = []
+        for category in category_expenses:
+            category_id = category['category_id']
+            total_amount = category['total_amount']
+            category_instance = get_object_or_404(Category, pk=category_id)
+            category_name = category_instance.category_name
+            # 요약 및 세부 내역 추가
+            category_summary.append({
+                'category_name':category_name,
+                'total_amount': total_amount,
+            })
+        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
         
-    #     user_query=''
-    #     for data in sorted_category_summary:
-    #         user_query +=f'{data['category_name']} '
+        category_list=[]
+        for data in sorted_category_summary:
+            category_list.append(data['category_name'])
+        
+        print(category_list)
+        # OpenAI API 키 설정
+        # OpenAI Embeddings 및 캐싱 설정
+        embeddings = OpenAIEmbeddings(openai_api_key=settings.MY_OPENAI_API_KEY)
+        cache_dir = "./embedding_cache"
+        cached_embeddings = CacheBackedEmbeddings.from_bytes_store(embeddings, cache_dir)
 
-    #     print(user_query)
-    #     # Django 프로젝트 경로에 맞게 설정
-    #     index_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_combined_vector_index.index')
-    #     ids_file_path = os.path.join(settings.BASE_DIR, 'books', 'embedding', 'credit', 'faiss_indices_vector_ids.npy')
+        # Django 프로젝트 경로에 맞게 설정
+        credit_store_dir = os.path.join(settings.BASE_DIR, 'books', 'faiss_vector_store_creidt')
+        check_store_dir = os.path.join(settings.BASE_DIR, 'books', 'faiss_vector_store_check')
 
-    #     # FAISS 인덱스 및 ID 매핑 파일 불러오기
-    #     index = faiss.read_index(index_file_path)
-    #     loaded_ids = np.load(ids_file_path)
+        credit_vectorstore = FAISS.load_local(credit_store_dir, embeddings=cached_embeddings,allow_dangerous_deserialization=True)
+        check_vectorstore =FAISS.load_local(check_store_dir, embeddings=cached_embeddings,allow_dangerous_deserialization=True)
 
-    #     # 임베딩 모델 로드
-    #     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        credit_retriever = credit_vectorstore.as_retriever(search_kwargs={"k": 20})
+        check_retriever = check_vectorstore.as_retriever(search_kwargs={"k": 20})
 
-    #     # 사용자 쿼리 입력 및 검색 수
-    #     query_embedding = model.encode(user_query).astype('float32')
+        credit_ids={}
+        check_ids={}
+        
+        for category in category_list:
+            weight = len(category_list) - category_list.index(category)
+            credit_results=credit_retriever.invoke(category)
+            check_results =check_retriever.invoke(category)
+            for result in credit_results:
+                content = result.page_content
+                # 문자열을 "Card ID :" 기준으로 나눈 후 두 번째 부분에서 공백을 제거하고 추가
+                card_id = content.split("Card ID :")[1].strip()
+                if card_id in credit_ids:
+                    credit_ids[card_id] += weight
+                else:
+                    credit_ids[card_id] = weight
+            for result in check_results:
+                content = result.page_content
+                # 문자열을 "Card ID :" 기준으로 나눈 후 두 번째 부분에서 공백을 제거하고 추가
+                card_id = content.split("Card ID :")[1].strip()
+                if card_id in check_ids:
+                    check_ids[card_id] += weight
+                else:
+                    check_ids[card_id] = weight
 
-    #     # 검색 수행 (가장 유사한 10개 결과 찾기)
-    #     D, I = index.search(np.array([query_embedding]), k=10)
+        # credit_ids 딕셔너리에서 상위 3개의 항목을 가져오기
+        top_3_credit_ids = sorted(credit_ids.items(), key=lambda x: x[1], reverse=True)[:3]
 
-    #     # 검색된 결과 출력
-    #     print("추천된 결과:")
-    #     recommend_list=[]
-    #     for idx in I[0]:
-    #         recommend_list.append(loaded_ids[idx])
-    #     print(recommend_list)
+        # check_ids 딕셔너리에서 상위 3개의 항목을 가져오기
+        top_3_check_ids = sorted(check_ids.items(), key=lambda x: x[1], reverse=True)[:3]
 
-    #     return Response()
-    # return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    check_list=[1,2,3]
-    credits_list=[1,2,3]
+        # ID만 따로 리스트 형태로 추출하고 싶다면 다음과 같이 할 수 있습니다.
+        credits_list = [card_id for card_id, weight in top_3_credit_ids]
+        check_list = [card_id for card_id, weight in top_3_check_ids]
 
-    # 체크카드 정보 조회
-    check_cards = Check_cards.objects.filter(check_card_id__in=check_list)
+        # 체크카드 정보 조회
+        check_cards = Check_cards.objects.filter(check_card_id__in=check_list)
 
-    # 신용카드 정보 조회
-    credit_cards = Credit_cards.objects.filter(credit_card_id__in=credits_list)
+        # 신용카드 정보 조회
+        credit_cards = Credit_cards.objects.filter(credit_card_id__in=credits_list)
 
-    credit_cards_serializer = RecommendCreditCard(credit_cards,many=True)
-    check_cards_serializer = RecommendCheckCard(check_cards, many=True)
+        credit_cards_serializer = RecommendCreditCard(credit_cards,many=True)
+        check_cards_serializer = RecommendCheckCard(check_cards, many=True)
 
-    response_data = {
-        'credit_cards': credit_cards_serializer.data,
-        'check_cards': check_cards_serializer.data
-    }
+        response_data = {
+            'credit_cards': credit_cards_serializer.data,
+            'check_cards': check_cards_serializer.data
+        }
 
-    return Response(response_data, status=status.HTTP_200_OK)
+        return Response(response_data, status=status.HTTP_200_OK)
