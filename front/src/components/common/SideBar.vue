@@ -62,7 +62,7 @@
           <li>
             <button class="menu-item" @click="openRecommendModal">
               <span class="icon">💸</span>
-              카드 추천 서비스
+              스마트한 카드 추천
             </button>
           </li>
         </ul>

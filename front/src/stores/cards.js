@@ -9,7 +9,7 @@ export const useCardStore = defineStore('cards', () => {
     const hasMoreCards = ref(true)
     const currentType = ref('credit')
     const myCard = ref([])
-
+    const recommendCards = ref([])
 
     const cards = ref([])
     const card = ref(null)
@@ -176,6 +176,22 @@ export const useCardStore = defineStore('cards', () => {
         }
     }
 
+    const getRecommendCards = async () => {
+        try {
+            const response = await axios({
+                method: 'get',
+                url: `${API_URL}/account/books/recommend/cards`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+            })
+            recommendCards.value = response.data
+            console.log(recommendCards)
+        } catch (error) {
+            console.error('카드 추천 실패:', error)
+        }
+    }
+
     const resetCards = () => {
         cards.value = []
         hasMoreCards.value = true
@@ -185,6 +201,7 @@ export const useCardStore = defineStore('cards', () => {
         cards,
         card,
         myCard,
+        recommendCards,
         hasMoreCards,
         currentType,
         getCardList,
@@ -194,6 +211,7 @@ export const useCardStore = defineStore('cards', () => {
         registerMyCard,
         getMyCards,
         deleteMyCard,
+        getRecommendCards,
         resetCards
     }
 }, { persist: true })
