@@ -2,27 +2,49 @@
   <div class="modal-overlay" @click="$emit('close')">
     <div class="modal-content" @click.stop>
       <div class="modal-header">
-        <h2>내 카드 설정</h2>
+        <h2>등록된 카드 목록</h2>
         <button class="close-btn" @click="$emit('close')">×</button>
       </div>
       <div class="modal-body">
         <div class="my-cards">
-          <div v-if="store.myCard && store.myCard.length > 0" class="cards-grid">
-            <div v-for="card in store.myCard" :key="card.id" class="card-item">
-              <div class="card-image">
-                <img :src="card.img_path" :alt="card.name">
-              </div>
-              <div class="card-info">
-                <h3>{{ card.name }}</h3>
-                <span class="card-brand">{{ card.brand }}</span>
-                <div class="card-type">
-                  {{ card.card_type === 1 ? '신용카드' : '체크카드' }}
+          <!-- 신용카드 섹션 -->
+          <div v-if="myCards.credit_cards && myCards.credit_cards.length > 0">
+            <h3 class="section-title">신용카드</h3>
+            <div class="cards-grid">
+              <div v-for="card in myCards.credit_cards" :key="card.credit_card_id" class="card-item">
+                <div class="card-image">
+                  <img :src="card.img_path" :alt="card.credit_card_name">
                 </div>
-                <button class="delete-btn" @click="deleteCard(card)">삭제</button>
+                <div class="card-info">
+                  <h3>{{ card.credit_card_name }}</h3>
+                  <span class="card-brand">{{ card.brand }}</span>
+                  <div class="card-type">신용카드</div>
+                  <button class="delete-btn" @click="deleteCard(1, card.credit_card_id)">삭제</button>
+                </div>
               </div>
             </div>
           </div>
-          <div v-else class="no-cards">
+
+          <!-- 체크카드 섹션 -->
+          <div v-if="myCards.check_cards && myCards.check_cards.length > 0">
+            <h3 class="section-title">체크카드</h3>
+            <div class="cards-grid">
+              <div v-for="card in myCards.check_cards" :key="card.check_card_id" class="card-item">
+                <div class="card-image">
+                  <img :src="card.img_path" :alt="card.check_card_name">
+                </div>
+                <div class="card-info">
+                  <h3>{{ card.check_card_name }}</h3>
+                  <span class="card-brand">{{ card.brand }}</span>
+                  <div class="card-type">체크카드</div>
+                  <button class="delete-btn" @click="deleteCard(2, card.check_card_id)">삭제</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드가 없는 경우 -->
+          <div v-if="(!myCards.credit_cards?.length && !myCards.check_cards?.length)" class="no-cards">
             <p>등록된 카드가 없습니다.</p>
           </div>
         </div>
@@ -32,15 +54,23 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useCardStore } from "@/stores/cards.js"
+import { storeToRefs } from 'pinia'
 
 const store = useCardStore()
+const { myCard: myCards } = storeToRefs(store)
 
-const deleteCard = async (card) => {
-  if (confirm('카드를 삭제하시겠습니까?')) {
-    await store.deleteMyCard(card.card_type, card.id)
-    await store.getMyCards()
+const deleteCard = async (cardType, cardId) => {
+  if (confirm('정말 이 카드를 삭제하시겠습니까?')) {
+    try {
+      await store.deleteMyCard(cardType, cardId)
+      await store.getMyCards()
+      alert('카드가 삭제되었습니다.')
+    } catch (error) {
+      alert('카드 삭제에 실패했습니다.')
+      console.error('카드 삭제 실패:', error)
+    }
   }
 }
 
@@ -97,7 +127,7 @@ onMounted(async () => {
 }
 
 .modal-body {
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 .cards-grid {
@@ -181,5 +211,13 @@ onMounted(async () => {
   text-align: center;
   padding: 40px;
   color: #666;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 24px 0 16px;
+  padding-left: 20px;
 }
 </style>

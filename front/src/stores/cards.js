@@ -8,7 +8,7 @@ export const useCardStore = defineStore('cards', () => {
     // 불러올 카드 데이터가 존재하는지 확인
     const hasMoreCards = ref(true)
     const currentType = ref('credit')
-    const myCard = ref(null)
+    const myCard = ref([])
 
 
     const cards = ref([])
@@ -104,7 +104,6 @@ export const useCardStore = defineStore('cards', () => {
     }
 
     // 내 카드 등록
-    // store의 registerMyCard 함수
     const registerMyCard = async (cardType, cardId) => {
         try {
             const response = await axios({
@@ -151,11 +150,13 @@ export const useCardStore = defineStore('cards', () => {
                 },
             })
             myCard.value = response.data
+            console.log(myCard)
         } catch (error) {
             console.error(error)
         }
     }
 
+    // 내 카드 삭제
     const deleteMyCard = async (cardType, cardId) => {
         try {
             const response = await axios({
@@ -169,6 +170,7 @@ export const useCardStore = defineStore('cards', () => {
                     card_id: cardId
                 }
             })
+            return response.data
         } catch (error) {
             console.error('my card delete fail', error)
         }

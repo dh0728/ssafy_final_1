@@ -56,7 +56,7 @@
           <li>
             <button class="menu-item" @click="openMyCardModal">
               <span class="icon">💳</span>
-              내 카드 설정
+              내 카드 목록
             </button>
           </li>
           <li>
