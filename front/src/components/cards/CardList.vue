@@ -14,9 +14,12 @@
             <h3>{{ getCardName(card) }}</h3>
             <span class="brand">{{ card.brand }}</span>
           </div>
-          <RouterLink :to="{ name: 'CardDetail', params: { type: store.currentType === 'credit' ? 'credit' : 'check',cardId: getCardId(card)}}" class="detail-btn">
-            자세히 보기
-          </RouterLink>
+          <div class="button-group">
+            <RouterLink :to="{ name: 'CardDetail', params: { type: store.currentType === 'credit' ? 'credit' : 'check', cardId: getCardId(card)}}" class="detail-btn">
+              자세히 보기
+            </RouterLink>
+            <button @click="registerCard(card)" class="register-btn"> + 내 카드 등록</button>
+          </div>
         </div>
 
         <!-- 혜택 태그 -->
@@ -51,7 +54,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useCardStore } from "@/stores/cards.js"
 
 const store = useCardStore()
@@ -111,6 +114,19 @@ watch(() => store.currentType, () => {
     setupObserver()
   }
 })
+
+const registerCard = async (card) => {
+  try {
+    const cardType = store.currentType === 'credit' ? 1 : 2
+    const cardId = getCardId(card)
+
+    const result = await store.registerMyCard(cardType, cardId)
+    alert(result.message)
+  } catch (error) {
+    console.error('카드 등록 실패:', error)
+    alert('카드 등록 중 오류가 발생했습니다.')
+  }
+}
 
 onMounted(() => {
   const observer = setupObserver()
@@ -273,5 +289,37 @@ onMounted(() => {
 .observer-target {
   height: 20px;
   margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-btn {
+  padding: 8px 16px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.register-btn {
+  padding: 8px 16px;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.register-btn:hover {
+  background: #e9ecef;
 }
 </style>

@@ -4,12 +4,12 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 
 export const useCardStore = defineStore('cards', () => {
-    const router = useRouter()
     const API_URL = 'http://127.0.0.1:8000'
     // 불러올 카드 데이터가 존재하는지 확인
     const hasMoreCards = ref(true)
     const currentType = ref('credit')
-
+    const myCard = ref([])
+    const recommendCards = ref([])
 
     const cards = ref([])
     const card = ref(null)
@@ -103,6 +103,95 @@ export const useCardStore = defineStore('cards', () => {
         }
     }
 
+    // 내 카드 등록
+    const registerMyCard = async (cardType, cardId) => {
+        try {
+            const response = await axios({
+                method: 'POST',
+                url: `${API_URL}/cards/mycard/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+                data: {
+                    card_type: cardType,
+                    card_id: cardId
+                }
+            })
+
+            return {
+                success: true,
+                message: '카드가 성공적으로 등록되었습니다.'
+            }
+
+        } catch (error) {
+            // 400 에러는 이미 등록된 카드
+            if (error.response?.status === 400) {
+                return {
+                    success: false,
+                    message: '이미 등록된 카드입니다.'
+                }
+            }
+            // 기타 에러
+            return {
+                success: false,
+                message: '카드 등록 중 오류가 발생했습니다.'
+            }
+        }
+    }
+
+    // 내 카드 조회
+    const getMyCards = async () => {
+        try {
+            const response = await axios({
+                method: 'get',
+                url: `${API_URL}/cards/mycard/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+            })
+            myCard.value = response.data
+            console.log(myCard)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    // 내 카드 삭제
+    const deleteMyCard = async (cardType, cardId) => {
+        try {
+            const response = await axios({
+                method: 'delete',
+                url: `${API_URL}/cards/mycard/`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+                data: {
+                    card_type: cardType,
+                    card_id: cardId
+                }
+            })
+            return response.data
+        } catch (error) {
+            console.error('my card delete fail', error)
+        }
+    }
+
+    const getRecommendCards = async () => {
+        try {
+            const response = await axios({
+                method: 'get',
+                url: `${API_URL}/account/books/recommend/cards`,
+                headers: {
+                    'Authorization': `Token ${localStorage.getItem('auth')}`
+                },
+            })
+            recommendCards.value = response.data
+            console.log(recommendCards)
+        } catch (error) {
+            console.error('카드 추천 실패:', error)
+        }
+    }
+
     const resetCards = () => {
         cards.value = []
         hasMoreCards.value = true
@@ -111,12 +200,18 @@ export const useCardStore = defineStore('cards', () => {
     return {
         cards,
         card,
+        myCard,
+        recommendCards,
         hasMoreCards,
         currentType,
         getCardList,
         getMoreCards,
         getCardsByCondition,
         getCardDetail,
+        registerMyCard,
+        getMyCards,
+        deleteMyCard,
+        getRecommendCards,
         resetCards
     }
 }, { persist: true })

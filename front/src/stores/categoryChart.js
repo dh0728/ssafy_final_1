@@ -10,7 +10,7 @@ export const useCategoryChartStore = defineStore('categoryChart', () => {
 
             const response = await axios({
                 method: 'GET',
-                url: `${API_URL}/account/books/analyze/category/`,
+                url: `${API_URL}/account/books/analyze/category`,
 
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('auth')}`
