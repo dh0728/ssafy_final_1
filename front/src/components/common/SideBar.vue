@@ -54,10 +54,10 @@
         <div class="menu-title">설정</div>
         <ul class="menu-list">
           <li>
-            <RouterLink to="/budget/category-settings" class="menu-item" active-class="active">
+            <button class="menu-item" @click="openModal">
               <span class="icon">💳</span>
               내 카드 설정
-            </RouterLink>
+            </button>
           </li>
           <li>
             <RouterLink to="/budget/account-settings" class="menu-item" active-class="active">
@@ -68,12 +68,27 @@
         </ul>
       </div>
     </div>
-
   </div>
+  <MyCardRegister
+      v-if="showModal"
+      @close="closeModal"
+  />
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import MyCardRegister from "@/components/cards/MyCardRegister.vue";
+import {ref} from "vue";
+
+const showModal = ref(false)
+
+const openModal = () => {
+  showModal.value = true
+}
+
+const closeModal = () => {
+  showModal.value = false
+}
 </script>
 
 
@@ -175,5 +190,26 @@ import { RouterLink, RouterView } from 'vue-router'
     position: static;
     margin-bottom: 1rem;
   }
+}
+
+button.menu-item {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: #666;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+button.menu-item:hover {
+  background: #f8f9fa;
+  color: #1a1438;
 }
 </style>
