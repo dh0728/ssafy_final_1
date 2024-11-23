@@ -81,12 +81,19 @@ import {useCardStore} from "@/stores/cards.js"
 
 const store = useCardStore()
 
-const registerCard = async (card) => {
-  const result = await store.registerMyCard(card.card_type, card.id)
-  if (result.success) {
-    alert(result.message)
-  } else {
-    alert(result.message)
+const registerCard = async (cardType, cardId) => {
+  try {
+    const result = await store.registerMyCard(cardType, cardId)
+    if (result.success) {
+      alert(result.message)
+      // 성공 후 내 카드 목록 새로고침
+      await store.getMyCards()
+    } else {
+      alert(result.message)
+    }
+  } catch (error) {
+    alert('카드 등록 중 오류가 발생했습니다.')
+    console.error('카드 등록 실패:', error)
   }
 }
 
