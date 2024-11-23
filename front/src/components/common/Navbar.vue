@@ -1,10 +1,21 @@
 <script setup>
 import { useAccountStore } from '@/stores/accounts'
 import { storeToRefs } from 'pinia'
+import CardRecommend from "@/components/cards/CardRecommend.vue";
+import {ref} from "vue";
+
+const showRecommendModal = ref(false)
 
 const accountStore = useAccountStore()
 const { isAuthenticated } = storeToRefs(accountStore)
 
+const openRecommendModal = () => {
+  showRecommendModal.value = true
+}
+
+const closeRecommendModal = () => {
+  showRecommendModal.value = false
+}
 </script>
 
 <template>
@@ -14,7 +25,9 @@ const { isAuthenticated } = storeToRefs(accountStore)
       <RouterLink :to="{ name: 'CardList'}" class="nav-link">카드 찾기</RouterLink>
       <RouterLink :to="{ name: 'Budget' }" class="nav-link">내 가계부</RouterLink>
       <RouterLink :to="{ name: 'DateChart'}" class="nav-link">소비 분석</RouterLink>
-      <RouterLink to="/" class="nav-link">카드 추천</RouterLink>
+      <button class="nav-link recommend-btn" @click="openRecommendModal">
+        카드 추천 서비스
+      </button>
 
       <!--   단순 페이지 이동은 link, 상태 변경이 일어나는 로그아웃은 button     -->
       <template v-if="isAuthenticated">
@@ -27,6 +40,10 @@ const { isAuthenticated } = storeToRefs(accountStore)
 
     </div>
   </nav>
+  <CardRecommend
+      v-if="showRecommendModal"
+      @close="closeRecommendModal"
+  />
 </template>
 
 <style scoped>
@@ -68,5 +85,20 @@ const { isAuthenticated } = storeToRefs(accountStore)
   cursor: pointer;
   font-size: 0.9rem;
   text-decoration: none;
+}
+
+.recommend-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.recommend-btn:hover {
+  color: #1a1438;
 }
 </style>
