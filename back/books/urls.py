@@ -9,7 +9,8 @@ urlpatterns = [
 
 
     path('day/',views.day), # 하루 내역 데이터 조회
-    path('month/', views.month), # 한달치 결제 데이터 조히
+    path('month/', views.month), # 한달치 결제 데이터 조회
+    path('year/', views.year), # 한달치 결제 데이터 조회
 
     path('write/list/',views.write_account_data_list), # 여러 개 지출들 내역 POST, DELETE
     path('write/',views.write_account_data), # 한 개 지출들 POST, PUT, DELETE (post만들었는데 안씀)
