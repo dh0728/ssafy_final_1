@@ -71,3 +71,23 @@ class MyCheckCardSerializer(serializers.ModelSerializer):
     class Meta: 
         model = MyCheckCard
         fields = ['check_card_id', 'check_card_name', 'img_path', 'brand', 'card_type']
+
+class RecommendCreditCard(serializers.ModelSerializer):
+    card_type = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Credit_cards
+        fields = ('credit_card_id', 'credit_card_name', 'img_path', 'brand', 'card_type')
+    
+    def get_card_type(self, obj):
+        return 1
+
+class RecommendCheckCard(serializers.ModelSerializer):
+    card_type = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Check_cards
+        fields = ('check_card_id', 'check_card_name', 'img_path', 'brand', 'card_type')
+    
+    def get_card_type(self, obj):
+        return 2
