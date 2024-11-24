@@ -11,9 +11,6 @@
             이지연 님의 가계부
           </button>
         </div>
-        <div class="right-section">
-          <button class="write-btn" @click="openWriteModal">가계부 작성하기 📝</button>
-        </div>
       </div>
 
       <!-- 메인 필터 -->
@@ -29,6 +26,7 @@
               :class="{ active: showCategoryFilter }"
               @click="toggleTabs(false)"
           >카테고리 전체보기 ▾</button>
+          <button class="write-btn" @click="openWriteModal">가계부 작성하기 📝</button>
         </div>
       </div>
 
@@ -387,6 +385,12 @@ onMounted(() => {
 .filter-tabs {
   display: flex;
   gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.write-btn {
+  margin-left: auto;
 }
 
 .tab-btn {
