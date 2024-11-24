@@ -75,21 +75,64 @@
           <tr v-for="item in filteredHistoryItems" :key="item.account_book_data_id">
             <td><input type="checkbox"></td>
             <td>
-              <span :class="['type-badge', item.type]">
-                {{ item.type === 'income' ? '수입' : '지출' }}
-              </span>
+      <span :class="['type-badge', item.type]">
+        {{ item.type === 'income' ? '수입' : '지출' }}
+      </span>
             </td>
             <td>{{ item.date }}</td>
-            <td>{{ getCategoryName(item.category_id) }}</td>
-            <td>{{ item.payment }}</td>
-            <td>{{ item.store }}</td>
-            <td :class="['amount', item.type]">
-              {{ formatNumber(item.account) }}원
+            <td>
+              <template v-if="editingItem === item.account_book_data_id">
+                <select v-model="item.category_id">
+                  <option v-for="cat in categories" :key="cat.id" :value="cat.id">
+                    {{ cat.name }}
+                  </option>
+                </select>
+              </template>
+              <template v-else>
+                {{ getCategoryName(item.category_id) }}
+              </template>
             </td>
-            <td>{{ item.memo }}</td>
+            <td>
+              <template v-if="editingItem === item.account_book_data_id">
+                <input v-model="item.payment">
+              </template>
+              <template v-else>
+                {{ item.payment }}
+              </template>
+            </td>
+            <td>
+              <template v-if="editingItem === item.account_book_data_id">
+                <input v-model="item.store">
+              </template>
+              <template v-else>
+                {{ item.store }}
+              </template>
+            </td>
+            <td>
+              <template v-if="editingItem === item.account_book_data_id">
+                <input type="number" v-model="item.account">
+              </template>
+              <template v-else>
+                {{ formatNumber(item.account) }}원
+              </template>
+            </td>
+            <td>
+              <template v-if="editingItem === item.account_book_data_id">
+                <input v-model="item.memo">
+              </template>
+              <template v-else>
+                {{ item.memo }}
+              </template>
+            </td>
             <td class="action-buttons">
-              <button class="action-btn" @click="editItem(item)">수정하기</button>
-              <button class="action-btn" @click="deleteItem(item.account_book_data_id)">삭제하기</button>
+              <template v-if="editingItem === item.account_book_data_id">
+                <button class="action-btn save" @click="saveEdit(item)">저장</button>
+                <button class="action-btn cancel" @click="cancelEdit">취소</button>
+              </template>
+              <template v-else>
+                <button class="action-btn" @click="startEdit(item)">수정하기</button>
+                <button class="action-btn delete" @click="deleteItem(item.account_book_data_id)">삭제하기</button>
+              </template>
             </td>
           </tr>
           </tbody>
@@ -181,30 +224,8 @@ const fetchHistoryItems = async () => {
   }
 }
 
-// 수정 기능
-const editItem = async (item) => {
-  try {
-    const formData = {
-      year: item.year,
-      month: item.month,
-      day: item.day,
-      is_income: item.is_income,
-      payment: item.payment,
-      store: item.store,
-      category_id: item.category_id,
-      account: item.account,
-      memo: item.memo,
-      account_book_data_id: item.account_book_data_id
-    }
+const editingCell = ref({ itemId: null, field: null })
 
-    const result = await calendarStore.updateCalendar(formData)
-    if (result) {
-      fetchHistoryItems()
-    }
-  } catch (error) {
-    console.error('수정 실패:', error)
-  }
-}
 
 // 삭제 기능
 const deleteItem = async (accountBookDataId) => {
@@ -266,6 +287,42 @@ const toggleTabs = (isAllView) => {
     selectedCategoryId.value = null // 카테고리 선택 초기화
   } else {
     toggleCategoryModal()
+  }
+}
+
+const editingItem = ref(null)
+const tempItem = ref(null)
+
+const startEdit = (item) => {
+  tempItem.value = {...item}
+  editingItem.value = item.account_book_data_id
+}
+
+const cancelEdit = () => {
+  Object.assign(historyItems.value.find(item => item.account_book_data_id === editingItem.value), tempItem.value)
+  editingItem.value = null
+}
+
+const saveEdit = async (item) => {
+  try {
+    const result = await calendarStore.updateCalendar({
+      year: item.year,
+      month: item.month,
+      day: item.day,
+      is_income: item.type === 'income',
+      payment: item.payment,
+      store: item.store,
+      category_id: item.category_id,
+      account: item.account,
+      memo: item.memo,
+      account_book_data_id: item.account_book_data_id
+    })
+    if (result) {
+      editingItem.value = null
+      await fetchHistoryItems()
+    }
+  } catch (error) {
+    console.error('수정 실패:', error)
   }
 }
 
@@ -627,5 +684,57 @@ onMounted(() => {
   background: #4C6EF5;
   color: white;
   border-color: #4C6EF5;
+}
+
+.editable input,
+.editable select {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.editable input:focus,
+.editable select:focus {
+  outline: none;
+  border-color: #4C6EF5;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: #f8f9fa;
+}
+
+.action-btn.save {
+  background: #4C6EF5;
+  color: white;
+  border-color: #4C6EF5;
+}
+
+.action-btn.delete {
+  background: #ff6b6b;
+  color: white;
+  border-color: #ff6b6b;
+}
+
+.action-btn.cancel {
+  background: #868e96;
+  color: white;
+  border-color: #868e96;
 }
 </style>
