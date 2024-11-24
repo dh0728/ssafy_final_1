@@ -18,10 +18,10 @@
           <div class="item-content">
             <span class="label">이번 달 지출</span>
             <div class="amount">{{ formatNumber(monthlyStats.expense) }}원</div>
-            <a href="#" class="link">
+            <RouterLink :to="{ name: 'DateChart' }" class="link">
               지출 분석하러 가기
               <span class="arrow">→</span>
-            </a>
+            </RouterLink>
           </div>
         </div>
         <div class="divider"></div>
@@ -29,10 +29,10 @@
           <div class="item-content">
             <span class="label">이번 달 수입</span>
             <div class="amount">{{ formatNumber(monthlyStats.income) }}원</div>
-            <a href="#" class="link">
+            <RouterLink :to="{ name: 'DateChart' }" class="link">
               수입 분석하러 가기
               <span class="arrow">→</span>
-            </a>
+            </RouterLink>
           </div>
         </div>
         <div class="divider"></div>
