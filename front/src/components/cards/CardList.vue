@@ -2,8 +2,11 @@
   <div class="card-list">
     <div v-for="card in store.cards" :key="getCardId(card)" class="card-item">
       <!-- 왼쪽: 카드 이미지 -->
-      <div class="card-image">
-        <img :src="card.img_path" :alt="getCardName(card)">
+      <div class="card-container">
+        <div class="circle-bg"></div> <!-- 원 배경 -->
+        <div class="card-image">
+          <img :src="card.img_path" :alt="getCardName(card)" />
+        </div>
       </div>
 
       <!-- 오른쪽: 카드 정보 -->
@@ -28,8 +31,8 @@
         <!-- 혜택 그리드 -->
         <div class="benefits-grid">
           <div v-for="(category, index) in getCardCategories(card)"
-               :key="index"
-               class="benefit-item">
+              :key="index"
+              class="benefit-item">
             <div class="benefit-title">{{ category.title }}</div>
             <div class="benefit-desc">{{ category.desc }}</div>
           </div>
@@ -146,18 +149,44 @@ onMounted(() => {
   margin: 0 auto;
   padding: 20px;
 }
+.card-container {
+  position: relative; /* 카드와 원을 겹치기 위한 부모 컨테이너 */
+  display: flex; /* 카드 정렬에 필요한 flex 적용 */
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center; /* 카드와 내용 정렬 조정 */
+  width: 200px; /* 필요한 만큼 확장 */
+  height: 120px;
+}
+
+.circle-bg {
+  position: absolute; /* 카드 뒤에 배경을 배치 */
+  margin-right: 24px;
+  transform: translateX(-50%,50%); 
+  width: 120px; /* 원의 너비 */
+  height: 120px; /* 원의 높이 (정사각형) */
+  background-color: #f3f3f3; /* 원 배경색 */
+  border-radius: 50%; /* 원 형태로 만듦 */
+  z-index: 0; /* 카드보다 뒤로 배치 */
+}
 
 .card-image {
-  width: 200px;
-  min-width: 200px;
+  width: auto;
   height: 120px;
   margin-right: 24px;
   /* margin-top: 48px; 제거 */
+  z-index: 1;
   display: flex;
   align-items: center;  /* 세로 중앙 정렬 */
   justify-content: center;  /* 가로 중앙 정렬 */
-  align-self: center;  /* 부모 요소 기준 중앙 정렬 */
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
+  overflow: hidden;
+}
+
+.card-image img {
+  max-width: 100%; /* 이미지를 컨테이너에 맞게 조정 */
+  max-height: 100%; /* 높이를 맞춤 */
+  object-fit: contain; /* 이미지의 비율을 유지하며 컨테이너에 맞춤 */
+  display: block; /* 기본 margin 제거 */
 }
 
 .card-item {
@@ -169,6 +198,7 @@ onMounted(() => {
   background: white;
   transition: all 0.2s ease;
   align-items: center;  /* 추가: 카드 내용과 이미지 세로 중앙 정렬 */
+  /* overflow: hidden; */
 }
 
 .card-image:hover {
@@ -185,12 +215,7 @@ onMounted(() => {
   }
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
+
 
 .card-image:hover img {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));

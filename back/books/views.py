@@ -7,7 +7,7 @@ from .models import Account_book, Account_book_data, Budget, Schedule
 from cards.models import Category, Credit_cards, Check_cards
 from cards.serializers import RecommendCheckCard, RecommendCreditCard
 
-from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer,CategoryExpenseSerializer
+from .serializers import AccountBookCalendar, AccountBookDataSerializer,BudgetPostPutSerializer, BudgetSerializer, ScheduleSerializer, AccountBookSerializer, MonthlyDataSerializer,AnalysisTimeSerialzer,CategoryExpenseSerializer , EvaluationSerializer
 from django.db import transaction
 
 from django.conf import settings
@@ -673,6 +673,48 @@ def evaluation(month_data,birth):
     except Exception as e:
         return f"An error occurred: {str(e)}"
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def evaluation_gpt(request):
+    account_book = get_object_or_404(Account_book, user_id=request.user)
+    if request.method == 'GET':
+        year= datetime.now().year
+        month = datetime.now().month
+
+        # 한달 데이터 모으기
+        month_data = Account_book_data.objects.filter(
+            year=year,
+            month=month,
+            account_book_id=account_book.pk
+        )
+
+        if month_data.count() <= 10:
+            comment ='데이터가 적어서 평가를 제공할 수 없습니다.'
+            return Response({'comment': comment}, status=status.HTTP_200_OK)
+
+        # 카테고리 id 별로 account 합쳐야함
+        # 카테고리별 소비 금액 합계 계산
+        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
+
+        category_summary = []
+        for category in category_expenses:
+            category_id = category['category_id']
+            total_amount = category['total_amount']
+            category_instance = get_object_or_404(Category, pk=category_id)
+            category_name = category_instance.category_name
+            # 요약 및 세부 내역 추가
+            category_summary.append({
+                'category_name':category_name,
+                'total_amount': total_amount,
+            })
+        
+        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
+        print(request.user.birth)
+        comment =evaluation(sorted_category_summary,request.user.birth)
+        data = {'comment':comment}
+        serializer = EvaluationSerializer(data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -788,28 +830,6 @@ def analyze_time(request):
             'schedules':schedules,
         }
 
-
-        # 카테고리 id 별로 account 합쳐야함
-        # 카테고리별 소비 금액 합계 계산
-        category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
-
-        category_summary = []
-        for category in category_expenses:
-            category_id = category['category_id']
-            total_amount = category['total_amount']
-            category_instance = get_object_or_404(Category, pk=category_id)
-            category_name = category_instance.category_name
-            # 요약 및 세부 내역 추가
-            category_summary.append({
-                'category_name':category_name,
-                'total_amount': total_amount,
-            })
-        
-        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
-        print(request.user.birth)
-        comment =evaluation(sorted_category_summary,request.user.birth)
-
-        analysis_data['comment']=comment
         # 시리얼라이저를 사용하여 응답 반환
         serializer = AnalysisTimeSerialzer(analysis_data)
 
