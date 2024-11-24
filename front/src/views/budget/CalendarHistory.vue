@@ -119,7 +119,7 @@
                 <input v-model="item.memo">
               </template>
               <template v-else>
-                {{ item.memo }}
+                {{ truncateMemo(item.memo) }}
               </template>
             </td>
             <td class="action-buttons">
@@ -322,6 +322,10 @@ const saveEdit = async (item) => {
   } catch (error) {
     console.error('수정 실패:', error)
   }
+}
+
+const truncateMemo = (memo) => {
+  return memo.length > 15 ? memo.slice(0, 15) + '...' : memo;
 }
 
 // 초기 데이터 로드
