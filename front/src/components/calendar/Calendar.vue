@@ -10,8 +10,12 @@
         </div>
       </div>
       <div class="month-controls">
-        <button class="control-btn" @click="prevMonth">←</button>
-        <button class="control-btn" @click="nextMonth">→</button>
+        <button class="control-btn" @click="prevMonth">
+          <i class="fas fa-chevron-left"><</i>
+        </button>
+        <button class="control-btn" @click="nextMonth">
+          <i class="fas fa-chevron-right">></i>
+        </button>
       </div>
     </div>
 
@@ -185,21 +189,26 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
 }
 
 .month-selector {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1438;
 }
+
 
 .calendar-legend {
   display: flex;
   gap: 16px;
   font-size: 14px;
+}
+
+.month-controls {
+  display: flex;
 }
 
 .income { color: #1BBF83; }
@@ -278,5 +287,58 @@ onMounted(() => {
   background: none !important;
 }
 
+.control-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #4C6EF5;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.control-btn:hover {
+  background: #4C6EF5;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* FullCalendar 커스텀 스타일 */
+:deep(.fc-theme-standard th) {
+  border: none !important;
+  padding: 12px 0;
+  font-weight: 500;
+  color: #868e96;
+}
+
+:deep(.fc-theme-standard td) {
+  border: none !important;
+}
+
+:deep(.fc-scrollgrid) {
+  border: none !important;
+}
+
+:deep(.fc-day-today) {
+  background: #f8f9fa !important;
+  border-radius: 8px;
+}
+
+:deep(.fc-col-header-cell) {
+  padding: 8px 0 !important;
+}
+
+/* 날짜 셀 스타일 개선 */
+:deep(.fc-daygrid-day) {
+  padding: 4px;
+}
+
+:deep(.fc-daygrid-day-frame) {
+  min-height: 80px;
+}
 </style>
