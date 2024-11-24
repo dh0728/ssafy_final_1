@@ -108,7 +108,7 @@ const emit = defineEmits(['write-completed'])
 
 const props = defineProps({
   selectedDate: {
-    type: Date,
+    type: [Date, null],
     required: true
   }
 })
