@@ -141,7 +141,7 @@ onMounted(async () => {
 
 .circle-bg {
   position: absolute; /* 카드 뒤에 배경을 배치 */
-  transform: translateX(-50%,50%); 
+  transform: translateX(-50%, 50%);
   width: 200px; /* 원의 너비 */
   height: 200px; /* 원의 높이 (정사각형) */
   background-color: #f3f3f3; /* 원 배경색 */
@@ -182,12 +182,6 @@ onMounted(async () => {
   flex: 1;
 }
 
-.card-body {
-  display: flex;
-  align-items: center; /* 세로 방향으로 중앙 정렬 */
-  justify-content: space-between; /* 가로 방향으로 적절한 간격 */
-
-}
 
 .main-benefits {
   display: flex;
@@ -236,25 +230,6 @@ onMounted(async () => {
   margin-bottom: 1.5rem;
 }
 
-.fees {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1rem;
-}
-
-.fee-item, .perform {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.label {
-  color: #666;
-}
-
-.value {
-  font-weight: 500;
-}
 
 .benefits-section {
   background: white;

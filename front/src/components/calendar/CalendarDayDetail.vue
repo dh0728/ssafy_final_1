@@ -63,8 +63,8 @@ import { useRouter } from 'vue-router'
 
 const props = defineProps({
   selectedDate: {
-    type: Date,
-    required: true
+    type: [Date, null],
+    default: null
   },
   dayData: {
     type: Array,
