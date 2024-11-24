@@ -335,7 +335,7 @@ def category_ask(userInput):
 
         categories_summary = "\n".join([f"{key} (ID: {value['category_id']}): {', '.join(value['kinds'])}" for key, value in category_data.items()])
         
-        OPENAI_API_KEY =settings.OPENAI_API_KEY
+        OPENAI_API_KEY =settings.MY_OPENAI_API_KEY
 
         client = OpenAI(api_key=OPENAI_API_KEY)
         # 페르소나 지정 및 기존 대화 내용 저장
@@ -357,7 +357,7 @@ def category_ask(userInput):
         )
 
         response = client.chat.completions.create(
-        model="gpt-3.5-turbo",  # 사용하려는 모델 (필수 지정)
+        model="gpt-4o-mini-2024-07-18",  # 사용하려는 모델 (필수 지정)
         messages=conversation_history,  # 대화 메시지 목록 (필수 지정)
         max_tokens=500,  # 생성될 응답의 최대 토큰 수 (값의 범위: 1~모델 마다 최대값 ex> gpt-3.5-turbo: 16,385 tokens)
         temperature=0.7,  # 확률 분포 조정을 통한 응답의 다양성 제어 (값의 범위: 0~2)
