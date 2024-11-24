@@ -41,12 +41,6 @@
               카테고리별 분석
             </RouterLink>
           </li>
-          <li>
-            <RouterLink to="/budget/yearly" class="menu-item" active-class="active">
-              <span class="icon">📈</span>
-              연간 통계
-            </RouterLink>
-          </li>
         </ul>
       </div>
 
@@ -107,22 +101,6 @@ const closeRecommendModal = () => {
 
 
 <style scoped>
-.budget-container {
-  display: flex;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.card-detail-container {
-  display: flex;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
 .sidebar {
   width: 240px;
   flex-shrink: 0;
