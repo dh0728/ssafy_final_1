@@ -3,6 +3,7 @@
     <!-- 상단 영역: 카드 이미지와 기본 정보 -->
     <div class="card-basic-info">
       <div class="card-image-container">
+        <div class="circle-bg"></div> <!-- 원 배경 -->
         <div class="card-image">
           <img :src="store.card.img_path" :alt="store.card.credit_card_name">
         </div>
@@ -21,8 +22,8 @@
         <!-- 주요 혜택 아이콘 -->
         <div class="main-benefits">
           <div v-for="(benefit, index) in store.card.benefits?.slice(0, 3)"
-               :key="index"
-               class="benefit-icon">
+              :key="index"
+              class="benefit-icon">
             <span>{{ benefit.desc }}</span>
           </div>
         </div>
@@ -50,9 +51,9 @@
         <!-- 카드사 버튼 -->
         <div class="action-button">
           <a v-if="store.card.is_active"
-             :href="store.card.bank_url"
-             target="_blank"
-             class="bank-btn">
+            :href="store.card.bank_url"
+            target="_blank"
+            class="bank-btn">
             카드사 바로가기
             <span class="arrow">→</span>
           </a>
@@ -68,8 +69,8 @@
       <h2>카드 혜택</h2>
       <div class="benefits-list">
         <div v-for="benefit in store.card.benefits"
-             :key="benefit.title"
-             class="benefit-item">
+            :key="benefit.title"
+            class="benefit-item">
           <div class="benefit-header">
             <h3>{{ benefit.title }}</h3>
             <p class="benefit-desc">{{ benefit.desc }}</p>
@@ -127,6 +128,21 @@ onMounted(async () => {
 .card-image-container {
   position: relative;
   width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+.circle-bg {
+  position: absolute; /* 카드 뒤에 배경을 배치 */
+  margin-right: 24px;
+  transform: translateX(-50%,50%); 
+  width: 120px; /* 원의 너비 */
+  height: 120px; /* 원의 높이 (정사각형) */
+  background-color: #f3f3f3; /* 원 배경색 */
+  border-radius: 50%; /* 원 형태로 만듦 */
+  z-index: 0; /* 카드보다 뒤로 배치 */
 }
 
 .card-image {

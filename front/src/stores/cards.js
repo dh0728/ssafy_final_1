@@ -97,7 +97,7 @@ export const useCardStore = defineStore('cards', () => {
                 url: `${API_URL}/cards/${cardType}/detail/${cardId}`,
             })
 
-             card.value = response.data
+            card.value = response.data
         } catch (error) {
             console.error('단일 카드 조회 실패:', error)
         }
