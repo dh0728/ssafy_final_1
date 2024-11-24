@@ -12,7 +12,7 @@ from django.db import transaction
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-# import requests
+import requests
 import time
 import uuid
 import json
@@ -846,8 +846,8 @@ def recommend_cards(request):
     if request.method == 'GET':
         # 요청 파라미터 유효성 검사
         try:
-            year = int(request.query_params.get('year'))
-            month = int(request.query_params.get('month'))
+            year = datetime.now().year
+            month = datetime.now().month
             if not (1 <= month <= 12):
                 return Response({'error': 'Month must be between 1 and 12.'}, status=status.HTTP_400_BAD_REQUEST)
         except (ValueError, TypeError):
