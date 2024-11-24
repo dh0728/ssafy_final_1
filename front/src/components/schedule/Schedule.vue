@@ -98,6 +98,28 @@ const openEditModal = (schedule) => {
   flex-direction: column;
   gap: 12px;
   margin-bottom: 20px;
+  height: 400px; /* 원하는 높이 지정 */
+  overflow-y: auto; /* 세로 스크롤 추가 */
+  padding-right: 8px; /* 스크롤바 여백 */
+}
+
+/* 스크롤바 스타일링 (Webkit 브라우저용) */
+.schedule-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.schedule-list::-webkit-scrollbar-track {
+  background: #f1f3f5;
+  border-radius: 3px;
+}
+
+.schedule-list::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 3px;
+}
+
+.schedule-list::-webkit-scrollbar-thumb:hover {
+  background: #ced4da;
 }
 
 .schedule-content-wrapper {
