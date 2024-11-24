@@ -39,10 +39,16 @@ const chartData = computed(() => {
       label: '일별 지출',
       data: dailyData,
       borderColor: '#FF8E99',
-      backgroundColor: '#FF8E99',
+      // backgroundColor: '#FF8E99',
+      backgroundColor: 'rgba(255, 142, 153, 0.5)', // 선 아래 영역의 배경색 (부드러운 핑크)
+      pointBackgroundColor: '#FFFFFF', // 데이터 포인트 배경색
+      pointBorderColor: '#FF8E99', // 데이터 포인트 테두리 색상
+      pointRadius: 2, // 데이터 포인트 반지름
+      pointBorderWidth: 1, // 데이터 포인트 테두리 두께
+      pointHoverRadius: 7, // 마우스 오버 시 데이터 포인트 확대 크
       tension: 0.1,
-      pointRadius: 0,
-      borderWidth: 1.5
+      pointRadius: 2,
+      borderWidth: 6
     }]
   }
 })
@@ -50,6 +56,11 @@ const chartData = computed(() => {
 const chartOptions = {
   responsive: true,
   maintainAspectRatio: false,
+  layout: {
+    padding: {
+      right: 20  // 하단에 20px의 패딩 추가
+    }
+  },
   plugins: {
     legend: {
       display: false
@@ -82,10 +93,24 @@ const chartOptions = {
         display: false
       },
       ticks: {
-        display: false
+        maxRotion:0, // 기울이기 싫어
+        minRotation:0,
+        autoSkip: false, 
+        maxTicksLimit:2, //최대 레이블 수 
+        callback: function(value, index, values) {
+          // 첫 번째 레이블 "1일", 마지막 레이블 "말일"
+          if (index === 0) {
+            return '1일';
+          } else if (index === values.length - 1) {
+            return '말일';
+          } else {
+            return '';  // 중간 레이블은 표시하지 않음
+          }
+        }
       }
     },
     y: {
+      suggestedMin :-1000,
       grid: {
         display: false
       },
@@ -119,7 +144,6 @@ onMounted(async () => {
   const data = await dateChartStore.getMonthlyChart()
   if (data) {
     monthlyData.value = data
-    totalExpenditure.value = data.total_expenditure
   }
 })
 </script>
@@ -172,4 +196,5 @@ onMounted(async () => {
   margin-bottom: 10px; /* 하단 여백 추가 */
   transform: translateY(-20px);
 }
+
 </style>
