@@ -3,7 +3,9 @@
     <SideBar />
     <div class="receipt-content">
       <div class="upload-container">
-        <div class="upload-box"
+        <!-- 업로드 전 -->
+        <div v-if="!previewUrl"
+             class="upload-box"
              @drop.prevent="handleDrop"
              @dragover.prevent
              @click="triggerFileInput">
@@ -23,16 +25,18 @@
           </div>
         </div>
 
-        <!-- 미리보기 영역 -->
-        <div v-if="previewUrl" class="preview-container">
+        <!-- 업로드 후 미리보기 -->
+        <div v-else class="upload-box preview-active">
           <div class="preview-header">
             <h3>업로드된 영수증</h3>
             <button class="close-btn" @click="clearPreview">×</button>
           </div>
-          <img :src="previewUrl" alt="영수증 미리보기" class="preview-image">
-          <button class="submit-btn" @click="uploadReceipt" :disabled="isLoading">
-            {{ isLoading ? '처리중...' : '인식하기' }}
-          </button>
+          <div class="preview-content">
+            <img :src="previewUrl" alt="영수증 미리보기" class="preview-image">
+            <button class="submit-btn" @click="uploadReceipt" :disabled="isLoading">
+              {{ isLoading ? '처리중...' : '인식하기' }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -86,6 +90,8 @@ const clearPreview = () => {
 const uploadReceipt = async () => {
   if (!selectedImage.value) return
 
+  router.push({name: 'LoadingReceipt'})
+
   const formData = new FormData()
   formData.append('image', selectedImage.value)
 
@@ -101,10 +107,11 @@ const uploadReceipt = async () => {
 
     if (response.status === 200) {
       receiptStore.setOcrResult(response.data.data)
-      router.push({name : 'ResultReceipt'})
+      router.push({name: 'ResultReceipt'})
     }
   } catch (error) {
     console.error('Upload error:', error)
+    router.push({name: 'ReceiptUpload'})
   }
 }
 </script>
@@ -127,19 +134,26 @@ const uploadReceipt = async () => {
 .upload-container {
   margin-top: 24px;
   display: flex;
-  gap: 24px;
+  justify-content: center;
 }
 
 .upload-box {
-  flex: 1;
+  width: 100%;
+  max-width: 600px;
   min-height: 400px;
   border: 2px dashed #E5E7EB;
   border-radius: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.upload-box:not(.preview-active):hover {
+  border-color: #4C6EF5;
+  background: #f8f9fa;
 }
 
 .upload-box:hover {
@@ -174,19 +188,35 @@ const uploadReceipt = async () => {
   color: #9CA3AF;
 }
 
-.preview-container {
-  width: 400px;
-  background: #f8f9fa;
-  border-radius: 12px;
+.preview-active {
+  cursor: default;
   padding: 20px;
 }
 
+.preview-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .preview-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
+
+
 
 .preview-header h3 {
   font-size: 16px;
@@ -194,14 +224,9 @@ const uploadReceipt = async () => {
   color: #1a1438;
 }
 
-.preview-image {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
-
 .submit-btn {
   width: 100%;
+  max-width: 200px;
   padding: 12px;
   background: #4C6EF5;
   color: white;
