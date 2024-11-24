@@ -17,7 +17,7 @@
         <div class="info-item">
           <div class="item-content">
             <span class="label">이번 달 지출</span>
-            <div class="amount">509,212원</div>
+            <div class="amount">{{ formatNumber(monthlyStats.expense) }}원</div>
             <a href="#" class="link">
               지출 분석하러 가기
               <span class="arrow">→</span>
@@ -28,7 +28,7 @@
         <div class="info-item">
           <div class="item-content">
             <span class="label">이번 달 수입</span>
-            <div class="amount">30,111원</div>
+            <div class="amount">{{ formatNumber(monthlyStats.income) }}원</div>
             <a href="#" class="link">
               수입 분석하러 가기
               <span class="arrow">→</span>
@@ -70,15 +70,33 @@ import { useBudgetStore } from '@/stores/budget'
 import Calendar from "@/components/calendar/Calendar.vue";
 import Schedule from "@/components/schedule/Schedule.vue";
 import BudgetSettingModal from '@/components/budget/BudgetSetting.vue'
+import {useCalendarStore} from "@/stores/calendar.js";
 
 const budgetModal = ref(null)
 const store = useBudgetStore()
+const calendarStore = useCalendarStore();
 const currentBudget = ref(null)
+const monthlyStats = ref({
+  income: 0,
+  expense: 0
+})
 
 const fetchBudget = async () => {
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+
   const budgetData = await store.getBudget()
   if (budgetData) {
     currentBudget.value = budgetData.value
+  }
+
+  const calendarData = await calendarStore.getCalendarData(year, month)
+  if (calendarData) {
+    monthlyStats.value = {
+      income: calendarData.total_income,
+      expense: calendarData.total_expenditure
+    }
   }
 }
 

@@ -222,7 +222,6 @@ const fetchHistoryItems = async () => {
   }
 }
 
-const editingCell = ref({ itemId: null, field: null })
 
 
 // 삭제 기능

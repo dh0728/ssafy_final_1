@@ -6,7 +6,7 @@ import axios from 'axios'
 export const useBudgetStore = defineStore('budget', () => {
     const API_URL = 'http://127.0.0.1:8000'
     const currentBudget = ref(null)
-    const budgetId = ref(null) // budget_id 저장용
+    const budgetId = ref(null)
 
     const getBudget = async () => {
         console.log(localStorage.getItem('auth'))
@@ -66,36 +66,10 @@ export const useBudgetStore = defineStore('budget', () => {
         }
     }
 
-    // const setBudget = async (amount) => {
-    //     try {
-    //         const date = new Date()
-    //         const response = await axios({
-    //             method: 'POST',
-    //             url: `${API_URL}/account/books/budget/`,
-    //             headers: {
-    //                 'Authorization': `Token ${localStorage.getItem('auth')}`
-    //             },
-    //             data: {
-    //                 year: date.getFullYear(),
-    //                 month: date.getMonth() + 1,
-    //                 value: amount
-    //             }
-    //         })
-    //
-    //         if (response.status === 200 || response.status === 201) {
-    //             currentBudget.value = amount
-    //             return true
-    //         }
-    //     } catch (error) {
-    //         console.error('예산 설정 실패:', error)
-    //         return false
-    //     }
-    // }
-
     return {
         currentBudget,
         budgetId,
         getBudget,
-        setBudget
+        setBudget,
     }
 }, { persist: true })

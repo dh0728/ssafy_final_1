@@ -135,7 +135,7 @@ export const useCalendarStore = defineStore('calendar', () => {
         }
     }
 
-    // 하루 수입, 지출 총 금액
+
     const getCalendarData = async (year, month) => {
         try {
             const response = await axios({
