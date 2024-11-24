@@ -55,44 +55,45 @@
                 @input="onlyNumbers"
             >
           </div>
+          <div class="form-group row-group">
+            <div class="form-group">
+              <label>분류</label>
+              <select
+                  v-if="isEditing"
+                  v-model="ocrData.is_income"
+                  class="input-field"
+              >
+                <option :value="false">지출</option>
+                <option :value="true">수입</option>
+              </select>
+              <input
+                  v-else
+                  type="text"
+                  :value="ocrData.is_income ? '수입' : '지출'"
+                  class="input-field"
+                  readonly
+              >
+            </div>
 
-          <div class="form-group">
-            <label>분류</label>
-            <select
-                v-if="isEditing"
-                v-model="ocrData.is_income"
-                class="input-field"
-            >
-              <option :value="false">지출</option>
-              <option :value="true">수입</option>
-            </select>
-            <input
-                v-else
-                type="text"
-                :value="ocrData.is_income ? '수입' : '지출'"
-                class="input-field"
-                readonly
-            >
-          </div>
-
-          <div class="form-group">
-            <label>결제수단</label>
-            <select
-                v-if="isEditing"
-                v-model="ocrData.payment"
-                class="input-field"
-            >
-              <option value="현금">현금</option>
-              <option value="카드">카드</option>
-              <option value="이체">이체</option>
-            </select>
-            <input
-                v-else
-                type="text"
-                v-model="ocrData.payment"
-                class="input-field"
-                readonly
-            >
+            <div class="form-group">
+              <label>결제수단</label>
+              <select
+                  v-if="isEditing"
+                  v-model="ocrData.payment"
+                  class="input-field"
+              >
+                <option value="현금">현금</option>
+                <option value="카드">카드</option>
+                <option value="이체">이체</option>
+              </select>
+              <input
+                  v-else
+                  type="text"
+                  v-model="ocrData.payment"
+                  class="input-field"
+                  readonly
+              >
+            </div>
           </div>
 
           <div class="form-group">
@@ -295,6 +296,7 @@ const modifyData = () => {
 .result-content {
   display: flex;
   gap: 32px;
+  height: 820px;
 }
 
 .uploaded-image-section,
@@ -317,6 +319,7 @@ const modifyData = () => {
   margin-bottom: 20px;
 }
 
+
 .form-group label {
   display: block;
   margin-bottom: 8px;
@@ -325,15 +328,34 @@ const modifyData = () => {
   color: #4B5563;
 }
 
-.input-field {
+.row-group {
+  display: flex;
+  gap: 16px;
   width: 100%;
-  height: 48px;
-  padding: 8px 16px;
+  align-items: center; /* 라벨과 입력 필드를 세로로 정렬 */
+  height: 82px;
+}
+
+.row-group .form-group {
+  flex: 1; /* 각 필드가 동일한 크기를 가짐 */
+  margin-top: 20px;
+}
+
+
+
+.input-field {
+  width: 90%; 
+  height: 42px;
+  padding: 6px 16px;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   font-size: 15px;
   color: #1F2937;
   background: #f8f9fa;
+}
+
+.row-group .form-group .input-field{
+  width: 80%;
 }
 
 .date-group {
@@ -344,8 +366,8 @@ const modifyData = () => {
 
 .date-input {
   width: 80px;
-  height: 48px;
-  padding: 8px;
+  height: 42px;
+  padding: 6px;
   border: 1px solid #E5E7EB;
   border-radius: 8px;
   text-align: center;
@@ -354,6 +376,7 @@ const modifyData = () => {
 
 .form-actions {
   display: flex;
+  width: 96%;
   gap: 12px;
   margin-top: 32px;
 }
