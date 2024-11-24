@@ -30,11 +30,8 @@
 
         <!-- 4. 고정 지출 분석 컨테이너 -->
         <div class="fixed-expense-container">
-          <h3>11월 고정지출</h3>
-          <div class="fixed-expense-content">
-            <div class="fixed-expense-total">총 127,303원</div>
-            <div class="fixed-expense-count">총 2건</div>
-          </div>
+          <h3>소비 평가</h3>
+          <DataEvaluation />
         </div>
       </div>
       
@@ -48,6 +45,7 @@ import SideBar from "@/components/common/SideBar.vue";
 import MonthlyChart from "@/components/chart/MonthlyChart.vue";
 import WeeklyChart from "@/components/chart/WeeklyChart.vue";
 import MonthlyBudgetChart from "@/components/chart/MonthlyBudgetChart.vue";
+import DataEvaluation from "@/components/chart/DataEvaluation.vue";
 </script>
 
 <style scoped>
@@ -132,7 +130,7 @@ import MonthlyBudgetChart from "@/components/chart/MonthlyBudgetChart.vue";
   /* 옆 상자 간결 */
   margin-left: 50px;
   /* 아래칸 두번째 컨테이너 넓이 */
-  width: 400px;
+  width: 700px;
   background: white;
   border-radius: 12px;
   padding: 24px;
