@@ -406,11 +406,19 @@ onMounted(() => {
   border-collapse: collapse;
 }
 
-.history-table th,
-.history-table td {
+.history-table th {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #eee;
+}
+
+.history-table td {
+  padding: 16px 12px;
+  transition: background 0.2s;
+}
+
+.history-table tr:hover {
+  background: #f8f9fa;
 }
 
 .type-badge {
@@ -646,32 +654,25 @@ onMounted(() => {
   cursor: pointer;
 }
 
-.category-list {
-  display: flex;
-  flex-direction: column;
+
+.category-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 16px;
 }
 
-.category-group {
+.category-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-top: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
 }
 
 .category-item {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: center;
-  font-size: 13px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .category-item:hover {
@@ -737,4 +738,5 @@ onMounted(() => {
   color: white;
   border-color: #868e96;
 }
+
 </style>
