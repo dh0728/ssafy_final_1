@@ -19,7 +19,7 @@
         </div>
 
         <!-- 주요 혜택 아이콘 -->
-        <div class="card_body"> 
+        <div class="card_body">
           <div class="main-benefits">
             <div v-for="(benefit, index) in store.card.benefits?.slice(0, 3)"
                 :key="index"
@@ -27,7 +27,7 @@
               <span>{{ benefit.desc }}</span>
             </div>
           </div>
-          
+
           <div class="action-button">
             <a v-if="store.card.is_active"
               :href="store.card.bank_url"
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        
+
 
         <!-- 카드 상세 정보 -->
         <div class="card-details">
@@ -64,7 +64,7 @@
         </div>
 
         <!-- 카드사 버튼 -->
-    
+
       </div>
     </div>
 
@@ -116,42 +116,37 @@ onMounted(async () => {
 .card-detail-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 32px;
 }
 
 .card-basic-info {
   display: flex;
-  gap: 3rem;
-  margin-bottom: 3rem;
-  padding: 2rem;
+  gap: 56px;  /* 48px에서 증가 */
+  margin-bottom: 32px;
+  padding: 40px;  /* 32px에서 증가 */
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card-image-container {
-  position: relative;
-  width: 300px;
-  height: 200px;
+  width: 400px;  /* 320px에서 증가 */
+  height: 260px; /* 200px에서 증가 */
   display: flex;
   justify-content: center;
-  align-items: center; /* 세로 중앙 정렬 */
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 16px;  /* 더 부드러운 모서리 */
+  transition: transform 0.3s ease;
+  padding: 20px;  /* 여백 추가 */
+  margin-top: 40px;
 }
 
-.circle-bg {
-  position: absolute; /* 카드 뒤에 배경을 배치 */
-  transform: translateX(-50%, 50%);
-  width: 200px; /* 원의 너비 */
-  height: 200px; /* 원의 높이 (정사각형) */
-  background-color: #f3f3f3; /* 원 배경색 */
-  border-radius: 50%; /* 원 형태로 만듦 */
-  z-index: 0; /* 카드보다 뒤로 배치 */
+.card-image-container:hover {
+  transform: translateY(-4px);
 }
 
 .card-image {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -160,131 +155,171 @@ onMounted(async () => {
 }
 
 .card-image img {
-  max-width: 100%; /* 부모 너비에 맞게 조정 */
-  max-height: 100%; /* 부모 높이에 맞게 조정 */
-  object-fit: contain; /* 이미지 비율 유지 */
-}
-
-.card-image::before {
-  content: '';
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(circle, rgba(26, 20, 56, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .card-info {
   flex: 1;
 }
 
-
-.main-benefits {
-  display: flex;
-  flex-direction: column; /* 혜택 리스트는 세로 정렬 */
-  gap: 0.5rem; /* 혜택 아이템 간 간격 */
+.info-header {
+  margin-bottom: 24px;
 }
 
-.action-button {
-  flex-shrink: 0; /* 버튼 크기를 고정 */
-  text-align: right; /* 버튼 내용 오른쪽 정렬 */
-  margin-right: 30px; /* 왼쪽으로 20px 당기기 */
-  align-items: center; /* 세로 중앙 정렬 */
-}
-
-.bank-btn {
+.cashback-tag {
   display: inline-block;
-  /* padding: 0.5rem 1rem; */
-  width: 270px;
-  height: 50px;
-  text-decoration: none; /* 밑줄 제거 */
-  background-color: #4C6EF5; /* 버튼 배경색 */
-  color: white; /* 텍스트 색상 */
-  border-radius: 10px; /* 버튼 모서리 둥글게 */
-  font-weight: bold; /* 굵은 텍스트 */
-  font-size: 22px;
-  align-items: center; /* 텍스트를 세로 중앙 정렬 */
-  text-align: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.bank-btn:hover {
-  background-color: #4e2db8; /* 호버 시 배경색 변경 */
-  color: #eaeaff; /* 호버 시 텍스트 색상 변경 */
+  padding: 6px 16px;
+  background: #f3f0ff;
+  color: #845ef7;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 16px;
 }
 
 .card-info h1 {
-  font-size: 1.8rem;
+  font-size: 24px;
+  font-weight: 600;
   color: #1a1438;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .brand {
   color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: 16px;
+  margin-bottom: 24px;
 }
 
+.main-benefits {
+  margin: 24px 0;
+}
+
+.benefit-icon {
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #495057;
+}
+
+.bank-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  background: #4C6EF5;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(76, 110, 245, 0.2);
+}
+
+.bank-btn:hover {
+  background: #4263eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 110, 245, 0.3);
+}
+
+.card-details {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 24px 0;
+  padding: 16px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-row span:first-child {
+  font-size: 14px;
+  color: #666;
+}
+
+.detail-row span:last-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1438;
+}
+
+.separator {
+  width: 1px;
+  height: 40px;
+  background: #eee;
+}
+
+.additional-info {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.visa-tag,
+.online-tag,
+.type-tag {
+  padding: 4px 12px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #666;
+}
 
 .benefits-section {
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .benefits-section h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-weight: 600;
   color: #1a1438;
-  margin-bottom: 1.5rem;
-}
-
-.benefits-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .benefit-item {
-  padding: 1.5rem;
+  padding: 24px;
   border: 1px solid #eee;
-  border-radius: 8px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
 }
 
-.benefit-header {
-  margin-bottom: 1rem;
+.benefit-item:hover {
+  border-color: #4C6EF5;
+  box-shadow: 0 2px 8px rgba(76, 110, 245, 0.1);
 }
 
 .benefit-header h3 {
-  font-size: 1.2rem;
+  font-size: 18px;
+  font-weight: 600;
   color: #1a1438;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .benefit-desc {
-  color: #666;
-  font-size: 1.1rem;
+  color: #495057;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .benefit-detail {
-  font-size: 0.9rem;
+  margin-top: 16px;
+  font-size: 14px;
   color: #666;
   line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .card-basic-info {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .card-image-container {
-    width: 100%;
-  }
 }
 </style>
