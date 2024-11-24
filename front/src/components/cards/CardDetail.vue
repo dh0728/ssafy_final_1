@@ -14,19 +14,34 @@
           <div class="share-button">
 <!--            <img src="@/assets/images/share-icon.svg" alt="공유하기">-->
           </div>
+          <h1>{{ store.card.credit_card_name }}</h1>
+          <p class="brand">{{ store.card.brand }}</p>
         </div>
-
-        <h1>{{ store.card.credit_card_name }}</h1>
-        <p class="brand">{{ store.card.brand }}</p>
 
         <!-- 주요 혜택 아이콘 -->
-        <div class="main-benefits">
-          <div v-for="(benefit, index) in store.card.benefits?.slice(0, 3)"
-              :key="index"
-              class="benefit-icon">
-            <span>{{ benefit.desc }}</span>
+        <div class="card_body"> 
+          <div class="main-benefits">
+            <div v-for="(benefit, index) in store.card.benefits?.slice(0, 3)"
+                :key="index"
+                class="benefit-icon">
+              <span>{{ benefit.desc }}</span>
+            </div>
+          </div>
+          
+          <div class="action-button">
+            <a v-if="store.card.is_active"
+              :href="store.card.bank_url"
+              target="_blank"
+              class="bank-btn">
+              카드사 바로가기
+              <span class="arrow">→</span>
+            </a>
+            <div v-else class="inactive-msg">
+              발급이 중단된 카드입니다
+            </div>
           </div>
         </div>
+        
 
         <!-- 카드 상세 정보 -->
         <div class="card-details">
@@ -49,18 +64,7 @@
         </div>
 
         <!-- 카드사 버튼 -->
-        <div class="action-button">
-          <a v-if="store.card.is_active"
-            :href="store.card.bank_url"
-            target="_blank"
-            class="bank-btn">
-            카드사 바로가기
-            <span class="arrow">→</span>
-          </a>
-          <div v-else class="inactive-msg">
-            발급이 중단된 카드입니다
-          </div>
-        </div>
+    
       </div>
     </div>
 
@@ -123,6 +127,7 @@ onMounted(async () => {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
 
 .card-image-container {
@@ -136,21 +141,28 @@ onMounted(async () => {
 
 .circle-bg {
   position: absolute; /* 카드 뒤에 배경을 배치 */
-  margin-right: 24px;
   transform: translateX(-50%,50%); 
-  width: 120px; /* 원의 너비 */
-  height: 120px; /* 원의 높이 (정사각형) */
+  width: 200px; /* 원의 너비 */
+  height: 200px; /* 원의 높이 (정사각형) */
   background-color: #f3f3f3; /* 원 배경색 */
   border-radius: 50%; /* 원 형태로 만듦 */
   z-index: 0; /* 카드보다 뒤로 배치 */
 }
 
 .card-image {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  height: 180px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card-image img {
+  max-width: 100%; /* 부모 너비에 맞게 조정 */
+  max-height: 100%; /* 부모 높이에 맞게 조정 */
+  object-fit: contain; /* 이미지 비율 유지 */
 }
 
 .card-image::before {
@@ -166,14 +178,50 @@ onMounted(async () => {
   border-radius: 50%;
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .card-info {
   flex: 1;
+}
+
+.card-body {
+  display: flex;
+  align-items: center; /* 세로 방향으로 중앙 정렬 */
+  justify-content: space-between; /* 가로 방향으로 적절한 간격 */
+
+}
+
+.main-benefits {
+  display: flex;
+  flex-direction: column; /* 혜택 리스트는 세로 정렬 */
+  gap: 0.5rem; /* 혜택 아이템 간 간격 */
+}
+
+.action-button {
+  flex-shrink: 0; /* 버튼 크기를 고정 */
+  text-align: right; /* 버튼 내용 오른쪽 정렬 */
+  margin-right: 30px; /* 왼쪽으로 20px 당기기 */
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+.bank-btn {
+  display: inline-block;
+  /* padding: 0.5rem 1rem; */
+  width: 270px;
+  height: 50px;
+  text-decoration: none; /* 밑줄 제거 */
+  background-color: #4C6EF5; /* 버튼 배경색 */
+  color: white; /* 텍스트 색상 */
+  border-radius: 10px; /* 버튼 모서리 둥글게 */
+  font-weight: bold; /* 굵은 텍스트 */
+  font-size: 22px;
+  align-items: center; /* 텍스트를 세로 중앙 정렬 */
+  text-align: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bank-btn:hover {
+  background-color: #4e2db8; /* 호버 시 배경색 변경 */
+  color: #eaeaff; /* 호버 시 텍스트 색상 변경 */
 }
 
 .card-info h1 {
