@@ -23,6 +23,8 @@ urlpatterns = [
     path('analyze/category',views.analyze_category),
 
     path('recommend/cards/',views.recommend_cards),
+
+    path('evaluation/' ,views.evaluation_gpt)
 ]
 
 

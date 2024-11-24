@@ -63,7 +63,6 @@ class AnalysisTimeSerialzer(serializers.Serializer):
     total_expenditure_age_1 = serializers.IntegerField()
     total_expenditure_age_2 = serializers.IntegerField()
     total_schedules = serializers.IntegerField()
-    comment = serializers.CharField()
     day_data = TimeDayDataSerializer(many=True)
     weekly_data = TimeWeekDateSerializer(many=True)    
     schedules = TimeScheduleSerializer(many=True)
@@ -82,3 +81,6 @@ class CategoryExpenseSerializer(serializers.Serializer):
     category_id = serializers.IntegerField()
     total_amount = serializers.IntegerField()
     details = CategoryExpenseDetailSerializer(many=True)
+
+class EvaluationSerializer(serializers.Serializer):
+    comment = serializers.CharField()
