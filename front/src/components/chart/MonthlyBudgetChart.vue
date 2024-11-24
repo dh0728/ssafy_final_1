@@ -8,13 +8,17 @@
         {{ formatDifference(chartData.total_expenditure - chartData.total_expenditure_age_1) }}원
         {{ chartData.total_expenditure > chartData.total_expenditure_age_1 ? '더' : '덜' }} 쓰이고
       </div>
-        <Bar :data="monthlyData" :options="monthlyOptions" class="monthly-chart" />
+      <div style="width: 100% ;height:100%;display: flex;box-sizing: border-box; ">
+        <div style="flex: 2; padding: 10px; border-right: 1px solid #ddd ;">
+          <Bar :data="monthlyData" :options="monthlyOptions" class="monthly-chart" />
+        </div >
+        <div style="flex: 1; padding: 10px;">
+          <Bar :data="budgetData" :options="budgetOptions" class="budget-chart" />
+        </div>
+      </div>  
+      
     </div>
 
-    <!-- 예산 대비 지출 그래프 -->
-    <div class="chart-section">
-      <Bar :data="budgetData" :options="budgetOptions" class="budget-chart" />
-    </div>
   </div>
 </template>
 
@@ -167,9 +171,11 @@ onMounted(async () => {
 .chart-wrapper {
   flex: 2;
   height: 75%;
+  width: 100%;
 }
 
 .chart-section {
+  border-left: 1px solid #ddd;
   flex: 1;
   height: 75%;
   margin-top: 63px;
@@ -188,16 +194,13 @@ h3 {
   margin-bottom: 12px;
 }
 
-.monthly-chart, .budget-chart {
-  height: 100% !important;
+.monthly-chart {
+  width: 80%;
+  height: 80%;
 }
-/* .monthly-chart{
-  border-right: 1px solid black;
-} */
 
 .budget-chart {
-  height: 80% !important;  /* 차트 높이 조정 */
-  margin-top: 54px;  /* 추가 여백 */
-  width: 80%;
+  width: 50%;
 }
+
 </style>

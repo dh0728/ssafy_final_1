@@ -52,7 +52,7 @@ import DataEvaluation from "@/components/chart/DataEvaluation.vue";
 .analysis-container {
   padding: 32px;
   margin-left: 480px;
-  max-width: 1100px;
+  max-width: 1300px;
   background: white;
 }
 
@@ -121,7 +121,7 @@ import DataEvaluation from "@/components/chart/DataEvaluation.vue";
   width: 850px;
   background: white;
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -130,10 +130,10 @@ import DataEvaluation from "@/components/chart/DataEvaluation.vue";
   /* 옆 상자 간결 */
   margin-left: 50px;
   /* 아래칸 두번째 컨테이너 넓이 */
-  width: 700px;
+  width: 650px;
   background: white;
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 

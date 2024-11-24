@@ -127,7 +127,7 @@ onMounted(async () => {
 .weekly-container {
   background: white;
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
 }

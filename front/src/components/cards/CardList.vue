@@ -170,8 +170,8 @@ onMounted(() => {
 }
 
 .card-image {
-  width: auto;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   margin-right: 24px;
   /* margin-top: 48px; 제거 */
   z-index: 1;
