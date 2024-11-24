@@ -133,27 +133,6 @@ const formatNumber = (value) => {
   cursor: pointer;
 }
 
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.icon-btn {
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #666;
-  transition: all 0.2s;
-}
-
-.icon-btn:hover {
-  background: #f8f9fa;
-}
-
 .write-btn {
   padding: 8px 16px;
   background: #4C6EF5;

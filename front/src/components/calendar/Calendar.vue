@@ -179,7 +179,6 @@ onMounted(() => {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  margin-top: 24px;
 }
 
 .calendar-header {
