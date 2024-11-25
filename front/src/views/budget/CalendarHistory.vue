@@ -4,14 +4,14 @@
 
     <div class="history2-container">
       <!-- 상단 필터 영역 -->
-      <div class="filter-header">
-        <div class="left-section">
-          <button class="filter-btn active">
-            <span class="check-icon">✓</span>
-            이지연 님의 가계부
-          </button>
-        </div>
-      </div>
+<!--      <div class="filter-header">-->
+<!--        <div class="left-section">-->
+<!--          <button class="filter-btn active">-->
+<!--            <span class="check-icon">✓</span>-->
+<!--            이지연 님의 가계부-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <!-- 메인 필터 -->
       <div class="main-filters">
@@ -327,7 +327,6 @@ const truncateMemo = (memo) => {
   return memo.length > 15 ? memo.slice(0, 15) + '...' : memo;
 }
 
-// 초기 데이터 로드
 onMounted(() => {
   fetchHistoryItems()
 })
@@ -344,33 +343,6 @@ onMounted(() => {
 .history2-container {
   padding: 20px;
   background: white;
-}
-
-.filter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.left-section {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.filter-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  background: white;
-}
-
-.filter-btn.active {
-  background: #f0f0f0;
 }
 
 .write-btn {
@@ -574,7 +546,7 @@ onMounted(() => {
   background: white;
   border-radius: 16px;
   padding: 24px;
-  width: 480px;
+  width: 800px;
   max-height: 80vh;
   overflow-y: auto;
 }
