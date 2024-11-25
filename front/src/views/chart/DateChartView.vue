@@ -30,7 +30,7 @@
 
         <!-- 4. 고정 지출 분석 컨테이너 -->
         <div class="fixed-expense-container">
-          <h3>소비 평가</h3>
+          <h3>앙대핑의 소비 평가</h3>
           <DataEvaluation />
         </div>
       </div>

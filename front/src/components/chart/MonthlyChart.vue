@@ -175,13 +175,14 @@ const getComparisonText = () => {
   }
 
   const diff = monthlyData.value.total_expenditure - monthlyData.value.total_expenditure_age_1
-  return `지난 달보다 ${formatNumber(Math.abs(diff))}원 ${diff > 0 ? '더' : '덜'} 썼어요`
+  return `지난 달보다 ${formatNumber(Math.abs(diff))}원 ${diff > 0 ? '더' : '덜'} 썼어요!`
 }
 
 onMounted(async () => {
   const data = await dateChartStore.getMonthlyChart()
   if (data) {
     monthlyData.value = data
+    totalExpenditure.value = data.total_expenditure
   }
 })
 </script>
