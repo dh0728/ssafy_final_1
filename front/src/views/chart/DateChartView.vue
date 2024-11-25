@@ -5,8 +5,7 @@
     <div class="filter-header">
       <div class="left-section">
         <button class="filter-btn active">
-          <span class="check-icon">✓</span>
-          이지연 님의 소비 분석
+          <span v-if="accountStore.username">✓ {{ accountStore.username }} 님의 소비 분석</span>
         </button>
       </div>
     </div>
@@ -46,6 +45,9 @@ import MonthlyChart from "@/components/chart/MonthlyChart.vue";
 import WeeklyChart from "@/components/chart/WeeklyChart.vue";
 import MonthlyBudgetChart from "@/components/chart/MonthlyBudgetChart.vue";
 import DataEvaluation from "@/components/chart/DataEvaluation.vue";
+import {useAccountStore} from "@/stores/accounts.js";
+
+const accountStore = useAccountStore();
 </script>
 
 <style scoped>

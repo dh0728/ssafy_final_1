@@ -6,8 +6,7 @@
       <div class="filter-header">
         <div class="left-section">
           <button class="filter-btn active">
-            <span class="check-icon">✓</span>
-            이지연 님의 소비 분석
+            <span v-if="accountStore.username">✓ {{ accountStore.username }} 님의 소비 분석</span>
           </button>
         </div>
       </div>
@@ -38,8 +37,10 @@ import SideBar from "@/components/common/SideBar.vue";
 import CategoryChart from "@/components/chart/CategoryChart.vue";
 import CategoryList from "@/components/chart/CategoryList.vue";
 import {ref, onMounted, onBeforeUnmount} from "vue";
+import {useAccountStore} from "@/stores/accounts.js";
 
 const categoryList = ref(null)
+const accountStore = useAccountStore();
 
 const onSelectCategory = (category) => {
   categoryList.value?.updateSelectedCategory(category)
@@ -117,10 +118,7 @@ onBeforeUnmount(() => {
   width: 430px;
 }
 
-.chart-wrapper {
-  height: 300px;
-  /* margin-top: 16px; */
-}
+
 
 h3 {
   font-size: 18px;
@@ -134,10 +132,6 @@ h3 {
   padding: 20px 0;
 }
 
-.details-table {
-  width: 100%;
-  border-collapse: collapse;
-}
 
 .details-table th,
 .details-table td {
@@ -153,7 +147,6 @@ h3 {
 }
 
 .details-section {
-  /* margin-top: 24px; */
   margin-left: 50px;
   width: 800px;
 }
