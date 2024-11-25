@@ -4,7 +4,8 @@
     <div class="header">
       <div class="user-select">
         <span class="user-icon">👤 </span>
-        <span>이지연 님의 가계부</span>
+        <span v-if="accountStore.username">{{ accountStore.username }} 님의 가계부</span>
+        <span v-else>가계부</span>
       </div>
       <div class="actions">
         <button class="write-btn">가계부 작성하기</button>
@@ -71,10 +72,12 @@ import Calendar from "@/components/calendar/Calendar.vue";
 import Schedule from "@/components/schedule/Schedule.vue";
 import BudgetSettingModal from '@/components/budget/BudgetSetting.vue'
 import {useCalendarStore} from "@/stores/calendar.js";
+import {useAccountStore} from "@/stores/accounts.js";
 
 const budgetModal = ref(null)
 const store = useBudgetStore()
 const calendarStore = useCalendarStore();
+const accountStore = useAccountStore();
 const currentBudget = ref(null)
 const monthlyStats = ref({
   income: 0,
@@ -82,6 +85,8 @@ const monthlyStats = ref({
 })
 
 const fetchBudget = async () => {
+  await accountStore.getUserInfo()
+
   const date = new Date()
   const year = date.getFullYear()
   const month = date.getMonth() + 1
