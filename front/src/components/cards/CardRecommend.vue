@@ -1,49 +1,60 @@
 <template>
   <div class="modal-overlay" @click="$emit('close')">
     <div class="modal-content" @click.stop>
-      <div class="modal-header">
-        <h2>스마트한 카드 추천</h2>
-        <button class="close-btn" @click="$emit('close')">×</button>
+      <!-- 로딩 화면 -->
+      <div v-if="isLoading" class="loading-content">
+        <div class="loading-box">
+          <div class="loading-spinner"></div>
+          <h2>소비 패턴을 분석하고 있습니다</h2>
+          <p>잠시만 기다려주세요...</p>
+        </div>
       </div>
 
-      <div class="modal-body">
-        <div class="recommendation-section">
-          <div id="cardCarousel" class="carousel">
-            <div class="carousel-inner">
-              <!-- 신용카드 -->
-              <div v-for="(card, index) in allCards"
-                   :key="card.id"
-                   :class="['carousel-item', index === 0 ? 'active' : '']">
-                <div class="card-item">
-                  <div :class="['benefit-tag', card.type]">
-                    {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}
-                  </div>
-                  <div class="card-image">
-                    <img :src="card.img_path" :alt="card.name">
-                  </div>
-                  <div class="card-info">
-                    <h4>{{ card.name }}</h4>
-                    <span class="card-brand">{{ card.brand }}</span>
-                    <div class="button-group">
-                      <RouterLink
-                          :to="{ name: 'CardDetail', params: { type: card.type, cardId: card.id }}"
-                          class="detail-btn">
-                        자세히 보기
-                      </RouterLink>
+      <!-- 메인 컨텐츠 -->
+      <template v-else>
+        <div class="modal-header">
+          <h2>스마트한 카드 추천</h2>
+          <button class="close-btn" @click="$emit('close')">×</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="recommendation-section">
+            <div id="cardCarousel" class="carousel">
+              <div class="carousel-inner">
+                <div v-for="(card, index) in allCards"
+                     :key="card.id"
+                     :class="['carousel-item', index === 0 ? 'active' : '']">
+                  <div class="card-item">
+                    <div :class="['benefit-tag', card.type]">
+                      {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}
+                    </div>
+                    <div class="card-image">
+                      <img :src="card.img_path" :alt="card.name">
+                    </div>
+                    <div class="card-info">
+                      <h4>{{ card.name }}</h4>
+                      <span class="card-brand">{{ card.brand }}</span>
+                      <div class="button-group">
+                        <RouterLink
+                            :to="{ name: 'CardDetail', params: { type: card.type, cardId: card.id }}"
+                            class="detail-btn">
+                          자세히 보기
+                        </RouterLink>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <button class="carousel-control prev" @click="prevSlide">
+                <span class="carousel-control-prev-icon">←</span>
+              </button>
+              <button class="carousel-control next" @click="nextSlide">
+                <span class="carousel-control-next-icon">→</span>
+              </button>
             </div>
-            <button class="carousel-control prev" @click="prevSlide">
-              <span class="carousel-control-prev-icon">←</span>
-            </button>
-            <button class="carousel-control next" @click="nextSlide">
-              <span class="carousel-control-next-icon">→</span>
-            </button>
           </div>
         </div>
-      </div>
+      </template>
     </div>
   </div>
 </template>
@@ -54,6 +65,7 @@ import { useCardStore } from "@/stores/cards.js"
 
 const store = useCardStore()
 const currentIndex = ref(0)
+const isLoading = ref(true)
 
 const allCards = computed(() => {
   const creditCards = store.recommendCards?.credit_cards?.map(card => ({
@@ -88,11 +100,71 @@ const nextSlide = () => {
 }
 
 onMounted(async () => {
-  await store.getRecommendCards()
+  isLoading.value = true
+  try {
+    await store.getRecommendCards()
+    setTimeout(() => {
+      isLoading.value = false
+    }, 1500)
+  } finally {
+    isLoading.value = false
+  }
 })
+
+// 타이밍 이슈 방, 비동기 처리 깔끔하게
+// onMounted(async () => {
+//   isLoading.value = true
+//   try {
+//     await store.getRecommendCards()
+//     await new Promise(resolve => setTimeout(resolve, 1500))
+//   } finally {
+//     isLoading.value = false
+//   }
+// })
 </script>
 
 <style scoped>
+.loading-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 600px;
+}
+
+.loading-box {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 40px;
+  border: 4px solid #E5E7EB;
+  border-radius: 50%;
+  border-top-color: #4C6EF5;
+  animation: spin 1s linear infinite;
+}
+
+.loading-box h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1438;
+  margin-bottom: 16px;
+}
+
+.loading-box p {
+  color: #6B7280;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
