@@ -11,10 +11,10 @@
       </div>
       <div class="month-controls">
         <button class="control-btn" @click="prevMonth">
-          <i class="fas fa-chevron-left"><</i>
+          <i class="fas fa-chevron-left"></i>
         </button>
         <button class="control-btn" @click="nextMonth">
-          <i class="fas fa-chevron-right">></i>
+          <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </div>

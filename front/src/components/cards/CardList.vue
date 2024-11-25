@@ -35,7 +35,7 @@
         </div>
 
         <!-- 혜택 태그 -->
-        <div class="benefit-tag">최대 18만원 캐시백</div>
+        <!-- <div class="benefit-tag">최대 18만원 캐시백</div> -->
 
         <!-- 혜택 그리드 -->
         <div class="benefits-grid">
