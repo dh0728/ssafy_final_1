@@ -1,11 +1,19 @@
 <template>
   <div class="category-list-container">
     <div v-if="selectedCategory" class="list-header">
-      <h3>{{ getCategoryName(selectedCategory.category_id) }} 상세 내역</h3>
-      <div class="total-info">
-        총 {{ selectedCategory.details.length }}건
+      <div>
+        <h3>{{ getCategoryName(selectedCategory.category_id) }} 상세 내역</h3>
+        <div class="total-info">
+          총 {{ selectedCategory.details.length }}건 
+        </div>
       </div>
+      
+      <div class="actions">
+        <button class="write-btn" @click="go_history">가계부 수정하기 📝</button>
+      </div>
+      
     </div>
+    
 
     <div v-if="selectedCategory" class="table-container">
       <table class="history-table">
@@ -19,7 +27,7 @@
           <th>메모</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="scrollable-tbody">
         <tr v-for="detail in selectedCategory.details" :key="detail.day">
           <td>{{ detail.day }}일</td>
           <td>{{ getCategoryName(selectedCategory.category_id) }}</td>
@@ -40,9 +48,12 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
 import { useCategoryChartStore } from '@/stores/categoryChart'
 
 const selectedCategory = ref(null)
+
+const router = useRouter()
 
 const categories = ref([
   { id: 1, name: '🏬 모든가맹점' },
@@ -74,6 +85,10 @@ const categories = ref([
   { id: 27, name: '🏃‍♂️ 생활' },
 ])
 
+const go_history = () => {
+  return router.push({name: 'CalendarHistory'})
+}
+
 const getCategoryName = (id) => {
   const category = categories.value.find(cat => cat.id === id)
   return category ? category.name : '기타'
@@ -93,6 +108,10 @@ defineExpose({
 </script>
 
 <style scoped>
+
+h3 {
+  margin-bottom: 5px;
+}
 .category-list-container {
   padding: 20px;
 }
@@ -101,12 +120,14 @@ defineExpose({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
   margin-bottom: 20px;
 }
 
 .total-info {
   font-size: 14px;
   color: #666;
+  margin-bottom: 5px;
 }
 
 .table-container {
@@ -141,4 +162,51 @@ defineExpose({
   padding: 40px;
   color: #666;
 }
+
+.scrollable-tbody {
+  display: block;
+  max-height: 480px; /* 원하는 높이 설정 */
+  overflow-y: auto; /* 수직 스크롤 활성화 */
+}
+
+.history-table thead,
+.scrollable-tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* 고정된 테이블 레이아웃을 유지하기 위해 설정 */
+}
+
+.history-table {
+  width: 100%;
+}
+
+.scrollable-tbody {
+  width: 100%;
+}
+
+/* 스크롤바 숨기기 */
+.scrollable-tbody::-webkit-scrollbar {
+  display: none; /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+}
+
+.scrollable-tbody {
+  -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+}
+
+.write-btn {
+  padding: 8px 16px;
+  background: #4C6EF5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 </style>

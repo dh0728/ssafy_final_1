@@ -21,12 +21,12 @@
           <div class="amount"
                @click="selectCategory(item)"
                style="cursor: pointer">
-            {{ formatNumber(item.total_amount) }}원
+            {{ formatNumber(item.total_amount) }}원 >
           </div>
         </div>
-        <div class="divider"></div>
-        <div class="total">총 {{ formatNumber(totalAmount) }}원</div>
       </div>
+      <div class="divider"></div>
+      <div class="total">총 {{ formatNumber(totalAmount) }}원</div>
     </div>
   </div>
 </template>
@@ -161,7 +161,7 @@ onMounted(async () => {
 
 <style scoped>
 .category-chart {
-  padding: 24px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -169,7 +169,6 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
 }
 
 .chart-wrapper {
@@ -180,7 +179,10 @@ onMounted(async () => {
 .category-items {
   width: 100%;
   max-width: 300px;
-  margin-top: 20px;
+  margin-top: 25px;
+  max-height: 180px; /* 스크롤을 활성화할 높이 제한 */
+  overflow-y: auto; /* 수직 스크롤 활성화 */
+  padding-right: 10px; /* 스크롤바와 텍스트 간의 간격을 위해 패딩 추가 */
 }
 
 .category-item {
@@ -188,6 +190,17 @@ onMounted(async () => {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
+}
+
+
+/* 스크롤바 숨기기 */
+.category-items::-webkit-scrollbar {
+  display: none; /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+}
+
+.category-items {
+  -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
 }
 
 .category-info {
@@ -214,13 +227,16 @@ onMounted(async () => {
 }
 
 .divider {
+  padding-left: 10px;
   height: 1px;
+  width: 300px;
   background-color: #eee;
   margin: 12px 0;
 }
 
 .total {
-  margin-top: 20px;
+  padding-left: 10px;
+  width: 300px;
   text-align: right;
   font-weight: 500;
 }

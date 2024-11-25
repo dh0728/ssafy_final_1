@@ -33,6 +33,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from langchain.embeddings.cache import CacheBackedEmbeddings
 
+from rest_framework.pagination import LimitOffsetPagination
 
 # Create your views here.
 @api_view(['GET'])
@@ -64,6 +65,24 @@ def day(request):
             )
         serializer = AccountBookCalendar(account_book_data,many=True)
         return Response(serializer.data)
+
+# @api_view(['GET'])
+# @permission_classes([IsAuthenticated]) 
+# def page_data(request):
+#     account_book = get_object_or_404(Account_book, user_id=request.user)
+#     if request.method == "GET":
+#         year= datetime.now().year
+#         account_book_data = Account_book_data.objects.filter(
+#             account_book_id=account_book.pk,
+#             year=year
+#         ).order_by('-month', 'day')  # month 내림차순, day 오름차순
+
+#         paginator = LimitOffsetPagination()
+#         result_page = paginator.paginate_queryset(account_book_data, request)
+#         serializer = AccountBookCalendar(result_page, many=True)
+        
+#         return paginator.get_paginated_response(serializer.data)
+
 
 # 한달 내역 데이터 조회
 @api_view(['GET'])
@@ -642,7 +661,7 @@ def evaluation(month_data,birth):
             {"role": "system", "content": "만약 사용자의 소비 내역이 문제가 있어 보인다면 과격한 표현을 사용해가며 사용자가 경각심을 느낄 수 있도록 해줘야해."},
             {"role": "system", "content": "사용자의 나이대와 비슷한 다른 사람들과 마음껏 비교해도 괜찮아."},
             {"role": "system", "content": "만약 사용자가 소비를 올바르게 잘 하고 있다면 칭찬해 줘."},
-            {"role": "system", "content": "500자 이내로 부탁해."},
+            {"role": "system", "content": "250자 이내로 부탁해."},
         ]
 
         conversation_history.append(

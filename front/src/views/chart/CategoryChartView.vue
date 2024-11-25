@@ -37,13 +37,31 @@
 import SideBar from "@/components/common/SideBar.vue";
 import CategoryChart from "@/components/chart/CategoryChart.vue";
 import CategoryList from "@/components/chart/CategoryList.vue";
-import {ref} from "vue";
+import {ref, onMounted, onBeforeUnmount} from "vue";
 
 const categoryList = ref(null)
 
 const onSelectCategory = (category) => {
   categoryList.value?.updateSelectedCategory(category)
 }
+
+// 스크롤 비활성화 및 복구 함수
+const disableScroll = () => {
+  document.body.style.overflow = 'hidden';
+};
+
+const enableScroll = () => {
+  document.body.style.overflow = 'auto';
+};
+
+onMounted(() => {
+  disableScroll(); // 컴포넌트가 마운트될 때 스크롤 비활성화
+});
+
+onBeforeUnmount(() => {
+  enableScroll(); // 컴포넌트가 언마운트될 때 스크롤 복구
+});
+
 </script>
 
 <style scoped>
@@ -81,6 +99,7 @@ const onSelectCategory = (category) => {
 }
 
 .category-analysis {
+  max-height: 700px;
   display: flex;
   background: white;
   border-radius: 12px;
@@ -89,7 +108,7 @@ const onSelectCategory = (category) => {
 }
 
 .chart-section {
-  border: solid 1px black;
+
   display: flex;
   margin-bottom: 32px;
 }
@@ -134,7 +153,6 @@ h3 {
 }
 
 .details-section {
-  border: 1px solid black;
   /* margin-top: 24px; */
   margin-left: 50px;
   width: 800px;

@@ -25,7 +25,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend , Chart, registerables} from 'chart.js'
 import { useDateChartStore } from "@/stores/dateChart.js"
 import {useBudgetStore} from "@/stores/budget.js";
 
@@ -49,35 +49,6 @@ const monthlyLabels = computed(() => {
   ]
 })
 
-const customXAxisLabels = {
-  id: 'customXAxisLabels',
-  afterDraw: (chart) => {
-    const ctx = chart.ctx;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-
-    const xAxis = chart.scales.x;
-    xAxis.ticks.forEach((tick, index) => {
-      const x = xAxis.getPixelForTick(index);
-      const y = xAxis.bottom + 5; // 라벨 시작 위치 조정
-
-      // 첫 번째 줄 (금액) 스타일
-      ctx.font = 'bold 14px Arial';
-      ctx.fillStyle = '#333';
-      ctx.fillText(tick[0], x, y);
-
-      // 두 번째 줄 (월 지출) 스타일
-      ctx.font = 'italic 12px Arial';
-      ctx.fillStyle = '#666';
-      ctx.fillText(tick[1], x, y + 20); // 첫 번째 줄 아래에 위치
-    });
-  }
-};
-
-// 차트 설정에 플러그인 등록
-ChartJS.register(customXAxisLabels);
-
-
 const monthlyData = computed(() => ({
   labels: monthlyLabels.value,  // monthLabels -> monthlyLabels
   datasets: [{
@@ -95,11 +66,9 @@ const monthlyData = computed(() => ({
   }]
 }))
 
-
-
 const budgetData = computed(() => ({
   labels: [
-    [`${formatNumber(chartData.value.total_expenditure_age_2)}원`,`${new Date().getMonth() + 1}월 예산`], 
+    [`${formatNumber(budgetStore.currentBudget)}원`,`${new Date().getMonth() + 1}월 예산`], 
     [`${formatNumber(chartData.value.total_expenditure_age_2)}원`,`${new Date().getMonth() + 1}월 지출`],
   ],
   datasets: [{
@@ -114,9 +83,46 @@ const budgetData = computed(() => ({
 }))
 
 
+const customLabelStyles = {
+  id: 'customLabelStyles',
+  afterDraw: (chart) => {
+    const ctx = chart.ctx;
+    const xAxis = chart.scales.x;
+
+    chart.data.labels.forEach((labelArray, index) => {
+      const meta = chart.getDatasetMeta(0);
+      const bar = meta.data[index];
+      
+      if (bar) {
+        const x = bar.x;
+        const y = xAxis.bottom + 10; // 바닥 축 바로 아래에 위치
+
+        // 첫 번째 줄: 금액 (굵은 글씨, 검정색)
+        ctx.font = 'bold 14px Apple SD Gothic Neo';
+        ctx.fontWe
+        ctx.fillStyle = '#333'; // 검정색
+        ctx.textAlign = 'center';
+        ctx.fillText(labelArray[0], x, y);
+
+        // 두 번째 줄: 월 지출 (얇은 글씨, 회색)
+        ctx.font = '10px Apple SD Gothic Neo';
+        ctx.fillStyle = '#999'; // 회색
+        ctx.fillText(labelArray[1], x, y + 20);
+      }
+    });
+  }
+};
+
+Chart.register(...registerables,customLabelStyles)
+
 const monthlyOptions = {
   responsive: true,
   maintainAspectRatio: false,
+  layout: {
+    padding: {
+      bottom: 40 // 아래쪽에 40px 정도의 여백 추가
+    }
+  },
   plugins: {
     legend: {
       display: false
@@ -126,7 +132,7 @@ const monthlyOptions = {
         label: (context) => `${formatNumber(context.raw)}원`
       }
     },
-    customXAxisLabels
+    customLabelStyles // 플러그인 추가
   },
   scales: {
     y: {
@@ -141,14 +147,22 @@ const monthlyOptions = {
     x: {
       grid: {
         display: false  // x축 그리드 제거
+      },
+      ticks:{
+        display :false
       }
     }
-  }
+  },
 }
 
 const budgetOptions = {
   responsive: true,
   maintainAspectRatio: false,
+  layout: {
+    padding: {
+      bottom: 40 // 아래쪽에 40px 정도의 여백 추가
+    }
+  },
   indexAxis: 'x',  // 세로 막대로 변경
   plugins: {
     legend: {
@@ -158,20 +172,26 @@ const budgetOptions = {
       callbacks: {
         label: (context) => `${formatNumber(Math.abs(context.raw))}원`
       }
-    }
+    },
+    customLabelStyles,
   },
+  
   scales: {
     x: {
       display: true,  // x축 숨기기
       grid: {
         display: false
+      },
+      ticks:{
+        display :false
       }
     },
     y: {
       display: false,  // y축 숨기기
       beginAtZero: true  // 0부터 시작하도록 설정
-    }
-  }
+    },
+    
+  },
 }
 
 const formatNumber = (value) => {
