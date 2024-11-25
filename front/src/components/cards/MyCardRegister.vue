@@ -12,14 +12,13 @@
             <h3 class="section-title">신용카드</h3>
             <div class="cards-grid">
               <div v-for="card in myCards.credit_cards" :key="card.credit_card_id" class="card-item">
+                <button class="delete-btn" @click="deleteCard(1, card.credit_card_id)">×</button>
                 <div class="card-image">
                   <img :src="card.img_path" :alt="card.credit_card_name">
                 </div>
                 <div class="card-info">
                   <h3>{{ card.credit_card_name }}</h3>
                   <span class="card-brand">{{ card.brand }}</span>
-                  <div class="card-type">신용카드</div>
-                  <button class="delete-btn" @click="deleteCard(1, card.credit_card_id)">삭제</button>
                 </div>
               </div>
             </div>
@@ -30,14 +29,13 @@
             <h3 class="section-title">체크카드</h3>
             <div class="cards-grid">
               <div v-for="card in myCards.check_cards" :key="card.check_card_id" class="card-item">
+                <button class="delete-btn" @click="deleteCard(2, card.check_card_id)">×</button>
                 <div class="card-image">
                   <img :src="card.img_path" :alt="card.check_card_name">
                 </div>
                 <div class="card-info">
                   <h3>{{ card.check_card_name }}</h3>
                   <span class="card-brand">{{ card.brand }}</span>
-                  <div class="card-type">체크카드</div>
-                  <button class="delete-btn" @click="deleteCard(2, card.check_card_id)">삭제</button>
                 </div>
               </div>
             </div>
@@ -132,25 +130,33 @@ onMounted(async () => {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 24px;
   padding: 20px;
 }
 
 .delete-btn {
-  margin-top: 12px;
-  padding: 6px 12px;
-  background: #ff4757;
-  color: white;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: none;
   border: none;
-  border-radius: 4px;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 12px;
-  transition: background 0.2s ease;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
 }
 
 .delete-btn:hover {
-  background: #ff6b81;
+  background: #ff4757;
+  color: white;
 }
 
 .card-item {
@@ -159,6 +165,7 @@ onMounted(async () => {
   padding: 20px;
   transition: all 0.2s ease;
   position: relative;
+  overflow: hidden;
 }
 
 

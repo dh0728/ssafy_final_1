@@ -6,7 +6,7 @@
       <div class="subtitle">
         이번 달에는 지난 달 보다
         {{ formatDifference(chartData.total_expenditure - chartData.total_expenditure_age_1) }}원
-        {{ chartData.total_expenditure > chartData.total_expenditure_age_1 ? '더' : '덜' }} 쓰이고
+        {{ chartData.total_expenditure > chartData.total_expenditure_age_1 ? '더' : '덜' }} 사용했어요 !
       </div>
       <div style="width: 100% ;height:100%;display: flex;box-sizing: border-box; ">
         <div style="flex: 2; padding: 10px; border-right: 1px solid #ddd ;">
