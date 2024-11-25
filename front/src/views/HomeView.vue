@@ -67,7 +67,7 @@
           </div>
           <div class="card-text">
             <h4>CALENDAR</h4>
-            <p>휘휘휙 기록되는 나의 소비</p>
+            <p>휘리릭 기록되는 나의 소비</p>
           </div>
         </RouterLink>
 
@@ -391,7 +391,10 @@
 }
 
 .service-text {
-  margin-bottom: 48px; /* 60px에서 줄임 */
+  flex: 1;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.8s ease forwards;
 }
 
 .service-text h2 {
@@ -401,26 +404,52 @@
 }
 
 .title-group h3 {
-  font-size: 40px; /* 48px에서 줄임 */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 40px;
   font-weight: 700;
   color: #1a1438;
-  line-height: 1.2; /* 1.3에서 줄임 */
-  margin-bottom: 4px; /* 8px에서 줄임 */
-  letter-spacing: -0.02em; /* 글자 간격 줄임 */
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.title-group h3:nth-child(1) {
+  animation: slideDown 0.6s ease forwards 0.2s;
+}
+
+.title-group h3:nth-child(2) {
+  animation: slideDown 0.6s ease forwards 0.4s;
+}
+
+.title-group h3:nth-child(3) {
+  animation: slideDown 0.6s ease forwards 0.6s;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .service-cards {
-  flex: 1.2; /* 카드 영역 비율 */
+  flex: 1.2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px; /* 카드 간격 축소 */
-  max-width: 600px; /* 카드 영역 전체 너비 제한 */
+  max-width: 500px; /* 카드 영역 전체 너비 제한 */
 }
 
 .service-card {
   background: #f8f9fa;
-  padding: 24px; /* 패딩 축소 */
-  border-radius: 14px;
+  padding: 20px; /* 패딩 축소 */
+  border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
