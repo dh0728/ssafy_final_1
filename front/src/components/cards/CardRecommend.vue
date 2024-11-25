@@ -7,68 +7,41 @@
       </div>
 
       <div class="modal-body">
-        <!-- 신용카드 섹션 -->
-        <div v-if="store.recommendCards?.credit_cards?.length > 0" class="recommendation-section">
-          <h3>추천 신용카드</h3>
-          <div class="card-list">
-            <div v-for="card in store.recommendCards.credit_cards"
-                 :key="card.credit_card_id"
-                 class="card-item">
-              <div class="card-image">
-                <img :src="card.img_path" :alt="card.credit_card_name">
-              </div>
-              <div class="card-info">
-                <h4>{{ card.credit_card_name }}</h4>
-                <span class="card-brand">{{ card.brand }}</span>
-                <div class="benefit-tag">추천 신용카드</div>
-                <div class="button-group">
-                  <RouterLink
-                      :to="{ name: 'CardDetail', params: { type: 'credit', cardId: card.credit_card_id }}"
-                      class="detail-btn">
-                    자세히 보기
-                  </RouterLink>
-                  <button @click="registerCard(1, card.credit_card_id)" class="register-btn">
-                    내 카드 등록
-                  </button>
+        <div class="recommendation-section">
+          <div id="cardCarousel" class="carousel">
+            <div class="carousel-inner">
+              <!-- 신용카드 -->
+              <div v-for="(card, index) in allCards"
+                   :key="card.id"
+                   :class="['carousel-item', index === 0 ? 'active' : '']">
+                <div class="card-item">
+                  <div class="card-image">
+                    <div :class="['benefit-tag', card.type]">
+                      {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}
+                    </div>
+                    <img :src="card.img_path" :alt="card.name">
+                  </div>
+                  <div class="card-info">
+                    <h4>{{ card.name }}</h4>
+                    <span class="card-brand">{{ card.brand }}</span>
+                    <div class="button-group">
+                      <RouterLink
+                          :to="{ name: 'CardDetail', params: { type: card.type, cardId: card.id }}"
+                          class="detail-btn">
+                        자세히 보기
+                      </RouterLink>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <button class="carousel-control prev" @click="prevSlide">
+              <span class="carousel-control-prev-icon">←</span>
+            </button>
+            <button class="carousel-control next" @click="nextSlide">
+              <span class="carousel-control-next-icon">→</span>
+            </button>
           </div>
-        </div>
-
-        <!-- 체크카드 섹션 -->
-        <div v-if="store.recommendCards?.check_cards?.length > 0" class="recommendation-section">
-          <h3>추천 체크카드</h3>
-          <div class="card-list">
-            <div v-for="card in store.recommendCards.check_cards"
-                 :key="card.check_card_id"
-                 class="card-item">
-              <div class="card-image">
-                <img :src="card.img_path" :alt="card.check_card_name">
-              </div>
-              <div class="card-info">
-                <h4>{{ card.check_card_name }}</h4>
-                <span class="card-brand">{{ card.brand }}</span>
-                <div class="benefit-tag">추천 체크카드</div>
-                <div class="button-group">
-                  <RouterLink
-                      :to="{ name: 'CardDetail', params: { type: 'check', cardId: card.check_card_id }}"
-                      class="detail-btn">
-                    자세히 보기
-                  </RouterLink>
-                  <button @click="registerCard(2, card.check_card_id)" class="register-btn">
-                    내 카드 등록
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 추천 카드가 없는 경우 -->
-        <div v-if="!store.recommendCards?.credit_cards?.length && !store.recommendCards?.check_cards?.length"
-             class="no-cards">
-          <p>추천 카드를 불러오는 중입니다...</p>
         </div>
       </div>
     </div>
@@ -76,25 +49,42 @@
 </template>
 
 <script setup>
-import {onMounted} from 'vue'
-import {useCardStore} from "@/stores/cards.js"
+import { onMounted, computed, ref } from 'vue'
+import { useCardStore } from "@/stores/cards.js"
 
 const store = useCardStore()
+const currentIndex = ref(0)
 
-const registerCard = async (cardType, cardId) => {
-  try {
-    const result = await store.registerMyCard(cardType, cardId)
-    if (result.success) {
-      alert(result.message)
-      // 성공 후 내 카드 목록 새로고침
-      await store.getMyCards()
-    } else {
-      alert(result.message)
-    }
-  } catch (error) {
-    alert('카드 등록 중 오류가 발생했습니다.')
-    console.error('카드 등록 실패:', error)
-  }
+const allCards = computed(() => {
+  const creditCards = store.recommendCards?.credit_cards?.map(card => ({
+    ...card,
+    type: 'credit',
+    id: card.credit_card_id,
+    name: card.credit_card_name
+  })) || []
+
+  const checkCards = store.recommendCards?.check_cards?.map(card => ({
+    ...card,
+    type: 'check',
+    id: card.check_card_id,
+    name: card.check_card_name
+  })) || []
+
+  return [...creditCards, ...checkCards]
+})
+
+const prevSlide = () => {
+  const items = document.querySelectorAll('.carousel-item')
+  items[currentIndex.value].classList.remove('active')
+  currentIndex.value = (currentIndex.value - 1 + items.length) % items.length
+  items[currentIndex.value].classList.add('active')
+}
+
+const nextSlide = () => {
+  const items = document.querySelectorAll('.carousel-item')
+  items[currentIndex.value].classList.remove('active')
+  currentIndex.value = (currentIndex.value + 1) % items.length
+  items[currentIndex.value].classList.add('active')
 }
 
 onMounted(async () => {
@@ -120,10 +110,14 @@ onMounted(async () => {
   background: white;
   padding: 32px;
   border-radius: 12px;
-  width: 900px;
+  width: 400px;
   min-height: 600px;
   max-height: 90vh;
   overflow-y: auto;
+}
+
+.recommendation-section {
+  padding: 0px;
 }
 
 .modal-header {
@@ -149,18 +143,14 @@ onMounted(async () => {
   color: #666;
 }
 
-.card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 24px;
-  padding: 20px;
-}
-
 .card-item {
-  background: #f8f9fa;
-  border-radius: 16px;
+  background: white;
+  border-radius: 14px;
   padding: 20px;
-  transition: all 0.2s ease;
+  height: 380px; /* 높이 조정 */
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .card-item:hover {
@@ -185,6 +175,7 @@ onMounted(async () => {
   font-size: 18px;
   font-weight: 600;
   color: #1a1438;
+  padding-top: 20px;
   margin-bottom: 8px;
 }
 
@@ -205,42 +196,34 @@ onMounted(async () => {
   margin-bottom: 16px;
 }
 
-.benefits {
-  margin-bottom: 20px;
-}
-
-.benefit-item {
-  margin-bottom: 8px;
-  color: #495057;
-  font-size: 14px;
-}
-
 .button-group {
   display: flex;
   gap: 8px;
+  margin-top: auto; /* 버튼을 하단에 배치 */
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
 }
 
 .detail-btn, .register-btn {
   flex: 1;
-  padding: 8px 16px;
+  padding: 8px 0;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 11px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.detail-btn {
-  background: #1a1438;
-  color: white;
-  text-decoration: none;
   text-align: center;
 }
 
-.register-btn {
+.detail-btn {
   background: #f8f9fa;
   color: #1a1438;
   border: 1px solid #e9ecef;
+  text-decoration: none;
 }
+
 
 .detail-btn:hover {
   background: #2d1d5c;
@@ -250,9 +233,71 @@ onMounted(async () => {
   background: #e9ecef;
 }
 
-.no-cards {
-  text-align: center;
-  padding: 40px;
-  color: #666;
+.benefit-tag.credit {
+  background: #f3f0ff;
+  color: #845ef7;
 }
+
+.benefit-tag.check {
+  background: #e7f5ff;
+  color: #339af0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.carousel-control.prev {
+  left: 20px;
+}
+
+.carousel-control.next {
+  right: 20px;
+}
+
+.card-item {
+  width: 300px;
+  margin: 0 auto;
+}
+
 </style>
