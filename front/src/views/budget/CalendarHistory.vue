@@ -736,9 +736,9 @@ onMounted(() => {
 }
 
 .action-btn.delete {
-  background: #ff6b6b;
+  background: #868e96;
   color: white;
-  border-color: #ff6b6b;
+  border-color: #868e96;
 }
 
 .action-btn.cancel {
