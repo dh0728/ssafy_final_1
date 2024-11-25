@@ -1,5 +1,14 @@
 <template>
   <div class="card-list">
+
+    <div v-if="!store.cards?.length" class="no-result">
+      <img src="../../assets/no-result.png" alt="검색 결과 없음" class="no-result-image">
+      <h3>해당 조건의 상품을 찾지 못했어요</h3>
+      <p>필터를 변경하여 다시 검색해주세요</p>
+    </div>
+
+
+    <template v-else>
     <div v-for="card in store.cards" :key="getCardId(card)" class="card-item">
       <!-- 왼쪽: 카드 이미지 -->
       <div class="card-container">
@@ -52,6 +61,7 @@
         </div>
       </div>
     </div>
+    </template>
     <div ref="observerTarget" class="observer-target"></div>
   </div>
 </template>
@@ -161,7 +171,7 @@ onMounted(() => {
 .circle-bg {
   position: absolute; /* 카드 뒤에 배경을 배치 */
   margin-right: 24px;
-  transform: translateX(-50%,50%); 
+  transform: translateX(-50%, 50%);
   width: 120px; /* 원의 너비 */
   height: 120px; /* 원의 높이 (정사각형) */
   background-color: #f3f3f3; /* 원 배경색 */
@@ -338,5 +348,35 @@ onMounted(() => {
 
 .register-btn:hover {
   background: #e9ecef;
+}
+
+.no-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+  background: white;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.no-result-image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.no-result h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1438;
+  margin-bottom: 12px;
+}
+
+.no-result p {
+  color: #6B7280;
+  font-size: 16px;
 }
 </style>
