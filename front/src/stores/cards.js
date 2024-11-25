@@ -13,9 +13,11 @@ export const useCardStore = defineStore('cards', () => {
 
     const cards = ref([])
     const card = ref(null)
+    const loading = ref(false)
 
     const getCardList = async (cardType) => {
         try {
+            loading.value =true 
             currentType.value = cardType
             const type = cardType === 'credit' ? 1 : 2
             const response = await axios({
@@ -25,6 +27,8 @@ export const useCardStore = defineStore('cards', () => {
             cards.value = response.data
         } catch (error) {
             console.error(error)
+        } finally {
+            loading.value = false
         }
     }
 
@@ -32,6 +36,7 @@ export const useCardStore = defineStore('cards', () => {
     // 조건 검색
     const getCardsByCondition = async (type, categories, companies) => {
         try {
+            loading.value =true
             currentType.value = type
             const cardType = type === 'credit' ? 1 : 2
 
@@ -57,6 +62,8 @@ export const useCardStore = defineStore('cards', () => {
             cards.value = response.data
         } catch (error) {
             console.error('카드 검색 실패:', error)
+        } finally {
+            loading.value = false
         }
     }
 
@@ -212,6 +219,7 @@ export const useCardStore = defineStore('cards', () => {
         getMyCards,
         deleteMyCard,
         getRecommendCards,
-        resetCards
+        resetCards,
+        loading,
     }
 }, { persist: true })

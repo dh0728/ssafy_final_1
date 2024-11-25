@@ -1,7 +1,7 @@
 <template>
   <div class="card-list">
 
-    <div v-if="!store.cards?.length" class="no-result">
+    <div v-if="!store.loading && !store.cards?.length" class="no-result">
       <img src="../../assets/no-result.png" alt="검색 결과 없음" class="no-result-image">
       <h3>해당 조건의 상품을 찾지 못했어요</h3>
       <p>필터를 변경하여 다시 검색해주세요</p>
