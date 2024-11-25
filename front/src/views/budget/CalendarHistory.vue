@@ -3,16 +3,6 @@
     <SideBar />
 
     <div class="history2-container">
-      <!-- 상단 필터 영역 -->
-<!--      <div class="filter-header">-->
-<!--        <div class="left-section">-->
-<!--          <button class="filter-btn active">-->
-<!--            <span class="check-icon">✓</span>-->
-<!--            이지연 님의 가계부-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
-
       <!-- 메인 필터 -->
       <div class="main-filters">
         <div class="filter-tabs">
@@ -365,7 +355,7 @@ onMounted(() => {
 }
 
 .write-btn {
-  margin-left: auto;
+  margin-left: 670px;
 }
 
 .tab-btn {
@@ -373,11 +363,15 @@ onMounted(() => {
   border: none;
   background: none;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s;
 }
 
 .tab-btn.active {
   font-weight: 600;
   border-bottom: 2px solid #4C6EF5;
+  font-size: 18px
 }
 
 .history-table {
@@ -717,5 +711,4 @@ onMounted(() => {
   color: white;
   border-color: #868e96;
 }
-
 </style>
