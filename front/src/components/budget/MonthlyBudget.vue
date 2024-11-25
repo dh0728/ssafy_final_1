@@ -3,12 +3,14 @@
     <!-- 상단 헤더 -->
     <div class="header">
       <div class="user-select">
+        <button class="filter-btn active">
         <span class="user-icon">👤 </span>
         <span v-if="accountStore.username">{{ accountStore.username }} 님의 가계부</span>
         <span v-else>가계부</span>
+          </button>
       </div>
       <div class="actions">
-        <button class="write-btn">가계부 작성하기</button>
+        <button class="write-btn">가계부 작성하기 📝</button>
       </div>
     </div>
 
@@ -286,4 +288,56 @@ const formatNumber = (value) => {
 }
 
 
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1438;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: white;
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: aliceblue;
+  color: #9CA3AF;
+}
+
+.user-icon {
+  font-size: 18px;
+  color: #4C6EF5;
+}
+
+.write-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #4C6EF5;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(76, 110, 245, 0.2);
+}
+
+.write-btn:hover {
+  background: #4263eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 110, 245, 0.3);
+}
 </style>
