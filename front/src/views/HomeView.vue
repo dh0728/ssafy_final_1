@@ -108,15 +108,15 @@
     <div class="footer-content">
         <div class="contact-info">
             <p class="footer-title">고객센터</p>
-            <p class="footer-li">전화: 1661-7654(24시간 연중무휴)</p>
-            <p class="footer-li">해외전화: +82-2-6975-9000</p>
-            <p class="footer-li">이메일: help@tossbank.com</p>
+            <p class="footer-li">전화: 1661-1234(24시간 연중무휴)</p>
+            <p class="footer-li">해외전화: +82-1-1234-5678</p>
+            <p class="footer-li">이메일: ssafy@gagyebug.com</p>
         </div>
         <div class="company-info">
             <p class="footer-title">SSAFY(주)</p>
-            <p class="footer-li">등록번호: 462-86-01671</p>
-            <p class="footer-li">주소: 06133 서울특별시 강남구 테헤란로 131, 13층 (삼성, 한국지사사이트)</p>
-            <p class="footer-li">대표: 이민이</p>
+            <p class="footer-li">등록번호: 456-89-123123</p>
+            <p class="footer-li">주소: 부산광역시 강서구 녹산산업중로 333 (송정동)</p>
+            <p class="footer-li">대표: 이재용</p>
         </div>
         <ul class="footer-wraper">
           <li class="footer-wraper-li">개인정보 처리방침</li>
@@ -127,10 +127,11 @@
           <li class="footer-wraper-li">경영공시</li>
         </ul>
         <div class="links">
-            <a href="#"><img src="" alt="social_icon_1"></a>
-            <a href="#"><img src="" alt="social_icon_2"></a>
-            <a href="#"><img src="" alt="social_icon_3"></a>
-            <a href="#"><img src="" alt="social_icon_4"></a>
+            <font-awesome-icon :icon="['fab', 'youtube']" />
+            <a href="https://www.youtube.com/@hellossafy"><i class="fa-brands fa-youtube" style="color: #6B7684;"></i></a>
+            <a href="https://www.instagram.com/hellossafycial/"><i class="fa-brands fa-instagram" style="color: #6B7684;" ></i></a>
+            <a href="#"><i class="fa-solid fa-phone"style="color: #6B7684;"></i></a>
+            <a href="#"><i class="fa-solid fa-comment" style="color: #6B7684;"></i></a>
         </div>
     </div>
 </footer>
@@ -537,6 +538,10 @@
     margin: 5px 0;
     padding-bottom: 50px;
 }
+.company-info {
+  padding-bottom: 50px;
+}
+
 .footer-title {
   font-size: 20px;
 }
@@ -551,8 +556,10 @@
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  width: 550px;
   justify-content: flex-start;
   color: #6B7684;
+  padding-bottom: 50px;
 }
 .footer-wraper-li{
   flex: 0 0 25%;
@@ -566,6 +573,21 @@
 .links img {
     width: 24px; /* 소셜 아이콘 크기 조정 */
     height: auto;
+}
+
+a {
+    color: inherit; /* 링크 색상을 상위 요소와 동일하게 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:visited {
+    color: inherit; /* 방문한 링크의 색상을 상위 요소와 동일하게 유지 */
+}
+
+a:hover,
+a:focus {
+    color: inherit; /* 호버 또는 포커스 상태에서 색상 변경 없음 */
+    text-decoration: none; /* 호버 또는 포커스 상태에서 밑줄 제거 */
 }
 
 </style>
