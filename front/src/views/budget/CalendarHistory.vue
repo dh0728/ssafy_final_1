@@ -60,7 +60,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="item in filteredHistoryItems" :key="item.account_book_data_id">
+          <tr v-for="item in paginatedItems" :key="item.account_book_data_id">
             <td><input type="checkbox"></td>
             <td>
       <span :class="['type-badge', item.type]">
@@ -128,10 +128,24 @@
       </div>
 
       <!-- 페이지네이션 -->
-      <div class="pagination">
-        <button class="page-btn">←</button>
-        <button class="page-btn active">1</button>
-        <button class="page-btn">→</button>
+      <div class="pagination" v-if="totalPages > 1">
+        <button
+            class="page-btn"
+            :disabled="currentPage === 1"
+            @click="changePage(currentPage - 1)"
+        >←</button>
+        <button
+            v-for="page in totalPages"
+            :key="page"
+            class="page-btn"
+            :class="{ active: currentPage === page }"
+            @click="changePage(page)"
+        >{{ page }}</button>
+        <button
+            class="page-btn"
+            :disabled="currentPage === totalPages"
+            @click="changePage(currentPage + 1)"
+        >→</button>
       </div>
     </div>
     <CalendarAdd ref="writeModal" :selected-date="currentDate" @write-completed="onWriteCompleted" />
@@ -152,6 +166,13 @@ const historyItems = ref([])
 const showCategoryFilter = ref(false)
 const showCategoryModal = ref(false)
 const selectedCategoryId = ref(null)
+
+const itemsPerPage = 10  // 페이지당 표시할 아이템 수
+const currentPage = ref(1)  // 현재 페이지
+const totalPages = computed(() => Math.ceil(filteredHistoryItems.value.length / itemsPerPage))
+
+const editingItem = ref(null)
+const tempItem = ref(null)
 
 const categories = ref([
   { id: 1, name: '🏬 모든가맹점' },
@@ -277,8 +298,6 @@ const toggleTabs = (isAllView) => {
   }
 }
 
-const editingItem = ref(null)
-const tempItem = ref(null)
 
 const startEdit = (item) => {
   tempItem.value = {...item}
@@ -315,6 +334,22 @@ const saveEdit = async (item) => {
 
 const truncateMemo = (memo) => {
   return memo.length > 15 ? memo.slice(0, 15) + '...' : memo;
+}
+
+
+
+// 현재 페이지에 표시할 아이템들
+const paginatedItems = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredHistoryItems.value.slice(start, end)
+})
+
+// 페이지 변경 함수
+const changePage = (page) => {
+  if (page >= 1 && page <= totalPages.value) {
+    currentPage.value = page
+  }
 }
 
 onMounted(() => {
