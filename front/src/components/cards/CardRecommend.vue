@@ -15,10 +15,10 @@
                    :key="card.id"
                    :class="['carousel-item', index === 0 ? 'active' : '']">
                 <div class="card-item">
+                  <div :class="['benefit-tag', card.type]">
+                    {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}
+                  </div>
                   <div class="card-image">
-                    <div :class="['benefit-tag', card.type]">
-                      {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}
-                    </div>
                     <img :src="card.img_path" :alt="card.name">
                   </div>
                   <div class="card-info">
@@ -147,16 +147,12 @@ onMounted(async () => {
   background: white;
   border-radius: 14px;
   padding: 20px;
-  height: 380px; /* 높이 조정 */
+  height: 370px; /* 높이 조정 */
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.card-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
 .card-image {
   width: 100%;
@@ -171,12 +167,13 @@ onMounted(async () => {
   border-radius: 8px;
 }
 
+
 .card-info h4 {
   font-size: 18px;
   font-weight: 600;
   color: #1a1438;
-  padding-top: 20px;
   margin-bottom: 8px;
+  margin-top: 5px;
 }
 
 .card-brand {
@@ -194,12 +191,13 @@ onMounted(async () => {
   border-radius: 20px;
   font-size: 14px;
   margin-bottom: 16px;
+  width: 80px;
 }
 
 .button-group {
   display: flex;
   gap: 8px;
-  margin-top: auto; /* 버튼을 하단에 배치 */
+  margin-top: auto;
   position: absolute;
   bottom: 16px;
   left: 16px;
@@ -298,6 +296,17 @@ onMounted(async () => {
 .card-item {
   width: 300px;
   margin: 0 auto;
+  display: flex; 
+  align-items: center; /* 세로 가운데 정렬 (필요한 경우) */
+} 
+.card-image {
+  width: 200px;
+  height: 200px;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 이미지 비율 유지 */
 }
 
 </style>
