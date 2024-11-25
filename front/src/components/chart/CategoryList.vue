@@ -34,7 +34,7 @@
           <td>{{ detail.payment }}</td>
           <td>{{ detail.store }}</td>
           <td class="amount">{{ formatNumber(detail.account) }}원</td>
-          <td>{{ detail.memo }}</td>
+          <td>{{ truncateMemo(detail.memo) }}</td>
         </tr>
         </tbody>
       </table>
@@ -99,6 +99,10 @@ const formatNumber = (value) => new Intl.NumberFormat('ko-KR').format(value)
 // 이벤트 핸들러 추가
 const updateSelectedCategory = (category) => {
   selectedCategory.value = category
+}
+
+const truncateMemo = (memo) => {
+  return memo.length > 15 ? memo.slice(0, 10) + '...' : memo;
 }
 
 // CategoryChart에서 emit할 이벤트를 받아서 처리하도록 expose
