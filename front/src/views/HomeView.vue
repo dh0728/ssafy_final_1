@@ -366,13 +366,13 @@
 }
 
 .service-text h2 {
-  font-size: 20px;
   color: #666;
   letter-spacing: -0.02em; /* 글자 간격 축소 */
 }
 
 
 .title-group h3 {
+  margin-top: 20px;
   font-size: 40px;
   font-weight: 700;
   color: #1a1438;

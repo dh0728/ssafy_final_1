@@ -43,11 +43,40 @@ const chartData = ref({
 const monthlyLabels = computed(() => {
   const currentMonth = new Date().getMonth() + 1
   return [
-    `${currentMonth - 2}월 지출`,
-    `${currentMonth - 1}월 지출`,
-    `${currentMonth}월 지출`
+    [`${formatNumber(chartData.value.total_expenditure_age_2)}원`,`${currentMonth - 2}월 지출`],
+    [`${formatNumber(chartData.value.total_expenditure_age_1)}원`,`${currentMonth - 1}월 지출`],
+    [`${formatNumber(chartData.value.total_expenditure)}원`,`${currentMonth}월 지출`]
   ]
 })
+
+const customXAxisLabels = {
+  id: 'customXAxisLabels',
+  afterDraw: (chart) => {
+    const ctx = chart.ctx;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+
+    const xAxis = chart.scales.x;
+    xAxis.ticks.forEach((tick, index) => {
+      const x = xAxis.getPixelForTick(index);
+      const y = xAxis.bottom + 5; // 라벨 시작 위치 조정
+
+      // 첫 번째 줄 (금액) 스타일
+      ctx.font = 'bold 14px Arial';
+      ctx.fillStyle = '#333';
+      ctx.fillText(tick[0], x, y);
+
+      // 두 번째 줄 (월 지출) 스타일
+      ctx.font = 'italic 12px Arial';
+      ctx.fillStyle = '#666';
+      ctx.fillText(tick[1], x, y + 20); // 첫 번째 줄 아래에 위치
+    });
+  }
+};
+
+// 차트 설정에 플러그인 등록
+ChartJS.register(customXAxisLabels);
+
 
 const monthlyData = computed(() => ({
   labels: monthlyLabels.value,  // monthLabels -> monthlyLabels
@@ -69,7 +98,10 @@ const monthlyData = computed(() => ({
 
 
 const budgetData = computed(() => ({
-  labels: [`${new Date().getMonth() + 1}월 예산`, `${new Date().getMonth() + 1}월 지출`],
+  labels: [
+    [`${formatNumber(chartData.value.total_expenditure_age_2)}원`,`${new Date().getMonth() + 1}월 예산`], 
+    [`${formatNumber(chartData.value.total_expenditure_age_2)}원`,`${new Date().getMonth() + 1}월 지출`],
+  ],
   datasets: [{
     data: [budgetStore.currentBudget || 0, chartData.value.total_expenditure],
     backgroundColor: ['#1BBF83', '#1BBF83'],
@@ -93,7 +125,8 @@ const monthlyOptions = {
       callbacks: {
         label: (context) => `${formatNumber(context.raw)}원`
       }
-    }
+    },
+    customXAxisLabels
   },
   scales: {
     y: {

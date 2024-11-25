@@ -9,7 +9,7 @@ export const useBudgetStore = defineStore('budget', () => {
     const budgetId = ref(null)
 
     const getBudget = async () => {
-        console.log(localStorage.getItem('auth'))
+        // console.log(localStorage.getItem('auth'))
         try {
             const date = new Date()
             const response = await axios({
