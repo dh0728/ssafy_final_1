@@ -12,15 +12,52 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { Line } from 'vue-chartjs'
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, registerables } from 'chart.js'
 import { useDateChartStore } from '@/stores/dateChart'
-
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const dateChartStore = useDateChartStore()
 const monthlyData = ref(null)
 const currentMonth = ref(new Date().getMonth() + 1)
 const totalExpenditure = ref(0)
+
+
+const customLabelStyles = {
+  id: 'customLabelStyles',
+  afterDraw: (chart) => {
+    if (!chart || !chart.ctx) {
+      return; // 차트가 유효하지 않다면 실행하지 않음
+    }
+    const ctx = chart.ctx;
+    const xAxis = chart.scales.x;
+
+    if (!xAxis) {
+      return; // x축이 정의되지 않았다면 실행하지 않음
+    }
+
+    chart.data.labels.forEach((labelArray, index) => {
+      const meta = chart.getDatasetMeta(0);
+      const bar = meta.data[index];
+      
+      if (!bar) {
+        return; // 데이터가 존재하지 않는다면 실행하지 않음
+      }
+      const x = bar.x;
+      const y = xAxis.bottom + 10; // 바닥 축 바로 아래에 위치
+      // 첫 번째 줄: 금액 (굵은 글씨, 검정색)
+      ctx.font = 'bold 14px Apple SD Gothic Neo';
+      ctx.fontWe
+      ctx.fillStyle = '#333'; // 검정색
+      ctx.textAlign = 'center';
+      ctx.fillText(labelArray[0], x, y);
+      // 두 번째 줄: 월 지출 (얇은 글씨, 회색)
+      ctx.font = 'Apple SD Gothic Neo';
+      ctx.fillStyle = '#999'; // 회색
+      ctx.fillText(labelArray[1], x, y + 20);
+      
+    });
+  }
+};
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, customLabelStyles)
 
 const chartData = computed(() => {
   if (!monthlyData.value) return null
@@ -85,7 +122,8 @@ const chartOptions = {
           return '#fff';
         }
       }
-    }
+    },
+    customLabelStyles : false,
   },
   scales: {
     x: {

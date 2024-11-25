@@ -24,7 +24,8 @@ urlpatterns = [
 
     path('recommend/cards/',views.recommend_cards),
 
-    path('evaluation/' ,views.evaluation_gpt)
+    path('evaluation/' ,views.evaluation_gpt),
+    # path('page/', views.page_data)
 ]
 
 
