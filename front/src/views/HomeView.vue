@@ -111,7 +111,6 @@
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
 }
 
 .card-container {
@@ -133,7 +132,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 600px;
-  margin-bottom: 80px;
+  margin-bottom: 10px;
 }
 
 .banner-content {
@@ -237,7 +236,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 80px;
+  margin-top: 0px;
 }
 
 .feature-card {
