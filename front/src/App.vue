@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main_div">
     <Navbar />
 
     <RouterView />
@@ -88,6 +88,8 @@ import {RouterView} from "vue-router";
 html, body {
     font-family: 'Apple SD Gothic Neo', sans-serif;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 
 </style>

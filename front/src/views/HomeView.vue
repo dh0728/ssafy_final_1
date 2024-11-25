@@ -107,16 +107,25 @@
 <footer class="footer-container">
     <div class="footer-content">
         <div class="contact-info">
-            <p>고객센터</p>
-            <p>전화: 1661-7654(24시간 연중무휴)</p>
-            <p>해외전화: +82-2-6975-9000</p>
-            <p>이메일: help@tossbank.com</p>
+            <p class="footer-title">고객센터</p>
+            <p class="footer-li">전화: 1661-7654(24시간 연중무휴)</p>
+            <p class="footer-li">해외전화: +82-2-6975-9000</p>
+            <p class="footer-li">이메일: help@tossbank.com</p>
         </div>
         <div class="company-info">
-            <p>등록번호: 462-86-01671</p>
-            <p>주소: 06133 서울특별시 강남구 테헤란로 131, 13층 (삼성, 한국지사사이트)</p>
-            <p>대표: 이민이</p>
+            <p class="footer-title">SSAFY(주)</p>
+            <p class="footer-li">등록번호: 462-86-01671</p>
+            <p class="footer-li">주소: 06133 서울특별시 강남구 테헤란로 131, 13층 (삼성, 한국지사사이트)</p>
+            <p class="footer-li">대표: 이민이</p>
         </div>
+        <ul class="footer-wraper">
+          <li class="footer-wraper-li">개인정보 처리방침</li>
+          <li class="footer-wraper-li">보호금융상품등록부</li>
+          <li class="footer-wraper-li">이용자유의사항</li>
+          <li class="footer-wraper-li">공지사항</li>
+          <li class="footer-wraper-li">상품공시실</li>
+          <li class="footer-wraper-li">경영공시</li>
+        </ul>
         <div class="links">
             <a href="#"><img src="" alt="social_icon_1"></a>
             <a href="#"><img src="" alt="social_icon_2"></a>
@@ -507,25 +516,47 @@
 }
 
 .footer-container {
-    background-color: #2c2c2c; /* 다크 그레이 배경 */
+    background-color: #0b0b0d;; /* 다크 그레이 배경 */
     color: white;
-    padding: 30px;
+    padding: 50px 40px 50px 40px;
     font-size: 14px;
     line-height: 1.6;
-    width: 100vw; 
-    
+    margin: 0;
+    width: 100%;
 }
 
 .footer-content {
-    display: flex;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
 }
 
-.contact-info p, .company-info p {
+.contact-info {
     margin: 5px 0;
+    padding-bottom: 50px;
+}
+.footer-title {
+  font-size: 20px;
+}
+.footer-li {
+  font-size: 14px;
+  color: #6B7684;
+}
+
+.footer-wraper {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-start;
+  color: #6B7684;
+}
+.footer-wraper-li{
+  flex: 0 0 25%;
+  margin-bottom:10px;
 }
 
 .links a {
