@@ -204,4 +204,7 @@ button.menu-item:hover {
   background: #f8f9fa;
   color: #1a1438;
 }
+.menu-item {
+  font-family: 'Apple SD Gothic Neo', sans-serif; /* 원하는 폰트를 적용 */
+}
 </style>
