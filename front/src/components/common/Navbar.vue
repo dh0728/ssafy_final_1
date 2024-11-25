@@ -72,8 +72,9 @@ const closeRecommendModal = () => {
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: #1a1438;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .login-btn {
@@ -85,6 +86,7 @@ const closeRecommendModal = () => {
   cursor: pointer;
   font-size: 0.9rem;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .recommend-btn {
@@ -96,6 +98,7 @@ const closeRecommendModal = () => {
   text-decoration: none;
   color: #333;
   font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .recommend-btn:hover {

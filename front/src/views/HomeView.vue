@@ -104,6 +104,27 @@
     </div>
   </section>
 </div>
+<footer class="footer-container">
+    <div class="footer-content">
+        <div class="contact-info">
+            <p>고객센터</p>
+            <p>전화: 1661-7654(24시간 연중무휴)</p>
+            <p>해외전화: +82-2-6975-9000</p>
+            <p>이메일: help@tossbank.com</p>
+        </div>
+        <div class="company-info">
+            <p>등록번호: 462-86-01671</p>
+            <p>주소: 06133 서울특별시 강남구 테헤란로 131, 13층 (삼성, 한국지사사이트)</p>
+            <p>대표: 이민이</p>
+        </div>
+        <div class="links">
+            <a href="#"><img src="" alt="social_icon_1"></a>
+            <a href="#"><img src="" alt="social_icon_2"></a>
+            <a href="#"><img src="" alt="social_icon_3"></a>
+            <a href="#"><img src="" alt="social_icon_4"></a>
+        </div>
+    </div>
+</footer>
 </template>
 
 
@@ -483,6 +504,37 @@
     width: 100%;
     max-width: 100%;
   }
+}
+
+.footer-container {
+    background-color: #2c2c2c; /* 다크 그레이 배경 */
+    color: white;
+    padding: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 100vw; 
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.contact-info p, .company-info p {
+    margin: 5px 0;
+}
+
+.links a {
+    margin: 0 10px;
+}
+
+.links img {
+    width: 24px; /* 소셜 아이콘 크기 조정 */
+    height: auto;
 }
 
 </style>

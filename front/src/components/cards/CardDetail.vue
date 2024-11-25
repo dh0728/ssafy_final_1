@@ -49,7 +49,7 @@
             <span>연회비</span>
             <span>{{ store.card.abroad_fee === 0 ? '없음' : `${formatNumber(store.card.abroad_fee)}원` }}</span>
           </div>
-          <div class="separator">/</div>
+          <div class="separator"></div>
           <div class="detail-row">
             <span>전월실적</span>
             <span>{{ store.card.pre_month_perform }}</span>
@@ -305,7 +305,7 @@ onMounted(async () => {
 
 .benefit-header h3 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   color: #1a1438;
   margin-bottom: 8px;
 }
@@ -314,6 +314,7 @@ onMounted(async () => {
   color: #495057;
   font-size: 15px;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 .benefit-detail {

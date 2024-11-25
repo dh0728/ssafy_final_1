@@ -250,16 +250,6 @@ onMounted(() => {
   font-size: 0.9rem;
 }
 
-.detail-btn {
-  padding: 8px 16px;
-  background: #000;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
 .benefit-tag {
   display: inline-block;
   padding: 4px 12px;
@@ -324,7 +314,8 @@ onMounted(() => {
 
 .detail-btn {
   padding: 8px 16px;
-  background: #000;
+  /* background: #000;*/
+  background: #4C6EF5;;
   color: white;
   border: none;
   border-radius: 4px;
@@ -342,6 +333,7 @@ onMounted(() => {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-weight: 600;
 }
 
 .register-btn:hover {

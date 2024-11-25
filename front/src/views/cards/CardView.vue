@@ -268,16 +268,18 @@ onMounted(async () => {
   border: none;
   border-radius: 50px;
   font-size: 1rem;
-  color: #666;
+  /* color: #666; */
+  color: #1a1438;
   background: transparent;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .tab-btn.active {
   background: white;
   color: #1a1438;
-  font-weight: 500;
+  font-weight: 900;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -307,7 +309,8 @@ onMounted(async () => {
 }
 
 .filter-label {
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
@@ -324,10 +327,12 @@ onMounted(async () => {
   border: 1px solid #eee;
   border-radius: 20px;
   background: white;
-  color: #666;
+  /* color: #666; */
+  color: #1a1438;
   font-size: 0.9rem;
   cursor: pointer;
   white-space: nowrap;
+  font-weight: 700;
 }
 
 .filter-btn:hover {
@@ -335,8 +340,10 @@ onMounted(async () => {
 }
 
 .filter-btn.active {
-  background-color: #1a1438;
+  /* background-color: #1a1438; */
+  /* border-color: #1a1438; */
+  background-color: #4C6EF5;
   color: white;
-  border-color: #1a1438;
+  border-color: #4C6EF5;
 }
 </style>
