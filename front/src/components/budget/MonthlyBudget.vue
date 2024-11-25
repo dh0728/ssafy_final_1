@@ -3,11 +3,14 @@
     <!-- 상단 헤더 -->
     <div class="header">
       <div class="user-select">
+        <button class="filter-btn active">
         <span class="user-icon">👤 </span>
-        <span>이지연 님의 가계부</span>
+        <span v-if="accountStore.username">{{ accountStore.username }} 님의 가계부</span>
+        <span v-else>가계부</span>
+          </button>
       </div>
       <div class="actions">
-        <button class="write-btn">가계부 작성하기</button>
+        <button class="write-btn">가계부 작성하기 📝</button>
       </div>
     </div>
 
@@ -71,10 +74,12 @@ import Calendar from "@/components/calendar/Calendar.vue";
 import Schedule from "@/components/schedule/Schedule.vue";
 import BudgetSettingModal from '@/components/budget/BudgetSetting.vue'
 import {useCalendarStore} from "@/stores/calendar.js";
+import {useAccountStore} from "@/stores/accounts.js";
 
 const budgetModal = ref(null)
 const store = useBudgetStore()
 const calendarStore = useCalendarStore();
+const accountStore = useAccountStore();
 const currentBudget = ref(null)
 const monthlyStats = ref({
   income: 0,
@@ -82,6 +87,8 @@ const monthlyStats = ref({
 })
 
 const fetchBudget = async () => {
+  await accountStore.getUserInfo()
+
   const date = new Date()
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -281,4 +288,56 @@ const formatNumber = (value) => {
 }
 
 
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1438;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: white;
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: aliceblue;
+  color: #9CA3AF;
+}
+
+.user-icon {
+  font-size: 18px;
+  color: #4C6EF5;
+}
+
+.write-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #4C6EF5;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(76, 110, 245, 0.2);
+}
+
+.write-btn:hover {
+  background: #4263eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 110, 245, 0.3);
+}
 </style>
