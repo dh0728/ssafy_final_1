@@ -1,0 +1,2847 @@
+[
+{
+    "model": "books.account_book",
+    "pk": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+    "fields": {
+        "user_id": 6,
+        "created_at": "2024-11-26T03:19:42.361Z"
+    }
+},
+{
+    "model": "books.account_book",
+    "pk": "621d6d0e-f8db-4572-867e-fb85c71e7865",
+    "fields": {
+        "user_id": 5,
+        "created_at": "2024-11-26T03:09:30.856Z"
+    }
+},
+{
+    "model": "books.account_book",
+    "pk": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+    "fields": {
+        "user_id": 2,
+        "created_at": "2024-11-21T00:24:20.061Z"
+    }
+},
+{
+    "model": "books.account_book",
+    "pk": "c43d7487-104c-42a1-a398-d50efc33b0a0",
+    "fields": {
+        "user_id": 4,
+        "created_at": "2024-11-26T02:54:43.604Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "00ce4ebd-1f85-47bb-a950-4acb04ab2bd3",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 2,
+        "account": 54500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "냉삼집",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:30:09.089Z",
+        "updated_at": "2024-11-26T05:30:09.089Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "0553ef67-db89-4d3d-a3f0-2afe86213ff5",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 21,
+        "account": 4500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "청솔로9",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:10:19.467Z",
+        "updated_at": "2024-11-26T05:10:19.467Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "087fd926-0a21-4b6f-9304-ab93829b18ba",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 25,
+        "account": 20500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "BHC",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:11:31.282Z",
+        "updated_at": "2024-11-26T05:11:31.282Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "0a73b495-a683-4078-8057-584e2e007c1f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 16,
+        "year": 2024,
+        "month": 10,
+        "day": 9,
+        "account": 3000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "욜로 PC방",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:21:00.223Z",
+        "updated_at": "2024-11-26T05:21:00.223Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "0ae110d8-022a-4316-91e9-b707ebc35228",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 26,
+        "account": 60000,
+        "is_income": false,
+        "payment": "cash",
+        "store": "w컨셉",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-25T00:28:02.288Z",
+        "updated_at": "2024-11-25T00:28:02.288Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "0ba7fd93-f58b-402d-945e-407006c92271",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 10,
+        "day": 5,
+        "account": 3150,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:40:18.118Z",
+        "updated_at": "2024-11-26T03:40:18.118Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "0dfe9ae5-d7e4-4cf0-aaf8-cd28fba2738c",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 25,
+        "account": 2000,
+        "is_income": false,
+        "payment": "card",
+        "store": "고모리 커피공장",
+        "memo": "아아",
+        "is_schedule": false,
+        "created_at": "2024-11-25T02:27:11.656Z",
+        "updated_at": "2024-11-25T02:27:11.656Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "0ffe6c1d-1707-448a-8c5a-a3e4dd70e250",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 9,
+        "day": 3,
+        "account": 15500,
+        "is_income": false,
+        "payment": "이체",
+        "store": "삼겹살",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:57:21.230Z",
+        "updated_at": "2024-11-26T04:57:21.230Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "101c07ad-01cf-4fa3-93a7-2b7ca8d6ec6c",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 18,
+        "account": 45800,
+        "is_income": false,
+        "payment": "카드",
+        "store": "생일선물",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:04:06.836Z",
+        "updated_at": "2024-11-26T05:04:06.836Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "102d72f8-023c-4a36-8edd-ddfed373422e",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 10,
+        "year": 2024,
+        "month": 9,
+        "day": 10,
+        "account": 2895,
+        "is_income": true,
+        "payment": "현금",
+        "store": "체크카드 캐시백",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:14:48.683Z",
+        "updated_at": "2024-11-26T05:14:48.683Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "126206c0-7155-48c1-b1d9-add8bcbe44f6",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 25,
+        "year": 2024,
+        "month": 9,
+        "day": 26,
+        "account": 167000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "밀양본가",
+        "memo": "감자탕 대(3개)123000원개당 41000원, \n소주(3개)12000원개당 4000원, \n뼈추가(1개)10000원개당 10000원, \n라면사리(4개)8000원개당 2000원, \n수제비사리(2개)4000원개당 2000원, \n볶음밥(5개)10000원개당 2000원,",
+        "is_schedule": false,
+        "created_at": "2024-11-25T08:25:39.769Z",
+        "updated_at": "2024-11-25T08:25:39.769Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "13807d00-df12-48cc-b109-9b89c626bff6",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 1,
+        "account": 38000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "미슐당",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:28:26.024Z",
+        "updated_at": "2024-11-26T05:28:26.024Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "14a038bd-341f-4b00-bd04-fe8074d76f89",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 5,
+        "account": 110000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:31:19.355Z",
+        "updated_at": "2024-11-26T05:31:19.355Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "14c37a44-d8ab-40d6-aa61-62cc6bafc2be",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 9,
+        "day": 17,
+        "account": 300000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:16:21.044Z",
+        "updated_at": "2024-11-26T05:16:21.044Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "152694ff-bc09-458f-82bf-546755d81dec",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 15,
+        "account": 1000000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "삼성SSAFY",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:33:00.962Z",
+        "updated_at": "2024-11-26T05:33:00.962Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "1672a3cb-ff59-4ea9-adc5-0c52929fabd8",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 24,
+        "account": 56130,
+        "is_income": false,
+        "payment": "카드",
+        "store": "옷",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:11:10.807Z",
+        "updated_at": "2024-11-26T05:11:10.807Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "180e92c7-6572-4b7a-b53d-8de8a1b634aa",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 10,
+        "day": 19,
+        "account": 1700,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:41:58.560Z",
+        "updated_at": "2024-11-26T03:41:58.560Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "1820380a-fd36-4adb-b812-6f48225a4e2f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 15,
+        "account": 3000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "다이소",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:09:03.702Z",
+        "updated_at": "2024-11-26T05:09:03.702Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "18c1ea29-f4ac-44e0-b3de-b63fb56ab7cc",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 10,
+        "day": 20,
+        "account": 6900,
+        "is_income": false,
+        "payment": "카드",
+        "store": "던킨도넛",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:42:51.574Z",
+        "updated_at": "2024-11-26T03:42:51.574Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "1b866d21-a477-42ad-824e-01692e35a54a",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 9,
+        "day": 20,
+        "account": 63100,
+        "is_income": false,
+        "payment": "카드",
+        "store": "마켓컬리",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:37:08.038Z",
+        "updated_at": "2024-11-26T03:37:08.038Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "1d169311-2b80-4a1d-9b06-466e6901bf59",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 19,
+        "account": 18800,
+        "is_income": false,
+        "payment": "카드",
+        "store": "배달",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:24:50.090Z",
+        "updated_at": "2024-11-26T05:24:50.090Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "1e50f07f-44f5-4d68-ac52-4a70edf4ab6b",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 1,
+        "year": 2024,
+        "month": 9,
+        "day": 26,
+        "account": 167000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "밀양본가",
+        "memo": "감자탕 대(3개):123000원 개당 41000, 소주(3개):12000원 개당 4000, 뼈추가(1개):10000원 개당 10000, 라면사리(4개):8000원 개당 2000, 수제비사리(2개):4000원 개당 2000, 볶음밥(5개):10000원 개당 2000,",
+        "is_schedule": false,
+        "created_at": "2024-11-22T06:49:44.146Z",
+        "updated_at": "2024-11-22T06:49:44.146Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "1fa8fc23-1c0e-4408-ab79-c611be5e0087",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 30,
+        "account": 170000,
+        "is_income": false,
+        "payment": "cash",
+        "store": "pp",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T06:16:10.470Z",
+        "updated_at": "2024-11-22T06:16:10.470Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "205c64b7-ba37-4c1d-8355-f24e63aa3b1b",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 30,
+        "account": 0,
+        "is_income": false,
+        "payment": "cash",
+        "store": "170000",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T06:15:52.401Z",
+        "updated_at": "2024-11-22T06:15:52.401Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "21852b8b-8ba6-4bda-ad07-92fdf2e12cb0",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 11,
+        "day": 3,
+        "account": 12000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:46:04.439Z",
+        "updated_at": "2024-11-26T03:46:04.439Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "237ef018-6fba-477f-a257-d78f95a63b0c",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 2,
+        "account": 12000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "바이오메드프로페셔널",
+        "memo": "샴푸",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:39:33.741Z",
+        "updated_at": "2024-11-26T03:39:33.741Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "2401dff2-f189-44ab-af5c-9ff2a8ee3dab",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 25,
+        "year": 2024,
+        "month": 10,
+        "day": 17,
+        "account": 50000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "가족 모임",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:24:29.903Z",
+        "updated_at": "2024-11-26T05:24:29.903Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "265f40ee-2dd2-4c06-81cd-83c39fd6d3e4",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 4,
+        "account": 22000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "생일선물",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:02:02.566Z",
+        "updated_at": "2024-11-26T05:02:02.567Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "2a046bce-4d92-430a-a82a-48f6d8de8c19",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 9,
+        "account": 22500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "두바이 찹쌀떡",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:32:11.689Z",
+        "updated_at": "2024-11-26T05:32:11.689Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "2c871dff-2fda-49eb-a45b-e5450c9560a8",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 30,
+        "account": 221253,
+        "is_income": false,
+        "payment": "카드",
+        "store": "W컨셉",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:44:16.352Z",
+        "updated_at": "2024-11-26T03:44:16.352Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "33cca1ac-5c8b-476a-9b1a-55ec2d30a345",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 9,
+        "day": 13,
+        "account": 1000000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "삼성SSAFY",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:15:17.528Z",
+        "updated_at": "2024-11-26T05:15:17.528Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "349d7a0b-9134-47f3-a975-7e199f931d75",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 9,
+        "day": 25,
+        "account": 106000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "수영",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:18:04.005Z",
+        "updated_at": "2024-11-26T05:18:04.005Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "3510e96e-dfe6-4317-b33e-6db07444607d",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 9,
+        "day": 6,
+        "account": 41600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "마켓컬리",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:33:53.942Z",
+        "updated_at": "2024-11-26T03:33:53.942Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "386457ed-4bfd-4b62-ab93-3a4ee8617638",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 2,
+        "account": 19000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "쭈꾸미",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:44:44.572Z",
+        "updated_at": "2024-11-26T03:44:44.572Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "39a92e0a-8bc3-48d4-a9fc-63db0b4b70a2",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 3,
+        "account": 200000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:30:43.260Z",
+        "updated_at": "2024-11-26T05:30:43.260Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "3a3b9e7e-15a7-403c-93d7-c644fb0940ca",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 21,
+        "account": 25000,
+        "is_income": false,
+        "payment": "card",
+        "store": "포케",
+        "memo": "존맛탱",
+        "is_schedule": false,
+        "created_at": "2024-11-21T08:16:04.441Z",
+        "updated_at": "2024-11-21T08:16:04.441Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "3ae40120-a264-4bb2-ad27-54db1a3f0856",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 22,
+        "account": 700,
+        "is_income": false,
+        "payment": "cash",
+        "store": "박카스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T05:31:04.925Z",
+        "updated_at": "2024-11-22T05:31:04.925Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "3d370b85-3870-413e-b82a-355a4cfc39fc",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 10,
+        "day": 12,
+        "account": 10200,
+        "is_income": false,
+        "payment": "카드",
+        "store": "스타벅스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:23:37.912Z",
+        "updated_at": "2024-11-26T05:23:37.912Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "41002d27-bff8-4f9a-962c-78e9e7d0f36e",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 9,
+        "account": 1600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "베스킨라빈스31",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:46:42.889Z",
+        "updated_at": "2024-11-26T03:46:42.889Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "453ad0d4-5eef-4c05-b928-6c23a0021f4f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 16,
+        "account": 32000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "배달",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:33:39.982Z",
+        "updated_at": "2024-11-26T05:33:39.982Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "483fda08-83cb-49fa-90e5-60fd5837644e",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 9,
+        "day": 26,
+        "account": 78928,
+        "is_income": false,
+        "payment": "카드",
+        "store": "알리 익스프레스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:18:45.924Z",
+        "updated_at": "2024-11-26T05:18:45.924Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "4915c4a4-da8b-4a18-8e50-32eaf7bd01fc",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 15,
+        "account": 500000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:27:22.948Z",
+        "updated_at": "2024-11-26T05:27:22.948Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "4ad45f1d-9967-4a19-8dde-c0ed373fe05a",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "account": 9380,
+        "is_income": false,
+        "payment": "카드",
+        "store": "트레이더스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:19:11.137Z",
+        "updated_at": "2024-11-26T05:19:11.137Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "4b001b1c-30dc-4591-ad5d-074a9c989730",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 18,
+        "account": 14250,
+        "is_income": false,
+        "payment": "카드",
+        "store": "콜로닐",
+        "memo": "신발 방수",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:53:15.677Z",
+        "updated_at": "2024-11-26T04:53:15.677Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "4b8113c5-ad77-4336-88f3-628d19fe09dd",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 26,
+        "account": 246568,
+        "is_income": false,
+        "payment": "카드",
+        "store": "무신사",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:11:57.718Z",
+        "updated_at": "2024-11-26T05:11:57.718Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "508b03bb-8ca0-4acd-9d0b-77493bb5f1a4",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 5,
+        "account": 5000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "청솔로",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:31:39.766Z",
+        "updated_at": "2024-11-26T05:31:39.766Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "51218d23-d79b-4bbb-ae15-f16a3d8e1e31",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 1,
+        "account": 12823,
+        "is_income": false,
+        "payment": "카드",
+        "store": "알리 익스프레스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:28:57.916Z",
+        "updated_at": "2024-11-26T05:28:57.916Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5194fa88-0d8a-436d-85dc-9999d3779b60",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 11,
+        "day": 24,
+        "account": 4700,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS더프레쉬",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:36:00.032Z",
+        "updated_at": "2024-11-26T05:36:00.032Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "58f96b49-8e9f-4154-983f-6e0cc9b3b853",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 9,
+        "day": 23,
+        "account": 17850,
+        "is_income": false,
+        "payment": "카드",
+        "store": "르주르",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:17:41.471Z",
+        "updated_at": "2024-11-26T05:17:41.471Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "59208171-e1f0-42b4-aeb2-4dd94f3aa589",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 24,
+        "account": 20000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "스타벅스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:36:12.629Z",
+        "updated_at": "2024-11-26T05:36:12.629Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5b2009ec-fbf6-4ac7-b2c4-c25108ce959a",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 12,
+        "account": 9400,
+        "is_income": false,
+        "payment": "카드",
+        "store": "베스킨라빈스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:41:06.157Z",
+        "updated_at": "2024-11-26T03:41:06.157Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5c981d3c-8325-40a9-8809-a4c8dbf8a4f2",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 9,
+        "account": 50000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:22:19.752Z",
+        "updated_at": "2024-11-26T05:22:19.752Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5d81ea01-241a-43e1-8986-e718680aa053",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 12,
+        "year": 2024,
+        "month": 11,
+        "day": 26,
+        "account": 12000,
+        "is_income": false,
+        "payment": "cash",
+        "store": "명지 내과",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T02:34:00.209Z",
+        "updated_at": "2024-11-26T02:34:00.209Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5d85bd1a-2978-4328-833d-bccb9e48e8cb",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 9,
+        "year": 2024,
+        "month": 11,
+        "day": 7,
+        "account": 12,
+        "is_income": false,
+        "payment": "card",
+        "store": "올리브영",
+        "memo": "단백질바 먹었징 ^.^",
+        "is_schedule": false,
+        "created_at": "2024-11-21T05:55:50.091Z",
+        "updated_at": "2024-11-22T05:11:06.854Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5de5630a-0dc7-4e5d-8a79-e6a0fbbe34a0",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 11,
+        "year": 2024,
+        "month": 9,
+        "day": 21,
+        "account": 113160,
+        "is_income": false,
+        "payment": "이체",
+        "store": "9월 관리비",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:16:50.627Z",
+        "updated_at": "2024-11-26T05:16:50.627Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5f0ef46c-749f-4654-9294-071241580185",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 10,
+        "day": 12,
+        "account": 19000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "투썸플레이스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:03:07.571Z",
+        "updated_at": "2024-11-26T05:03:07.571Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "5f6b5f1e-5880-4705-a680-c60cfc62f09e",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "account": 13000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "서희네",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:19:42.303Z",
+        "updated_at": "2024-11-26T05:19:42.303Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "63442db2-ea0f-4f6e-866e-7e9355432243",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 19,
+        "year": 2024,
+        "month": 11,
+        "day": 22,
+        "account": 40500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "에어부산",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:55:32.667Z",
+        "updated_at": "2024-11-26T04:55:32.667Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "64744ba4-9bc4-41eb-b880-16021ae7d844",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 3,
+        "account": 82400,
+        "is_income": false,
+        "payment": "카드",
+        "store": "모코칸 오일",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:39:53.638Z",
+        "updated_at": "2024-11-26T03:39:53.638Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "65a3758c-c54e-4c4e-8aba-1a1e60ff22c3",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 15,
+        "account": 500000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:33:18.546Z",
+        "updated_at": "2024-11-26T05:33:18.546Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "67785364-1acb-4aa9-abc4-d7d0849b5c03",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 9,
+        "day": 10,
+        "account": 9100,
+        "is_income": false,
+        "payment": "카드",
+        "store": "과일도시락",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:58:54.379Z",
+        "updated_at": "2024-11-26T04:58:54.379Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "677dc21c-4b8c-4880-b8d2-3d1caf20975b",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 2,
+        "year": 2024,
+        "month": 10,
+        "day": 20,
+        "account": 11300,
+        "is_income": false,
+        "payment": "카드",
+        "store": "카카오택시",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:04:47.554Z",
+        "updated_at": "2024-11-26T05:04:47.554Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "6925d774-b6a3-49f5-aff1-5a3d3a19b728",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 9,
+        "day": 4,
+        "account": 15500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "버티컬 마우스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:12:55.875Z",
+        "updated_at": "2024-11-26T05:12:55.875Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "69666df3-fcbe-4e25-ba4b-e9eda90b6dfe",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 10,
+        "account": 46000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "유인어스",
+        "memo": "슬랙스",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:40:38.817Z",
+        "updated_at": "2024-11-26T03:40:38.817Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "6e94703b-ffce-4512-af15-5d88afeb7135",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 9,
+        "day": 12,
+        "account": 34500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "올리브영",
+        "memo": "정샘물 쿠션",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:35:00.310Z",
+        "updated_at": "2024-11-26T03:35:00.310Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "749916f1-a036-480f-8f6c-342d329ff99f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 9,
+        "day": 2,
+        "account": 1900,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "단백질칩버터맛",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:33:30.080Z",
+        "updated_at": "2024-11-26T03:33:30.080Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "75c8cde6-7d72-4ba3-b2c4-b7bed18fd02b",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 13,
+        "year": 2024,
+        "month": 10,
+        "day": 20,
+        "account": 6000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "도그마켓",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:42:16.191Z",
+        "updated_at": "2024-11-26T03:42:16.191Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "7623c499-5d81-453d-bebf-8fce58cdca13",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 9,
+        "day": 25,
+        "account": 10500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "청솔로",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:59:43.077Z",
+        "updated_at": "2024-11-26T04:59:43.077Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "7735f962-04f0-46ee-b846-74ac3293204b",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 5,
+        "account": 20000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "서희네",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:31:04.074Z",
+        "updated_at": "2024-11-26T05:31:04.074Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "7fa20678-bde0-48e8-8959-01d5b0109367",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 25,
+        "year": 2024,
+        "month": 11,
+        "day": 10,
+        "account": 500000,
+        "is_income": false,
+        "payment": "현금",
+        "store": "축의금",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:08:19.475Z",
+        "updated_at": "2024-11-26T05:08:19.475Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "7fbaf201-c226-41e6-a050-b282e3605025",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 22,
+        "account": 39880,
+        "is_income": false,
+        "payment": "카드",
+        "store": "마켓컬리",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:26:15.890Z",
+        "updated_at": "2024-11-26T05:26:15.890Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "80f4b354-921b-41a0-9946-ee4d170653d8",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 18,
+        "account": 38470,
+        "is_income": false,
+        "payment": "카드",
+        "store": "멜라운지",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:53:44.208Z",
+        "updated_at": "2024-11-26T04:53:44.208Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "8105a866-1a6e-4815-bfd7-9110b4482784",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 11,
+        "year": 2024,
+        "month": 11,
+        "day": 25,
+        "account": 115770,
+        "is_income": false,
+        "payment": "이체",
+        "store": "10월 관리비",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:36:40.115Z",
+        "updated_at": "2024-11-26T05:36:40.115Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "82e67302-1545-4b32-ac46-e97d4d9229e2",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 11,
+        "day": 17,
+        "account": 27000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "올리브영",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:09:25.828Z",
+        "updated_at": "2024-11-26T05:09:25.828Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "84ee62c1-b2bd-46d5-beb8-312988c08297",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 11,
+        "day": 2,
+        "account": 1140,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:45:15.277Z",
+        "updated_at": "2024-11-26T03:45:15.277Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "86215a62-503a-4041-9591-34bdbea20ae1",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 17,
+        "account": 50000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "가족 모임",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:34:02.068Z",
+        "updated_at": "2024-11-26T05:34:02.068Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "867ff301-40db-4fcb-9361-04fc9a1e9743",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 25,
+        "account": 2000,
+        "is_income": false,
+        "payment": "card",
+        "store": "고모리",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-25T00:27:41.348Z",
+        "updated_at": "2024-11-25T00:27:41.349Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "89a72ae4-0802-4c8a-8936-4e1f0e3c71a6",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 11,
+        "year": 2024,
+        "month": 10,
+        "day": 10,
+        "account": 470000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "10월 월세",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:22:45.740Z",
+        "updated_at": "2024-11-26T05:22:45.740Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "8b1b6c37-d823-4727-93a9-6e6c80156e84",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 2,
+        "year": 2024,
+        "month": 10,
+        "day": 10,
+        "account": 56100,
+        "is_income": false,
+        "payment": "카드",
+        "store": "SRT",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:23:17.549Z",
+        "updated_at": "2024-11-26T05:23:17.549Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "8d46a597-e8cb-48ab-a5d8-23ed25782aae",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 9,
+        "day": 1,
+        "account": 13000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "하이무 바다소금축",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:32:42.696Z",
+        "updated_at": "2024-11-26T03:32:42.696Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "903818f7-7d83-4100-9572-17c5cd836924",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 1,
+        "year": 2024,
+        "month": 9,
+        "day": 26,
+        "account": 167000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "밀양본가",
+        "memo": "감자탕 대(3개):123000원 개당 41000, 소주(3개):12000원 개당 4000, 뼈추가(1개):10000원 개당 10000, 라면사리(4개):8000원 개당 2000, 수제비사리(2개):4000원 개당 2000, 볶음밥(5개):10000원 개당 2000,",
+        "is_schedule": false,
+        "created_at": "2024-11-22T03:10:16.251Z",
+        "updated_at": "2024-11-22T03:10:16.251Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "97f53850-4b53-42b4-9e60-523597a77b00",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 10,
+        "day": 20,
+        "account": 4800,
+        "is_income": false,
+        "payment": "카드",
+        "store": "이마트24",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:43:09.870Z",
+        "updated_at": "2024-11-26T03:43:09.870Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "986206b4-53fc-43a0-b5a9-a068d60f0395",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 25,
+        "account": 200000,
+        "is_income": false,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:26:35.854Z",
+        "updated_at": "2024-11-26T05:26:35.854Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "98f72d18-4be3-4a4f-b133-030fa698799d",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 10,
+        "account": 151553,
+        "is_income": false,
+        "payment": "카드",
+        "store": "어그",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:52:41.279Z",
+        "updated_at": "2024-11-26T04:52:41.279Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "9adeca2d-ceaa-4ed9-a969-e78c39c2e5a3",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 17,
+        "account": 4900,
+        "is_income": false,
+        "payment": "카드",
+        "store": "네이버 멤버십 플러스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:38:35.769Z",
+        "updated_at": "2024-11-26T03:38:35.769Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "9b49bf08-7adb-4535-bafc-71fde6d62db5",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 5,
+        "account": 15100,
+        "is_income": false,
+        "payment": "카드",
+        "store": "배달",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:20:14.186Z",
+        "updated_at": "2024-11-26T05:20:14.186Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "9b7a7cc4-dfcf-4bae-b54b-0a16b03403ea",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "account": 6000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "앙호두",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:19:28.422Z",
+        "updated_at": "2024-11-26T05:19:28.422Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "9f38602a-a8ff-4989-b240-810d72b94301",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 14,
+        "year": 2024,
+        "month": 11,
+        "day": 6,
+        "account": 22600,
+        "is_income": false,
+        "payment": "이체",
+        "store": "리눅스마스터 2급",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:46:23.888Z",
+        "updated_at": "2024-11-26T03:46:23.888Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "a081acc9-ee92-46ba-adf7-8db97a200461",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 9,
+        "day": 25,
+        "account": 400000,
+        "is_income": false,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:18:24.295Z",
+        "updated_at": "2024-11-26T05:18:24.295Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "a194bf02-3496-4324-81ed-f9ef9d694a73",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 9,
+        "day": 20,
+        "account": 2700,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:36:18.751Z",
+        "updated_at": "2024-11-26T03:36:18.751Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "a1d78e8c-2397-4776-a83a-ee23aeaa77b4",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 14,
+        "year": 2024,
+        "month": 9,
+        "day": 10,
+        "account": 22600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "정보처리기사",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:34:14.073Z",
+        "updated_at": "2024-11-26T03:34:14.073Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "a386c026-a17e-462a-8efb-c87a46b08880",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 9,
+        "day": 20,
+        "account": 2000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:35:49.655Z",
+        "updated_at": "2024-11-26T03:35:49.655Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "a52a83ce-94d6-4530-9fae-1c68da62aae4",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 21,
+        "account": 4400,
+        "is_income": true,
+        "payment": "현금",
+        "store": "탄소중립실천 마일리지",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:25:44.986Z",
+        "updated_at": "2024-11-26T05:25:44.986Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "a8fc2111-a13a-4354-a529-294d59259629",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 10,
+        "day": 3,
+        "account": 3000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "폴라초이스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:01:15.512Z",
+        "updated_at": "2024-11-26T05:01:15.512Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "ac27dcdd-6800-4940-9df5-04be8bc57eb2",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "account": 133000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "유인어스",
+        "memo": "옷",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:39:10.291Z",
+        "updated_at": "2024-11-26T03:39:10.291Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "acaa7735-d1ac-491e-8653-30853a9c0e94",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 9,
+        "account": 30600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "쭈꾸미",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:20:40.021Z",
+        "updated_at": "2024-11-26T05:20:40.021Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "b101d2e8-8528-4579-af0a-c56241cbed03",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 10,
+        "day": 12,
+        "account": 6000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "몽드 스터디카페",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:41:30.701Z",
+        "updated_at": "2024-11-26T03:41:30.701Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "b2772ece-f4a6-4227-8ea2-6bda8cae1941",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 1,
+        "account": 25000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "키보드",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:07:44.732Z",
+        "updated_at": "2024-11-26T05:07:44.732Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "b2e0fa5d-9059-4e25-a126-5c9ca3a0c9dd",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "account": 37800,
+        "is_income": false,
+        "payment": "카드",
+        "store": "멜리언스",
+        "memo": "실리콘 진동 클렌저",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:37:51.395Z",
+        "updated_at": "2024-11-26T03:37:51.395Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "b3309ba6-2be9-4b08-be0b-abe69640ef1d",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 17,
+        "account": 11600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "투썸플레이스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:09:57.357Z",
+        "updated_at": "2024-11-26T05:09:57.357Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "b4568da4-f4a1-4a0c-9503-b3bc691d62b9",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 30,
+        "account": 30000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "타코",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:06:13.828Z",
+        "updated_at": "2024-11-26T05:06:13.828Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "bc0b7d58-8298-4adb-8ee3-a465b446c768",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 16,
+        "year": 2024,
+        "month": 11,
+        "day": 26,
+        "account": 2500,
+        "is_income": false,
+        "payment": "현금",
+        "store": "축구",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T02:44:43.048Z",
+        "updated_at": "2024-11-26T02:44:43.048Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "bc64c9b2-db05-432b-af34-171400d6abda",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 9,
+        "day": 4,
+        "account": 16000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "BHC",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:57:50.915Z",
+        "updated_at": "2024-11-26T04:57:50.915Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "bc81b253-58b4-4414-b52a-4349586d687f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 10,
+        "account": 470000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "11월 월세",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:32:31.852Z",
+        "updated_at": "2024-11-26T05:32:31.852Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "bdbd2ef4-7774-4b6a-b7e6-b30cb841105f",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 26,
+        "account": 167000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "밀양본가",
+        "memo": "감자탕 대(3개)123000원개당 41000원, \n소주(3개)12000원개당 4000원, \n뼈추가(1개)10000원개당 10000원, \n라면사리(4개)8000원개당 2000원, \n수제비사리(2개)4000원개당 2000원, \n볶음밥(5개)10000원개당 2000원,",
+        "is_schedule": false,
+        "created_at": "2024-11-25T08:26:15.090Z",
+        "updated_at": "2024-11-25T08:26:15.090Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "be0b91ad-f542-47c8-bdcc-872019be562b",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 6,
+        "year": 2024,
+        "month": 11,
+        "day": 17,
+        "account": 390000,
+        "is_income": false,
+        "payment": "card",
+        "store": "노스페이스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T02:33:19.336Z",
+        "updated_at": "2024-11-22T02:33:19.336Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "bf53fb57-e6ce-4f9b-bb57-184614ce09d6",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 9,
+        "day": 17,
+        "account": 3600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:35:33.786Z",
+        "updated_at": "2024-11-26T03:35:33.786Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c0f88108-e3c5-4295-aa2f-e52dde532ce4",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 7,
+        "account": 123123,
+        "is_income": false,
+        "payment": "cash",
+        "store": "커리",
+        "memo": "ㅇㅇ",
+        "is_schedule": false,
+        "created_at": "2024-11-21T06:02:14.860Z",
+        "updated_at": "2024-11-21T06:02:14.860Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c2b821ee-7d77-4147-9130-36a28128cf7f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 23,
+        "account": 23000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "미분당",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:35:15.286Z",
+        "updated_at": "2024-11-26T05:35:15.286Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c2ef91c3-6f7a-414f-87a3-77a1a1dc3a60",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 10,
+        "day": 22,
+        "account": 106000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "수영",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:05:39.518Z",
+        "updated_at": "2024-11-26T05:05:39.518Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c3b7dc20-7483-4533-8341-5ff1694765ca",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 9,
+        "day": 16,
+        "account": 27600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "배달",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:15:56.940Z",
+        "updated_at": "2024-11-26T05:15:56.940Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c499b20a-ea5e-478b-b768-0ffb71d539c6",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 11,
+        "day": 20,
+        "account": 32740,
+        "is_income": false,
+        "payment": "카드",
+        "store": "올리브영",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:54:34.550Z",
+        "updated_at": "2024-11-26T04:54:34.550Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c5289c08-3025-44fa-bbe4-adf0df0e8c09",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 10,
+        "day": 15,
+        "account": 1000000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "삼성SSAFY",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:24:01.120Z",
+        "updated_at": "2024-11-26T05:24:01.120Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "c6d3bf35-7b14-4baf-abe8-8a5f0f45d8b7",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 9,
+        "account": 25000,
+        "is_income": false,
+        "payment": "cash",
+        "store": "샐러디",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-25T00:27:10.975Z",
+        "updated_at": "2024-11-25T00:27:10.975Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "cafd4796-1432-4e1c-8eaf-66a72f7923f6",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 11,
+        "day": 9,
+        "account": 4000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "다이소",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:47:05.313Z",
+        "updated_at": "2024-11-26T03:47:05.313Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "cb8d43ff-4d61-472c-b512-b2fad17d3d5f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 11,
+        "year": 2024,
+        "month": 9,
+        "day": 10,
+        "account": 470000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "월세",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:14:22.315Z",
+        "updated_at": "2024-11-26T05:14:22.315Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "cdbe59b5-7aff-47c0-8952-f8e1591924a8",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 19,
+        "year": 2024,
+        "month": 10,
+        "day": 30,
+        "account": 103000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "에어부산",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:27:51.507Z",
+        "updated_at": "2024-11-26T05:27:51.507Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "d079b57b-10a3-4fa5-bdcd-084ed4799011",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 13,
+        "account": 22600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "버거킹",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:03:36.018Z",
+        "updated_at": "2024-11-26T05:03:36.019Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "d4b92513-9d4b-43d9-b9ea-a2a4e3253c6e",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 11,
+        "day": 25,
+        "account": 200000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:36:57.385Z",
+        "updated_at": "2024-11-26T05:36:57.385Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "d5a4fd27-5383-47e3-a3f9-92caa5a364d4",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 7,
+        "year": 2024,
+        "month": 10,
+        "day": 18,
+        "account": 1500000,
+        "is_income": false,
+        "payment": "cash",
+        "store": "커리",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T01:53:36.484Z",
+        "updated_at": "2024-11-22T01:53:36.484Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "d9f11df0-ca6a-45d1-adc7-879a9305db6e",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 9,
+        "day": 13,
+        "account": 20100,
+        "is_income": false,
+        "payment": "카드",
+        "store": "머즐스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:15:35.655Z",
+        "updated_at": "2024-11-26T05:15:35.655Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "dad6adc9-1436-462c-8072-6f41268ca6c3",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 2,
+        "account": 8000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "달미롱",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:29:14.520Z",
+        "updated_at": "2024-11-26T05:29:14.520Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "dc8e3d70-0d0b-4dfa-af59-141df9d9457f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 10,
+        "day": 25,
+        "account": 1500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:43:32.059Z",
+        "updated_at": "2024-11-26T03:43:32.059Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "dd144f32-af3b-4441-a49c-6f331c7ed748",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 9,
+        "day": 5,
+        "account": 180000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "헬스장",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:58:21.672Z",
+        "updated_at": "2024-11-26T04:58:21.672Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "ddb3231a-be62-4c15-9973-16a45c156e93",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 10,
+        "day": 7,
+        "account": 15000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "고모리",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:02:28.705Z",
+        "updated_at": "2024-11-26T05:02:28.705Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "e18e3c34-6026-41ba-bf7c-592d5c5d3dfc",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 2,
+        "year": 2024,
+        "month": 11,
+        "day": 29,
+        "account": 3500,
+        "is_income": false,
+        "payment": "cash",
+        "store": "버스",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T02:36:18.880Z",
+        "updated_at": "2024-11-22T02:36:18.880Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "e1e898d4-0ba7-4236-bfd7-8bf43d8c4e2b",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 12,
+        "year": 2024,
+        "month": 9,
+        "day": 5,
+        "account": 8200,
+        "is_income": false,
+        "payment": "카드",
+        "store": "명지내과의원",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:13:34.566Z",
+        "updated_at": "2024-11-26T05:13:34.566Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "e9707632-4c51-487f-ae2e-6c7571a8481f",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 11,
+        "account": 54165,
+        "is_income": false,
+        "payment": "이체",
+        "store": "갈삼구이",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:08:41.793Z",
+        "updated_at": "2024-11-26T05:08:41.793Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "ec326dca-db33-431e-bce2-75c8a39fa345",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 27,
+        "year": 2024,
+        "month": 9,
+        "day": 3,
+        "account": 100000,
+        "is_income": true,
+        "payment": "현금",
+        "store": "용돈",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:13:15.438Z",
+        "updated_at": "2024-11-26T05:13:15.438Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "ec3dd2b5-fd5c-4953-8960-ee06c13ccbab",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 6,
+        "year": 2024,
+        "month": 9,
+        "day": 29,
+        "account": 14000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "다이소",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:00:08.237Z",
+        "updated_at": "2024-11-26T05:00:08.237Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "eef0ad08-989e-4121-978e-3c79e8d8d5ca",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 2,
+        "year": 2024,
+        "month": 10,
+        "day": 21,
+        "account": 8600,
+        "is_income": false,
+        "payment": "카드",
+        "store": "카카오택시",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:05:04.968Z",
+        "updated_at": "2024-11-26T05:05:04.968Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "f19cff36-fd60-46c4-a85d-9113eaee8650",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 5,
+        "year": 2024,
+        "month": 10,
+        "day": 26,
+        "account": 3000,
+        "is_income": false,
+        "payment": "카드",
+        "store": "GS25",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:43:47.832Z",
+        "updated_at": "2024-11-26T03:43:47.832Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "f24b34fc-f813-4915-b0f1-2943bf236f87",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 9,
+        "year": 2024,
+        "month": 11,
+        "day": 12,
+        "account": 12300,
+        "is_income": false,
+        "payment": "card",
+        "store": "올리브영",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T06:17:01.140Z",
+        "updated_at": "2024-11-22T06:17:01.140Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "f38396a5-5be9-4006-9b52-710d10466ffb",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 9,
+        "year": 2024,
+        "month": 9,
+        "day": 10,
+        "account": 4080,
+        "is_income": false,
+        "payment": "카드",
+        "store": "올리브영",
+        "memo": "메디힐 팩",
+        "is_schedule": false,
+        "created_at": "2024-11-26T03:34:38.675Z",
+        "updated_at": "2024-11-26T03:34:38.675Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "f509257a-c713-4110-9192-85d009637975",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 24,
+        "year": 2024,
+        "month": 10,
+        "day": 19,
+        "account": 100000,
+        "is_income": false,
+        "payment": "현금",
+        "store": "축의금",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:25:17.405Z",
+        "updated_at": "2024-11-26T05:25:17.406Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "f539ee59-b4be-4980-862a-6fb02d216d79",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 25,
+        "year": 2024,
+        "month": 9,
+        "day": 15,
+        "account": 200000,
+        "is_income": false,
+        "payment": "이체",
+        "store": "생일선물",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:59:26.029Z",
+        "updated_at": "2024-11-26T04:59:26.029Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "f5b197d3-aac3-4f73-9143-ab3980f080f7",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 1,
+        "year": 2024,
+        "month": 11,
+        "day": 15,
+        "account": 2500000,
+        "is_income": true,
+        "payment": "cash",
+        "store": "월급",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-22T00:18:51.712Z",
+        "updated_at": "2024-11-22T00:18:51.712Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "fa021d43-d3a4-4069-80ac-6493207f7cd9",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 14,
+        "year": 2024,
+        "month": 11,
+        "day": 20,
+        "account": 44650,
+        "is_income": false,
+        "payment": "이체",
+        "store": "리눅스마스터 2급",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T04:54:16.492Z",
+        "updated_at": "2024-11-26T04:54:16.492Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "faf7d431-aae0-4548-8388-17909f48754c",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 8,
+        "year": 2024,
+        "month": 11,
+        "day": 23,
+        "account": 2500,
+        "is_income": false,
+        "payment": "카드",
+        "store": "파리바게트",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:35:36.145Z",
+        "updated_at": "2024-11-26T05:35:36.145Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "fbdcdd71-89a2-4b40-9ba4-8f9c8b3616a6",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 7,
+        "year": 2024,
+        "month": 11,
+        "day": 1,
+        "account": 26400,
+        "is_income": false,
+        "payment": "카드",
+        "store": "굽네치킨",
+        "memo": "",
+        "is_schedule": false,
+        "created_at": "2024-11-26T05:07:20.508Z",
+        "updated_at": "2024-11-26T05:07:20.509Z"
+    }
+},
+{
+    "model": "books.account_book_data",
+    "pk": "fddf7f0a-0783-47d7-b9ad-2ff65d477fb3",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 13,
+        "year": 2024,
+        "month": 10,
+        "day": 24,
+        "account": 12312,
+        "is_income": true,
+        "payment": "card",
+        "store": "ㄹㄹㄹㄹ",
+        "memo": "ㄹㄹㄹㄹ",
+        "is_schedule": false,
+        "created_at": "2024-11-21T07:34:25.738Z",
+        "updated_at": "2024-11-21T07:34:25.738Z"
+    }
+},
+{
+    "model": "books.budget",
+    "pk": "80b8adbe-9bf1-4591-bb30-1c43498fa37d",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "year": 2024,
+        "month": 11,
+        "value": 1200000,
+        "created_at": "2024-11-21T01:05:58.739Z",
+        "updated_at": "2024-11-26T02:13:18.416Z"
+    }
+},
+{
+    "model": "books.budget",
+    "pk": "a4680eb5-f67a-4166-9092-903b5197d22b",
+    "fields": {
+        "account_book_id": "c43d7487-104c-42a1-a398-d50efc33b0a0",
+        "year": 2024,
+        "month": 11,
+        "value": 0,
+        "created_at": "2024-11-26T02:54:50.579Z",
+        "updated_at": "2024-11-26T02:54:50.579Z"
+    }
+},
+{
+    "model": "books.budget",
+    "pk": "cc90b38a-6da4-4beb-8301-38ccf6e23ab1",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "year": 2024,
+        "month": 11,
+        "value": 0,
+        "created_at": "2024-11-26T03:21:40.492Z",
+        "updated_at": "2024-11-26T03:21:40.492Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "2151e128-3146-4f9e-a6c2-d24d9a62feba",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 1,
+        "name": "월세",
+        "value": 470000,
+        "day": 10,
+        "is_income": false,
+        "created_at": "2024-11-26T05:38:15.593Z",
+        "updated_at": "2024-11-26T05:38:15.593Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "2e84c944-c897-4b1e-8968-44e88441b1ad",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 1,
+        "name": "SSAFY 월급",
+        "value": 1000000,
+        "day": 10,
+        "is_income": true,
+        "created_at": "2024-11-21T02:09:54.516Z",
+        "updated_at": "2024-11-21T02:09:54.516Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "5f10e756-6e5e-44b4-9b4e-86d1e50bb8fb",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 1,
+        "name": "네이버 멤버십 플러스",
+        "value": 4900,
+        "day": 1,
+        "is_income": false,
+        "created_at": "2024-11-26T05:38:01.223Z",
+        "updated_at": "2024-11-26T05:38:01.223Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "a5b3cd05-2f8b-4760-a16b-fc0b351fe6bb",
+    "fields": {
+        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
+        "category_id": 1,
+        "name": "넷플릭스",
+        "value": 15000,
+        "day": 20,
+        "is_income": false,
+        "created_at": "2024-11-21T02:09:42.259Z",
+        "updated_at": "2024-11-21T02:09:42.259Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "aa5d5ab7-1535-4216-9576-298bbe638298",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 1,
+        "name": "용돈",
+        "value": 500000,
+        "day": 13,
+        "is_income": true,
+        "created_at": "2024-11-26T05:38:28.413Z",
+        "updated_at": "2024-11-26T05:38:28.413Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "c9a8d24e-1271-401d-869e-f1e8d8faee72",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 1,
+        "name": "삼성SSAFY",
+        "value": 1000000,
+        "day": 15,
+        "is_income": true,
+        "created_at": "2024-11-26T05:38:42.419Z",
+        "updated_at": "2024-11-26T05:38:42.419Z"
+    }
+},
+{
+    "model": "books.schedule",
+    "pk": "f5a7aee3-bcc6-43b9-9da8-83b01eea1ae7",
+    "fields": {
+        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
+        "category_id": 1,
+        "name": "가족 모임",
+        "value": 50000,
+        "day": 17,
+        "is_income": false,
+        "created_at": "2024-11-26T05:38:59.123Z",
+        "updated_at": "2024-11-26T05:38:59.123Z"
+    }
+}
+]
