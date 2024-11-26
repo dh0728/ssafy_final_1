@@ -617,7 +617,7 @@ def analyze_category(request):
             month=month,
             account_book_id=account_book.pk,
             is_income = False
-        )
+        ).order_by('day')
 
         # 카테고리 id 별로 account 합쳐야함
         # 카테고리별 소비 금액 합계 계산
