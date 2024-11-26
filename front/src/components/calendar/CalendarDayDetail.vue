@@ -33,13 +33,13 @@
                   </span>
               </td>
               <td>{{ formattedDate }}</td>
-              <td>{{ item.category }}</td>
+              <td>{{ getCategoryName(item.category_id) }}</td>
               <td>{{ item.payment }}</td>
               <td>{{ item.store }}</td>
               <td :class="['amount', item.is_income ? 'income' : 'expense']">
                 {{ formatNumber(item.account) }}원
               </td>
-              <td>{{ item.memo }}</td>
+              <td>{{ truncateMemo(item.memo) }}</td>
             </tr>
             </tbody>
           </table>
@@ -76,6 +76,41 @@ const props = defineProps({
   }
 })
 
+const categories = ref([
+  { id: 1, name: '🏬 모든가맹점' },
+  { id: 2, name: '🚍 교통' },
+  { id: 3, name: '⛽ 주유' },
+  { id: 4, name: '📱 통신' },
+  { id: 5, name: '🛒 마트/편의점' },
+  { id: 6, name: '🎁 쇼핑' },
+  { id: 7, name: '🍛 푸드' },
+  { id: 8, name: '☕ 카페/디저트' },
+  { id: 9, name: '💄 뷰티/피트니스' },
+  { id: 10, name: '💰 무실적' },
+  { id: 11, name: '📃 공과금/렌탈' },
+  { id: 12, name: '🏥 병원/약국' },
+  { id: 13, name: '🐱 애완동물' },
+  { id: 14, name: '✏ 교육/육아' },
+  { id: 15, name: '🚗 자동차/하이패스' },
+  { id: 16, name: '⚽ 레저/스포츠' },
+  { id: 17, name: '🎬 영화/문화' },
+  { id: 18, name: '🤳 간편결제' },
+  { id: 19, name: '✈ 항공마일리지' },
+  { id: 20, name: '💺 공항라운지/PP' },
+  { id: 21, name: '💎 프리미엄' },
+  { id: 22, name: '🧳 여행/숙박' },
+  { id: 23, name: '🌏 해외' },
+  { id: 24, name: '💼 비지니스' },
+  { id: 25, name: '🎸 기타' },
+  { id: 26, name: '💸 금융' },
+  { id: 27, name: '🏃‍♂️ 생활' },
+])
+
+const getCategoryName = (id) => {
+  const category = categories.value.find(cat => cat.id === id)
+  return category ? category.name : '기타'
+}
+
 const emit = defineEmits(['close'])
 const router = useRouter()
 
@@ -87,6 +122,11 @@ const formattedDate = computed(() => {
 const formatNumber = (value) => {
   return new Intl.NumberFormat('ko-KR').format(value)
 }
+
+const truncateMemo = (memo) => {
+  return memo.length > 15 ? memo.slice(0, 18) + '...' : memo;
+}
+
 
 const closeModal = () => {
   emit('close')
