@@ -347,7 +347,7 @@ def write_account_data(request): # 단일 지출
         return Response({"message": f"Account book data with id {account_book_data_id} has been deleted."}, status=status.HTTP_204_NO_CONTENT)
 
 def category_ask(userInput):
-    media_path = os.path.join(settings.MEDIA_ROOT, 'category_input.json')
+    media_path = os.path.join(settings.BASE_DIR, 'static','category_input.json')
     try:
         with open(media_path, 'r', encoding='utf-8') as file:
             category_data = json.load(file)
