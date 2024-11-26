@@ -646,14 +646,16 @@ def analyze_category(request):
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
 
-def evaluation(month_data,birth):
+def evaluation(month_data,birth,budget):
     try:
-        user_input='나는 이번 한달 동안'
+        # print(budget.value)
+        user_input=f'이번달 나의 예산은 {budget}원이야. 나는 이번 한달 동안'
         total=0
         for data in month_data:
             total +=data['total_amount']
             user_input += f'{data["category_name"]}에 {data["total_amount"]}원, '
 
+        # print('totol',total)
         user_input +=f'총 {total}원을 사용했어 내 소비 습관 어때?? '
 
 
@@ -709,7 +711,8 @@ def evaluation_gpt(request):
         month_data = Account_book_data.objects.filter(
             year=year,
             month=month,
-            account_book_id=account_book.pk
+            account_book_id=account_book.pk,
+            is_income = 'False',
         )
 
         if month_data.count() <= 10:
@@ -727,14 +730,22 @@ def evaluation_gpt(request):
             category_instance = get_object_or_404(Category, pk=category_id)
             category_name = category_instance.category_name
             # 요약 및 세부 내역 추가
+            # print('category_name',category_name)
+            # print('total_amount',total_amount)
             category_summary.append({
                 'category_name':category_name,
                 'total_amount': total_amount,
             })
-        
-        sorted_category_summary = sorted(category_summary, key=lambda x: x['total_amount'], reverse=True)
-        print(request.user.birth)
-        comment =evaluation(sorted_category_summary,request.user.birth)
+        try :
+            budget = Budget.objects.get(account_book_id=account_book.pk)
+        except:
+            budget =0
+
+        sorted_category_summary = sorted(category_summary, key=lambda x: x
+        ['total_amount'], reverse=True)
+        pprint.pprint(sorted_category_summary)
+        # print(request.user.birth)
+        comment =evaluation(sorted_category_summary,request.user.birth,budget)
         data = {'comment':comment}
         serializer = EvaluationSerializer(data)
         return Response(serializer.data, status=status.HTTP_200_OK)
