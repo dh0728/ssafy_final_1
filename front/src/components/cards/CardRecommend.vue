@@ -17,14 +17,15 @@
           <button class="close-btn" @click="$emit('close')">×</button>
         </div>
 
-        <div class="modal-body">
+        <div class="modal-body" @click.stop>
           <div class="recommendation-section">
             <div id="cardCarousel" class="carousel">
               <div class="carousel-inner">
                 <div v-for="(card, index) in allCards"
                     :key="card.id"
-                    :class="['carousel-item', index === 0 ? 'active' : '']">
-                  <div class="card-item">
+                    :class="['carousel-item', index === 0 ? 'active' : '']"
+                    @click.stop>
+                  <div class="card-item" @click.stop>
                     <div :class="['benefit-tag', card.type]">
                       {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}
                     </div>
@@ -37,7 +38,8 @@
                       <div class="button-group">
                         <RouterLink
                             :to="{ name: 'CardDetail', params: { type: card.type, cardId: card.id }}"
-                            class="detail-btn">
+                            class="detail-btn"
+                            @click.stop>
                           자세히 보기
                         </RouterLink>
                       </div>
@@ -186,6 +188,7 @@ onMounted(async () => {
   min-height: 600px;
   max-height: 90vh;
   overflow-y: auto;
+  z-index: 1001;
 }
 
 .recommendation-section {
@@ -324,6 +327,7 @@ onMounted(async () => {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 1002;
 }
 
 .carousel-item {
@@ -334,9 +338,12 @@ onMounted(async () => {
   transition: opacity 0.5s ease;
   display: flex;
   justify-content: center;
+  pointer-events: none; /* 모든 클릭 차단 */
+  opacity: 0.0; /* 비활성화된 상태를 시각적으로 표시 */
 }
 
 .carousel-item.active {
+  pointer-events: auto; 
   opacity: 1;
 }
 
