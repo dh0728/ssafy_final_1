@@ -129,9 +129,9 @@ const storeName = ref('')
 const memo = ref('')
 
 const paymentMethods = [
-  { value: 'cash', label: '현금' },
-  { value: 'card', label: '카드' },
-  { value: 'transfer', label: '이체' }
+  { value: '현금', label: '현금' },
+  { value: '카드', label: '카드' },
+  { value: '이체', label: '이체' }
 ]
 
 const showCategoryModal = ref(false)
