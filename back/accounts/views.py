@@ -11,7 +11,7 @@ from .models import User
 @permission_classes([IsAuthenticated])
 def get_user(request):
     if request.method=='GET':
-        user = User.objects.first()
+        user = User.objects.get(pk=request.user.id)
         serializer = CustomUserDetailsSerializer(user)
         print(serializer.data)
         return Response(serializer.data)

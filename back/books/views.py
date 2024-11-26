@@ -596,6 +596,7 @@ def calender_data(request):
 
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+import pprint 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def analyze_category(request):
@@ -622,7 +623,7 @@ def analyze_category(request):
         # 카테고리 id 별로 account 합쳐야함
         # 카테고리별 소비 금액 합계 계산
         category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
-
+        pprint.pprint(category_expenses)
         category_summary = []
         for category in category_expenses:
             category_id = category['category_id']
@@ -638,6 +639,7 @@ def analyze_category(request):
                 'total_amount': total_amount,
                 'details': list(details)
             })
+        # print(category_summary)
         serializer =CategoryExpenseSerializer(category_summary, many=True)
 
         return Response(serializer.data)
