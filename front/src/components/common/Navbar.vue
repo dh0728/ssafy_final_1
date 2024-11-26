@@ -59,9 +59,10 @@ const closeRecommendModal = () => {
 
 .logo {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #1a1438;
   text-decoration: none;
+  
 }
 
 .nav-links {

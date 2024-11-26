@@ -22,8 +22,8 @@
             <div id="cardCarousel" class="carousel">
               <div class="carousel-inner">
                 <div v-for="(card, index) in allCards"
-                     :key="card.id"
-                     :class="['carousel-item', index === 0 ? 'active' : '']">
+                    :key="card.id"
+                    :class="['carousel-item', index === 0 ? 'active' : '']">
                   <div class="card-item">
                     <div :class="['benefit-tag', card.type]">
                       {{ card.type === 'credit' ? '추천 신용카드' : '추천 체크카드' }}

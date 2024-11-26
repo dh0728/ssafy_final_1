@@ -325,7 +325,7 @@ onMounted(() => {
 .detail-btn {
   padding: 8px 16px;
   /* background: #000;*/
-  background: #4C6EF5;;
+  background: #4C6EF5;
   color: white;
   border: none;
   border-radius: 4px;
