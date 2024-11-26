@@ -354,7 +354,7 @@ def category_ask(userInput):
 
         categories_summary = "\n".join([f"{key} (ID: {value['category_id']}): {', '.join(value['kinds'])}" for key, value in category_data.items()])
         
-        print(categories_summary)
+        # print(categories_summary)
         OPENAI_API_KEY =settings.MY_OPENAI_API_KEY
 
         client = OpenAI(api_key=OPENAI_API_KEY)
@@ -387,9 +387,10 @@ def category_ask(userInput):
         )
         # 응답 출력
         for response in response.choices :
-            print(response.message.content)
-            return response.message.content
-    except:
+            print('result',response.message.content)
+            return int(response.message.content)
+    except Exception as e:
+        print(f"Error: OpenAI API call failed - {e}")
         return 25
 
 
