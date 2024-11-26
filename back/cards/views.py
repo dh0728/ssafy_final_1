@@ -143,8 +143,8 @@ def searchCondition(request,card_type):
         companies= request.query_params.getlist('companies')
         categories=list(map(int,categories_str))
 
-        print('companies',companies)
-        print('categories',categories_str)
+        # print('companies',companies)
+        # print('categories',categories_str)
 
         if card_type == '1':
             brands=[]
@@ -162,8 +162,8 @@ def searchCondition(request,card_type):
             card_category_model = Check_card_category
             card_category_field = 'check_card_id'
         
-        print(brands)
-        print(categories)
+        # print(brands)
+        # print(categories)
         if categories:
             sql_query = f"""
                 SELECT {card_category_field}_id

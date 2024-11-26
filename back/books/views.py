@@ -179,7 +179,7 @@ def budget(request):
     if request.method == 'GET':
         year = request.query_params.get('year')
         month = request.query_params.get('month')
-        print(month)
+        # print(month)
         month=int(month)
         year=int(year)
         try:
@@ -245,7 +245,7 @@ def write_account_data_list(request):
     elif request.method == 'DELETE':
         with transaction.atomic():
             data = request.data
-            print(data)
+            # print(data)
             if isinstance(data,list) and all(isinstance(id, str) for id in data):
                 try:
                     account_book_data = Account_book_data.objects.filter(
@@ -387,10 +387,10 @@ def category_ask(userInput):
         )
         # 응답 출력
         for response in response.choices :
-            print('result',response.message.content)
+            # print('result',response.message.content)
             return int(response.message.content)
     except Exception as e:
-        print(f"Error: OpenAI API call failed - {e}")
+        # print(f"Error: OpenAI API call failed - {e}")
         return 25
 
 
@@ -404,7 +404,7 @@ def receipt(request): # 영수증 OCR
         # 파일을 가져와서 확인
         file = request.FILES.get('image')
         if not file:
-            print("No file uploaded.")
+            # print("No file uploaded.")
             return Response({'error': 'No file uploaded'}, status=400)
 
         # 파일 정보 출력
@@ -596,7 +596,7 @@ def calender_data(request):
 
     return Response({'error': 'Invalid request method.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-import pprint 
+# import pprint 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def analyze_category(request):
@@ -743,7 +743,7 @@ def evaluation_gpt(request):
 
         sorted_category_summary = sorted(category_summary, key=lambda x: x
         ['total_amount'], reverse=True)
-        pprint.pprint(sorted_category_summary)
+        # pprint.pprint(sorted_category_summary)
         # print(request.user.birth)
         comment =evaluation(sorted_category_summary,request.user.birth,budget)
         data = {'comment':comment}
@@ -917,7 +917,7 @@ def recommend_cards(request):
         for data in sorted_category_summary:
             category_list.append(data['category_name'])
         
-        print(category_list)
+        # print(category_list)
         # OpenAI API 키 설정
         # OpenAI Embeddings 및 캐싱 설정
         embeddings = OpenAIEmbeddings(openai_api_key=settings.MY_OPENAI_API_KEY)
