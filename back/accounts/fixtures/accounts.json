@@ -1,0 +1,21 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$HudQ0QWpd5eEULB7iu5w8R$UMqbmGgZpo587FFv+SDkFKt282mmSl62ccvt7EDXIKk=",
+        "last_login": "2024-11-26T03:19:42.697Z",
+        "is_superuser": false,
+        "username": "흥청이지연",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-26T03:19:42.002Z",
+        "email": "zeeyeonleee@gmail.com",
+        "birth": "1996-04-28",
+        "created_at": "2024-11-26T03:19:42.324Z",
+        "updated_at": "2024-11-26T03:19:42.331Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

@@ -19,6 +19,10 @@ export const useAccountStore = defineStore('accounts', () => {
         console.log(password)
 
         try {
+            token.value = null
+            user.value = null
+            username.value = null
+
             const response = await axios({
                 method: 'post',
                 url: `${API_URL}/accounts/login/`,
@@ -29,7 +33,6 @@ export const useAccountStore = defineStore('accounts', () => {
             })
             token.value = response.data.key
             localStorage.setItem('auth', response.data.key)
-            console.log(response.data)
             await getUserInfo()
             await router.push({ name: 'Home' })
         } catch (error) {
@@ -89,7 +92,9 @@ export const useAccountStore = defineStore('accounts', () => {
             })
             token.value = null
             user.value = null
-            localStorage.removeItem('auth')
+            username.value = null
+            // localStorage.removeItem('auth')
+            localStorage.clear()
             router.push({ name: 'Home' })
         } catch (error) {
             console.error('로그아웃 실패:', error)
@@ -106,7 +111,7 @@ export const useAccountStore = defineStore('accounts', () => {
             console.log(token.value)
             user.value = response.data
             username.value = response.data.username
-            console.log(user.value)
+            // console.log(user)
             return response.data
         } catch (error) {
             console.error('사용자 정보 가져오기 실패:', error)
