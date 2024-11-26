@@ -404,6 +404,11 @@ onMounted(async () => {
   color: #495057;
 }
 
+.benefit-icon span{
+  font-size: 16px;
+}
+
+
 .bank-btn {
   display: inline-flex;
   align-items: center;
@@ -509,8 +514,8 @@ onMounted(async () => {
 
 .benefit-header h3 {
   flex: 1;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: #333;
   margin: 0;
 }
@@ -527,7 +532,8 @@ onMounted(async () => {
 
 .benefit-content p {
   color: #495057;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.5;
   margin: 0;
 }
