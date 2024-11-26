@@ -20,7 +20,9 @@ const closeRecommendModal = () => {
 
 <template>
   <nav class="navbar">
-    <RouterLink to="/" class="logo">가계북</RouterLink>
+    <RouterLink to="/" class="logo">
+      가계북
+    </RouterLink>
     <div class="nav-links">
       <RouterLink :to="{ name: 'CardList'}" class="nav-link">카드 찾기</RouterLink>
       <RouterLink :to="{ name: 'Budget' }" class="nav-link">내 가계부</RouterLink>
@@ -58,11 +60,11 @@ const closeRecommendModal = () => {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 1.8rem;
   color: #1a1438;
   text-decoration: none;
-  
+  margin-left: 1.0rem;
 }
 
 .nav-links {
