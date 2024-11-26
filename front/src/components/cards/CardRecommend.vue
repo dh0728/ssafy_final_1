@@ -46,10 +46,10 @@
                 </div>
               </div>
               <button class="carousel-control prev" @click="prevSlide">
-                <span class="carousel-control-prev-icon">←</span>
+                <span class="carousel-control-prev-icon"><i class="fa-solid fa-arrow-left"></i></span>
               </button>
               <button class="carousel-control next" @click="nextSlide">
-                <span class="carousel-control-next-icon">→</span>
+                <span class="carousel-control-next-icon"><i class="fa-solid fa-arrow-right"></i></span>
               </button>
             </div>
           </div>
