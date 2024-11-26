@@ -8,30 +8,6 @@
     }
 },
 {
-    "model": "books.account_book",
-    "pk": "621d6d0e-f8db-4572-867e-fb85c71e7865",
-    "fields": {
-        "user_id": 5,
-        "created_at": "2024-11-26T03:09:30.856Z"
-    }
-},
-{
-    "model": "books.account_book",
-    "pk": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-    "fields": {
-        "user_id": 2,
-        "created_at": "2024-11-21T00:24:20.061Z"
-    }
-},
-{
-    "model": "books.account_book",
-    "pk": "c43d7487-104c-42a1-a398-d50efc33b0a0",
-    "fields": {
-        "user_id": 4,
-        "created_at": "2024-11-26T02:54:43.604Z"
-    }
-},
-{
     "model": "books.account_book_data",
     "pk": "00ce4ebd-1f85-47bb-a950-4acb04ab2bd3",
     "fields": {
@@ -2712,18 +2688,6 @@
 },
 {
     "model": "books.budget",
-    "pk": "80b8adbe-9bf1-4591-bb30-1c43498fa37d",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "year": 2024,
-        "month": 11,
-        "value": 1200000,
-        "created_at": "2024-11-21T01:05:58.739Z",
-        "updated_at": "2024-11-26T02:13:18.416Z"
-    }
-},
-{
-    "model": "books.budget",
     "pk": "a4680eb5-f67a-4166-9092-903b5197d22b",
     "fields": {
         "account_book_id": "c43d7487-104c-42a1-a398-d50efc33b0a0",
@@ -2732,18 +2696,6 @@
         "value": 0,
         "created_at": "2024-11-26T02:54:50.579Z",
         "updated_at": "2024-11-26T02:54:50.579Z"
-    }
-},
-{
-    "model": "books.budget",
-    "pk": "cc90b38a-6da4-4beb-8301-38ccf6e23ab1",
-    "fields": {
-        "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
-        "year": 2024,
-        "month": 11,
-        "value": 0,
-        "created_at": "2024-11-26T03:21:40.492Z",
-        "updated_at": "2024-11-26T03:21:40.492Z"
     }
 },
 {
