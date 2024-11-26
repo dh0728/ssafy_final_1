@@ -2,7 +2,7 @@ const calendarRoutes = [
     {
         path: '/history/',
         name: 'CalendarHistory',
-        component: () => import('@/views/budget/CalendarHistory.vue')
+        component: () => import('@/views/calendar/CalendarHistory.vue')
     },
 ]
 

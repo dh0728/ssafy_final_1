@@ -348,6 +348,10 @@ const changePage = (page) => {
   }
 }
 
+const onWriteCompleted = async () => {
+  await fetchHistoryItems()
+}
+
 onMounted(() => {
   fetchHistoryItems()
 })
@@ -741,5 +745,55 @@ onMounted(() => {
   background: #868e96;
   color: white;
   border-color: #868e96;
+}
+
+/* 수정 모드의 입력 필드 스타일 */
+input, select {
+  width: auto;
+  min-width: 80px;
+  max-width: 120px;
+  padding: 4px 8px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: #f8f9fa;
+  margin: 0;
+  line-height: inherit;
+}
+
+/* 숫자 입력 필드 */
+input[type="number"] {
+  text-align: right;
+  padding-right: 20px;
+}
+
+/* 메모 입력 필드 */
+input[type="text"] {
+  width: 100%;
+  max-width: 200px;
+}
+
+/* 카테고리 선택 필드 */
+select {
+  padding-right: 24px;
+  background-position: right 4px center;
+}
+
+/* 포커스 스타일 */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4C6EF5;
+  background: white;
+  box-shadow: none;
+}
+
+/* 수정/취소 버튼 */
+.action-btn {
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 4px;
 }
 </style>
