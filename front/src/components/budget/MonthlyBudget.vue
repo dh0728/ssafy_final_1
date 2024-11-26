@@ -10,7 +10,7 @@
           </button>
       </div>
       <div class="actions">
-        <button class="write-btn">가계부 작성하기 📝</button>
+        <button @click="openCalendarModal" class="write-btn">가계부 작성하기 📝</button>
       </div>
     </div>
 
@@ -62,6 +62,7 @@
       <Calendar />
       <Schedule />
     </div>
+    <CalendarAdd ref="calendarModal" :selected-date="new Date()" @write-completed="onWriteCompleted" />
     <BudgetSettingModal ref="budgetModal" @budget-updated="refreshBudget" />
   </div>
 </template>
@@ -75,8 +76,10 @@ import Schedule from "@/components/schedule/Schedule.vue";
 import BudgetSettingModal from '@/components/budget/BudgetSetting.vue'
 import {useCalendarStore} from "@/stores/calendar.js";
 import {useAccountStore} from "@/stores/accounts.js";
+import CalendarAdd from "@/components/calendar/CalendarAdd.vue";
 
 const budgetModal = ref(null)
+const calendarModal = ref(null)
 const store = useBudgetStore()
 const calendarStore = useCalendarStore();
 const accountStore = useAccountStore();
@@ -116,7 +119,16 @@ const openBudgetModal = () => {
 
 const refreshBudget = (newBudget) => {
   currentBudget.value = newBudget
-  fetchBudget()  // 전체 예산 정보 새로고침
+  fetchBudget()
+}
+
+const openCalendarModal = () => {
+  calendarModal.value.openModal()
+}
+
+// 작성 완료 후 처리 함수 추가
+const onWriteCompleted = () => {
+  fetchBudget()
 }
 
 // 숫자 포맷팅 함수
