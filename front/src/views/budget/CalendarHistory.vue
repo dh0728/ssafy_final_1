@@ -233,19 +233,16 @@ const fetchHistoryItems = async () => {
   }
 }
 
-
-
 // 삭제 기능
 const deleteItem = async (accountBookDataId) => {
   if (confirm('정말 삭제하시겠습니까?')) {
-    try {
-      const success = await calendarStore.deleteCalendar(accountBookDataId)
-      if (success) {
-        fetchHistoryItems() // 목록 새로고침
-      }
-    } catch (error) {
-      console.error('삭제 실패:', error)
+    const success = await calendarStore.deleteCalendar(accountBookDataId)
+    if (success) {
+      historyItems.value = historyItems.value.filter(
+          item => item.account_book_data_id !== accountBookDataId
+      )
     }
+    await fetchHistoryItems()
   }
 }
 
@@ -335,7 +332,6 @@ const saveEdit = async (item) => {
 const truncateMemo = (memo) => {
   return memo.length > 15 ? memo.slice(0, 15) + '...' : memo;
 }
-
 
 
 // 현재 페이지에 표시할 아이템들
