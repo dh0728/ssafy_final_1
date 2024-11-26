@@ -28,7 +28,7 @@ import { useEvaluationStore } from '@/stores/evaluation.js'
 const evaluationStore = useEvaluationStore()
 
 onMounted(() => {
-  // evaluationStore.getEvaluation()
+  evaluationStore.getEvaluation()
 })
 </script>
 
