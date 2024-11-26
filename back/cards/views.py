@@ -138,7 +138,7 @@ def searchCondition(request,card_type):
     '''
     if request.method == 'GET':
         # 요청에서 brand와 category 추출
-        
+        # card_type == request.query_params.getlist('card_type')
         categories_str = request.query_params.getlist('categories')
         companies= request.query_params.getlist('companies')
         categories=list(map(int,categories_str))
@@ -180,7 +180,7 @@ def searchCondition(request,card_type):
                     card_ids = [row[0] for row in cursor.fetchall()]
             except Exception as e:
                 return Response({"error": f"데이터베이스 오류가 발생했습니다: {str(e)}"}, status=500)
-            print(card_ids)
+            # print(card_ids)
 
         # # 카드 ID와 brand를 이용하여 최종카드 정보 조회
         # if card_type == '1':
@@ -252,7 +252,7 @@ def mycard(request):
     elif request.method == 'POST':
         card_type = request.data.get('card_type')
         card_id = request.data.get('card_id')
-        print(card_id)
+        # print(card_id)
         if not card_type or not card_id:
             return Response({"error": "Both card_type and card_id are required."}, status=status.HTTP_400_BAD_REQUEST)
 

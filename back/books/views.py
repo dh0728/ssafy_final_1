@@ -618,12 +618,12 @@ def analyze_category(request):
             month=month,
             account_book_id=account_book.pk,
             is_income = False
-        ).order_by('day')
+        )
 
         # 카테고리 id 별로 account 합쳐야함
         # 카테고리별 소비 금액 합계 계산
         category_expenses = month_data.values('category_id').annotate(total_amount=Sum('account'))
-        pprint.pprint(category_expenses)
+        # pprint.pprint(category_expenses)
         category_summary = []
         for category in category_expenses:
             category_id = category['category_id']
@@ -631,7 +631,7 @@ def analyze_category(request):
 
             details = month_data.filter(category_id=category_id).values(
                 'day', 'account', 'payment', 'store', 'memo'
-            )
+            ).order_by('day')
 
             # 요약 및 세부 내역 추가
             category_summary.append({

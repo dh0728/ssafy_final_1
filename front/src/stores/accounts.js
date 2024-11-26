@@ -103,8 +103,10 @@ export const useAccountStore = defineStore('accounts', () => {
             const response = await axios.get(`${API_URL}/accounts/user/`, {
                 headers: { Authorization: `Token ${token.value}` }
             })
+            console.log(token.value)
             user.value = response.data
             username.value = response.data.username
+            console.log(user.value)
             return response.data
         } catch (error) {
             console.error('사용자 정보 가져오기 실패:', error)
@@ -119,6 +121,7 @@ export const useAccountStore = defineStore('accounts', () => {
                 headers: { Authorization: `Token ${token.value}` }
             })
             user.value = response.data
+            
         } catch (error) {
             console.error('프로필 업데이트 실패:', error)
             throw error
