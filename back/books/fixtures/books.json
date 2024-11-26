@@ -85,25 +85,6 @@
 },
 {
     "model": "books.account_book_data",
-    "pk": "0ae110d8-022a-4316-91e9-b707ebc35228",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 6,
-        "year": 2024,
-        "month": 11,
-        "day": 26,
-        "account": 60000,
-        "is_income": false,
-        "payment": "cash",
-        "store": "w컨셉",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-25T00:28:02.288Z",
-        "updated_at": "2024-11-25T00:28:02.288Z"
-    }
-},
-{
-    "model": "books.account_book_data",
     "pk": "0ba7fd93-f58b-402d-945e-407006c92271",
     "fields": {
         "account_book_id": "55ad2f36-8254-4577-9b3b-8c217be4128d",
@@ -119,25 +100,6 @@
         "is_schedule": false,
         "created_at": "2024-11-26T03:40:18.118Z",
         "updated_at": "2024-11-26T03:40:18.118Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "0dfe9ae5-d7e4-4cf0-aaf8-cd28fba2738c",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 25,
-        "account": 2000,
-        "is_income": false,
-        "payment": "card",
-        "store": "고모리 커피공장",
-        "memo": "아아",
-        "is_schedule": false,
-        "created_at": "2024-11-25T02:27:11.656Z",
-        "updated_at": "2024-11-25T02:27:11.656Z"
     }
 },
 {
@@ -195,25 +157,6 @@
         "is_schedule": false,
         "created_at": "2024-11-26T05:14:48.683Z",
         "updated_at": "2024-11-26T05:14:48.683Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "126206c0-7155-48c1-b1d9-add8bcbe44f6",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 25,
-        "year": 2024,
-        "month": 9,
-        "day": 26,
-        "account": 167000,
-        "is_income": false,
-        "payment": "카드",
-        "store": "밀양본가",
-        "memo": "감자탕 대(3개)123000원개당 41000원, \n소주(3개)12000원개당 4000원, \n뼈추가(1개)10000원개당 10000원, \n라면사리(4개)8000원개당 2000원, \n수제비사리(2개)4000원개당 2000원, \n볶음밥(5개)10000원개당 2000원,",
-        "is_schedule": false,
-        "created_at": "2024-11-25T08:25:39.769Z",
-        "updated_at": "2024-11-25T08:25:39.769Z"
     }
 },
 {
@@ -404,63 +347,6 @@
         "is_schedule": false,
         "created_at": "2024-11-26T05:24:50.090Z",
         "updated_at": "2024-11-26T05:24:50.090Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "1e50f07f-44f5-4d68-ac52-4a70edf4ab6b",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 1,
-        "year": 2024,
-        "month": 9,
-        "day": 26,
-        "account": 167000,
-        "is_income": false,
-        "payment": "카드",
-        "store": "밀양본가",
-        "memo": "감자탕 대(3개):123000원 개당 41000, 소주(3개):12000원 개당 4000, 뼈추가(1개):10000원 개당 10000, 라면사리(4개):8000원 개당 2000, 수제비사리(2개):4000원 개당 2000, 볶음밥(5개):10000원 개당 2000,",
-        "is_schedule": false,
-        "created_at": "2024-11-22T06:49:44.146Z",
-        "updated_at": "2024-11-22T06:49:44.146Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "1fa8fc23-1c0e-4408-ab79-c611be5e0087",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 30,
-        "account": 170000,
-        "is_income": false,
-        "payment": "cash",
-        "store": "pp",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T06:16:10.470Z",
-        "updated_at": "2024-11-22T06:16:10.470Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "205c64b7-ba37-4c1d-8355-f24e63aa3b1b",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 30,
-        "account": 0,
-        "is_income": false,
-        "payment": "cash",
-        "store": "170000",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T06:15:52.401Z",
-        "updated_at": "2024-11-22T06:15:52.401Z"
     }
 },
 {
@@ -672,44 +558,8 @@
         "updated_at": "2024-11-26T05:30:43.260Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "3a3b9e7e-15a7-403c-93d7-c644fb0940ca",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 21,
-        "account": 25000,
-        "is_income": false,
-        "payment": "card",
-        "store": "포케",
-        "memo": "존맛탱",
-        "is_schedule": false,
-        "created_at": "2024-11-21T08:16:04.441Z",
-        "updated_at": "2024-11-21T08:16:04.441Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "3ae40120-a264-4bb2-ad27-54db1a3f0856",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 8,
-        "year": 2024,
-        "month": 11,
-        "day": 22,
-        "account": 700,
-        "is_income": false,
-        "payment": "cash",
-        "store": "박카스",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T05:31:04.925Z",
-        "updated_at": "2024-11-22T05:31:04.925Z"
-    }
-},
+
+
 {
     "model": "books.account_book_data",
     "pk": "3d370b85-3870-413e-b82a-355a4cfc39fc",
@@ -995,44 +845,8 @@
         "updated_at": "2024-11-26T05:22:19.752Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "5d81ea01-241a-43e1-8986-e718680aa053",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 12,
-        "year": 2024,
-        "month": 11,
-        "day": 26,
-        "account": 12000,
-        "is_income": false,
-        "payment": "cash",
-        "store": "명지 내과",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-26T02:34:00.209Z",
-        "updated_at": "2024-11-26T02:34:00.209Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "5d85bd1a-2978-4328-833d-bccb9e48e8cb",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 9,
-        "year": 2024,
-        "month": 11,
-        "day": 7,
-        "account": 12,
-        "is_income": false,
-        "payment": "card",
-        "store": "올리브영",
-        "memo": "단백질바 먹었징 ^.^",
-        "is_schedule": false,
-        "created_at": "2024-11-21T05:55:50.091Z",
-        "updated_at": "2024-11-22T05:11:06.854Z"
-    }
-},
+
+
 {
     "model": "books.account_book_data",
     "pk": "5de5630a-0dc7-4e5d-8a79-e6a0fbbe34a0",
@@ -1451,25 +1265,7 @@
         "updated_at": "2024-11-26T05:34:02.068Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "867ff301-40db-4fcb-9361-04fc9a1e9743",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 8,
-        "year": 2024,
-        "month": 11,
-        "day": 25,
-        "account": 2000,
-        "is_income": false,
-        "payment": "card",
-        "store": "고모리",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-25T00:27:41.348Z",
-        "updated_at": "2024-11-25T00:27:41.349Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "89a72ae4-0802-4c8a-8936-4e1f0e3c71a6",
@@ -1527,25 +1323,7 @@
         "updated_at": "2024-11-26T03:32:42.696Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "903818f7-7d83-4100-9572-17c5cd836924",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 1,
-        "year": 2024,
-        "month": 9,
-        "day": 26,
-        "account": 167000,
-        "is_income": false,
-        "payment": "카드",
-        "store": "밀양본가",
-        "memo": "감자탕 대(3개):123000원 개당 41000, 소주(3개):12000원 개당 4000, 뼈추가(1개):10000원 개당 10000, 라면사리(4개):8000원 개당 2000, 수제비사리(2개):4000원 개당 2000, 볶음밥(5개):10000원 개당 2000,",
-        "is_schedule": false,
-        "created_at": "2024-11-22T03:10:16.251Z",
-        "updated_at": "2024-11-22T03:10:16.251Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "97f53850-4b53-42b4-9e60-523597a77b00",
@@ -1926,25 +1704,7 @@
         "updated_at": "2024-11-26T05:06:13.828Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "bc0b7d58-8298-4adb-8ee3-a465b446c768",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 16,
-        "year": 2024,
-        "month": 11,
-        "day": 26,
-        "account": 2500,
-        "is_income": false,
-        "payment": "현금",
-        "store": "축구",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-26T02:44:43.048Z",
-        "updated_at": "2024-11-26T02:44:43.048Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "bc64c9b2-db05-432b-af34-171400d6abda",
@@ -1983,44 +1743,8 @@
         "updated_at": "2024-11-26T05:32:31.852Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "bdbd2ef4-7774-4b6a-b7e6-b30cb841105f",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 26,
-        "account": 167000,
-        "is_income": false,
-        "payment": "카드",
-        "store": "밀양본가",
-        "memo": "감자탕 대(3개)123000원개당 41000원, \n소주(3개)12000원개당 4000원, \n뼈추가(1개)10000원개당 10000원, \n라면사리(4개)8000원개당 2000원, \n수제비사리(2개)4000원개당 2000원, \n볶음밥(5개)10000원개당 2000원,",
-        "is_schedule": false,
-        "created_at": "2024-11-25T08:26:15.090Z",
-        "updated_at": "2024-11-25T08:26:15.090Z"
-    }
-},
-{
-    "model": "books.account_book_data",
-    "pk": "be0b91ad-f542-47c8-bdcc-872019be562b",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 6,
-        "year": 2024,
-        "month": 11,
-        "day": 17,
-        "account": 390000,
-        "is_income": false,
-        "payment": "card",
-        "store": "노스페이스",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T02:33:19.336Z",
-        "updated_at": "2024-11-22T02:33:19.336Z"
-    }
-},
+
+
 {
     "model": "books.account_book_data",
     "pk": "bf53fb57-e6ce-4f9b-bb57-184614ce09d6",
@@ -2040,25 +1764,7 @@
         "updated_at": "2024-11-26T03:35:33.786Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "c0f88108-e3c5-4295-aa2f-e52dde532ce4",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 7,
-        "account": 123123,
-        "is_income": false,
-        "payment": "cash",
-        "store": "커리",
-        "memo": "ㅇㅇ",
-        "is_schedule": false,
-        "created_at": "2024-11-21T06:02:14.860Z",
-        "updated_at": "2024-11-21T06:02:14.860Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "c2b821ee-7d77-4147-9130-36a28128cf7f",
@@ -2154,25 +1860,7 @@
         "updated_at": "2024-11-26T05:24:01.120Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "c6d3bf35-7b14-4baf-abe8-8a5f0f45d8b7",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 11,
-        "day": 9,
-        "account": 25000,
-        "is_income": false,
-        "payment": "cash",
-        "store": "샐러디",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-25T00:27:10.975Z",
-        "updated_at": "2024-11-25T00:27:10.975Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "cafd4796-1432-4e1c-8eaf-66a72f7923f6",
@@ -2268,25 +1956,7 @@
         "updated_at": "2024-11-26T05:36:57.385Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "d5a4fd27-5383-47e3-a3f9-92caa5a364d4",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 7,
-        "year": 2024,
-        "month": 10,
-        "day": 18,
-        "account": 1500000,
-        "is_income": false,
-        "payment": "cash",
-        "store": "커리",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T01:53:36.484Z",
-        "updated_at": "2024-11-22T01:53:36.484Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "d9f11df0-ca6a-45d1-adc7-879a9305db6e",
@@ -2382,25 +2052,7 @@
         "updated_at": "2024-11-26T05:02:28.705Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "e18e3c34-6026-41ba-bf7c-592d5c5d3dfc",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 2,
-        "year": 2024,
-        "month": 11,
-        "day": 29,
-        "account": 3500,
-        "is_income": false,
-        "payment": "cash",
-        "store": "버스",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T02:36:18.880Z",
-        "updated_at": "2024-11-22T02:36:18.880Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "e1e898d4-0ba7-4236-bfd7-8bf43d8c4e2b",
@@ -2515,25 +2167,7 @@
         "updated_at": "2024-11-26T03:43:47.832Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "f24b34fc-f813-4915-b0f1-2943bf236f87",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 9,
-        "year": 2024,
-        "month": 11,
-        "day": 12,
-        "account": 12300,
-        "is_income": false,
-        "payment": "card",
-        "store": "올리브영",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T06:17:01.140Z",
-        "updated_at": "2024-11-22T06:17:01.140Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "f38396a5-5be9-4006-9b52-710d10466ffb",
@@ -2591,25 +2225,7 @@
         "updated_at": "2024-11-26T04:59:26.029Z"
     }
 },
-{
-    "model": "books.account_book_data",
-    "pk": "f5b197d3-aac3-4f73-9143-ab3980f080f7",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 1,
-        "year": 2024,
-        "month": 11,
-        "day": 15,
-        "account": 2500000,
-        "is_income": true,
-        "payment": "cash",
-        "store": "월급",
-        "memo": "",
-        "is_schedule": false,
-        "created_at": "2024-11-22T00:18:51.712Z",
-        "updated_at": "2024-11-22T00:18:51.712Z"
-    }
-},
+
 {
     "model": "books.account_book_data",
     "pk": "fa021d43-d3a4-4069-80ac-6493207f7cd9",
@@ -2668,37 +2284,6 @@
     }
 },
 {
-    "model": "books.account_book_data",
-    "pk": "fddf7f0a-0783-47d7-b9ad-2ff65d477fb3",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 13,
-        "year": 2024,
-        "month": 10,
-        "day": 24,
-        "account": 12312,
-        "is_income": true,
-        "payment": "card",
-        "store": "ㄹㄹㄹㄹ",
-        "memo": "ㄹㄹㄹㄹ",
-        "is_schedule": false,
-        "created_at": "2024-11-21T07:34:25.738Z",
-        "updated_at": "2024-11-21T07:34:25.738Z"
-    }
-},
-{
-    "model": "books.budget",
-    "pk": "a4680eb5-f67a-4166-9092-903b5197d22b",
-    "fields": {
-        "account_book_id": "c43d7487-104c-42a1-a398-d50efc33b0a0",
-        "year": 2024,
-        "month": 11,
-        "value": 0,
-        "created_at": "2024-11-26T02:54:50.579Z",
-        "updated_at": "2024-11-26T02:54:50.579Z"
-    }
-},
-{
     "model": "books.schedule",
     "pk": "2151e128-3146-4f9e-a6c2-d24d9a62feba",
     "fields": {
@@ -2712,20 +2297,7 @@
         "updated_at": "2024-11-26T05:38:15.593Z"
     }
 },
-{
-    "model": "books.schedule",
-    "pk": "2e84c944-c897-4b1e-8968-44e88441b1ad",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 1,
-        "name": "SSAFY 월급",
-        "value": 1000000,
-        "day": 10,
-        "is_income": true,
-        "created_at": "2024-11-21T02:09:54.516Z",
-        "updated_at": "2024-11-21T02:09:54.516Z"
-    }
-},
+
 {
     "model": "books.schedule",
     "pk": "5f10e756-6e5e-44b4-9b4e-86d1e50bb8fb",
@@ -2740,20 +2312,7 @@
         "updated_at": "2024-11-26T05:38:01.223Z"
     }
 },
-{
-    "model": "books.schedule",
-    "pk": "a5b3cd05-2f8b-4760-a16b-fc0b351fe6bb",
-    "fields": {
-        "account_book_id": "7500ccaa-94e4-4def-b3ab-219fbf1e0b55",
-        "category_id": 1,
-        "name": "넷플릭스",
-        "value": 15000,
-        "day": 20,
-        "is_income": false,
-        "created_at": "2024-11-21T02:09:42.259Z",
-        "updated_at": "2024-11-21T02:09:42.259Z"
-    }
-},
+
 {
     "model": "books.schedule",
     "pk": "aa5d5ab7-1535-4216-9576-298bbe638298",
