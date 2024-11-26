@@ -99,6 +99,12 @@ onMounted(async () => {
   min-height: 800px;
   max-height: 90vh;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-header {
@@ -203,15 +209,6 @@ onMounted(async () => {
   color: #666;
   font-size: 14px;
   margin-bottom: 8px;
-}
-
-.card-type {
-  display: inline-block;
-  padding: 4px 12px;
-  background: #1a1438;
-  color: white;
-  border-radius: 20px;
-  font-size: 12px;
 }
 
 .no-cards {

@@ -549,4 +549,5 @@ onMounted(async () => {
   border-color: #4C6EF5;
   box-shadow: 0 2px 8px rgba(76, 110, 245, 0.1);
 }
+
 </style>
