@@ -34,6 +34,9 @@ import ScheduleEdit from './ScheduleEdit.vue'
 const store = useScheduleStore()
 const scheduleModal = ref(null)
 const schedules = ref([])
+const editModal = ref(null)
+const selectedSchedule = ref(null)
+
 
 const openScheduleModal = () => {
   scheduleModal.value.openModal()
@@ -50,26 +53,26 @@ const formatNumber = (value) => {
   return new Intl.NumberFormat('ko-KR').format(value)
 }
 
-onMounted(() => {
-  fetchSchedules()
-})
+
 
 const deleteSchedule = async (scheduleId) => {
   if (confirm('정말 삭제하시겠습니까?')) {
     const success = await store.deleteSchedule(scheduleId)
     if (success) {
-      await fetchSchedules()
+      schedules.value = schedules.value.filter(schedule => schedule.schedule_id !== scheduleId)
     }
+    await fetchSchedules()
   }
 }
-
-const editModal = ref(null)
-const selectedSchedule = ref(null)
 
 const openEditModal = (schedule) => {
   selectedSchedule.value = schedule
   editModal.value.openModal()
 }
+
+onMounted(() => {
+  fetchSchedules()
+})
 </script>
 
 <style scoped>

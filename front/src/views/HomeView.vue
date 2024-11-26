@@ -61,7 +61,7 @@
       </div>
 
       <div class="service-cards">
-        <RouterLink to="/calendar" class="service-card">
+        <RouterLink to="#" class="service-card">
           <div class="card-icon">
             <i class="ph ph-device-mobile"></i>
           </div>
@@ -71,7 +71,7 @@
           </div>
         </RouterLink>
 
-        <RouterLink to="/search" class="service-card">
+        <RouterLink to="#" class="service-card">
           <div class="card-icon">
             <i class="ph ph-smiley"></i>
           </div>
@@ -81,7 +81,7 @@
           </div>
         </RouterLink>
 
-        <RouterLink to="/analysis" class="service-card">
+        <RouterLink to="#" class="service-card">
           <div class="card-icon">
             <i class="ph ph-chart-line"></i>
           </div>
@@ -91,7 +91,7 @@
           </div>
         </RouterLink>
 
-        <RouterLink to="/recommend" class="service-card">
+        <RouterLink to="#" class="service-card">
           <div class="card-icon">
             <i class="ph ph-star"></i>
           </div>
