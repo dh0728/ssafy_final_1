@@ -57,6 +57,7 @@ const closeRecommendModal = () => {
   padding: 1rem 2rem;
   background-color: #ffffff;
   border-bottom: 1px solid #eaeaea;
+
 }
 
 .logo {

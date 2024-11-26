@@ -12,9 +12,8 @@
         <div class="info-header">
           <div class="cashback-tag">최대 9만원 캐시백</div>
           <div class="share-button">
-<!--            <img src="@/assets/images/share-icon.svg" alt="공유하기">-->
           </div>
-          <h1>{{ store.card.credit_card_name }}</h1>
+          <h1>{{ getCardName }}</h1>
           <p class="brand">{{ store.card.brand }}</p>
         </div>
 
@@ -95,6 +94,10 @@ const route = useRoute()
 const store = useCardStore()
 
 const cardData = computed(() => store.card)
+
+const getCardName = computed(() => {
+  return store.card.credit_card_name || store.card.check_card_name
+})
 
 const formatNumber = (number) => {
   return number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
