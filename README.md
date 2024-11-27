@@ -1,6 +1,6 @@
 # :cookie: cookiewalk
 <p align="center">
-  <img src="/images/logo.png" width="40%" height="30%" title="px(픽셀) 크기 설정"     alt="logo"></img>
+  <img src="/images/logo.png" width="40%" height="50%" title="px(픽셀) 크기 설정"     alt="logo"></img>
 </p>
 
 ## :fire: 쿠키워크 프로젝트 ##
