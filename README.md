@@ -36,14 +36,19 @@
 ## REST API URL
 
 ### auth ###
-<img src="./images/accounts.png" width="100%" height="100%" title="px(픽셀) 크기 설정"     alt="logo"></img>
+<p align="center">
+  <img src="./images/accounts.png" width="80%" height="80%" title="px(픽셀) 크기 설정"     alt="logo"></img>
+</p>
 
 ### 가계부 ###
-<img src="./images/account.png" width="100%" height="100%" title="px(픽셀) 크기 설정"     alt="logo"></img>
+<p align="center">
+  <img src="./images/account.png" width="80%" height="80%" title="px(픽셀) 크기 설정"     alt="logo"></img>
+</p>
 
 ### 카드 ###
-<img src="./images/cards.png" width="100%" height="100%" title="px(픽셀) 크기 설정"     alt="logo"></img>
-
+<p align="center">
+  <img src="./images/cards.png" width="80%" height="80%" title="px(픽셀) 크기 설정"     alt="logo"></img>
+</p>
 
 ## 가계북 주요 기능 ##
 
