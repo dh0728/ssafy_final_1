@@ -54,22 +54,95 @@
 
 
 ### 🔔메인페이지 ###
+<p>
+  <img src="./images/가계북_메인페이지.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
 
 ### 📌카드 조회 ###
 
+#### 카드 조회 ####
+
+<p>
+  <img src="./images/가계북_카드조회.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
+#### 카드 상세 페이지 ####
+
+<p>
+  <img src="./images/가계북_카드상세페이지.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
 ### 📅 캘린더 ###
+
+#### 달력 ####
+
+<p>
+  <img src="./images/가계북_캘린더_기본.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
+#### 내역 ####
+
+<p>
+  <img src="./images/가계북_캘린더_내역추가.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
+#### 예산 ####
+
+<p>
+  <img src="./images/가계북_캘린더_예산.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
+#### 금융일정 ####
+
+<p>
+  <img src="./images/가계북_캘린더_금융일정.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
 
 ### 📝 내역 ###
 
+#### 내역 조회 ####
+
+<p>
+  <img src="./images/가계북_내역_기본.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
+#### 내역 수정삭제 ####
+
+<p>
+  <img src="./images/가계북_내역_수정삭제.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
 ### 📸 영수증 인식 ###
 
+<p>
+  <img src="./images/가계북_영수증인식.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
 ### 📊 주간 월별 분석 ###
+<p>
+  <img src="./images/가계북_월별일별분석.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
 
 ### 🔍 카테고리별 분석 ###
 
+<p>
+  <img src="./images/가계북_카테고리분석.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
 ### 💳 내카드 목록 ###
 
+<p>
+  <img src="./images/가계북_내카드등록.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
+
+
 ### 💸 스마트한 카드 추천 ###
+
+<p>
+  <img src="./images/가계북_카드추천.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+</p>
 
 
 ## 🤬 프로젝트 진행중 어려웠던 점
