@@ -61,6 +61,8 @@
   <img src="./images/가계북_메인페이지.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
+
 ### 📌카드 조회 ###
 
 <br>
@@ -76,6 +78,8 @@
 <p>
   <img src="./images/가계북_카드상세페이지.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
+
+<hr>
 
 ### 📅 캘린더 ###
 
@@ -105,6 +109,7 @@
   <img src="./images/가계북_캘린더_금융일정.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
 
 ### 📝 내역 ###
 
@@ -122,17 +127,22 @@
   <img src="./images/가계북_내역_수정삭제.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
+
 ### 📸 영수증 인식 ###
 
 <p>
   <img src="./images/가계북_영수증인식.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
+
 ### 📊 주간 월별 분석 ###
 <p>
   <img src="./images/가계북_월별일별분석.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
 
 ### 🔍 카테고리별 분석 ###
 
@@ -140,12 +150,15 @@
   <img src="./images/가계북_카테고리분석.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
+
 ### 💳 내카드 목록 ###
 
 <p>
   <img src="./images/가계북_내카드등록.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
 
 ### 💸 스마트한 카드 추천 ###
 
@@ -153,6 +166,7 @@
   <img src="./images/가계북_카드추천.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
+<hr>
 
 ## 🤬 프로젝트 진행중 어려웠던 점
 
