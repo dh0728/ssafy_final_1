@@ -361,7 +361,7 @@ onMounted(async () => {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+  z-index: 1005;
 }
 
 .carousel-control.prev {
