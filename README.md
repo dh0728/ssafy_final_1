@@ -55,7 +55,7 @@
 
 ### 🔔메인페이지 ###
 <p align="center">
-  <img src="/images/가계북_메인페이지지.gif" width="50%" height="50%"title="px(픽셀) 크기 설정"alt="main_page"></img>
+  <img src="./images/가계북_메인페이지.gif" width="75%" height="75%"title="px(픽셀) 크기 설정"alt="main_page"></img>
 </p>
 
 ### 📌카드 조회 ###
