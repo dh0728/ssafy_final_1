@@ -283,7 +283,7 @@
     <td><img src="./images/송동현.png"></td>
   </tr>
   <tr>
-    <td><div align="center">프론트엔드</div></td>
-    <td><div align="center">백엔드</div></td>
+    <td><div align="center">Frontend</div></td>
+    <td><div align="center">Backend</div></td>
   </tr>
 </table>
