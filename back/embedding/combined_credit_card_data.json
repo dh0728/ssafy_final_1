@@ -1,0 +1,7382 @@
+[
+    {
+        "credit_card_id": 1,
+        "credit_card_name": "신한카드 Mr.Life",
+        "categories": [
+            "공과금/렌탈",
+            "마트/편의점",
+            "병원/약국",
+            "주유",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 2,
+        "credit_card_name": "현대카드 M",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 3,
+        "credit_card_name": "KB국민 My WE:SH 카드",
+        "categories": [
+            "영화/문화",
+            "해외",
+            "교통",
+            "기타",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 4,
+        "credit_card_name": "삼성카드 taptap O",
+        "categories": [
+            "공항라운지/PP",
+            "마트/편의점",
+            "주유",
+            "교통",
+            "기타",
+            "쇼핑",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 5,
+        "credit_card_name": "삼성카드 & MILEAGE PLATINUM (스카이패스)",
+        "categories": [
+            "기타",
+            "푸드",
+            "생활",
+            "통신",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 6,
+        "credit_card_name": "카드의정석 EVERY MILE SKYPASS",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 7,
+        "credit_card_name": "LOCA LIKIT 1.2",
+        "categories": [
+            "모든가맹점",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 8,
+        "credit_card_name": "BC 바로 클리어 플러스",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "프리미엄",
+            "생활",
+            "통신",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 9,
+        "credit_card_name": "신한카드 처음(ANNIVERSE)",
+        "categories": [
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 10,
+        "credit_card_name": "현대카드ZERO Edition3(할인형)",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 11,
+        "credit_card_name": "JADE Classic",
+        "categories": [
+            "공항라운지/PP",
+            "교통",
+            "생활",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 12,
+        "credit_card_name": "DA카드의정석Ⅱ",
+        "categories": [
+            "모든가맹점",
+            "공항라운지/PP",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 13,
+        "credit_card_name": "신한카드 Deep Oil",
+        "categories": [
+            "모든가맹점",
+            "영화/문화",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 14,
+        "credit_card_name": "삼성 iD SIMPLE 카드",
+        "categories": [
+            "공항라운지/PP",
+            "병원/약국",
+            "기타",
+            "여행/숙박",
+            "무실적",
+            "프리미엄",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 15,
+        "credit_card_name": "현대카드 Summit",
+        "categories": [
+            "마트/편의점",
+            "영화/문화",
+            "주유",
+            "교통",
+            "자동차/하이패스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 16,
+        "credit_card_name": "LOCA 365 카드",
+        "categories": [
+            "공과금/렌탈",
+            "금융",
+            "교통",
+            "푸드",
+            "무실적",
+            "생활",
+            "통신",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 17,
+        "credit_card_name": "삼성 iD GLOBAL 카드",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "생활",
+            "무실적",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 18,
+        "credit_card_name": "신한카드 처음",
+        "categories": [
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 19,
+        "credit_card_name": "올바른 FLEX 카드",
+        "categories": [
+            "공항라운지/PP",
+            "영화/문화",
+            "기타",
+            "쇼핑",
+            "생활",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 20,
+        "credit_card_name": "현대카드 MX Black Edition2",
+        "categories": [
+            "공항라운지/PP",
+            "마트/편의점",
+            "주유",
+            "교통",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 21,
+        "credit_card_name": "Easy all 티타늄카드",
+        "categories": [
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 22,
+        "credit_card_name": "American Express® Green Card Edition2",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 23,
+        "credit_card_name": "카드의정석 EVERY DISCOUNT",
+        "categories": [
+            "모든가맹점",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 24,
+        "credit_card_name": "신한카드 The BEST-F",
+        "categories": [
+            "공항라운지/PP",
+            "기타",
+            "쇼핑",
+            "여행/숙박",
+            "생활",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 25,
+        "credit_card_name": "American Express Blue",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "해외",
+            "교통",
+            "생활",
+            "통신",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 26,
+        "credit_card_name": "디지로카 London",
+        "categories": [
+            "해외",
+            "쇼핑",
+            "생활",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 27,
+        "credit_card_name": "굿데이올림카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 28,
+        "credit_card_name": "하나 스카이패스 아멕스 플래티늄 카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 29,
+        "credit_card_name": "올바른 NEW HAVE카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 30,
+        "credit_card_name": "BLISS.5 카드(마일리지)",
+        "categories": [
+            "생활",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 31,
+        "credit_card_name": "네이버 현대카드",
+        "categories": [
+            "영화/문화",
+            "금융",
+            "교통",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 32,
+        "credit_card_name": "아시아나 신한카드 Air 1.5",
+        "categories": [
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 33,
+        "credit_card_name": "IBK무민카드(신용)",
+        "categories": [
+            "병원/약국",
+            "주유",
+            "쇼핑",
+            "생활",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 34,
+        "credit_card_name": "LOCA Professional",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 35,
+        "credit_card_name": "다담카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "금융",
+            "교통",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 36,
+        "credit_card_name": "taptap DIGITAL",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 37,
+        "credit_card_name": "현대카드Z family Edition2",
+        "categories": [
+            "생활",
+            "간편결제",
+            "마트/편의점",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 38,
+        "credit_card_name": "현대카드ZERO Edition3(포인트형)",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "해외",
+            "교통",
+            "기타",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 39,
+        "credit_card_name": "American Express® Gold Card Edition2",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 40,
+        "credit_card_name": "신한카드 Point Plan",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 41,
+        "credit_card_name": "대한항공카드 300",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 42,
+        "credit_card_name": "K-패스 신한카드",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "교통",
+            "모든가맹점",
+            "쇼핑",
+            "프리미엄",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 43,
+        "credit_card_name": "신한카드 RPM+ Platinum#",
+        "categories": [
+            "생활",
+            "간편결제",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 44,
+        "credit_card_name": "I-Mileage (대한항공)",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "푸드",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 45,
+        "credit_card_name": "신한카드 Air One",
+        "categories": [
+            "생활",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 46,
+        "credit_card_name": "zgm.the pay카드",
+        "categories": [
+            "공항라운지/PP",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 47,
+        "credit_card_name": "BC 바로 MACAO 카드",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 48,
+        "credit_card_name": "삼성 iD ON 카드",
+        "categories": [
+            "프리미엄",
+            "마트/편의점",
+            "주유",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 49,
+        "credit_card_name": "원더카드 (원더 Life)",
+        "categories": [
+            "공항라운지/PP",
+            "주유",
+            "교통",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 50,
+        "credit_card_name": "삼성 iD CLASSY 카드",
+        "categories": [
+            "간편결제",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 51,
+        "credit_card_name": "JADE Prime",
+        "categories": [
+            "영화/문화",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 52,
+        "credit_card_name": "우리 K-패스(신용)",
+        "categories": [
+            "공항라운지/PP",
+            "기타",
+            "생활",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 53,
+        "credit_card_name": "현대백화점카드",
+        "categories": [
+            "무실적",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 54,
+        "credit_card_name": "BC 바로 에어 플러스 스카이패스",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "금융",
+            "기타",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 55,
+        "credit_card_name": "THE iD. PLATINUM(포인트)",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "여행/숙박",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 56,
+        "credit_card_name": "Oil & Life카드(Oil카드)",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 57,
+        "credit_card_name": "BeV V카드(스카이패스형)",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "기타",
+            "무실적",
+            "생활",
+            "통신",
+            "프리미엄",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 58,
+        "credit_card_name": "The Easy카드",
+        "categories": [
+            "간편결제",
+            "쇼핑",
+            "주유",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 59,
+        "credit_card_name": "카드의정석 SHOPPING+",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "기타",
+            "여행/숙박",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 60,
+        "credit_card_name": "NH올원 Shopping&11번가카드(R2타입)",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "해외",
+            "교통",
+            "금융",
+            "푸드",
+            "무실적",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 61,
+        "credit_card_name": "ALL 우리카드 Infinite",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 62,
+        "credit_card_name": "LOCA LIKIT Eat",
+        "categories": [
+            "생활",
+            "무실적",
+            "기타",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 63,
+        "credit_card_name": "K-패스 (신용)",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 64,
+        "credit_card_name": "zgm.일본여행중 카드",
+        "categories": [
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 65,
+        "credit_card_name": "CLUB SK 카드",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "병원/약국",
+            "주유",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 66,
+        "credit_card_name": "티머니 Pay & GO 신한카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 67,
+        "credit_card_name": "삼성 iD ALL 카드",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "기타",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 68,
+        "credit_card_name": "GOAT BC 바로카드",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 69,
+        "credit_card_name": "the Red (항공 마일리지형)",
+        "categories": [
+            "생활",
+            "푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 70,
+        "credit_card_name": "THE iD. TITANIUM(포인트)",
+        "categories": [
+            "생활",
+            "푸드",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 71,
+        "credit_card_name": "카드의정석 TEN",
+        "categories": [
+            "공항라운지/PP",
+            "기타",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 72,
+        "credit_card_name": "가온올림카드(실속형)",
+        "categories": [
+            "항공마일리지",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 73,
+        "credit_card_name": "K-22(Mileage)",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 74,
+        "credit_card_name": "하나 CLUB H 아메리칸 익스프레스 리저브 카드",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 75,
+        "credit_card_name": "청춘대로 톡톡카드",
+        "categories": [
+            "무실적",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 76,
+        "credit_card_name": "롯데백화점 롯데카드",
+        "categories": [
+            "공항라운지/PP",
+            "쇼핑",
+            "프리미엄",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 77,
+        "credit_card_name": "별다줄카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "교통",
+            "푸드",
+            "무실적",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 78,
+        "credit_card_name": "BLISS.5 카드(포인트)",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 79,
+        "credit_card_name": "트래블월렛 우리카드",
+        "categories": [
+            "주유",
+            "교통",
+            "기타",
+            "자동차/하이패스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 80,
+        "credit_card_name": "SKYPASS 롯데 아멕스카드",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "기타",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 81,
+        "credit_card_name": "현대카드 MM",
+        "categories": [
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 82,
+        "credit_card_name": "HERITAGE Smart [대한항공 마일리지형]",
+        "categories": [
+            "생활",
+            "간편결제",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 83,
+        "credit_card_name": "대한항공카드 120",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "교통",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 84,
+        "credit_card_name": "신한카드 Deep On Platinum+",
+        "categories": [
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 85,
+        "credit_card_name": "신한카드 Point Plan+",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 86,
+        "credit_card_name": "올바른 MYPICK 카드",
+        "categories": [
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 87,
+        "credit_card_name": "현대카드Z work Edition2",
+        "categories": [
+            "영화/문화",
+            "금융",
+            "교통",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 88,
+        "credit_card_name": "카드의정석 Dear, Shopper(디어쇼퍼)",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "금융",
+            "기타",
+            "모든가맹점",
+            "여행/숙박",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 89,
+        "credit_card_name": "트래블로그 신용카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 90,
+        "credit_card_name": "the Green Edition3",
+        "categories": [
+            "병원/약국",
+            "푸드",
+            "쇼핑",
+            "여행/숙박",
+            "무실적",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 91,
+        "credit_card_name": "zgm.휴가중카드",
+        "categories": [
+            "해외",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "여행/숙박",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 92,
+        "credit_card_name": "신한카드 Edu Plan+",
+        "categories": [
+            "모든가맹점",
+            "금융",
+            "프리미엄",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 93,
+        "credit_card_name": "신세계이마트 삼성카드7",
+        "categories": [
+            "무실적",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 94,
+        "credit_card_name": "IBK-Hybrid(하이브리드)카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 95,
+        "credit_card_name": "네이버페이 taptap",
+        "categories": [
+            "간편결제",
+            "카페/디저트",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 96,
+        "credit_card_name": "the Pink Edition2",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 97,
+        "credit_card_name": "모니모카드",
+        "categories": [
+            "영화/문화",
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 98,
+        "credit_card_name": "삼성 iD ENERGY 카드",
+        "categories": [
+            "공과금/렌탈",
+            "해외",
+            "기타",
+            "쇼핑",
+            "생활",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 99,
+        "credit_card_name": "메리어트 본보이™ 더 베스트 신한카드",
+        "categories": [
+            "공항라운지/PP",
+            "주유",
+            "쇼핑",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 100,
+        "credit_card_name": "국민행복 삼성카드 V2",
+        "categories": [
+            "생활",
+            "영화/문화",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 101,
+        "credit_card_name": "로얄블루1000카드 [SKYPASS]",
+        "categories": [
+            "생활",
+            "푸드",
+            "교통",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 102,
+        "credit_card_name": "신한카드 The CLASSIC+",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 103,
+        "credit_card_name": "카드의정석 Dear, Traveler(디어트래블러)",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "주유",
+            "쇼핑",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 104,
+        "credit_card_name": "JADE First Centum",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 105,
+        "credit_card_name": "쿠팡 와우 카드",
+        "categories": [
+            "공항라운지/PP",
+            "기타",
+            "무실적",
+            "프리미엄",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 106,
+        "credit_card_name": "ALL 우리카드 Premium",
+        "categories": [
+            "공항라운지/PP",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 107,
+        "credit_card_name": "디지로카 Edu",
+        "categories": [
+            "공항라운지/PP",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 108,
+        "credit_card_name": "Easy pick 티타늄 카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 109,
+        "credit_card_name": "Oil & Life카드(Life카드)",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 110,
+        "credit_card_name": "삼성 iD PLUG-IN 카드",
+        "categories": [
+            "공과금/렌탈",
+            "마트/편의점",
+            "주유",
+            "교통",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "프리미엄",
+            "간편결제",
+            "통신",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 111,
+        "credit_card_name": "현대백화점 Fit카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 112,
+        "credit_card_name": "始發(시발)카드",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 113,
+        "credit_card_name": "zgm.play카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "금융",
+            "기타",
+            "푸드",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 114,
+        "credit_card_name": "디지로카 Paris",
+        "categories": [
+            "주유",
+            "금융",
+            "해외",
+            "생활",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 115,
+        "credit_card_name": "American Express The Platinum Card®Edition2",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "무실적",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 116,
+        "credit_card_name": "BeV V카드(포인트형)",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "기타",
+            "푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 117,
+        "credit_card_name": "원더카드 FREE",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 118,
+        "credit_card_name": "I-Mileage (아시아나)",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 119,
+        "credit_card_name": "NH올원 파이카드",
+        "categories": [
+            "영화/문화",
+            "기타",
+            "푸드",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 120,
+        "credit_card_name": "카드의정석 PREMIUM MILEAGE(SKYPASS)",
+        "categories": [
+            "생활",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 121,
+        "credit_card_name": "대한항공카드 the First Edition2",
+        "categories": [
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 122,
+        "credit_card_name": "LOCA LIKIT Play",
+        "categories": [
+            "병원/약국",
+            "금융",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 123,
+        "credit_card_name": "Mile1 하나카드",
+        "categories": [
+            "모든가맹점",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 124,
+        "credit_card_name": "대한항공카드 060",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 125,
+        "credit_card_name": "삼성카드 taptap S",
+        "categories": [
+            "모든가맹점",
+            "영화/문화",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 126,
+        "credit_card_name": "신한카드 국민행복",
+        "categories": [
+            "생활",
+            "영화/문화",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 127,
+        "credit_card_name": "삼성 iD VITA 카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 128,
+        "credit_card_name": "taptap SHOPPING",
+        "categories": [
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 129,
+        "credit_card_name": "K-패스 카드",
+        "categories": [
+            "마트/편의점",
+            "병원/약국",
+            "해외",
+            "금융",
+            "기타",
+            "무실적",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 130,
+        "credit_card_name": "American Express Rose Gold KB Kookmin Card",
+        "categories": [
+            "주유",
+            "교통",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 131,
+        "credit_card_name": "I-어디로든 그린카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "모든가맹점",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 132,
+        "credit_card_name": "BC 바로 리워드 플러스",
+        "categories": [
+            "마트/편의점",
+            "해외",
+            "교통",
+            "생활",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 133,
+        "credit_card_name": "트래블로그 PRESTIGE 신용카드",
+        "categories": [
+            "생활",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 134,
+        "credit_card_name": "T나는혜택 삼성카드",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 135,
+        "credit_card_name": "K-22(Point)",
+        "categories": [
+            "주유",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 136,
+        "credit_card_name": "LOCA LIKIT Shop",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 137,
+        "credit_card_name": "네이버페이 라인프렌즈 신한카드",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "쇼핑",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 138,
+        "credit_card_name": "the Red (M포인트형)",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 139,
+        "credit_card_name": "쇼핑앤조이 카드",
+        "categories": [
+            "쇼핑",
+            "주유",
+            "무실적",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 140,
+        "credit_card_name": "LOCA 나누기 카드",
+        "categories": [
+            "여행/숙박",
+            "쇼핑",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 141,
+        "credit_card_name": "코웨이 IBK카드",
+        "categories": [
+            "주유",
+            "금융",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "무실적",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 142,
+        "credit_card_name": "스카이패스 티타늄 카드",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "금융",
+            "교통",
+            "쇼핑",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 143,
+        "credit_card_name": "신한카드 Air Platinum#",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 144,
+        "credit_card_name": "신한카드 SOL트래블",
+        "categories": [
+            "간편결제",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 145,
+        "credit_card_name": "신한카드 YOLO ⓘ",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "모든가맹점",
+            "쇼핑",
+            "여행/숙박",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 146,
+        "credit_card_name": "WE:SH Travel",
+        "categories": [
+            "교통",
+            "기타",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 147,
+        "credit_card_name": "taptap DRIVE",
+        "categories": [
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 148,
+        "credit_card_name": "삼성카드 taptap I",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 149,
+        "credit_card_name": "신협-신한카드 Hi-Point",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 150,
+        "credit_card_name": "11번가 신한카드",
+        "categories": [
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 151,
+        "credit_card_name": "I-ALL",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 152,
+        "credit_card_name": "트레이더스신세계 삼성카드",
+        "categories": [
+            "생활",
+            "공항라운지/PP",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 153,
+        "credit_card_name": "토스뱅크 신용카드 Wide",
+        "categories": [
+            "레저/스포츠",
+            "주유",
+            "해외",
+            "푸드",
+            "쇼핑",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 154,
+        "credit_card_name": "#Pay 신한카드",
+        "categories": [
+            "마트/편의점",
+            "병원/약국",
+            "교통",
+            "통신",
+            "푸드",
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 155,
+        "credit_card_name": "신한카드 Edu",
+        "categories": [
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 156,
+        "credit_card_name": "신한카드 구독 좋아요",
+        "categories": [
+            "영화/문화",
+            "주유",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "생활",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 157,
+        "credit_card_name": "카드의정석 EVERY 1",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 158,
+        "credit_card_name": "D4카드의정석Ⅱ",
+        "categories": [
+            "무실적",
+            "금융",
+            "비지니스",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 159,
+        "credit_card_name": "메리어트 본보이™ 더 클래식 신한카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "여행/숙박",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 160,
+        "credit_card_name": "BC 바로 페이백 플러스",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 161,
+        "credit_card_name": "Easy all 카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 162,
+        "credit_card_name": "zgm 할인카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 163,
+        "credit_card_name": "참! 좋은 다이소카드(신용)",
+        "categories": [
+            "무실적",
+            "주유",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 164,
+        "credit_card_name": "LOCA 100",
+        "categories": [
+            "금융",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 165,
+        "credit_card_name": "삼성페이카드",
+        "categories": [
+            "마트/편의점",
+            "병원/약국",
+            "교육/육아",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 166,
+        "credit_card_name": "제주항공 Refresh Point 카드",
+        "categories": [
+            "모든가맹점",
+            "해외",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 167,
+        "credit_card_name": "현대카드 X",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 168,
+        "credit_card_name": "신한카드 The CLASSIC-Y",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "기타",
+            "쇼핑",
+            "여행/숙박",
+            "생활",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 169,
+        "credit_card_name": "카카오뱅크 개인사업자 삼성카드",
+        "categories": [
+            "생활",
+            "공과금/렌탈",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 170,
+        "credit_card_name": "금융포인트리카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 171,
+        "credit_card_name": "신한카드 B.Big(삑)",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 172,
+        "credit_card_name": "신한카드 The PREMIER GOLD EDITION (스카이패스)",
+        "categories": [
+            "마트/편의점",
+            "영화/문화",
+            "교통",
+            "기타",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 173,
+        "credit_card_name": "탄탄대로 Biz 카드",
+        "categories": [
+            "기타",
+            "모든가맹점",
+            "푸드",
+            "쇼핑",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 174,
+        "credit_card_name": "디지로카 Auto",
+        "categories": [
+            "무실적",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 175,
+        "credit_card_name": "New후불하이패스카드",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 176,
+        "credit_card_name": "삼성 BIZ iD BENEFIT카드",
+        "categories": [
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 177,
+        "credit_card_name": "CLUB Signature SKYPASS 카드",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 178,
+        "credit_card_name": "카카오뱅크 KB국민카드",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 179,
+        "credit_card_name": "올바른 BAZIC 카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 180,
+        "credit_card_name": "신한카드 후불하이패스+ (하이패스 전용)",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "푸드",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 181,
+        "credit_card_name": "일상의 기쁨카드(신용)",
+        "categories": [
+            "비지니스",
+            "공과금/렌탈",
+            "기타",
+            "모든가맹점",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 182,
+        "credit_card_name": "SKT 우리카드",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 183,
+        "credit_card_name": "K-패스카드",
+        "categories": [
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 184,
+        "credit_card_name": "LOCA LIKIT",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "쇼핑",
+            "뷰티/피트니스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 185,
+        "credit_card_name": "싱가포르항공 크리스플라이어 더 베스트 신한카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "푸드",
+            "여행/숙박",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 186,
+        "credit_card_name": "삼성 iD PET 카드",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "통신",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 187,
+        "credit_card_name": "마일리지 가온카드(대한항공)",
+        "categories": [
+            "교통",
+            "기타",
+            "쇼핑",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 188,
+        "credit_card_name": "신세계 BC 바로 콰트로 플러스",
+        "categories": [
+            "생활",
+            "무실적",
+            "해외",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 189,
+        "credit_card_name": "카드의정석 MILEAGE SKYPASS",
+        "categories": [
+            "기타",
+            "병원/약국",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 190,
+        "credit_card_name": "K-패스 삼성카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 191,
+        "credit_card_name": "카카오뱅크 삼성카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "푸드",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 192,
+        "credit_card_name": "zgm shopping카드",
+        "categories": [
+            "교통",
+            "푸드",
+            "생활",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 193,
+        "credit_card_name": "American Express Blue KB Kookmin Card",
+        "categories": [
+            "마트/편의점",
+            "영화/문화",
+            "교통",
+            "쇼핑",
+            "무실적",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 194,
+        "credit_card_name": "Easy on카드",
+        "categories": [
+            "해외",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 195,
+        "credit_card_name": "BC 바로 On&Off 카드",
+        "categories": [
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 196,
+        "credit_card_name": "네이버페이 신한카드",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "해외",
+            "교통",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 197,
+        "credit_card_name": "모니모A",
+        "categories": [
+            "모든가맹점",
+            "공항라운지/PP",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 198,
+        "credit_card_name": "I-PET",
+        "categories": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 199,
+        "credit_card_name": "디지로카 Wellness",
+        "categories": [
+            "교통",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 200,
+        "credit_card_name": "현대카드Z play",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "기타",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 201,
+        "credit_card_name": "KB국민 WE:SH All카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 202,
+        "credit_card_name": "카드의정석 I&U+",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "영화/문화",
+            "주유",
+            "교통",
+            "기타",
+            "쇼핑",
+            "뷰티/피트니스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 203,
+        "credit_card_name": "네이버페이 쇼핑엔로카",
+        "categories": [
+            "영화/문화",
+            "생활",
+            "마트/편의점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 204,
+        "credit_card_name": "Easy shopping 티타늄카드",
+        "categories": [
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 205,
+        "credit_card_name": "카드의정석 APT",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 206,
+        "credit_card_name": "K-패스카드(신용)",
+        "categories": [
+            "애완동물",
+            "금융",
+            "해외",
+            "생활",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 207,
+        "credit_card_name": "아시아나 삼성지엔미플래티늄카드",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 208,
+        "credit_card_name": "JADE First",
+        "categories": [
+            "해외",
+            "교통",
+            "푸드",
+            "간편결제",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 209,
+        "credit_card_name": "신한카드 Deep Once Plus",
+        "categories": [
+            "영화/문화",
+            "기타",
+            "무실적",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 210,
+        "credit_card_name": "CEO카드",
+        "categories": [
+            "통신",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 211,
+        "credit_card_name": "Easy link 티타늄카드",
+        "categories": [
+            "기타",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 212,
+        "credit_card_name": "삼성 iD AUTO 카드",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 213,
+        "credit_card_name": "삼성카드 BIZ LEADERS",
+        "categories": [
+            "금융",
+            "기타",
+            "모든가맹점",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 214,
+        "credit_card_name": "톡톡 Pay카드",
+        "categories": [
+            "생활",
+            "기타",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 215,
+        "credit_card_name": "#tag1카드 Navy",
+        "categories": [
+            "무실적",
+            "금융",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 216,
+        "credit_card_name": "BeV Ⅸ 토탈마일 카드",
+        "categories": [
+            "영화/문화",
+            "해외",
+            "푸드",
+            "쇼핑",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 217,
+        "credit_card_name": "",
+        "categories": [
+            "프리미엄",
+            "해외",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 218,
+        "credit_card_name": "LOCA MONEY",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "마트/편의점",
+            "기타",
+            "쇼핑",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 219,
+        "credit_card_name": "디지로카 Las Vegas",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 220,
+        "credit_card_name": "롯데백화점 FLEX카드",
+        "categories": [
+            "항공마일리지",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 221,
+        "credit_card_name": "Daily With(데일리위드)카드",
+        "categories": [
+            "해외",
+            "생활",
+            "무실적",
+            "간편결제",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 222,
+        "credit_card_name": "신한카드 Deep Store",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "레저/스포츠",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 223,
+        "credit_card_name": "1Q Special+",
+        "categories": [
+            "푸드",
+            "영화/문화",
+            "쇼핑",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 224,
+        "credit_card_name": "CLUB Premier (Hotel형)",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 225,
+        "credit_card_name": "NH20 해봄카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "자동차/하이패스",
+            "푸드",
+            "무실적",
+            "항공마일리지",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 226,
+        "credit_card_name": "신한카드 Deep Once",
+        "categories": [
+            "간편결제",
+            "쇼핑",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 227,
+        "credit_card_name": "신한카드 Deep Taking",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "해외",
+            "교통",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 228,
+        "credit_card_name": "카드의정석 UNTACT AIR",
+        "categories": [
+            "레저/스포츠",
+            "기타",
+            "쇼핑",
+            "생활",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 229,
+        "credit_card_name": "the Purple",
+        "categories": [
+            "무실적",
+            "주유",
+            "금융",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 230,
+        "credit_card_name": "삼성 iD ONE 카드",
+        "categories": [
+            "쇼핑",
+            "마트/편의점",
+            "애완동물",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 231,
+        "credit_card_name": "CLUB1카드 200",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "쇼핑",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 232,
+        "credit_card_name": "The CJ KB국민카드",
+        "categories": [
+            "레저/스포츠",
+            "주유",
+            "항공마일리지",
+            "프리미엄",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 233,
+        "credit_card_name": "스카이패스 삼성아멕스카드",
+        "categories": [
+            "모든가맹점",
+            "주유",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 234,
+        "credit_card_name": "나무 NH농협카드",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "교통",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "간편결제",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 235,
+        "credit_card_name": "[IBK] 그린카드v2",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 236,
+        "credit_card_name": "Easy ring 티타늄카드",
+        "categories": [
+            "영화/문화",
+            "기타",
+            "생활",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 237,
+        "credit_card_name": "현대카드M-경차전용카드(유류세 환급)",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 238,
+        "credit_card_name": "HERITAGE Reserve(스카이패스형)",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "모든가맹점",
+            "생활",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 239,
+        "credit_card_name": "SmileCard Edition2",
+        "categories": [
+            "해외",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 240,
+        "credit_card_name": "the black",
+        "categories": [
+            "간편결제",
+            "마트/편의점",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 241,
+        "credit_card_name": "일년의 설렘카드",
+        "categories": [
+            "영화/문화",
+            "주유",
+            "모든가맹점",
+            "생활",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 242,
+        "credit_card_name": "토스 신용카드",
+        "categories": [
+            "생활",
+            "해외",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 243,
+        "credit_card_name": "하나 원큐 카드",
+        "categories": [
+            "레저/스포츠",
+            "기타",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 244,
+        "credit_card_name": "EV카드",
+        "categories": [
+            "주유",
+            "교통",
+            "생활",
+            "통신",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 245,
+        "credit_card_name": "굿데이카드",
+        "categories": [
+            "기타",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 246,
+        "credit_card_name": "카드의정석 EVERY POINT",
+        "categories": [
+            "해외",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 247,
+        "credit_card_name": "CLUB Premier (Travel 형)",
+        "categories": [
+            "무실적",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 248,
+        "credit_card_name": "RAUME O (스카이패스)",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 249,
+        "credit_card_name": "BeV Ⅲ 카드",
+        "categories": [
+            "주유",
+            "금융",
+            "교통",
+            "기타",
+            "여행/숙박",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 250,
+        "credit_card_name": "신한카드 Cube Platinum#",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "영화/문화"
+        ]
+    },
+    {
+        "credit_card_id": 251,
+        "credit_card_name": "카드의정석 EVERY 1 (망그러진곰 Edition)",
+        "categories": [
+            "공과금/렌탈",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 252,
+        "credit_card_name": "BC 바로 KaPick",
+        "categories": [
+            "통신",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 253,
+        "credit_card_name": "신한카드 Globus",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "모든가맹점",
+            "생활",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 254,
+        "credit_card_name": "신한카드 YaY",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 255,
+        "credit_card_name": "Clip카드",
+        "categories": [
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 256,
+        "credit_card_name": "Diners Club POINT",
+        "categories": [
+            "금융",
+            "교통",
+            "기타",
+            "쇼핑",
+            "여행/숙박",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 257,
+        "credit_card_name": "zgm.streaming카드",
+        "categories": [
+            "무실적",
+            "주유",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 258,
+        "credit_card_name": "삼성 iD NOMAD 카드",
+        "categories": [
+            "여행/숙박",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 259,
+        "credit_card_name": "톡톡 with카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 260,
+        "credit_card_name": "ZipL 신용카드",
+        "categories": [
+            "주유",
+            "교통",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 261,
+        "credit_card_name": "롯데 국민행복카드",
+        "categories": [
+            "무실적",
+            "레저/스포츠",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 262,
+        "credit_card_name": "롯데포인트 플러스 카드",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 263,
+        "credit_card_name": "춘식이 모바일 로카",
+        "categories": [
+            "공항라운지/PP",
+            "마트/편의점",
+            "해외",
+            "애완동물",
+            "주유",
+            "쇼핑",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 264,
+        "credit_card_name": "트래블로그 SKYPASS 신용카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 265,
+        "credit_card_name": "I-나눔",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 266,
+        "credit_card_name": "NOL 카드",
+        "categories": [
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 267,
+        "credit_card_name": "신한카드 Eats More(이츠모아)",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "기타",
+            "생활",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 268,
+        "credit_card_name": "신한카드 Simple Platinum#",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "공항라운지/PP",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 269,
+        "credit_card_name": "GOLD FOR LOTTE DEPARTMENT STORE",
+        "categories": [
+            "모든가맹점",
+            "쇼핑",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 270,
+        "credit_card_name": "LOCA X 구독",
+        "categories": [
+            "쇼핑",
+            "금융",
+            "공과금/렌탈",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 271,
+        "credit_card_name": "신한카드 Simple+",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 272,
+        "credit_card_name": "카카오페이 신용카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 273,
+        "credit_card_name": "OK캐쉬백 위비할인카드",
+        "categories": [
+            "병원/약국",
+            "교통",
+            "쇼핑",
+            "통신",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 274,
+        "credit_card_name": "zgm.rounding카드",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 275,
+        "credit_card_name": "국민행복카드(신용)",
+        "categories": [
+            "생활",
+            "통신",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 276,
+        "credit_card_name": "넥슨 현대카드UNLIMITED",
+        "categories": [
+            "영화/문화",
+            "푸드",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 277,
+        "credit_card_name": "삼성카앤모아카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 278,
+        "credit_card_name": "Easy pick카드",
+        "categories": [
+            "간편결제",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 279,
+        "credit_card_name": "MY S-OIL 삼성카드",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 280,
+        "credit_card_name": "NH올원 All100(올백)카드",
+        "categories": [
+            "자동차/하이패스",
+            "기타",
+            "주유",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 281,
+        "credit_card_name": "the Red Stripe Edition2",
+        "categories": [
+            "생활",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 282,
+        "credit_card_name": "신한카드 Unboxing",
+        "categories": [
+            "해외",
+            "기타",
+            "무실적",
+            "생활",
+            "통신",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 283,
+        "credit_card_name": "CU·배달의민족 삼성카드 taptap",
+        "categories": [
+            "뷰티/피트니스",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 284,
+        "credit_card_name": "신한카드 주거래 신용",
+        "categories": [
+            "생활",
+            "영화/문화",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 285,
+        "credit_card_name": "어디로든 그린카드 X LOCA",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 286,
+        "credit_card_name": "NH올원 LGU+카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 287,
+        "credit_card_name": "Smilecard Edition3",
+        "categories": [
+            "무실적",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 288,
+        "credit_card_name": "신세계 the Mile 하나카드",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "쇼핑",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 289,
+        "credit_card_name": "신한카드 Shopping",
+        "categories": [
+            "모든가맹점",
+            "금융",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 290,
+        "credit_card_name": "올바른 POINT UP 카드",
+        "categories": [
+            "해외",
+            "생활",
+            "무실적",
+            "프리미엄",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 291,
+        "credit_card_name": "카드의정석 댕댕냥이(고양이)",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 292,
+        "credit_card_name": "후불하이패스 카드",
+        "categories": [
+            "공항라운지/PP",
+            "마트/편의점",
+            "해외",
+            "애완동물",
+            "주유",
+            "쇼핑",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 293,
+        "credit_card_name": "Any PLUS 카드",
+        "categories": [
+            "쇼핑",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 294,
+        "credit_card_name": "HERITAGE Smart [할인형]",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 295,
+        "credit_card_name": "zgm.고향으로카드",
+        "categories": [
+            "통신",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 296,
+        "credit_card_name": "디지로카 Golf",
+        "categories": [
+            "생활",
+            "무실적",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 297,
+        "credit_card_name": "디지로카 Pet",
+        "categories": [
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 298,
+        "credit_card_name": "K-패스 하나 신용카드",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "기타",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 299,
+        "credit_card_name": "KB국민 국민행복카드",
+        "categories": [
+            "영화/문화",
+            "해외",
+            "주유",
+            "쇼핑",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 300,
+        "credit_card_name": "KT 카드의정석 SUPER DC Ⅱ",
+        "categories": [
+            "자동차/하이패스",
+            "영화/문화",
+            "주유",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 301,
+        "credit_card_name": "신한카드 플리",
+        "categories": [
+            "모든가맹점",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 302,
+        "credit_card_name": "와이즈카드",
+        "categories": [
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 303,
+        "credit_card_name": "Hyundai Mobility(모빌리티) Platinum",
+        "categories": [
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 304,
+        "credit_card_name": "LOCA Mobility 반띵 카드",
+        "categories": [
+            "무실적",
+            "금융",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 305,
+        "credit_card_name": "SKT-현대카드M Edition3(라이트할부형2.0)",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "해외",
+            "푸드"
+        ]
+    },
+    {
+        "credit_card_id": 306,
+        "credit_card_name": "카카오뱅크 하나카드",
+        "categories": [
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 307,
+        "credit_card_name": "zgm living카드",
+        "categories": [
+            "모든가맹점",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 308,
+        "credit_card_name": "KB국민카드 KaPick",
+        "categories": [
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 309,
+        "credit_card_name": "마일리지 가온카드(아시아나)",
+        "categories": [
+            "레저/스포츠",
+            "주유",
+            "해외",
+            "쇼핑",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 310,
+        "credit_card_name": "카카오뱅크 롯데카드",
+        "categories": [
+            "모든가맹점",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 311,
+        "credit_card_name": "IBK-Syrup카드[신용]",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 312,
+        "credit_card_name": "갤러리아 우리카드",
+        "categories": [
+            "간편결제",
+            "영화/문화",
+            "통신",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 313,
+        "credit_card_name": "삼성페이 삼성카드 taptap",
+        "categories": [
+            "해외",
+            "교통",
+            "여행/숙박",
+            "생활",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 314,
+        "credit_card_name": "스카이패스 KB국민카드",
+        "categories": [
+            "푸드",
+            "마트/편의점",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 315,
+        "credit_card_name": "스타벅스 현대카드",
+        "categories": [
+            "통신",
+            "생활",
+            "영화/문화",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 316,
+        "credit_card_name": "신한카드 EVerywhere",
+        "categories": [
+            "애완동물",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 317,
+        "credit_card_name": "아멕스 플래티넘 아시아나클럽 롯데카드",
+        "categories": [
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 318,
+        "credit_card_name": "카드의정석 댕댕냥이(강아지)",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 319,
+        "credit_card_name": "현대카드 MY BUSINESS ZERO Food&Drink",
+        "categories": [
+            "영화/문화",
+            "통신",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 320,
+        "credit_card_name": "SSG.COM 삼성카드",
+        "categories": [
+            "무실적",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 321,
+        "credit_card_name": "디지로카 Monaco",
+        "categories": [
+            "공항라운지/PP",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 322,
+        "credit_card_name": "모바일엔디지로카",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 323,
+        "credit_card_name": "Kia Members 신용카드 Edition2",
+        "categories": [
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 324,
+        "credit_card_name": "Mile 1.6 대한항공",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 325,
+        "credit_card_name": "NU 후불하이패스",
+        "categories": [
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 326,
+        "credit_card_name": "SolSol++(쏠쏠투플러스)카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 327,
+        "credit_card_name": "Trip to 로카",
+        "categories": [
+            "생활",
+            "간편결제",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 328,
+        "credit_card_name": "무신사 현대카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 329,
+        "credit_card_name": "아시아나 마일리지카드",
+        "categories": [
+            "공과금/렌탈",
+            "마트/편의점",
+            "병원/약국",
+            "금융",
+            "생활",
+            "통신",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 330,
+        "credit_card_name": "CLUB Primus Skypass 카드",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "교통",
+            "모든가맹점",
+            "쇼핑",
+            "프리미엄",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 331,
+        "credit_card_name": "위카드",
+        "categories": [
+            "영화/문화",
+            "항공마일리지",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 332,
+        "credit_card_name": "어디로든 그린카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "쇼핑",
+            "여행/숙박",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 333,
+        "credit_card_name": "원더카드 T",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 334,
+        "credit_card_name": "케이뱅크 SIMPLE 카드",
+        "categories": [
+            "생활",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 335,
+        "credit_card_name": "Kia Members 경차전용카드(유류세 환급)",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 336,
+        "credit_card_name": "위 테라카드(스카이패스)",
+        "categories": [
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 337,
+        "credit_card_name": "알파원카드",
+        "categories": [
+            "해외",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 338,
+        "credit_card_name": "올바른TRAVEL카드(일본특화)",
+        "categories": [
+            "교통",
+            "쇼핑",
+            "생활",
+            "뷰티/피트니스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 339,
+        "credit_card_name": "현대카드 MY BUSINESS ZERO Online Seller",
+        "categories": [
+            "모든가맹점",
+            "영화/문화",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 340,
+        "credit_card_name": "BC 바로 에어 플러스 아시아나",
+        "categories": [
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 341,
+        "credit_card_name": "IBK DC히어로즈 카드(신용)",
+        "categories": [
+            "주유",
+            "교통",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 342,
+        "credit_card_name": "kt SUPER 카드",
+        "categories": [
+            "금융",
+            "주유",
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 343,
+        "credit_card_name": "LG U+ 삼성카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 344,
+        "credit_card_name": "NU Nature",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "통신",
+            "생활",
+            "간편결제",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 345,
+        "credit_card_name": "THE iD. TITANIUM (아시아나)",
+        "categories": [
+            "모든가맹점",
+            "비지니스",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 346,
+        "credit_card_name": "신한카드 Deep Making",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 347,
+        "credit_card_name": "신한카드 집",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 348,
+        "credit_card_name": "I’m YOLO 플래티넘",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 349,
+        "credit_card_name": "KB국민 Our WE:SH 카드",
+        "categories": [
+            "생활",
+            "금융",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 350,
+        "credit_card_name": "New LG전자 베스트샵 PLUS 신한카드",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "교통",
+            "무실적",
+            "간편결제",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 351,
+        "credit_card_name": "신한카드 The CLASSIC-L",
+        "categories": [
+            "모든가맹점",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 352,
+        "credit_card_name": "HERITAGE Exclusive",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 353,
+        "credit_card_name": "Mile 1.6 아시아나",
+        "categories": [
+            "영화/문화",
+            "항공마일리지",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 354,
+        "credit_card_name": "RAUME O",
+        "categories": [
+            "프리미엄",
+            "쇼핑",
+            "무실적",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 355,
+        "credit_card_name": "S1카드",
+        "categories": [
+            "주유",
+            "교통",
+            "기타",
+            "생활",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 356,
+        "credit_card_name": "아시아나 올림카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 357,
+        "credit_card_name": "LG U+ Bora 신한카드 Big Plus",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 358,
+        "credit_card_name": "넥슨 현대카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 359,
+        "credit_card_name": "신세계 BC 바로 SEVEN FLEX",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 360,
+        "credit_card_name": "신세계 THE S VIP",
+        "categories": [
+            "해외",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 361,
+        "credit_card_name": "에너지 더블 카드",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 362,
+        "credit_card_name": "올바른 Edu 카드",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 363,
+        "credit_card_name": "코스트코 리워드 현대카드 Edition2",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "기타",
+            "푸드",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 364,
+        "credit_card_name": "#MY WAY 카드",
+        "categories": [
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 365,
+        "credit_card_name": "KT 가족만족 할부 신한카드",
+        "categories": [
+            "기타",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 366,
+        "credit_card_name": "NH농협 올바른LIFE카드(적립형)",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 367,
+        "credit_card_name": "Real? Real! 2 카드",
+        "categories": [
+            "기타",
+            "프리미엄",
+            "교육/육아",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 368,
+        "credit_card_name": "T-economy KB국민카드",
+        "categories": [
+            "모든가맹점",
+            "비지니스"
+        ]
+    },
+    {
+        "credit_card_id": 369,
+        "credit_card_name": "Toss taptap S",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "금융",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "뷰티/피트니스",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 370,
+        "credit_card_name": "네이버웹툰 삼성 iD 카드",
+        "categories": [
+            "레저/스포츠",
+            "기타",
+            "여행/숙박",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 371,
+        "credit_card_name": "롯데마트&MAXX 카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "기타",
+            "자동차/하이패스",
+            "모든가맹점",
+            "푸드",
+            "쇼핑",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 372,
+        "credit_card_name": "아시아나클럽 롯데 플래티넘 카드",
+        "categories": [
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 373,
+        "credit_card_name": "위 레아카드(스카이패스)",
+        "categories": [
+            "생활",
+            "무실적",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 374,
+        "credit_card_name": "3 Body-A 현대카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 375,
+        "credit_card_name": "HERITAGE Reserve(포인트형)",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "금융",
+            "자동차/하이패스",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 376,
+        "credit_card_name": "IBK KaPick",
+        "categories": [
+            "영화/문화",
+            "통신",
+            "주유",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 377,
+        "credit_card_name": "ON PLATINUM카드(스카이패스)",
+        "categories": [
+            "모든가맹점",
+            "비지니스",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 378,
+        "credit_card_name": "국민행복카드 신용카드",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 379,
+        "credit_card_name": "국민행복카드(비씨)",
+        "categories": [
+            "프리미엄",
+            "통신",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 380,
+        "credit_card_name": "신세계 BC 바로 리워드 플러스",
+        "categories": [
+            "무실적",
+            "해외",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 381,
+        "credit_card_name": "올바른 OIL&PASS",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 382,
+        "credit_card_name": "원더 Co brand(집업) 제휴 카드",
+        "categories": [
+            "해외",
+            "금융",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 383,
+        "credit_card_name": "SOHO 다사로이카드",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "생활",
+            "통신",
+            "뷰티/피트니스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 384,
+        "credit_card_name": "TRADERS CLUB 삼성카드",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "병원/약국",
+            "주유",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 385,
+        "credit_card_name": "골든라이프올림카드",
+        "categories": [
+            "생활",
+            "여행/숙박",
+            "해외",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 386,
+        "credit_card_name": "미래에셋 현대카드 Diamond",
+        "categories": [
+            "생활",
+            "교통",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 387,
+        "credit_card_name": "쇼핑조아카드",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 388,
+        "credit_card_name": "CJ 삼성 iD 카드",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 389,
+        "credit_card_name": "e hi-pass 카드(현대차)",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 390,
+        "credit_card_name": "Easy auto 티타늄카드",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "해외",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 391,
+        "credit_card_name": "SmileCard the Club",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 392,
+        "credit_card_name": "가온글로벌카드",
+        "categories": [
+            "프리미엄",
+            "생활",
+            "주유",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 393,
+        "credit_card_name": "국민행복카드 S2",
+        "categories": [
+            "마트/편의점",
+            "카페/디저트",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 394,
+        "credit_card_name": "삼성 모바일플러스카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 395,
+        "credit_card_name": "삼성스토어 BENEFIT 삼성카드",
+        "categories": [
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 396,
+        "credit_card_name": "신세계 더 마일리지 삼성카드 (스카이패스)",
+        "categories": [
+            "마트/편의점",
+            "병원/약국",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 397,
+        "credit_card_name": "신한카드 MY CAR",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "교통",
+            "푸드",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 398,
+        "credit_card_name": "아시아나항공 KB국민카드",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 399,
+        "credit_card_name": "어디로든 그린카드",
+        "categories": [
+            "모든가맹점",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 400,
+        "credit_card_name": "위 레아카드(포인트)",
+        "categories": [
+            "기타",
+            "무실적",
+            "프리미엄",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 401,
+        "credit_card_name": "위 테라카드(포인트)",
+        "categories": [
+            "간편결제",
+            "쇼핑",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 402,
+        "credit_card_name": "카카오 T 하나카드",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 403,
+        "credit_card_name": "컬리카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 404,
+        "credit_card_name": "팟(pod) 카드",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 405,
+        "credit_card_name": "H.Point 우리카드",
+        "categories": [
+            "모든가맹점",
+            "쇼핑",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 406,
+        "credit_card_name": "LOCA CLASSIC",
+        "categories": [
+            "카페/디저트",
+            "주유",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 407,
+        "credit_card_name": "LOCA for Edu",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "모든가맹점",
+            "푸드",
+            "쇼핑",
+            "간편결제",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 408,
+        "credit_card_name": "더본 신한카드",
+        "categories": [
+            "마트/편의점",
+            "애완동물"
+        ]
+    },
+    {
+        "credit_card_id": 409,
+        "credit_card_name": "신한카드 Love Platinum#",
+        "categories": [
+            "생활",
+            "병원/약국",
+            "무실적",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 410,
+        "credit_card_name": "일년의 설렘카드(모바일전용)",
+        "categories": [
+            "프리미엄",
+            "쇼핑",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 411,
+        "credit_card_name": "카드의정석 UniMile in JEJU",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 412,
+        "credit_card_name": "현대카드 MY BUSINESS ZERO Retail&Service",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "교통",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 413,
+        "credit_card_name": "홈플러스 삼성카드",
+        "categories": [
+            "해외",
+            "금융",
+            "기타",
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 414,
+        "credit_card_name": "E1 LPG KB국민카드",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 415,
+        "credit_card_name": "Hyundai Mobility(모빌리티) 카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "교통",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "뷰티/피트니스",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 416,
+        "credit_card_name": "KB국민 펫코노미 카드",
+        "categories": [
+            "통신",
+            "생활",
+            "무실적",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 417,
+        "credit_card_name": "KT 삼성카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 418,
+        "credit_card_name": "SILVER FOR LOTTE DEPARTMENT STORE",
+        "categories": [
+            "쇼핑",
+            "애완동물",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 419,
+        "credit_card_name": "Triple In LOCA",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "기타",
+            "모든가맹점",
+            "간편결제",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 420,
+        "credit_card_name": "가온 워킹업카드",
+        "categories": [
+            "모든가맹점",
+            "비지니스",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 421,
+        "credit_card_name": "글로벌쇼핑 삼성카드 5v2",
+        "categories": [
+            "기타",
+            "통신",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 422,
+        "credit_card_name": "롯데렌터카 신차장 EV+ 우리카드",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 423,
+        "credit_card_name": "마이 홈플러스 신한카드",
+        "categories": [
+            "영화/문화",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 424,
+        "credit_card_name": "모두의 신세계 하나카드",
+        "categories": [
+            "생활",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 425,
+        "credit_card_name": "미래에셋 현대카드 Gold",
+        "categories": [
+            "자동차/하이패스",
+            "기타",
+            "주유",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 426,
+        "credit_card_name": "오늘은e 신용카드",
+        "categories": [
+            "간편결제",
+            "쇼핑",
+            "레저/스포츠",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 427,
+        "credit_card_name": "원더카드 LIVING",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 428,
+        "credit_card_name": "하나은행 밀리언달러 카드",
+        "categories": [
+            "금융",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 429,
+        "credit_card_name": "kt M mobile카드",
+        "categories": [
+            "공과금/렌탈",
+            "기타",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 430,
+        "credit_card_name": "SSG.COM카드",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "푸드",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 431,
+        "credit_card_name": "toss KB국민카드",
+        "categories": [
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 432,
+        "credit_card_name": "넥센타이어 우리카드",
+        "categories": [
+            "프리미엄",
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 433,
+        "credit_card_name": "신세계 BC 바로 클리어 플러스",
+        "categories": [
+            "공과금/렌탈",
+            "병원/약국",
+            "주유",
+            "교통",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 434,
+        "credit_card_name": "신한카드 The Pet",
+        "categories": [
+            "생활",
+            "공항라운지/PP",
+            "해외",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 435,
+        "credit_card_name": "알뜰폰 Hub Ⅱ 카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 436,
+        "credit_card_name": "에너지플러스카드 Edition3",
+        "categories": [
+            "통신",
+            "쇼핑",
+            "교통",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 437,
+        "credit_card_name": "올바른 NEW HAVE+카드",
+        "categories": [
+            "마트/편의점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 438,
+        "credit_card_name": "원더카드 HAPPY",
+        "categories": [
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 439,
+        "credit_card_name": "이마트 e카드 Edition2",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 440,
+        "credit_card_name": "이마트에브리데이 SSG카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "금융",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 441,
+        "credit_card_name": "카드의정석 APT Platinum",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 442,
+        "credit_card_name": "카드의정석 US",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "해외",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 443,
+        "credit_card_name": "E1 LPG 롯데카드",
+        "categories": [
+            "레저/스포츠",
+            "해외",
+            "기타",
+            "모든가맹점",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 444,
+        "credit_card_name": "iD MOVE카드",
+        "categories": [
+            "공항라운지/PP",
+            "주유",
+            "쇼핑",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 445,
+        "credit_card_name": "JEJUJINI Air Money카드",
+        "categories": [
+            "생활",
+            "주유",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 446,
+        "credit_card_name": "KB Pay 챌린지+카드",
+        "categories": [
+            "무실적",
+            "금융",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 447,
+        "credit_card_name": "배민 한그릇카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "생활",
+            "통신",
+            "간편결제",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 448,
+        "credit_card_name": "보험엔로카",
+        "categories": [
+            "간편결제",
+            "영화/문화",
+            "주유",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 449,
+        "credit_card_name": "삼성 iD POCKET 카드",
+        "categories": [
+            "모든가맹점",
+            "영화/문화",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 450,
+        "credit_card_name": "신한카드 LABE",
+        "categories": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 451,
+        "credit_card_name": "신협-신한카드 RPM+Platinum#",
+        "categories": [
+            "영화/문화",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 452,
+        "credit_card_name": "올바른OIL카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 453,
+        "credit_card_name": "후불하이패스카드(비씨)",
+        "categories": [
+            "간편결제",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 454,
+        "credit_card_name": "CGV 우리카드",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "교통",
+            "푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 455,
+        "credit_card_name": "Easy shopping 카드",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 456,
+        "credit_card_name": "KB Pay 챌린지카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "주유",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 457,
+        "credit_card_name": "kt DC PLUS",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 458,
+        "credit_card_name": "LOCA 100 Life",
+        "categories": [
+            "금융",
+            "주유",
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 459,
+        "credit_card_name": "S-OIL 삼성카드 & POINT",
+        "categories": [
+            "공항라운지/PP",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 460,
+        "credit_card_name": "SSG.COM 카드 Edition2",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "병원/약국",
+            "주유",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 461,
+        "credit_card_name": "가온 Biz카드",
+        "categories": [
+            "공항라운지/PP",
+            "영화/문화",
+            "자동차/하이패스",
+            "여행/숙박",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 462,
+        "credit_card_name": "마이핏카드(할인형)",
+        "categories": [
+            "공항라운지/PP",
+            "해외",
+            "여행/숙박",
+            "생활",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 463,
+        "credit_card_name": "미래에셋 현대카드 Silver",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 464,
+        "credit_card_name": "신한카드 알뜰More(알뜰모아)",
+        "categories": [
+            "레저/스포츠",
+            "주유",
+            "해외",
+            "쇼핑",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 465,
+        "credit_card_name": "신한카드 혼디모앙",
+        "categories": [
+            "간편결제",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 466,
+        "credit_card_name": "오케이몰 우리카드",
+        "categories": [
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 467,
+        "credit_card_name": "제주항공 Refresh Point KB국민카드",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 468,
+        "credit_card_name": "카드의정석 UNTACT PLATINUM",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 469,
+        "credit_card_name": "캐롯손해보험-현대카드M Edition3",
+        "categories": [
+            "영화/문화",
+            "주유",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 470,
+        "credit_card_name": "All For Me카드",
+        "categories": [
+            "비지니스",
+            "공과금/렌탈",
+            "모든가맹점",
+            "생활",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 471,
+        "credit_card_name": "CU Npay 카드",
+        "categories": [
+            "모든가맹점",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 472,
+        "credit_card_name": "GS칼텍스 신한카드 Shine",
+        "categories": [
+            "레저/스포츠",
+            "공과금/렌탈",
+            "영화/문화",
+            "푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 473,
+        "credit_card_name": "IKEA(이케아) Family with 신한카드",
+        "categories": [
+            "생활",
+            "푸드",
+            "마트/편의점",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 474,
+        "credit_card_name": "Jin Air - 롯데카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 475,
+        "credit_card_name": "NH올원 LG전자BEST카드",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 476,
+        "credit_card_name": "SK Oil 400 우리카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 477,
+        "credit_card_name": "라이프파트너 삼성카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "교육/육아",
+            "간편결제",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 478,
+        "credit_card_name": "롯데월드카드",
+        "categories": [
+            "공항라운지/PP",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 479,
+        "credit_card_name": "삼성페이 KB국민카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 480,
+        "credit_card_name": "신한카드 플리(산리오캐릭터즈)",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "푸드",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 481,
+        "credit_card_name": "아시아나 듀얼마일리지 롯데카드",
+        "categories": [
+            "프리미엄",
+            "통신",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 482,
+        "credit_card_name": "하나투어 삼성카드",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 483,
+        "credit_card_name": "현대백화점 해피포인트카드",
+        "categories": [
+            "레저/스포츠",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 484,
+        "credit_card_name": "#any 하나카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 485,
+        "credit_card_name": "CLUB Primus Asiana Club 카드",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 486,
+        "credit_card_name": "kt SUPER+ 카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 487,
+        "credit_card_name": "SC제일은행 아시아나 삼성지엔미카드",
+        "categories": [
+            "생활",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 488,
+        "credit_card_name": "SOHO 다사로이+카드",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "주유",
+            "교통",
+            "통신",
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 489,
+        "credit_card_name": "신한카드 Lesson Platinum#",
+        "categories": [
+            "주유",
+            "해외",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 490,
+        "credit_card_name": "탄탄대로 웰컴카드",
+        "categories": [
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 491,
+        "credit_card_name": "톡톡 구독카드",
+        "categories": [
+            "마트/편의점",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 492,
+        "credit_card_name": "하나로마트 하나카드",
+        "categories": [
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 493,
+        "credit_card_name": "#tag1카드 Orange",
+        "categories": [
+            "쇼핑",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 494,
+        "credit_card_name": "BNK카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 495,
+        "credit_card_name": "EV 카드",
+        "categories": [
+            "영화/문화",
+            "기타",
+            "푸드",
+            "생활",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 496,
+        "credit_card_name": "EVO 티타늄카드",
+        "categories": [
+            "푸드",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 497,
+        "credit_card_name": "Kia Members 경차전용카드",
+        "categories": [
+            "간편결제",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 498,
+        "credit_card_name": "Kia Members 전기차 신용카드",
+        "categories": [
+            "공항라운지/PP",
+            "애완동물",
+            "쇼핑",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 499,
+        "credit_card_name": "KMVNO 알뜰폰 카드",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 500,
+        "credit_card_name": "LG전자 KB국민카드",
+        "categories": [
+            "생활",
+            "레저/스포츠",
+            "교통",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 501,
+        "credit_card_name": "Liiv M Ⅱ 카드",
+        "categories": [
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 502,
+        "credit_card_name": "LOCA PLATINUM 마일리지형",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "해외",
+            "푸드",
+            "쇼핑",
+            "여행/숙박",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 503,
+        "credit_card_name": "T우주 신한카드",
+        "categories": [
+            "항공마일리지",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 504,
+        "credit_card_name": "경차 smart 롯데카드",
+        "categories": [
+            "영화/문화",
+            "레저/스포츠",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 505,
+        "credit_card_name": "롤라카드",
+        "categories": [
+            "자동차/하이패스",
+            "주유",
+            "비지니스",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 506,
+        "credit_card_name": "뱅크샐러드 빨대카드",
+        "categories": [
+            "해외",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 507,
+        "credit_card_name": "삼프로TV 하나카드",
+        "categories": [
+            "마트/편의점",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 508,
+        "credit_card_name": "신한카드 KaPick",
+        "categories": [
+            "마트/편의점",
+            "통신",
+            "교육/육아",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 509,
+        "credit_card_name": "카드의정석 시니어플러스",
+        "categories": [
+            "영화/문화",
+            "레저/스포츠",
+            "주유",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 510,
+        "credit_card_name": "프레딧 하나카드",
+        "categories": [
+            "프리미엄",
+            "통신",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 511,
+        "credit_card_name": "[NH농협] 그린카드v2",
+        "categories": [
+            "공항라운지/PP",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 512,
+        "credit_card_name": "CLUB Signature Asiana Club 카드",
+        "categories": [
+            "생활",
+            "카페/디저트",
+            "쇼핑",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 513,
+        "credit_card_name": "e플래티넘 롯데카드",
+        "categories": [
+            "레저/스포츠",
+            "주유",
+            "금융",
+            "항공마일리지",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 514,
+        "credit_card_name": "LOCA for Shopping",
+        "categories": [
+            "주유",
+            "교통",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 515,
+        "credit_card_name": "MY RENTAL+ 롯데카드",
+        "categories": [
+            "통신",
+            "간편결제",
+            "쇼핑",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 516,
+        "credit_card_name": "NH농협 부자되세요 아파트카드(비씨)",
+        "categories": [
+            "간편결제",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 517,
+        "credit_card_name": "ON PLATINUM카드(포인트)",
+        "categories": [
+            "간편결제",
+            "쇼핑",
+            "푸드",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 518,
+        "credit_card_name": "SK에너지 러브유 KB국민카드",
+        "categories": [
+            "레저/스포츠",
+            "공과금/렌탈",
+            "교통",
+            "푸드",
+            "생활",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 519,
+        "credit_card_name": "모바일101카드",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 520,
+        "credit_card_name": "신한카드 B.Big(마이펫 스노우볼 삑)",
+        "categories": [
+            "생활",
+            "무실적",
+            "간편결제",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 521,
+        "credit_card_name": "신한카드 The PREMIER GOLD EDITION (아시아나클럽)",
+        "categories": [
+            "레저/스포츠",
+            "주유",
+            "해외",
+            "모든가맹점",
+            "쇼핑",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 522,
+        "credit_card_name": "쏘카카드",
+        "categories": [
+            "주유",
+            "금융",
+            "생활",
+            "간편결제",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 523,
+        "credit_card_name": "아모레퍼시픽 신한카드",
+        "categories": [
+            "모든가맹점",
+            "공항라운지/PP",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 524,
+        "credit_card_name": "에코마일리지카드(비씨)",
+        "categories": [
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 525,
+        "credit_card_name": "올바른TRAVEL카드(중국특화)",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 526,
+        "credit_card_name": "이마트II KB국민카드(옐로우)",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 527,
+        "credit_card_name": "1st카드 (캐시백형)",
+        "categories": [
+            "마트/편의점",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 528,
+        "credit_card_name": "CLUB Primus Point 카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 529,
+        "credit_card_name": "GS리테일 NH농협카드",
+        "categories": [
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 530,
+        "credit_card_name": "KT Super DC",
+        "categories": [
+            "쇼핑",
+            "마트/편의점",
+            "애완동물"
+        ]
+    },
+    {
+        "credit_card_id": 531,
+        "credit_card_name": "ME+(미플러스)카드",
+        "categories": [
+            "마트/편의점",
+            "푸드",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 532,
+        "credit_card_name": "PAYCO taptap",
+        "categories": [
+            "생활",
+            "영화/문화",
+            "프리미엄",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 533,
+        "credit_card_name": "RAUME O (아시아나)",
+        "categories": [
+            "무실적",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 534,
+        "credit_card_name": "S-OIL LPG KB국민카드",
+        "categories": [
+            "해외",
+            "교통",
+            "여행/숙박",
+            "생활",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 535,
+        "credit_card_name": "SOHO 다사로이OIL카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 536,
+        "credit_card_name": "T라이트카드",
+        "categories": [
+            "생활",
+            "간편결제",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 537,
+        "credit_card_name": "zgm.play++카드",
+        "categories": [
+            "공항라운지/PP",
+            "모든가맹점",
+            "생활",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 538,
+        "credit_card_name": "밀리언달러 하나카드",
+        "categories": [
+            "공과금/렌탈",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 539,
+        "credit_card_name": "배민 곱빼기카드",
+        "categories": [
+            "자동차/하이패스",
+            "주유",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 540,
+        "credit_card_name": "신세계 신한카드",
+        "categories": [
+            "레저/스포츠",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 541,
+        "credit_card_name": "신세계 아울렛 BENEFIT 삼성카드",
+        "categories": [
+            "마트/편의점",
+            "해외",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "간편결제",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 542,
+        "credit_card_name": "신한카드 The Premium Pet",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "기타",
+            "쇼핑",
+            "여행/숙박",
+            "생활",
+            "항공마일리지"
+        ]
+    },
+    {
+        "credit_card_id": 543,
+        "credit_card_name": "신협-신한카드 Shopping",
+        "categories": [
+            "교통",
+            "모든가맹점",
+            "푸드",
+            "쇼핑",
+            "간편결제",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 544,
+        "credit_card_name": "언택트 L 하나카드",
+        "categories": [
+            "모든가맹점",
+            "쇼핑",
+            "간편결제",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 545,
+        "credit_card_name": "에버랜드 판다카드(푸바오 에디션)",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 546,
+        "credit_card_name": "올레 Super DC 대구은행카드",
+        "categories": [
+            "모든가맹점",
+            "영화/문화",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 547,
+        "credit_card_name": "올바른 POINT UP+ 카드",
+        "categories": [
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 548,
+        "credit_card_name": "원더 K리그 축덕카드",
+        "categories": [
+            "간편결제",
+            "영화/문화",
+            "마트/편의점",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 549,
+        "credit_card_name": "원더카드 DAILY",
+        "categories": [
+            "영화/문화",
+            "주유",
+            "푸드",
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 550,
+        "credit_card_name": "참! 좋은 kt wiz 카드(신용)",
+        "categories": [
+            "카페/디저트",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 551,
+        "credit_card_name": "[BNK부산] 그린카드v2",
+        "categories": [
+            "무실적",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 552,
+        "credit_card_name": "010PAY 우리카드",
+        "categories": [
+            "무실적",
+            "주유",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 553,
+        "credit_card_name": "1st 플래티늄+ 카드",
+        "categories": [
+            "생활",
+            "간편결제",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 554,
+        "credit_card_name": "LCC UniMile카드",
+        "categories": [
+            "프리미엄",
+            "항공마일리지",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 555,
+        "credit_card_name": "New PAYCO 롯데카드",
+        "categories": [
+            "마트/편의점",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 556,
+        "credit_card_name": "NH1961카드",
+        "categories": [
+            "마트/편의점",
+            "영화/문화",
+            "교통",
+            "쇼핑",
+            "무실적",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 557,
+        "credit_card_name": "NH올원 Rental&코웨이카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 558,
+        "credit_card_name": "SolSol(쏠쏠)카드",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "해외"
+        ]
+    },
+    {
+        "credit_card_id": 559,
+        "credit_card_name": "zgm point카드",
+        "categories": [
+            "생활",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 560,
+        "credit_card_name": "다이소 삼성카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "프리미엄",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 561,
+        "credit_card_name": "둘과넷 카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "금융",
+            "교통",
+            "푸드",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 562,
+        "credit_card_name": "로스트아크 카드",
+        "categories": [
+            "기타",
+            "영화/문화",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 563,
+        "credit_card_name": "롯데마트 롯데카드",
+        "categories": [
+            "모든가맹점",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 564,
+        "credit_card_name": "마이카 우리카드",
+        "categories": [
+            "기타",
+            "주유",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 565,
+        "credit_card_name": "마이핏카드(적립형)",
+        "categories": [
+            "레저/스포츠",
+            "기타",
+            "여행/숙박",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 566,
+        "credit_card_name": "반려愛카드(강아지)",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "영화/문화",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 567,
+        "credit_card_name": "삼성스토어 삼성카드",
+        "categories": [
+            "생활",
+            "모든가맹점",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 568,
+        "credit_card_name": "신세계 BC 바로 아시아나 플러스",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "해외",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 569,
+        "credit_card_name": "신한카드 봄",
+        "categories": [
+            "마트/편의점",
+            "영화/문화",
+            "교통",
+            "쇼핑",
+            "무실적",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 570,
+        "credit_card_name": "엠베스트 엘리하이 삼성카드",
+        "categories": [
+            "쇼핑",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 571,
+        "credit_card_name": "올바른 BAZIC+ 카드",
+        "categories": [
+            "주유",
+            "교통",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 572,
+        "credit_card_name": "할인조아카드",
+        "categories": [
+            "생활",
+            "기타",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 573,
+        "credit_card_name": "후불 하이패스카드",
+        "categories": [
+            "통신",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 574,
+        "credit_card_name": "CHALLENGE BAG KB국민카드",
+        "categories": [
+            "쇼핑",
+            "주유",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 575,
+        "credit_card_name": "Easy fly 티타늄카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 576,
+        "credit_card_name": "Kakaopage 롯데카드",
+        "categories": [
+            "영화/문화",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 577,
+        "credit_card_name": "K리그 축덕 하나멤버스 1Q Play1 카드",
+        "categories": [
+            "푸드",
+            "마트/편의점",
+            "주유",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 578,
+        "credit_card_name": "Liiv M 카드",
+        "categories": [
+            "모든가맹점",
+            "해외",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 579,
+        "credit_card_name": "NH올원+(플러스)카드",
+        "categories": [
+            "푸드",
+            "주유",
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 580,
+        "credit_card_name": "NU AUTO 우리카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 581,
+        "credit_card_name": "PlayStation® - 현대카드M",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 582,
+        "credit_card_name": "WON POINT(원 포인트) AIR",
+        "categories": [
+            "기타",
+            "푸드",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 583,
+        "credit_card_name": "골프존 롯데카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 584,
+        "credit_card_name": "국민행복카드",
+        "categories": [
+            "생활",
+            "마트/편의점",
+            "쇼핑",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 585,
+        "credit_card_name": "신협-신한카드 Air One",
+        "categories": [
+            "쇼핑",
+            "항공마일리지",
+            "해외",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 586,
+        "credit_card_name": "신협-신한카드 The CLASSIC+",
+        "categories": [
+            "푸드",
+            "주유",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 587,
+        "credit_card_name": "올바른지구 카드",
+        "categories": [
+            "프리미엄",
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 588,
+        "credit_card_name": "요기요 삼성카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "모든가맹점",
+            "푸드",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 589,
+        "credit_card_name": "위버스 신한카드(BTS)",
+        "categories": [
+            "영화/문화",
+            "무실적",
+            "프리미엄",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 590,
+        "credit_card_name": "캐롯손해보험 롯데카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "푸드",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 591,
+        "credit_card_name": "홈플러스 스페셜 신한카드",
+        "categories": [
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 592,
+        "credit_card_name": "1st카드 (포인트 적립형)",
+        "categories": [
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 593,
+        "credit_card_name": "CJ ONE 프리즘 신한카드",
+        "categories": [
+            "통신",
+            "레저/스포츠",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 594,
+        "credit_card_name": "DGB어디로든그린카드",
+        "categories": [
+            "모든가맹점",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 595,
+        "credit_card_name": "IBK hi 카드",
+        "categories": [
+            "쇼핑",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 596,
+        "credit_card_name": "KT수퍼할부카드(비씨)",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 597,
+        "credit_card_name": "LOCA for Auto",
+        "categories": [
+            "레저/스포츠",
+            "해외",
+            "기타",
+            "푸드",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 598,
+        "credit_card_name": "LOCA for Coffee",
+        "categories": [
+            "주유",
+            "금융",
+            "여행/숙박",
+            "생활",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 599,
+        "credit_card_name": "NC다이노스카드",
+        "categories": [
+            "푸드",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 600,
+        "credit_card_name": "New Happy 하나카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 601,
+        "credit_card_name": "NH농협 콕카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 602,
+        "credit_card_name": "olleh Super DC IBK카드",
+        "categories": [
+            "레저/스포츠",
+            "병원/약국",
+            "기타",
+            "생활",
+            "통신",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 603,
+        "credit_card_name": "SSG카드",
+        "categories": [
+            "주유",
+            "교통",
+            "기타",
+            "쇼핑",
+            "생활",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 604,
+        "credit_card_name": "TMAP KB국민카드",
+        "categories": [
+            "생활",
+            "푸드",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 605,
+        "credit_card_name": "W컨셉 삼성카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 606,
+        "credit_card_name": "뉴GS칼텍스 롯데카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 607,
+        "credit_card_name": "레고랜드카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "금융",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 608,
+        "credit_card_name": "부릉 삼성카드 BIZ",
+        "categories": [
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 609,
+        "credit_card_name": "부자되세요 덤카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "교통",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 610,
+        "credit_card_name": "삼성페이 롯데카드",
+        "categories": [
+            "모든가맹점",
+            "마트/편의점"
+        ]
+    },
+    {
+        "credit_card_id": 611,
+        "credit_card_name": "쇼핑& 카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "모든가맹점",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 612,
+        "credit_card_name": "신세계 푸빌라 BC바로카드",
+        "categories": [
+            "모든가맹점",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 613,
+        "credit_card_name": "신협-신한카드 Love Platinum#",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 614,
+        "credit_card_name": "여행스케치 아시아나클럽 플래티늄카드",
+        "categories": [
+            "공항라운지/PP",
+            "레저/스포츠",
+            "병원/약국",
+            "기타",
+            "모든가맹점",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 615,
+        "credit_card_name": "용인시민카드(신용)",
+        "categories": [
+            "무실적",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 616,
+        "credit_card_name": "원스토어 1 하나카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 617,
+        "credit_card_name": "위 레아카드(아시아나클럽)",
+        "categories": [
+            "영화/문화",
+            "주유",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 618,
+        "credit_card_name": "인플카 현대카드",
+        "categories": [
+            "생활",
+            "영화/문화",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 619,
+        "credit_card_name": "펫 사랑 카드",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "금융",
+            "교통",
+            "푸드",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 620,
+        "credit_card_name": "현대백화점 현대오일뱅크카드",
+        "categories": [
+            "쇼핑",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 621,
+        "credit_card_name": "[광주] K-그린카드v2",
+        "categories": [
+            "생활",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 622,
+        "credit_card_name": "#ing+(샵핑플러스)카드",
+        "categories": [
+            "간편결제",
+            "푸드",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 623,
+        "credit_card_name": "1st Link On 카드",
+        "categories": [
+            "모든가맹점",
+            "프리미엄",
+            "간편결제",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 624,
+        "credit_card_name": "1st TRIPLE 카드",
+        "categories": [
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 625,
+        "credit_card_name": "1st 카드(레드)",
+        "categories": [
+            "모든가맹점",
+            "영화/문화",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 626,
+        "credit_card_name": "GS행복가득카드",
+        "categories": [
+            "푸드",
+            "무실적",
+            "뷰티/피트니스",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 627,
+        "credit_card_name": "Hyundai Mobilty카드(상용차)",
+        "categories": [
+            "주유",
+            "무실적",
+            "교통",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 628,
+        "credit_card_name": "LOCA PLATINUM 할인형",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 629,
+        "credit_card_name": "NH올원 Direct&DB손해보험카드",
+        "categories": [
+            "교통",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 630,
+        "credit_card_name": "NH올원 NH투자증권카드",
+        "categories": [
+            "마트/편의점"
+        ]
+    },
+    {
+        "credit_card_id": 631,
+        "credit_card_name": "NS홈쇼핑 삼성카드",
+        "categories": [
+            "마트/편의점",
+            "기타",
+            "쇼핑",
+            "생활",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 632,
+        "credit_card_name": "PAYCO 36 우리카드",
+        "categories": [
+            "푸드",
+            "주유",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 633,
+        "credit_card_name": "SK LPG SAVE KB국민카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "해외",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 634,
+        "credit_card_name": "wavve카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 635,
+        "credit_card_name": "樂SEA(락시)",
+        "categories": [
+            "레저/스포츠",
+            "병원/약국",
+            "교육/육아",
+            "푸드",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 636,
+        "credit_card_name": "갤러리아 KB국민카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "푸드",
+            "쇼핑",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 637,
+        "credit_card_name": "건담 신한카드",
+        "categories": [
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 638,
+        "credit_card_name": "나무 롯데카드",
+        "categories": [
+            "푸드",
+            "무실적",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 639,
+        "credit_card_name": "라이나생명 라서즐거운카드",
+        "categories": [
+            "마트/편의점",
+            "해외",
+            "기타",
+            "생활",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 640,
+        "credit_card_name": "롯데카드 KaPick",
+        "categories": [
+            "간편결제",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 641,
+        "credit_card_name": "산림조합-현대카드M(청구할인형)",
+        "categories": [
+            "생활",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 642,
+        "credit_card_name": "세븐일레븐 멤버쉽롯데카드",
+        "categories": [
+            "푸드",
+            "영화/문화",
+            "주유",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 643,
+        "credit_card_name": "신세계면세점 SSG카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 644,
+        "credit_card_name": "신한 햇살론카드",
+        "categories": [
+            "푸드",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 645,
+        "credit_card_name": "신한라이프 THE PRIDE 신한카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 646,
+        "credit_card_name": "신한카드 My TeenS",
+        "categories": [
+            "생활",
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 647,
+        "credit_card_name": "신한카드 봄(도구리)",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 648,
+        "credit_card_name": "신한카드 핏(Fit)",
+        "categories": [
+            "생활",
+            "통신",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 649,
+        "credit_card_name": "어디로든 그린카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 650,
+        "credit_card_name": "에버랜드 판다카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 651,
+        "credit_card_name": "올바른 GIVE 카드",
+        "categories": [
+            "레저/스포츠",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 652,
+        "credit_card_name": "올바른SAFE Platinum카드",
+        "categories": [
+            "생활",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 653,
+        "credit_card_name": "우리동네GS 삼성카드",
+        "categories": [
+            "금융",
+            "교통",
+            "기타",
+            "쇼핑",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 654,
+        "credit_card_name": "위 테라카드(아시아나클럽)",
+        "categories": [
+            "생활",
+            "주유",
+            "푸드",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 655,
+        "credit_card_name": "위메프페이 신한카드",
+        "categories": [
+            "기타",
+            "통신",
+            "금융",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 656,
+        "credit_card_name": "자연드림 IBK카드",
+        "categories": [
+            "레저/스포츠",
+            "공과금/렌탈",
+            "영화/문화",
+            "푸드",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 657,
+        "credit_card_name": "카드의정석 하이마트",
+        "categories": [
+            "간편결제",
+            "영화/문화",
+            "쇼핑",
+            "푸드"
+        ]
+    },
+    {
+        "credit_card_id": 658,
+        "credit_card_name": "케이뱅크 롯데카드",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "영화/문화",
+            "주유",
+            "푸드",
+            "쇼핑",
+            "여행/숙박",
+            "무실적",
+            "뷰티/피트니스"
+        ]
+    },
+    {
+        "credit_card_id": 659,
+        "credit_card_name": "펫블리(PETvely) 카드",
+        "categories": [
+            "해외",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 660,
+        "credit_card_name": "&POP 카드",
+        "categories": [
+            "모든가맹점",
+            "공항라운지/PP",
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 661,
+        "credit_card_name": "#ing(샵핑)카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "해외",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 662,
+        "credit_card_name": "1st TRIPLE Platinum 카드",
+        "categories": [
+            "주유",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 663,
+        "credit_card_name": "Green Wave 1.5℃카드",
+        "categories": [
+            "영화/문화",
+            "쇼핑",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 664,
+        "credit_card_name": "GS Prime 신한카드",
+        "categories": [
+            "생활",
+            "애완동물",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 665,
+        "credit_card_name": "GS SHOP KB국민카드",
+        "categories": [
+            "영화/문화",
+            "교통",
+            "기타",
+            "모든가맹점",
+            "쇼핑",
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 666,
+        "credit_card_name": "GS&POINT 롯데카드",
+        "categories": [
+            "모든가맹점",
+            "마트/편의점",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 667,
+        "credit_card_name": "Happy 디지털카드",
+        "categories": [
+            "쇼핑",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 668,
+        "credit_card_name": "KB차차차 신용카드",
+        "categories": [
+            "쇼핑",
+            "레저/스포츠",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 669,
+        "credit_card_name": "L.pay 롯데카드 Ⅱ",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 670,
+        "credit_card_name": "L.PAY 신한카드",
+        "categories": [
+            "무실적",
+            "프리미엄",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 671,
+        "credit_card_name": "LOCA for 롯데마트",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "기타",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 672,
+        "credit_card_name": "LOTTE ONers 롯데카드",
+        "categories": [
+            "모든가맹점",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 673,
+        "credit_card_name": "NH농협 올바른 하나로(Hanaro) 카드",
+        "categories": [
+            "주유",
+            "기타",
+            "모든가맹점",
+            "무실적",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 674,
+        "credit_card_name": "NH올원 Rental&넥센타이어카드",
+        "categories": [
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 675,
+        "credit_card_name": "Shopping Save카드",
+        "categories": [
+            "생활"
+        ]
+    },
+    {
+        "credit_card_id": 676,
+        "credit_card_name": "SK OIL&LPG 카드",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 677,
+        "credit_card_name": "SPOTV NOW 신한카드 구독 좋아요",
+        "categories": [
+            "마트/편의점",
+            "카페/디저트",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 678,
+        "credit_card_name": "WE:SH Daily 카드",
+        "categories": [
+            "생활",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 679,
+        "credit_card_name": "넷마블 신한카드",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 680,
+        "credit_card_name": "랭킹닭컴 신용카드",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "무실적",
+            "여행/숙박",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 681,
+        "credit_card_name": "레고랜드매니아카드",
+        "categories": [
+            "생활",
+            "푸드"
+        ]
+    },
+    {
+        "credit_card_id": 682,
+        "credit_card_name": "부자되세요 HomeShopping카드(비씨)",
+        "categories": [
+            "마트/편의점",
+            "쇼핑",
+            "주유",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 683,
+        "credit_card_name": "신세계 The BLOSSOM 신한카드",
+        "categories": [
+            "교통",
+            "기타",
+            "모든가맹점",
+            "생활",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 684,
+        "credit_card_name": "신세계사이먼 프리미엄 아울렛 신한카드",
+        "categories": [
+            "영화/문화",
+            "레저/스포츠",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 685,
+        "credit_card_name": "아이파킹 크레딧 카",
+        "categories": [
+            "푸드",
+            "영화/문화",
+            "카페/디저트",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 686,
+        "credit_card_name": "올바른HOMETOWN카드",
+        "categories": [
+            "생활",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 687,
+        "credit_card_name": "올바른SAFE카드",
+        "categories": [
+            "마트/편의점",
+            "주유",
+            "금융",
+            "푸드",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 688,
+        "credit_card_name": "위버스 신한카드(ENHYPEN)",
+        "categories": [
+            "기타",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 689,
+        "credit_card_name": "위비 알뜰주유소 할인카드",
+        "categories": [
+            "생활",
+            "뷰티/피트니스",
+            "병원/약국",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 690,
+        "credit_card_name": "이디야 하나카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 691,
+        "credit_card_name": "이랜드리테일 롯데카드",
+        "categories": [
+            "주유",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 692,
+        "credit_card_name": "카드의정석 삼성디지털프라자",
+        "categories": [
+            "마트/편의점",
+            "병원/약국",
+            "금융",
+            "교통",
+            "기타",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 693,
+        "credit_card_name": "커피빈 신용카드",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 694,
+        "credit_card_name": "키자니아 에듀카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 695,
+        "credit_card_name": "풀무원 하나카드",
+        "categories": [
+            "생활",
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 696,
+        "credit_card_name": "현대홈쇼핑 현대카드",
+        "categories": [
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 697,
+        "credit_card_name": "[DGB대구] 그린카드v2",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "카페/디저트",
+            "주유",
+            "기타",
+            "통신",
+            "푸드",
+            "무실적",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 698,
+        "credit_card_name": "1st 플래티늄 카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "금융",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 699,
+        "credit_card_name": "AK KB국민카드",
+        "categories": [
+            "레저/스포츠",
+            "마트/편의점",
+            "교통",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 700,
+        "credit_card_name": "BNK 프렌즈 신용카드",
+        "categories": [
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 701,
+        "credit_card_name": "Flex카드 몽블랑 에디션",
+        "categories": [
+            "기타",
+            "모든가맹점",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 702,
+        "credit_card_name": "H.Point KB국민카드",
+        "categories": [
+            "주유",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 703,
+        "credit_card_name": "KCTV알뜰카드",
+        "categories": [
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 704,
+        "credit_card_name": "LFmall 신용카드",
+        "categories": [
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 705,
+        "credit_card_name": "LG BEST SHOP 486 신한카드",
+        "categories": [
+            "영화/문화",
+            "쇼핑",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 706,
+        "credit_card_name": "LG트윈스 신한카드",
+        "categories": [
+            "모든가맹점"
+        ]
+    },
+    {
+        "credit_card_id": 707,
+        "credit_card_name": "LOCA CLASSIC 롯데마트",
+        "categories": [
+            "병원/약국",
+            "쇼핑",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 708,
+        "credit_card_name": "LOCA for Health",
+        "categories": [
+            "공항라운지/PP",
+            "항공마일리지",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 709,
+        "credit_card_name": "SK 7mobile카드",
+        "categories": [
+            "영화/문화",
+            "마트/편의점",
+            "레저/스포츠",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 710,
+        "credit_card_name": "skylife Ultra IBK카드",
+        "categories": [
+            "생활",
+            "쇼핑",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 711,
+        "credit_card_name": "U＋ 알뜰모바일카드",
+        "categories": [
+            "레저/스포츠",
+            "해외",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "생활",
+            "프리미엄",
+            "간편결제"
+        ]
+    },
+    {
+        "credit_card_id": 712,
+        "credit_card_name": "UPTURN카드",
+        "categories": [
+            "영화/문화",
+            "기타",
+            "푸드",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 713,
+        "credit_card_name": "넥센타이어 KB국민카드",
+        "categories": [
+            "푸드",
+            "마트/편의점",
+            "주유",
+            "자동차/하이패스"
+        ]
+    },
+    {
+        "credit_card_id": 714,
+        "credit_card_name": "다둥이 행복카드",
+        "categories": [
+            "쇼핑",
+            "주유",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 715,
+        "credit_card_name": "닥터구디 T&R(티앤알) 카드",
+        "categories": [
+            "무실적",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 716,
+        "credit_card_name": "대성학원 신한카드",
+        "categories": [
+            "생활",
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 717,
+        "credit_card_name": "땡겨요 신한카드",
+        "categories": [
+            "생활",
+            "기타",
+            "교통",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 718,
+        "credit_card_name": "리디 신한카드",
+        "categories": [
+            "마트/편의점",
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 719,
+        "credit_card_name": "모두투어 투어마일리지 KB국민카드",
+        "categories": [
+            "무실적",
+            "해외",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 720,
+        "credit_card_name": "부자되세요 The Oil 카드",
+        "categories": [
+            "쇼핑",
+            "마트/편의점",
+            "애완동물",
+            "주유"
+        ]
+    },
+    {
+        "credit_card_id": 721,
+        "credit_card_name": "부자되세요 홈쇼핑카드",
+        "categories": [
+            "쇼핑"
+        ]
+    },
+    {
+        "credit_card_id": 722,
+        "credit_card_name": "수소차 충전할인 신한카드",
+        "categories": [
+            "레저/스포츠",
+            "항공마일리지",
+            "영화/문화",
+            "쇼핑",
+            "생활",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 723,
+        "credit_card_name": "신한카드 Applus",
+        "categories": [
+            "모든가맹점",
+            "쇼핑",
+            "생활",
+            "무실적",
+            "프리미엄"
+        ]
+    },
+    {
+        "credit_card_id": 724,
+        "credit_card_name": "신협-신한카드 B.Big(삑)",
+        "categories": [
+            "영화/문화",
+            "카페/디저트",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 725,
+        "credit_card_name": "에버랜드 삼성카드",
+        "categories": [
+            "모든가맹점",
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 726,
+        "credit_card_name": "요기패스 신용카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "병원/약국",
+            "쇼핑",
+            "통신",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 727,
+        "credit_card_name": "적립조아카드",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 728,
+        "credit_card_name": "제주 삼다수카드(신용)",
+        "categories": [
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 729,
+        "credit_card_name": "제주그린카드",
+        "categories": [
+            "주유",
+            "레저/스포츠",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 730,
+        "credit_card_name": "코오롱몰 우리카드",
+        "categories": [
+            "푸드",
+            "마트/편의점"
+        ]
+    },
+    {
+        "credit_card_id": 731,
+        "credit_card_name": "펫(PET)카드",
+        "categories": [
+            "영화/문화",
+            "쇼핑",
+            "뷰티/피트니스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 732,
+        "credit_card_name": "LOCA in MEGACITY",
+        "categories": [
+            "모든가맹점",
+            "마트/편의점",
+            "주유",
+            "교통"
+        ]
+    },
+    {
+        "credit_card_id": 733,
+        "credit_card_name": "NEW AUTO+",
+        "categories": [
+            "마트/편의점",
+            "카페/디저트",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 734,
+        "credit_card_name": "NH농협 올바른LIFE카드(할인형)",
+        "categories": [
+            "무실적",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 735,
+        "credit_card_name": "NH올원 Rental&바디프랜드카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "마트/편의점",
+            "주유",
+            "교통",
+            "뷰티/피트니스",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 736,
+        "credit_card_name": "NH올원 Shopping&AMOREPACIFIC카드",
+        "categories": [
+            "생활",
+            "푸드",
+            "쇼핑",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 737,
+        "credit_card_name": "ON PLATINUM카드(아시아나클럽)",
+        "categories": [
+            "생활",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 738,
+        "credit_card_name": "SOCAR 제휴 SOCAR 신한카드",
+        "categories": [
+            "기타",
+            "영화/문화",
+            "무실적",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 739,
+        "credit_card_name": "Z:IN 인테리어 신한카드",
+        "categories": [
+            "공항라운지/PP",
+            "쇼핑",
+            "마트/편의점",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 740,
+        "credit_card_name": "국민행복카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "교통",
+            "기타",
+            "무실적",
+            "여행/숙박",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 741,
+        "credit_card_name": "다이소 신한카드",
+        "categories": [
+            "레저/스포츠",
+            "영화/문화",
+            "주유",
+            "교통",
+            "기타",
+            "무실적",
+            "여행/숙박",
+            "통신"
+        ]
+    },
+    {
+        "credit_card_id": 742,
+        "credit_card_name": "동양생명 우리카드",
+        "categories": [
+            "쇼핑",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 743,
+        "credit_card_name": "랭킹닭컴 하나카드",
+        "categories": [
+            "생활",
+            "주유",
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 744,
+        "credit_card_name": "메가쇼핑 신한카드",
+        "categories": [
+            "레저/스포츠",
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 745,
+        "credit_card_name": "바디프랜드 하나카드",
+        "categories": [
+            "생활",
+            "뷰티/피트니스",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 746,
+        "credit_card_name": "베베쿡 신한카드",
+        "categories": [
+            "마트/편의점",
+            "카페/디저트",
+            "교통",
+            "여행/숙박"
+        ]
+    },
+    {
+        "credit_card_id": 747,
+        "credit_card_name": "부자되세요 The Oil카드",
+        "categories": [
+            "쇼핑",
+            "무실적"
+        ]
+    },
+    {
+        "credit_card_id": 748,
+        "credit_card_name": "셀리턴 우리카드",
+        "categories": [
+            "기타",
+            "교육/육아"
+        ]
+    },
+    {
+        "credit_card_id": 749,
+        "credit_card_name": "아모레퍼시픽 IBK카드",
+        "categories": [
+            "영화/문화",
+            "생활",
+            "마트/편의점",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 750,
+        "credit_card_name": "엘포인트카드(비씨)",
+        "categories": [
+            "금융"
+        ]
+    },
+    {
+        "credit_card_id": 751,
+        "credit_card_name": "요기요 신한카드",
+        "categories": [
+            "영화/문화",
+            "해외",
+            "푸드",
+            "생활",
+            "카페/디저트"
+        ]
+    },
+    {
+        "credit_card_id": 752,
+        "credit_card_name": "웅진씽크빅 카드",
+        "categories": [
+            "쇼핑",
+            "기타"
+        ]
+    },
+    {
+        "credit_card_id": 753,
+        "credit_card_name": "위버스 신한카드(SEVENTEEN)",
+        "categories": [
+            "공과금/렌탈"
+        ]
+    },
+    {
+        "credit_card_id": 754,
+        "credit_card_name": "위버스 신한카드(TXT)",
+        "categories": [
+            "마트/편의점",
+            "무실적",
+            "레저/스포츠"
+        ]
+    },
+    {
+        "credit_card_id": 755,
+        "credit_card_name": "제주신화월드 신한카드",
+        "categories": [
+            "교육/육아"
+        ]
+    }
+]
