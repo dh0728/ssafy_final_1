@@ -279,7 +279,7 @@
     <td><div align="center"><b>송동현</div></td>
   </tr>
   <tr>
-    <td><img src="/cookiewalk/public/images/임민형.png"></td>
+    <td><img src="./images/이지연.jpg"></td>
     <td><img src="./images/송동현.png"></td>
   </tr>
   <tr>
