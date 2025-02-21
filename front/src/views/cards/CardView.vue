@@ -33,7 +33,7 @@
         >
           <swiper-slide v-for="item in category" :key="item.id">
             <button
-                :class="['filter-btn', { active: selectedCategories.includes(item.id) }]"
+                :class="['filter-btn', { active: store.selectedCategories.includes(item.id) }]"
                 @click="toggleFilter('categories', item.id)"
             >
               {{ item.name }}
@@ -54,7 +54,7 @@
         >
           <swiper-slide v-for="company in currentCompanies" :key="company.id">
             <button
-                :class="['filter-btn', { active: selectedCompanies.includes(company.id) }]"
+                :class="['filter-btn', { active: store.selectedCompanies.includes(company.id) }]"
                 @click="toggleFilter('companies', company.id)"
             >
               {{ company.name }}
@@ -81,8 +81,6 @@ const store = useCardStore();
 
 // 기본값: credit
 const selectedTab = ref('credit')
-const selectedCategories = ref([])
-const selectedCompanies = ref([])
 
 // 데이터는 그대로 사용
 const cardCompany = ref([
@@ -201,25 +199,33 @@ const currentCompanies = computed(() => {
 
 const toggleFilter = async (type, id) => {
   // 기존 배열 복사
-  const targetRef = type === 'categories' ? selectedCategories : selectedCompanies
+  const target =
+    type === "categories"
+      ? store.selectedCategories.value
+      : store.selectedCompanies.value;
 
-  const index = targetRef.value.indexOf(id)
-  if (index === -1) {
-    // 새로운 값 추가
-    targetRef.value = [...targetRef.value, id]
-  } else {
-    // 기존 값 제거
-    targetRef.value = targetRef.value.filter(item => item !== id)
+  // 배열 초기화 확인
+  if (!Array.isArray(target)) {
+    console.error(`Error: target is not an array. Type: ${typeof target}`);
+    return; // 오류 방지
   }
 
+  // 값 추가 또는 제거
+  if (!target.includes(id)) {
+    target.push(id); // 새로운 값 추가
+  } else {
+    target.splice(target.indexOf(id), 1); // 기존 값 제거
+  }
+
+  
   // 필터가 선택된 경우에만 API 호출
-  if (selectedCategories.value.length > 0 || selectedCompanies.value.length > 0) {
+  if (store.selectedCategories.value.length > 0 || store.selectedCompanies.value.length > 0) {
     // 새로운 API 호출 전에 store 초기화
     store.resetCards()
     await store.getCardsByCondition(
         selectedTab.value,
-        [...selectedCategories.value], // 배열 복사하여 전달
-        [...selectedCompanies.value]
+        [...store.selectedCategories.value], // 배열 복사하여 전달
+        [...store.selectedCompanies.value]
     )
   } else {
     // 모든 필터가 해제된 경우 기본 목록 불러오기

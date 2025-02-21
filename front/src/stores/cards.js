@@ -11,6 +11,8 @@ export const useCardStore = defineStore('cards', () => {
     const myCard = ref([])
     const recommendCards = ref([])
 
+    const selectedCategories = ref([])
+    const selectedCompanies = ref([])
     const cards = ref([])
     const card = ref(null)
     const loading = ref(false)
@@ -34,7 +36,7 @@ export const useCardStore = defineStore('cards', () => {
 
 
     // 조건 검색
-    const getCardsByCondition = async (type, categories, companies) => {
+    const getCardsByCondition = async (type,) => {
         try {
             loading.value =true
             currentType.value = type
@@ -42,10 +44,10 @@ export const useCardStore = defineStore('cards', () => {
 
             const params = new URLSearchParams()
 
-            categories?.forEach(category => {
+            selectedCategories.value?.forEach(category => {
                 params.append('categories', category)
             })
-            companies?.forEach(company => {
+            selectedCompanies.value?.forEach(company => {
                 params.append('companies', company)
             })
 
@@ -221,5 +223,7 @@ export const useCardStore = defineStore('cards', () => {
         getRecommendCards,
         resetCards,
         loading,
+        selectedCategories,
+        selectedCompanies,
     }
 }, { persist: true })
