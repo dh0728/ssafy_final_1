@@ -284,7 +284,7 @@
   </tr>
   <tr>
     <td><img src="./images/이지연.jpg"></td>
-    <td><img src="./images/송동현.png"></td>
+    <td><img src="./images/profile.png"></td>
   </tr>
   <tr>
     <td><div align="center">Frontend</div></td>
